@@ -9,9 +9,9 @@ function createDBConn(){
     }
 }
 
-function fetchResult($table, $pid){
+function fetchResult($table, $pid, $order){
     createDBconn();
-    $cmd = "SELECT * FROM $table where ProbID = $pid";
+    $cmd = "SELECT * FROM $table where ProbID = $pid $order ";
     $result = mysql_query($cmd);
     return $result;
 }

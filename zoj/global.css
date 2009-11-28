@@ -83,7 +83,7 @@ a{color:#000;}a:hover{color:#36c;}
     text-align:center;
 }
 
-.comments {
+.commentFrame {
     text-align:center;
     position:relative; 
     display:block; 
@@ -99,9 +99,21 @@ a{color:#000;}a:hover{color:#36c;}
     text-align:center;
     position:relative; 
     display:block; 
-    border:2px solid #98B1C8; 
+    border:1px solid #98B1C8; 
     background:#F5F8FD;
     color:#0B3B0B; 
+    font-family:"tahoma";
+    font-size:13px;
+    padding-left:40px;
+}
+
+#errorMsg {
+    text-align:center;
+    position:relative; 
+    display:none; 
+    border:1px outset #98B1C8; 
+    background:#F5F8FD;
+    color:red; 
     font-family:"tahoma";
     font-size:13px;
     padding-left:40px;
@@ -124,4 +136,15 @@ a{color:#000;}a:hover{color:#36c;}
     bottom:0px;
 }
 
+.divtitle {
+    text-align:center;
+    position:relative; 
+    display:block; 
+    border:0px solid #98B1C8; 
+    background:#F5F8FD;
+    color:#0B3B0B; 
+    font-family:"tahoma";
+    font-size:13px;
+    padding-left:40px;
+}
 

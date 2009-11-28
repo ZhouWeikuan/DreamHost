@@ -3,13 +3,14 @@
     include_once('header.php'); 
     include_once('db.php'); 
 
-    $id = $_REQUEST['pid'];
-    if ($id <= 1000 || id >=9999){
-        $id = 1001;
+    $ProbID = $_REQUEST['pid'];
+    if ($ProbID <= 1000 || ProbID >=9999){
+        $ProbID = 1001;
     }
     $table = 'Codes';
     $row = array();
-    $result = fetchResult($table, $id);
+    $order = '';
+    $result = fetchResult($table, $ProbID, $order);
     if ($result){
         $row = mysql_fetch_array($result);
     }
@@ -33,34 +34,40 @@
     ?>
 </div> 
 
-<div id="comments">
+<div id="commentFrame">
 <?php
     $table = 'Comments';
     $row = array();
-    $result = fetchResult($table, $id);
+    $order = ' ORDER BY SubTime';
+    $result = fetchResult($table, $ProbID, $order);
     if ($result){
         while($row = mysql_fetch_array($result)){
-            $User = $row['User'];
+            $User = stripslashes($row['User']);
+            $Url = stripslashes($row['Url']);
+            if ($Url){
+                $User = "<a href='$Url'> $User </a>";
+            }
             $SubTime = $row['SubTime'];
-            $Comment = $row['Comment'];
+            $Comment = stripslashes($row['Comment']);
             print <<<EOL
             <div class="commentItem">
-                <div> $User  on $SubTime </div>
+                <div> 在$SubTime 时，$User 评论： </div>
                 <div> $Comment </div>
             </div>
 EOL;
         }
-    } else {
-    print <<<EOL
-    <div class="commentItem">
-        如果有什么意见或建议，请添加评论。
-    </div>
-EOL;
     }
 ?>
 </div>
+<script type="text/javascript" src="ajax.js"> </script>
 <div id="newComment">
-    add new comment here;
+    <input type="hidden" id="ProbID" value="<?echo($ProbID);?>" />
+    <div class="divtitle"> 请添加新评论</div>
+    <div id="errorMsg"> </div>
+    姓名： <input id="commentUserName" type="text" size="12" maxlength="39" />
+    &nbsp; &nbsp; 主页：<input id="commentHomeUrl" type="text" size="32" maxlength="119" />
+    &nbsp; &nbsp; <input type="submit" value="提交评论" onclick="javascript:onNewComment();" /> <br>
+    <textarea id="commentContent" rows="10" cols="80" maxlength="1023"> </textarea> <br>
 </div>
 
 <?php
