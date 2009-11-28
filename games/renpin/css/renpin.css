@@ -1,0 +1,61 @@
+.dgreen{color:#09460f; font-family:Arial; }
+.dred{color:#d01e3b; font-family:Arial; padding-left:6px;}
+.dorg{color:#f60; font-family:Arial; padding-left:6px;}
+.dblue{color:#369;}
+.p7_0{padding:5px 0 0 0;}
+.w220{width:220px;}
+.w360{width:360px;}
+.deal_left{width:485px; float:left; margin-top:-7px;}
+.deal_nav{border-bottom:solid 1px #ccc; height:25px; margin-bottom:25px; width:300px;}
+
+.deal_navbg{width:70px; height:24px; background:#fff; border-top:solid 1px #eee; border-left:solid 1px #eee; border-right:solid 1px #ccc;  margin-right:2px; float:left;}
+.deal_navbg h4{width:50px; height:16px;text-align:center; color:#369; cursor:pointer; padding:2px 0 0 10px; font-size:12px; margin:2px 0 0 12px; font-weight:normal; background-position:0 3px;}
+.deal_navbg h4.sy{background:url(http://img.kaixin001.com.cn/i/slave/sy.gif) left no-repeat;}
+.deal_navbg h4.ph{background:url(http://img.kaixin001.com.cn/i/slave/ph.gif) left no-repeat;}
+.deal_navbg h4.help{background:url(http://img.kaixin001.com.cn/i/slave/help.gif) left no-repeat;}
+
+.dealimg{float:left; width:120px; height:120px; border:6px solid #f1f1f1; margin-left:10px;}
+.dealtopimg{
+    float:left; 
+    width:60px; height:60px; border:5px solid #f1f1f1; margin-left:4px;
+}
+
+.dealtopinfo{float:left; 
+    width:200px; margin-left:5px;
+}
+.dealtopinfo p{
+    /*margin:0px; padding:0; height:22px; color:#666; font-size:12px;*/
+}
+
+.dealinfo{float:left; width:280px; margin-left:15px;}
+.dealinfo p{margin:0px; padding:0; height:22px; color:#666; font-size:12px;}
+h3.wdnl{width:452px; padding:5px 0 0 23px; border-bottom:solid 1px #7f93bc; height:20px; margin:20px 0 15px 0; font-size:13px; background:url(http://img.kaixin001.com.cn/i/slave/nl.gif) left no-repeat;}
+.nl_list{width:455px; padding:0 0 15px 10px; margin-left:10px; border-bottom:solid 1px #d8deea; margin-bottom:15px;}
+.dealimg2{float:left; width:50px; height:50px; border:5px solid #f1f1f1;}
+.wysft{width:200px; text-align:right; padding:1px 5px; margin:0px; border-bottom:solid 1px #ddd; color:#369;}
+.wysft2{width:115px; text-align:left; height:15px; padding:2px 0 2px 12px; margin:0px; border-bottom:solid 1px #ddd; color:#369;}
+.djl{width:340px; height:15px; padding:3px 5px; background:#f2f2f2; color:#808080; margin-top:10px;}
+.deal_right{position:absolute right:20px float:right; margin-left:10px; width:300px; margin-top:-7px;}
+.deal_navbg2{width:200px; position:relative top:20px right:20px height:24px; background:#fff; border-top:solid 1px #eee; border-left:solid 1px #eee; border-right:solid 1px #ccc; border-bottom:solid 1px #ccc; float:right;}
+.deal_navbg2 h4{width:120px; height:16px; text-align:center; color:#999; cursor:pointer; padding:2px 0 0 18px; font-size:12px; margin:2px 0 0 5px; font-weight:normal; background-position:0 4px; background:url(http://img.kaixin001.com.cn/i/slave/add.gif) left no-repeat;}
+h3.mmls{width:285px; padding:5px 0 0 23px; border-bottom:solid 1px #7f93bc; height:20px; margin:20px 0 5px 0; font-size:13px; background:url(http://img.kaixin001.com.cn/i/slave/histy.gif) left no-repeat;}
+h3.wdzr{width:285px; padding:5px 0 0 23px; border-bottom:solid 1px #7f93bc; height:20px; margin:20px 0 5px 0; font-size:13px; background:url(http://img.kaixin001.com.cn/i/slave/zr.gif) left no-repeat;}
+.histy_mx{float:left; width:285px; margin-left:7px; border-bottom:dashed 1px #d8deea; color:#333; line-height:150%; padding-bottom:2px;}
+.histy_mx2{float:left; width:440px; margin-left:7px; border-bottom:dashed 1px #d8deea; color:#333; line-height:150%; padding:0 5px 2px 5px;}
+.djl2{width:300px; height:15px; padding:3px 5px; background:#f2f2f2; color:#808080; margin:10px 0; border-bottom:solid 1px #d8deea;}
+
+.ph_left{width:225px; float:left; margin-left:10px; margin-top:-10px;}
+.ph_left h3{width:180px; padding:5px 0 3px 7px; margin:0px; height:15px; font-size:14px; font-weight:normal; border-bottom:solid 1px #d8dfea;}
+.ph_right{width:585px; float:left;margin-top:-16px!important;margin-top:-12px;}
+.ph_area{padding:10px 0 10px 15px;}
+.ph_area img{border:0px; padding-right:2px;}
+	.ph_area p{width:147px; height:26x; margin:0px 0; padding:5px 0 5px 8px; font-size:13px; color:#369;}
+.ph_area p.pbg{background:url(http://img.kaixin001.com.cn/i/slave/pbg.gif) no-repeat; height:26px; width:155px; font-weight:bold;}
+.ph_area p.pbg0{background:url(http://img.kaixin001.com.cn/i/slave/pbg0.gif) no-repeat; margin:0px 0; padding:5px 0 5px 8px; font-size:13px; color:#369;}
+.ph_list{width:570px; padding:0 0 3px 5px; border-bottom:solid 1px #d8dfea; margin-bottom:10px;}
+.ph_list2{width:570px; padding:5px 0 10px 5px; border-bottom:solid 1px #d8dfea; margin-bottom:10px;}
+
+.dealings_help{width:650px; padding-left:20px; color:#333; margin-top:-10px;}
+.dealings_help h3{font-size:12px; margin:0px; padding:10px 0;}
+.dealings_help p{font-size:13px; line-height:100%; text-indent:26px; margin:0px; padding:5px 0;}
+

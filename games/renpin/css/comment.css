@@ -1,0 +1,28 @@
+.chs_reply  {
+    position:relative; cursor:pointer;
+    }
+.chs_reply .chsr_area{position:absolute; top:-4px; *top:0px; _top:2px; left:-24px; color:#333;}
+.chsr_area .chs_bg{background:url(http://img1.kaixin001.com.cn/i2/chs_bg.gif) bottom no-repeat; width:121px; height:20px; padding-top:2px; text-indent:5px;}
+.chsr_area .reply_list{width:119px; border-left:solid 1px #c0c0c0; border-bottom:solid 1px #e3e3e3; border-right:solid 1px #e3e3e3; background:#f8f8f8; padding:3px 0;}
+.chsr_area .reply_list a{width:119px; height:20px; line-height:20px; display:block; text-indent:5px; color:#333; text-decoration:none;}
+.chsr_area .reply_list a:link,.chsr_area .reply_list a:visited{background:#f8f8f8;}
+.chsr_area .reply_list a:active,.chsr_area .reply_list a:hover{background:#e3e3e3;}
+
+
+.fdy_comt{position:relative; top:5px; left:30px; width:454px; margin:0 0 5px 0;}
+.fdy_comt .bgt{width:454px; height:12px; background:url(http://img1.kaixin001.com.cn/i/home/bgt2.gif) no-repeat bottom;}
+.fdy_comt .bgb{width:454px; height:11px; background:url(http://img1.kaixin001.com.cn/i/home/bgb.gif) no-repeat top;}
+.fdy_comt .bg{width:453px; background:#f3f5f9;}
+.new_comt{margin-left:35px;}
+
+.bbf{height:7px; border-bottom:solid 1px #eee; _margin-top:-10px;}
+.btg{height:5px; border-top:solid 1px #fff; _margin-bottom:-15px;}
+
+#newsdiv .gw13{float:right; color:#999; font-size:10px; font-family:Arial; _margin-left:-54px;}	
+
+.cuspic{width:20px; height:20px; padding:1px; border:solid 1px #dddeee; margin:-2px 5px 0 0;}
+.ml5{margin-left:5px;}
+.pt3{padding-top:6px;}
+
+.album_bg{background:url(http://img1.kaixin001.com.cn/i/home/album_bg.gif) no-repeat; width:119px; height:87px; text-align:center;}
+.album_bg img{height:68px; margin-top:8px;}
