@@ -1,6 +1,5 @@
 <html>
 <?php 
-    include_once('header.php'); 
     include_once('db.php'); 
 
     $ProbID = $_REQUEST['pid'];
@@ -15,6 +14,10 @@
         $row = mysql_fetch_array($result);
     }
 ?>
+<head>
+    <link href="global.css" rel="stylesheet" type="text/css" />
+    <title>acm zju, zoj <?echo("$ProbID");?> </title>
+</head>
 <body>
 <div id="main" class="tips">
     本站专门讨论zoj上各题解答方案，并附上语法加亮的源代码。欢迎各位同好一起努力，共同进步！
