@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: chess
 -- ------------------------------------------------------
--- Server version	5.0.84-log
+-- Server version	5.0.51a-24+lenny2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,22 +20,26 @@
 --
 
 DROP TABLE IF EXISTS `games`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `games` (
   `gid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL default '-1',
-  `ulast` bigint(20) unsigned default NULL,
-  `ucolor` char(8) default NULL,
+  `ustate` varchar(10) default 'NONE',
+  `umsg` varchar(10) default 'NONE',
+  `ulast` bigint(20) unsigned default '0',
+  `ucolor` char(8) default 'RED',
+  `ucmd` varchar(120) default NULL,
   `did` bigint(20) NOT NULL default '-1',
-  `dlast` bigint(20) unsigned default NULL,
-  `dcolor` char(8) default NULL,
-  `cmd` varchar(40) default NULL,
-  `msg` varchar(40) default NULL,
+  `dstate` varchar(10) default 'NONE',
+  `dmsg` varchar(10) default 'NONE',
+  `dlast` bigint(20) unsigned default '0',
+  `dcolor` char(8) default 'BLACK',
+  `dcmd` varchar(120) default NULL,
   PRIMARY KEY  (`gid`),
   UNIQUE KEY `gid` (`gid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `games`
@@ -55,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2009-12-11  0:03:59
+-- Dump completed on 2009-12-14 10:22:29
