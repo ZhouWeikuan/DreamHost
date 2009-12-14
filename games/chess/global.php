@@ -1,4 +1,7 @@
 <?
+Header('Cache-Control: no-cache');
+Header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+Header('Pragma: no-cache');
 
 class GameState {
     const TIMELIMIT = 300; // 5 minutes

@@ -23,8 +23,14 @@ switch($method){
     case 'DRAW':
         acceptDraw();
         break;
+    case 'NOTDRAW':
+        notDraw();
+        break;
     case 'LOSE':
-        askLose();
+        doLose();
+        break;
+    case 'WIN':
+        doWin($_REQUEST);
         break;
     case 'NEW':
         newRound($_REQUEST);

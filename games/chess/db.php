@@ -47,6 +47,50 @@ function doMove(&$env){
     print($ans);
 }
 
+function doWin(&$env){
+    $gid = $env['gid'];
+    $row = '';
+    if (!checkValidGame($gid, $row)){
+        print ("gid=$gid");
+        return;
+    }
+    $ans = "type=doWin&gid=$gid";
+    $msgStr = GameState::LOSE;
+    $role = $env['role'];
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    $cmd = "UPDATE games set " . $fld['state'] . "='END', " . $fld['ostate']  . "='END', "
+         . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
+    $result = mysql_query($cmd);
+    $ans .= "&cmd='$cmd'&result=$result";
+    print($ans);
+}
+
+function doLose(&$env){
+    $gid = $env['gid'];
+    $row = '';
+    if (!checkValidGame($gid, $row)){
+        print ("gid=$gid");
+        return;
+    }
+    $ans = "type=doLose&gid=$gid";
+    $msgStr = GameState::WIN; 
+    $role = $env['role'];
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    $cmd = "UPDATE games set " . $fld['state'] . "='END', " . $fld['ostate']  . "='END', "
+         . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
+    $result = mysql_query($cmd);
+    $ans .= "&cmd='$cmd'&result=$result";
+    print($ans);
+}
+
 function createServer($uid){
     $ans = "type=command&uid=$uid";
     $ts  = time(0);
@@ -123,9 +167,6 @@ function askDraw(){
 }
 
 function acceptDraw(){
-}
-
-function askLose(){
 }
 
 ?>
