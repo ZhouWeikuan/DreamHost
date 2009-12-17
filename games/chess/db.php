@@ -163,6 +163,57 @@ function findServer($uid){
     print($ans);
 }
 
+function newRound(&$env){
+    $gid = $env['gid'];
+    $uid = $env['uid'];
+    $ans = "type=newRound&uid=$uid";
+    $ts  = time(0);
+    $cmd = "SELECT * FROM games where gid = $gid LIMIT 1";
+    $result = mysql_query($cmd);
+    if ($result ){
+        $row = mysql_fetch_array($result);
+        if ($row){
+            $gid = $row['gid'];
+        }
+    }
+    $role = $env['role'];
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    $state = $fld['state'];
+    $last = $fld['last'];
+    $ostate = $fld['ostate'];
+    $cmd = "UPDATE games set $state='START', $last='$ts' WHERE gid=$gid ";
+    if ($row[$ostate] == GameState::START){
+        $fcolor = $fld['color'];
+        $color  = $row[$fcolor];
+        $focolor= $fld['ocolor'];
+        $ocolor = $row[$focolor];
+        $fcmd = $fld['cmd'];
+        $ocmd = $fld['ocmd'];
+        $cmd = "UPDATE games set $state='INIT', $ostate='INIT', $last='$ts',"
+            . " $fcmd='method=INIT&color=$color', $ocmd='method=INIT&color=$ocolor', "
+            . " $fcolor='$ocolor', $focolor='$color' WHERE gid=$gid";
+    }
+
+    if ($gid > 0){ // there is a game
+        $result = mysql_query($cmd);
+        $ans .= "&cmd=$cmd";
+        if ($result){
+            $ans .= "&gid=$gid";
+        } else {
+            $ans .= "&gid=-1";
+        }
+    } else { // no games found, turn to server?
+        createServer($uid);
+        return;
+    }
+    print($ans);
+}
+
+
 function askDraw(){
 }
 

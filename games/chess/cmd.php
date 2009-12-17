@@ -27,12 +27,12 @@ switch($method){
         notDraw();
         break;
     case 'LOSE':
-        doLose();
+        doLose($_REQUEST);
         break;
     case 'WIN':
         doWin($_REQUEST);
         break;
-    case 'NEW':
+    case 'START':
         newRound($_REQUEST);
         break;
     case 'UPDATE':
