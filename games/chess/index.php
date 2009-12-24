@@ -334,7 +334,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 		'loop', 'true',
 		'scale', 'showall',
 		'wmode', 'window',
-		'devicefont', 'true',
+		'devicefont', 'false',
 		'id', 'ChChess',
 		'bgcolor', '#ffffff',
 		'name', 'ChChess',
@@ -342,8 +342,8 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 		'allowFullScreen', 'true',
 		'allowScriptAccess','sameDomain',
 		'movie', 'ChChess',
-		'salign', '',
-		'flashvars', 'server="192.168.97.141"&amp;&amp;uid="1234"'
+		'flashvars', 'server=192.168.97.141&amp;&amp;uid=18',
+		'salign', ''
 		); //end AC code
 </script>
 <noscript>
@@ -352,11 +352,10 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 	<param name="allowFullScreen" value="true" />
 	<param name="movie" value="ChChess.swf" />
 	<param name="quality" value="high" />
-	<param name="devicefont" value="true" />
 	<param name="bgcolor" value="#ffffff" />
-	<param name="flashvars" value='server="192.168.97.141"&uid="1234"' />
-	<embed src="ChChess.swf" quality="high" devicefont="true" bgcolor="#ffffff" width="700" height="660" name="ChChess" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn"
-	flashvars='server="192.168.97.141"&amp;&amp;uid="1234"' />
+	<param name="flashvars" value="server=192.168.97.141&amp;&amp;uid=18" />
+	<embed src="ChChess.swf" quality="high" bgcolor="#ffffff" width="700" height="660" name="ChChess" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" 
+	flashvars="server=192.168.97.141&amp;&amp;uid=18" />
 	</object>
 </noscript>
 </body>
