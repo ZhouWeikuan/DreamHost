@@ -18,13 +18,13 @@ switch($method){
         findServer($uid);
         break;
     case 'ASKDRAW':
-        askDraw();
+        askDraw($_REQUEST);
         break;
     case 'DRAW':
-        acceptDraw();
+        acceptDraw($_REQUEST);
         break;
     case 'NOTDRAW':
-        notDraw();
+        notDraw($_REQUEST);
         break;
     case 'LOSE':
         doLose($_REQUEST);

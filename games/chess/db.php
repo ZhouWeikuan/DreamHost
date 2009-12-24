@@ -157,8 +157,8 @@ function findServer($uid){
             $ans .= "&gid=-1";
         }
     } else { // no games found, turn to server?
-        createServer($uid);
-        return;
+        // createServer($uid);
+        // return;
     }
     print($ans);
 }
@@ -213,11 +213,44 @@ function newRound(&$env){
     print($ans);
 }
 
+function updateDraw(&$env, $value){
+    $gid = $env['gid'];
+    if (!checkValidGame($gid, $row)){
+        print ("gid=$gid");
+        return;
+    }
 
-function askDraw(){
+    $ts  = time(0);
+    $uid = $env['uid'];
+    $role = $env['role'];
+    $ans = "type=askDraw&uid=$uid";
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    $fld_msg = $fld['msg'];
+    $last = $fld['last'];
+    $cmd = "UPDATE games SET $fld_msg='$value', $last='$ts' WHERE gid=$gid";
+    $result = mysql_query($cmd);
+    if ($result){
+        $ans .= "&gid=$gid";
+    } else {
+        $ans .= "&gid=-1";
+    }
+    print($ans);
 }
 
-function acceptDraw(){
+function askDraw(&$env){
+    updateDraw($env, 'ASKDRAW');
+}
+
+function notDraw(&$env){
+    updateDraw($env, 'NOTDRAW');
+}
+
+function acceptDraw(&$env){
+    updateDraw($env, 'DRAW');
 }
 
 ?>
