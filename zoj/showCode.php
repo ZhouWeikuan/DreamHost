@@ -65,7 +65,7 @@ EOL;
 <script type="text/javascript" src="ajax.js"> </script>
 <div id="newComment">
     <input type="hidden" id="ProbID" value="<?echo($ProbID);?>" />
-    <div class="divtitle"> 请添加新评论</div>
+    <div class="divtitle"> 欢迎添加新评论</div>
     <div id="errorMsg"> </div>
     姓名： <input id="commentUserName" type="text" size="12" maxlength="39" />
     &nbsp; &nbsp; 主页：<input id="commentHomeUrl" type="text" size="32" maxlength="119" />
