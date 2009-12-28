@@ -1,4 +1,4 @@
-var defHomeUrl = "http://apps.renren.com/weikuan";
+var defHomeUrl = "http://apps.renren.com/renpinwar";
 var appID = "67174"; // for 人品大战的appId
 
 function getAjaxObject(){
@@ -191,7 +191,7 @@ function closePopupSettings(){
 
 function inviteFriends(){
     var url = "http://apps.renren.com/request.do?app_id=" + appID
-            + "&action=http://apps.renren.com/weikuan";
+            + "&action=http://apps.renren.com/renpinwar";
     if (window.parent) {
         window.parent.location.href = url;
     } else {

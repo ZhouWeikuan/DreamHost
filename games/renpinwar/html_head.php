@@ -21,6 +21,24 @@
     var xn_sig_expires = "<?php echo($_REQUEST['xn_sig_expires']);?>" ;
     var xn_sig_api_key = "<?php echo($_REQUEST['xn_sig_api_key']);?>" ;
     var theOtherUser = "<?php echo($lookupUser);?>" ;
+
+function JS_redirect(url) {
+    if (window.parent) {
+        window.parent.location.href = url;
+    } else {
+        window.location.href = url;
+    }
+}
+
+<?
+    if (!$xiaonei_uid){
+        $url = 'http://app.renren.com/apps/tos.do?api_key=' . $api_key . "&v=1.0&next=";
+?>
+        JS_redirect("<?php echo($url);?>");
+<?
+    }
+?>
+
 </script>
 <script src="js/global.js" language="javascript" type="text/javascript" > </script>
 <script src="js/tips.js" language="javascript" type="text/javascript" > </script>
