@@ -4,11 +4,15 @@ $session_key = $_REQUEST['xn_sig_session_key'];
 $secret_key = '115004bcdb784c6a9413ea213f59931b'; // your secret
 $xiaonei_uid = $_REQUEST['xn_sig_user']; // uid is posted, so reduce calling api, 2008.07.21
 $homeurl = "http://apps.renren.com/chchess/";
+$server = "192.168.97.141";
+// $server = "www.zhouweikuan.cn";
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<!-- The css files -->
+<link href="css/global.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript">
     function JS_redirect(url) {
         if (window.parent) {
@@ -329,7 +333,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 		'allowFullScreen', 'true',
 		'allowScriptAccess','sameDomain',
 		'movie', 'ChChess',
-		'flashvars', 'server=192.168.97.141&amp;&amp;uid=<?php echo($xiaonei_uid);?>',
+		'flashvars', 'server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>',
 		'salign', ''
 		); //end AC code
 </script>
@@ -340,10 +344,13 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 	<param name="movie" value="ChChess.swf" />
 	<param name="quality" value="high" />
 	<param name="bgcolor" value="#ffffff" />
-	<param name="flashvars" value="server=192.168.97.141&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
+	<param name="flashvars" value="server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
 	<embed src="ChChess.swf" quality="high" bgcolor="#ffffff" width="700" height="660" name="ChChess" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" 
-	flashvars="server=192.168.97.141&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
+	flashvars="server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
 	</object>
 </noscript>
+<div class="tc">
+    version=0.0.1, alpha release
+</div>
 </body>
 </html>
