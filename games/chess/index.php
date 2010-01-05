@@ -1,11 +1,50 @@
 <?php
+
+require_once('xiaonei.class.php');
+require_once('db.php');
+
 $api_key    = $_REQUEST['xn_sig_api_key']; // your api_key
 $session_key = $_REQUEST['xn_sig_session_key'];
 $secret_key = '115004bcdb784c6a9413ea213f59931b'; // your secret
 $xiaonei_uid = $_REQUEST['xn_sig_user']; // uid is posted, so reduce calling api, 2008.07.21
 $homeurl = "http://apps.renren.com/chchess/";
+$xn = new XNApp($api_key, $secret_key);
 $server = "192.168.97.141";
 // $server = "www.zhouweikuan.cn";
+
+createDBConn();
+$result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
+if ($result){
+    $user_info = mysql_fetch_array($result);
+}
+if (!$result || !$user_info){
+    $param = array();
+    $param['uids'] = $xiaonei_uid;
+    $ans = $xn->users('getInfo', $param);
+    if ($ans){
+        $user = $ans['user'];
+        $name = $user['name'];
+        $icon = $user['mainurl'];
+        if (!$icon){
+            $icon = $user['headurl'];
+        }
+        if (!$icon){
+            $icon = $user['tinyurl'];
+        }
+        // echo ("name is " . $name);
+        mysql_query("INSERT INTO users (id, name, iconurl) VALUES ('$lookupUser', '$name', '$icon') " )
+            or die (mysql_error());
+        $result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
+        $user_info = mysql_fetch_array($result);
+    } else {
+?>
+        <link href="css/chess.css" rel="stylesheet" type="text/css" />
+        <div class="errorMsg"> <strong> 无法查询当前用户信息！</strong> </div>        
+<?php
+        exit(0);
+    }
+}
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
@@ -13,6 +52,7 @@ $server = "192.168.97.141";
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <!-- The css files -->
 <link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/chess.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript">
     function JS_redirect(url) {
         if (window.parent) {
@@ -352,5 +392,38 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 <div class="tc">
     version=0.0.1, alpha release
 </div>
+
+<script type="text/javascript" src="ajax.js"> </script>
+<div id="newComment">
+    <input type="hidden" id="commentUid" value="<? echo($xiaonei_uid);?>" />
+    <div class="divtitle"> 欢迎添加新评论</div>
+    <div id="errorMsg"> </div>
+    <input type="submit" value="提交评论" onclick="javascript:onNewComment();" /> <br>
+    <textarea id="commentContent" rows="10" cols="80" maxlength="160"> </textarea> <br>
+</div>
+
+<div id="commentFrame">
+<?php
+    $row = array();
+    $result = fetchComments();
+    if ($result){
+        while($row = mysql_fetch_array($result)){
+            $User = stripslashes($row['name']);
+            $icon = $row('iconurl'); 
+            $uid = 'http://renren.com/profile.do?id=' + $row['uid'];
+            $User = "<a href='$uid'> $User </a>";
+            $SubTime = $row['era'];
+            $Comment = stripslashes($row['txt']);
+            print <<<EOL
+            <div class="commentItem">
+                <div> <img src="$icon" class="dealimg"></img> $User 于$SubTime 时发表评论： </div>
+                <div> $Comment </div>
+            </div>
+EOL;
+        }
+    }
+?>
+</div>
+
 </body>
 </html>
