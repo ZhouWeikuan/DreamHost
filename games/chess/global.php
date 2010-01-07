@@ -6,6 +6,9 @@ Header('Pragma: no-cache');
 class GameState {
     const TIMELIMIT = 300; // 5 minutes
 
+    const SEAT   = 'SEAT';
+    const INFO   = 'INFO';
+
     const NONE   = 'NONE';
     const START  = 'START';
     const SERVER = 'SERVER';
@@ -14,6 +17,7 @@ class GameState {
     const MOVE   = 'MOVE';
     const WAIT   = 'WAIT';
     const OVER   = 'OVER';
+    const USER   = 'USER';
 
     const ASKDRAW = 'ASKDRAW';
     const NOTDRAW = 'NOTDRAW';

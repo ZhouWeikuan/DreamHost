@@ -62,7 +62,7 @@ function doWin(&$env){
     if ($role != GameState::SERVER){
         $fld = &$down;
     }
-    $cmd = "UPDATE games set " . $fld['state'] . "='END', " . $fld['ostate']  . "='END', "
+    $cmd = "UPDATE games set " . $fld['state'] . "='OVER', " . $fld['ostate']  . "='OVER', "
          . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
     $result = mysql_query($cmd);
     $ans .= "&cmd='$cmd'&result=$result";
@@ -84,7 +84,7 @@ function doLose(&$env){
     if ($role != GameState::SERVER){
         $fld = &$down;
     }
-    $cmd = "UPDATE games set " . $fld['state'] . "='END', " . $fld['ostate']  . "='END', "
+    $cmd = "UPDATE games set " . $fld['state'] . "='OVER', " . $fld['ostate']  . "='OVER', "
          . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
     $result = mysql_query($cmd);
     $ans .= "&cmd='$cmd'&result=$result";
@@ -223,7 +223,7 @@ function updateDraw(&$env, $value){
     $ts  = time(0);
     $uid = $env['uid'];
     $role = $env['role'];
-    $ans = "type=askDraw&uid=$uid";
+    $ans = "type=updateDraw&uid=$uid";
     global $upper, $down;
     $fld = &$upper;
     if ($role != GameState::SERVER){
@@ -251,6 +251,30 @@ function notDraw(&$env){
 
 function acceptDraw(&$env){
     updateDraw($env, 'DRAW');
+}
+
+function doInfo(){
+    $lns = array();
+    $rns = array();
+    $ans = "type=doInfo";
+    $cmd = 'select gid,name from games,users '
+         . 'where gid>0 and games.uid=users.id order by gid';
+    $res = mysql_query($cmd);
+    while ($row = mysql_fetch_array($res)){
+        array_push($lns, $row['name']);
+    }
+
+    $cmd = 'select gid,name from games,users '
+         . 'where gid>0 and games.did=users.id order by gid';
+    $res = mysql_query($cmd);
+    while ($row = mysql_fetch_array($res)){
+        array_push($rns, $row['name']);
+    }
+    $lns = implode(',', $lns);
+    $rns = implode(',', $rns);
+    $ans .= "&lns=$lns";
+    $ans .= "&rns=$rns";
+    print($ans);
 }
 
 ?>

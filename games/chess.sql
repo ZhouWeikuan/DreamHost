@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: chess
 -- ------------------------------------------------------
--- Server version	5.0.51a-24+lenny2
+-- Server version	5.0.84-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,16 +20,16 @@
 --
 
 DROP TABLE IF EXISTS `comments`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comments` (
   `cid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL,
   `txt` varchar(160) NOT NULL,
   `era` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`cid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `comments`
@@ -45,8 +45,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `games`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `games` (
   `gid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL default '-1',
@@ -63,8 +63,8 @@ CREATE TABLE `games` (
   `dcmd` varchar(120) default NULL,
   PRIMARY KEY  (`gid`),
   UNIQUE KEY `gid` (`gid`)
-) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `games`
@@ -72,7 +72,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
-INSERT INTO `games` VALUES (66,239941468,'WAIT','NONE',1262055413,'RED','',296576367,'MOVE','NONE',1262055433,'BLACK','');
+INSERT INTO `games` VALUES (1,1234,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(2,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(3,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(4,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(5,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(6,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(7,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(8,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(9,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(10,4321,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(11,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(12,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(13,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(14,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(15,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(16,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(17,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(18,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(19,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(20,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL);
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,8 +81,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `users`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
   `name` varchar(40) default NULL,
@@ -91,8 +91,8 @@ CREATE TABLE `users` (
   `draw` int(11) default '0',
   `iconurl` varchar(400) default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
@@ -100,6 +100,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (-1,'',0,0,0,''),(1234,'aaa',0,0,0,''),(4321,'bbb',0,0,0,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-01-05  6:38:53
+-- Dump completed on 2010-01-07 23:15:25

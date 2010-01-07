@@ -8,6 +8,12 @@ $uid = $_REQUEST['uid'];
 createDBConn();
 
 switch($method){
+    case SEAT:
+        doSeat($_REQUEST);
+        break;
+    case INFO:
+        doInfo();
+        break;
     case 'MOVE':
         doMove($_REQUEST);
         break;
