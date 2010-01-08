@@ -20,7 +20,11 @@ function getAjaxObject(){
 function doneNewComment(htmlText){
     var divFrame = document.getElementById("commentFrame");
     var div = document.createElement("div");
-    divFrame.appendChild(div);
+    if (divFrame.firstChild){
+        divFrame.insertBefore(div, divFrame.firstChild);
+    } else {
+        divFrame.appendChild(div);
+    }
     div.className = "commentItem";
     div.innerHTML = htmlText;
 }

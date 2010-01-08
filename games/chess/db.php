@@ -1,9 +1,13 @@
 <?php
 
+$conn = '';
+
 function createDBConn(){
     global $conn;
-    $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
-    mysql_select_db("chess", $conn) or die(mysql_error());
+    if (!$conn) {
+        $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
+        mysql_select_db("chess", $conn) or die(mysql_error());
+    }
 }
 
 function commit(){
@@ -96,6 +100,73 @@ function doLose(&$env){
          . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
     $result = mysql_query($cmd);
     $ans .= "&cmd='$cmd'&result=$result";
+    print($ans);
+}
+
+function doEnter(&$env){
+    $gid = $env['gid'];
+    $uid = $env['uid'];
+    $role = $env['role'];
+    $name = '未知';
+    $cmd = "SELECT name FROM users WHERE id=$uid LIMIT 1";
+    $res = mysql_query($cmd);
+    if ($res){
+        $row = mysql_fetch_array($res);
+        if ($row){
+            $name = $row['name'];
+        }
+    }
+
+    $ans = "type=doEnter&gid=$gid";
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+
+    $oid = $fld['oid'];
+    $cmd = "SELECT $oid, name FROM games, users WHERE gid=$gid AND users.id = games.$oid LIMIT 1";
+    $res = mysql_query($cmd);
+    if ($res){
+        $row = mysql_fetch_array($res);
+        if ($row){
+            $ans .= "&msg=ENTER&name=" . $row['name'];
+        }
+    }
+    
+    $msg = $fld['msg'];
+    $cmd = "UPDATE games SET $msg='ENTER&name=$name' WHERE gid=$gid";
+    $res = mysql_query($cmd);
+
+    print($ans);
+}
+
+function doLeave(&$env){
+    $gid = $env['gid'];
+    $uid = $env['uid'];
+    $role = $env['role'];
+    $name = '未知';
+    $cmd = "SELECT name FROM users WHERE id=$uid LIMIT 1";
+    $res = mysql_query($cmd);
+    if ($res){
+        $row = mysql_fetch_array($res);
+        if ($row){
+            $name = $row['name'];
+        }
+    }
+
+    $ans = "type=doLeave&gid=$gid";
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    
+    $msg = $fld['msg'];
+    $id = $fld['id'];
+    $cmd = "UPDATE games SET $id=-1, $msg='LEAVE&name=$name' WHERE gid=$gid";
+    $res = mysql_query($cmd);
+
     print($ans);
 }
 
@@ -287,6 +358,7 @@ function doSeat(&$env){
     $uid = $env['uid']; 
     $gid = $env['gid']; 
     $role = $env['role']; 
+    $ts  = time(0) - GameState::TIMELIMIT;
     $ans = "type=doSeat&gid=$gid&role=$role";
 
     global $upper, $down;
@@ -296,10 +368,10 @@ function doSeat(&$env){
     }
     $fld_id = $fld['id'];
 
-    $cmd = "UPDATE games SET uid=-1 WHERE uid=$uid AND ustate='OVER'";
+    $cmd = "UPDATE games SET uid=-1 WHERE uid=$uid AND (ustate='OVER' OR ulast < $ts)";
     mysql_query($cmd);
 
-    $cmd = "UPDATE games SET did=-1 WHERE did=$uid AND dstate='OVER'";
+    $cmd = "UPDATE games SET did=-1 WHERE did=$uid AND (dstate='OVER' OR dlast < $ts)";
     mysql_query($cmd);
 
     mysql_query('BEGIN');
@@ -344,6 +416,13 @@ function doSeat(&$env){
     }
 
     print($ans);
+}
+
+function fetchComments(){
+    $cmd = "SELECT cid, uid, name, iconurl, txt, era FROM comments, users " 
+         . "WHERE users.id = comments.uid ORDER BY cid DESC;";
+    $res = mysql_query($cmd);
+    return $res;
 }
 
 ?>

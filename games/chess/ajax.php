@@ -4,7 +4,7 @@ include_once('db.php');
 function onNewComment(){
     createDBConn();
     $uid = $_REQUEST["uid"];
-    if ($ProbID <= 0){
+    if ($uid <= 0){
         print("不合法的用户编号： $uid\n");
         return;
     }
@@ -31,7 +31,7 @@ function onNewComment(){
         $icon = $row['iconurl'];
         $User = $row['name'];
         $uid = 'http://renren.com/profile.do?id=' + $row['uid'];
-        $User = "<a href='$Url'> $User </a>";
+        $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\");'> $User </a>";
 
         $Comment = stripslashes($row['txt']);
         print <<<EOF

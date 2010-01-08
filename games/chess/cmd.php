@@ -38,6 +38,12 @@ switch($method){
     case 'WIN':
         doWin($_REQUEST);
         break;
+    case ENTER:
+        doEnter($_REQUEST);
+        break;
+    case LEAVE:
+        doLeave($_REQUEST);
+        break;
     case 'START':
         newRound($_REQUEST);
         break;

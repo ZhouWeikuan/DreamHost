@@ -24,6 +24,8 @@ class GameState {
     const DRAW    = 'DRAW';
     const LOSE    = 'LOSE';
     const WIN     = 'WIN';
+    const ENTER   = 'ENTER';
+    const LEAVE   = 'LEAVE';
 };
 
 $upper = array(

@@ -9,11 +9,11 @@ $secret_key = '115004bcdb784c6a9413ea213f59931b'; // your secret
 $xiaonei_uid = $_REQUEST['xn_sig_user']; // uid is posted, so reduce calling api, 2008.07.21
 $homeurl = "http://apps.renren.com/chchess/";
 $xn = new XNApp($api_key, $secret_key);
-$server = "192.168.97.141";
+$server = "192.168.1.84";
 // $server = "www.zhouweikuan.cn";
 
 createDBConn();
-$result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
+$result = mysql_query("SELECT * FROM users WHERE id=" . $xiaonei_uid);
 if ($result){
     $user_info = mysql_fetch_array($result);
 }
@@ -32,9 +32,9 @@ if (!$result || !$user_info){
             $icon = $user['tinyurl'];
         }
         // echo ("name is " . $name);
-        mysql_query("INSERT INTO users (id, name, iconurl) VALUES ('$lookupUser', '$name', '$icon') " )
+        mysql_query("INSERT INTO users (id, name, iconurl) VALUES ('$xiaonei_uid', '$name', '$icon') " )
             or die (mysql_error());
-        $result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
+        $result = mysql_query("SELECT * FROM users WHERE id=" . $xiaonei_uid);
         $user_info = mysql_fetch_array($result);
     } else {
 ?>
@@ -396,10 +396,11 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 <script type="text/javascript" src="ajax.js"> </script>
 <div id="newComment">
     <input type="hidden" id="commentUid" value="<? echo($xiaonei_uid);?>" />
-    <div class="divtitle"> 欢迎添加新评论</div>
     <div id="errorMsg"> </div>
-    <input type="submit" value="提交评论" onclick="javascript:onNewComment();" /> <br>
-    <textarea id="commentContent" rows="10" cols="80" maxlength="160"> </textarea> <br>
+    <div class="divtitle">  欢迎添加新评论 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="submit" height='10px' value="提交评论" onclick="javascript:onNewComment();" />
+    </div>
+    <textarea id="commentContent" text='' value='' rows="3" cols="80" maxlength="160"> </textarea> <br>
 </div>
 
 <div id="commentFrame">
@@ -409,9 +410,9 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
     if ($result){
         while($row = mysql_fetch_array($result)){
             $User = stripslashes($row['name']);
-            $icon = $row('iconurl'); 
-            $uid = 'http://renren.com/profile.do?id=' + $row['uid'];
-            $User = "<a href='$uid'> $User </a>";
+            $icon = $row['iconurl']; 
+            $url = 'http://renren.com/profile.do?id=' . $row['uid'];
+            $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\")'> $User </a>";
             $SubTime = $row['era'];
             $Comment = stripslashes($row['txt']);
             print <<<EOL

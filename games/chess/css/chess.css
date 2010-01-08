@@ -130,7 +130,7 @@ a{color:#000;}a:hover{color:#36c;}
     text-align:center;
     position:relative; 
     display:block; 
-    border:2px solid #98B1C8; 
+    border:1px solid #98B1C8; 
     background:#F5F8FD;
     color:#0B3B0B; 
     font-family:"tahoma";
@@ -151,7 +151,8 @@ a{color:#000;}a:hover{color:#36c;}
     background:#F5F8FD;
     color:#0B3B0B; 
     font-family:"tahoma";
-    font-size:13px;
+    font-weight:bold;
+    font-size:14px;
     padding-left:40px;
 }
 
