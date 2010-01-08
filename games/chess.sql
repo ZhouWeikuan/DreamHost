@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: chess
 -- ------------------------------------------------------
--- Server version	5.0.84-log
+-- Server version	5.0.51a-24+lenny2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,16 +20,16 @@
 --
 
 DROP TABLE IF EXISTS `comments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `comments` (
   `cid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL,
   `txt` varchar(160) NOT NULL,
   `era` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `comments`
@@ -37,6 +37,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,1234,'text','2010-01-05 07:04:31');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -45,8 +46,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `games`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `games` (
   `gid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL default '-1',
@@ -54,17 +55,17 @@ CREATE TABLE `games` (
   `umsg` varchar(10) default 'NONE',
   `ulast` bigint(20) unsigned default '0',
   `ucolor` char(8) default 'RED',
-  `ucmd` varchar(120) default NULL,
+  `ucmd` varchar(120) default '',
   `did` bigint(20) NOT NULL default '-1',
   `dstate` varchar(10) default 'NONE',
   `dmsg` varchar(10) default 'NONE',
   `dlast` bigint(20) unsigned default '0',
   `dcolor` char(8) default 'BLACK',
-  `dcmd` varchar(120) default NULL,
+  `dcmd` varchar(120) default '',
   PRIMARY KEY  (`gid`),
   UNIQUE KEY `gid` (`gid`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `games`
@@ -72,7 +73,7 @@ CREATE TABLE `games` (
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
-INSERT INTO `games` VALUES (1,1234,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(2,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(3,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(4,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(5,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(6,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(7,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(8,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(9,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(10,4321,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(11,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(12,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(13,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(14,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(15,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(16,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(17,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(18,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(19,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL),(20,-1,'NONE','NONE',0,'RED',NULL,-1,'NONE','NONE',0,'BLACK',NULL);
+INSERT INTO `games` VALUES (1,-1,'OVER','NONE',1262944008,'BLACK','',-1,'OVER','NONE',1262944011,'RED',''),(2,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(3,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(4,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(5,1234,'OVER','NONE',1262944259,'BLACK','',4321,'OVER','NONE',1262944250,'RED',''),(6,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(7,-1,'WAIT','NONE',1262942774,'BLACK','',-1,'MOVE','NONE',1262942785,'RED',''),(8,-1,'NONE','NONE',0,'RED','',-1,'OVER','NONE',1262941497,'BLACK',''),(9,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(10,-1,'OVER','NONE',1262941828,'RED','',-1,'NONE','NONE',0,'BLACK',''),(11,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(12,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(13,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(14,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(15,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(16,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(17,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(18,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(19,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(20,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK','');
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,8 +82,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
   `name` varchar(40) default NULL,
@@ -92,7 +93,7 @@ CREATE TABLE `users` (
   `iconurl` varchar(400) default '',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `users`
@@ -113,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-01-07 23:15:25
+-- Dump completed on 2010-01-08  9:53:34

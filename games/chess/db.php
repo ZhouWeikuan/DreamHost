@@ -6,6 +6,14 @@ function createDBConn(){
     mysql_select_db("chess", $conn) or die(mysql_error());
 }
 
+function commit(){
+    mysql_query('COMMIT');
+}
+
+function rollback(){
+    mysql_query('ROLLBACK');
+}
+
 function checkValidGame($gid, &$row){
     if ($gid < 0){
         return false;
@@ -207,8 +215,7 @@ function newRound(&$env){
             $ans .= "&gid=-1";
         }
     } else { // no games found, turn to server?
-        createServer($uid);
-        return;
+        $ans .= "&gid=-1";
     }
     print($ans);
 }
@@ -256,24 +263,86 @@ function acceptDraw(&$env){
 function doInfo(){
     $lns = array();
     $rns = array();
-    $ans = "type=doInfo";
-    $cmd = 'select gid,name from games,users '
-         . 'where gid>0 and games.uid=users.id order by gid';
+    $ans = "type=doInfo&method=INFO&ret=OK";
+    $cmd = 'select gid,name from games,users where gid>0 and games.uid=users.id order by gid';
     $res = mysql_query($cmd);
     while ($row = mysql_fetch_array($res)){
         array_push($lns, $row['name']);
     }
+    $lns = implode(',', $lns);
 
-    $cmd = 'select gid,name from games,users '
-         . 'where gid>0 and games.did=users.id order by gid';
+    $cmd = 'select gid,name from games,users where gid>0 and games.did=users.id order by gid';
     $res = mysql_query($cmd);
     while ($row = mysql_fetch_array($res)){
         array_push($rns, $row['name']);
     }
-    $lns = implode(',', $lns);
     $rns = implode(',', $rns);
-    $ans .= "&lns=$lns";
-    $ans .= "&rns=$rns";
+
+    $ans .= "&lns=$lns&rns=$rns";
+    print($ans);
+}
+
+function doSeat(&$env){
+    // method, uid, gid, role;
+    $uid = $env['uid']; 
+    $gid = $env['gid']; 
+    $role = $env['role']; 
+    $ans = "type=doSeat&gid=$gid&role=$role";
+
+    global $upper, $down;
+    $fld = &$upper;
+    if ($role != GameState::SERVER){
+        $fld = &$down;
+    }
+    $fld_id = $fld['id'];
+
+    $cmd = "UPDATE games SET uid=-1 WHERE uid=$uid AND ustate='OVER'";
+    mysql_query($cmd);
+
+    $cmd = "UPDATE games SET did=-1 WHERE did=$uid AND dstate='OVER'";
+    mysql_query($cmd);
+
+    mysql_query('BEGIN');
+    $cmd = "SELECT uid, did FROM games WHERE uid=$uid OR did=$uid LIMIT 1";
+    $res = mysql_query($cmd);
+    $row = '';
+    if ($res) {
+        $row = mysql_fetch_array($res);
+    }
+
+    if ($row){
+        $ans .= "&ret=error&reason='You have already in a room!'";
+    } else {
+        $cmd = "SELECT uid, did FROM games WHERE gid=$gid LIMIT 1";
+        $res = mysql_query($cmd);
+        if ($res) {
+            $row = mysql_fetch_array($res);
+        }
+        if ($row && $row[$fld_id] == -1){
+            $ts = time(0);
+            $state = $fld['state'];
+            $msg = $fld['msg'];
+            $fcmd = $fld['cmd'];
+            $last = $fld['last'];
+            $cmd = "UPDATE games set $fld_id='$uid', $state='OVER', $msg='NONE', $last='$ts',"
+                . "$fcmd='' WHERE gid='$gid'";
+            if (mysql_query($cmd)){
+                $ans .= "&ret=ok";
+            } else {
+                $ans .= "&ret=error&reason='can't update the table!'";
+            }
+        } else {
+            $ans .= "&ret=error&reason='There is someone there already!'";
+        }
+    }
+    $ans .= "&method=SEAT";
+    
+    if (mysql_error()){
+        rollback();
+    } else {
+        commit();
+    }
+
     print($ans);
 }
 
