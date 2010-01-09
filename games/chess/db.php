@@ -52,10 +52,31 @@ function doMove(&$env){
     }
     $ans .= "&fld=$fld";
 
-    $cmd = "UPDATE games set " . $fld['state'] . "='WAIT', " . $fld['ostate']  . "='MOVE', "
-         . $fld['cmd'] . "='$cmdStr' WHERE gid=$gid" ;
+    mysql_query('BEGIN');
+    $state = $fld['state'];
+    $ostate = $fld['ostate'];
+    $cmd = "SELECT $state FROM games WHERE gid=$gid";
+    $res = mysql_query($cmd);
+    $cur = '';
+    if ($res){
+        $row = mysql_fetch_array($res);
+        if ($row){
+            $cur = $row[$state];
+        }
+    }
+    if ($cur != GameState::OVER) {
+        $cmd = "UPDATE games set $state='WAIT', $ostate='MOVE', "
+            . $fld['cmd'] . "='$cmdStr' WHERE gid=$gid" ;
+    } else {
+        $cmd = "UPDATE games set " . $fld['cmd'] . "='$cmdStr' WHERE gid=$gid" ;
+    }
     $result = mysql_query($cmd);
-    $ans .= "&cmd='$cmd'&result=$result";
+    if (mysql_error()){
+        rollback();
+    } else {
+        commit();
+    }
+    $ans .= "&result=$result";
     print($ans);
 }
 
@@ -77,7 +98,7 @@ function doWin(&$env){
     $cmd = "UPDATE games set " . $fld['state'] . "='OVER', " . $fld['ostate']  . "='OVER', "
          . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
     $result = mysql_query($cmd);
-    $ans .= "&cmd='$cmd'&result=$result";
+    $ans .= "&result=$result";
     print($ans);
 }
 
@@ -99,7 +120,7 @@ function doLose(&$env){
     $cmd = "UPDATE games set " . $fld['state'] . "='OVER', " . $fld['ostate']  . "='OVER', "
          . $fld['msg'] . "='$msgStr' WHERE gid=$gid" ;
     $result = mysql_query($cmd);
-    $ans .= "&cmd='$cmd'&result=$result";
+    $ans .= "&result=$result";
     print($ans);
 }
 
@@ -208,7 +229,7 @@ function updateState(&$env){
     $ans = "type=updateState&gid=$gid";
     $cmd = "UPDATE games SET $field='$state' WHERE gid=$gid";
     $result = mysql_query($cmd);
-    $ans .= "&cmd=$cmd&result=$result";
+    $ans .= "&result=$result";
     print($ans);
 }
 
@@ -229,7 +250,6 @@ function findServer($uid){
     if ($gid > 0){ // there is a game
         $cmd = "UPDATE games set ustate='INIT', ucmd='method=INIT&color=BLACK', did=$uid, dstate='INIT', dcmd='method=INIT&color=RED', dlast='$ts' WHERE gid=$gid";
         $result = mysql_query($cmd);
-        $ans .= "&cmd=$cmd";
         if ($result){
             $ans .= "&gid=$gid";
         } else {
@@ -279,7 +299,6 @@ function newRound(&$env){
 
     if ($gid > 0){ // there is a game
         $result = mysql_query($cmd);
-        $ans .= "&cmd=$cmd";
         if ($result){
             $ans .= "&gid=$gid";
         } else {
@@ -368,10 +387,10 @@ function doSeat(&$env){
     }
     $fld_id = $fld['id'];
 
-    $cmd = "UPDATE games SET uid=-1 WHERE uid=$uid AND (ustate='OVER' OR ulast < $ts)";
+    $cmd = "UPDATE games SET uid=-1 WHERE (uid=$uid AND ustate='OVER') OR (uid > 0 AND ulast < $ts)";
     mysql_query($cmd);
 
-    $cmd = "UPDATE games SET did=-1 WHERE did=$uid AND (dstate='OVER' OR dlast < $ts)";
+    $cmd = "UPDATE games SET did=-1 WHERE (did=$uid AND dstate='OVER') OR (did > 0 AND dlast < $ts)";
     mysql_query($cmd);
 
     mysql_query('BEGIN');

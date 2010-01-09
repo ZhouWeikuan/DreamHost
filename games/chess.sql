@@ -28,7 +28,7 @@ CREATE TABLE `comments` (
   `txt` varchar(160) NOT NULL,
   `era` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -37,7 +37,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,1234,'text','2010-01-05 07:04:31');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,19 +51,19 @@ CREATE TABLE `games` (
   `gid` bigint(20) NOT NULL auto_increment,
   `uid` bigint(20) NOT NULL default '-1',
   `ustate` varchar(10) default 'NONE',
-  `umsg` varchar(10) default 'NONE',
+  `umsg` varchar(120) default NULL,
   `ulast` bigint(20) unsigned default '0',
   `ucolor` char(8) default 'RED',
   `ucmd` varchar(120) default '',
   `did` bigint(20) NOT NULL default '-1',
   `dstate` varchar(10) default 'NONE',
-  `dmsg` varchar(10) default 'NONE',
+  `dmsg` varchar(120) default NULL,
   `dlast` bigint(20) unsigned default '0',
   `dcolor` char(8) default 'BLACK',
   `dcmd` varchar(120) default '',
   PRIMARY KEY  (`gid`),
   UNIQUE KEY `gid` (`gid`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -73,7 +72,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
-INSERT INTO `games` VALUES (1,-1,'OVER','NONE',1262944008,'BLACK','',-1,'OVER','NONE',1262944011,'RED',''),(2,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(3,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(4,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(5,1234,'OVER','NONE',1262944259,'BLACK','',4321,'OVER','NONE',1262944250,'RED',''),(6,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(7,-1,'WAIT','NONE',1262942774,'BLACK','',-1,'MOVE','NONE',1262942785,'RED',''),(8,-1,'NONE','NONE',0,'RED','',-1,'OVER','NONE',1262941497,'BLACK',''),(9,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(10,-1,'OVER','NONE',1262941828,'RED','',-1,'NONE','NONE',0,'BLACK',''),(11,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(12,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(13,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(14,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(15,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(16,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(17,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(18,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(19,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(20,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK','');
+INSERT INTO `games` VALUES (1,-1,'OVER','LEAVE&name=å‘¨çŽ‹',1262963617,'RED','',-1,'OVER','LEAVE&name=å‘¨ä¸ºå®½',1262963617,'BLACK',''),(2,-1,'OVER','LEAVE&name=å‘¨ä¸ºå®½',1263035097,'BLACK','',-1,'OVER','LEAVE&name=å‘¨çŽ‹',1263035097,'RED',''),(3,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(4,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(5,-1,'OVER','NONE',1262944259,'BLACK','',-1,'OVER','LEAVE&name=aaa',1263029120,'RED',''),(6,296576367,'OVER','NONE',1263035813,'BLACK','',239941468,'OVER','NONE',1263035813,'RED',''),(7,-1,'WAIT','NONE',1262942774,'BLACK','',-1,'MOVE','NONE',1262942785,'RED',''),(8,-1,'WAIT','NONE',1263029365,'BLACK','',-1,'MOVE','NONE',1263029353,'RED',''),(9,-1,'MOVE','NONE',1263029276,'BLACK','',-1,'WAIT','NONE',1263029279,'RED',''),(10,-1,'OVER','NONE',1263033566,'BLACK','',-1,'OVER','NONE',1263033577,'RED',''),(11,-1,'START','NONE',1262966764,'BLACK','',-1,'OVER','NONE',1262966746,'RED',''),(12,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(13,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(14,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(15,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(16,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(17,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(18,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(19,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK',''),(20,-1,'NONE','NONE',0,'RED','',-1,'NONE','NONE',0,'BLACK','');
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +100,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (-1,'',0,0,0,''),(1234,'aaa',0,0,0,''),(4321,'bbb',0,0,0,'');
+INSERT INTO `users` VALUES (-1,'',0,0,0,''),(1234,'aaa',0,0,0,''),(4321,'bbb',0,0,0,''),(239941468,'å‘¨çŽ‹',0,0,0,'http://hd13.xiaonei.com/photos/hd13/20080201/17/25/head_4915c107.jpg'),(296576367,'å‘¨ä¸ºå®½',0,0,0,'http://head.xiaonei.com/photos/0/0/men_head.gif');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -114,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-01-08  9:53:34
+-- Dump completed on 2010-01-09 11:16:55

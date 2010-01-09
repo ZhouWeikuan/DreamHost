@@ -390,7 +390,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 	</object>
 </noscript>
 <div class="tc">
-    version=0.0.1, alpha release
+    version=0.0.1, beta release
 </div>
 
 <script type="text/javascript" src="ajax.js"> </script>
