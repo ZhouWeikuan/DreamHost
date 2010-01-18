@@ -2,16 +2,6 @@
 
 require_once('db.php');
 
-createDBConn();
-$user_info = getUserInfo($xiaonei_uid);
-if (! $user_info){
-?>
-    <link href="css/chess.css" rel="stylesheet" type="text/css" />
-    <div class="errorMsg"> <strong> 无法查询当前用户信息！</strong> </div>        
-    <?php
-    exit(0);
-}
-
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
@@ -38,6 +28,20 @@ if (! $user_info){
         }
     ?>
 </script>
+
+<?php
+
+createDBConn();
+$user_info = getUserInfo($xiaonei_uid);
+if (! $user_info){
+?>
+    <link href="css/chess.css" rel="stylesheet" type="text/css" />
+    <div class="errorMsg"> <strong> 无法查询当前用户信息！</strong> </div>        
+    <?php
+    exit(0);
+}
+
+?>
 
 <title>ChChess</title>
 <script language="JavaScript" type="text/javascript">
