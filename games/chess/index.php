@@ -1,55 +1,22 @@
 <?php
 
-require_once('xiaonei.class.php');
 require_once('db.php');
 
-$api_key    = $_REQUEST['xn_sig_api_key']; // your api_key
-$session_key = $_REQUEST['xn_sig_session_key'];
-$secret_key = '115004bcdb784c6a9413ea213f59931b'; // your secret
-$xiaonei_uid = $_REQUEST['xn_sig_user']; // uid is posted, so reduce calling api, 2008.07.21
-$homeurl = "http://apps.renren.com/chchess/";
-$xn = new XNApp($api_key, $secret_key);
-$server = "192.168.1.84";
-// $server = "www.zhouweikuan.cn";
-
 createDBConn();
-$result = mysql_query("SELECT * FROM users WHERE id=" . $xiaonei_uid);
-if ($result){
-    $user_info = mysql_fetch_array($result);
-}
-if (!$result || !$user_info){
-    $param = array();
-    $param['uids'] = $xiaonei_uid;
-    $ans = $xn->users('getInfo', $param);
-    if ($ans){
-        $user = $ans['user'];
-        $name = $user['name'];
-        $icon = $user['mainurl'];
-        if (!$icon){
-            $icon = $user['headurl'];
-        }
-        if (!$icon){
-            $icon = $user['tinyurl'];
-        }
-        // echo ("name is " . $name);
-        mysql_query("INSERT INTO users (id, name, iconurl) VALUES ('$xiaonei_uid', '$name', '$icon') " )
-            or die (mysql_error());
-        $result = mysql_query("SELECT * FROM users WHERE id=" . $xiaonei_uid);
-        $user_info = mysql_fetch_array($result);
-    } else {
+$user_info = getUserInfo($xiaonei_uid);
+if (! $user_info){
 ?>
-        <link href="css/chess.css" rel="stylesheet" type="text/css" />
-        <div class="errorMsg"> <strong> 无法查询当前用户信息！</strong> </div>        
-<?php
-        exit(0);
-    }
+    <link href="css/chess.css" rel="stylesheet" type="text/css" />
+    <div class="errorMsg"> <strong> 无法查询当前用户信息！</strong> </div>        
+    <?php
+    exit(0);
 }
 
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- The css files -->
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/chess.css" rel="stylesheet" type="text/css" />

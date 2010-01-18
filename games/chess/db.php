@@ -1,13 +1,14 @@
 <?php
-
-$conn = '';
+include_once('header.php');
 
 function createDBConn(){
     global $conn;
-    if (!$conn) {
-        $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
-        mysql_select_db("chess", $conn) or die(mysql_error());
-    }
+    $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
+    mysql_select_db("chess", $conn) or die(mysql_error());
+}
+
+function begin(){
+    mysql_query('BEGIN');
 }
 
 function commit(){
@@ -16,6 +17,60 @@ function commit(){
 
 function rollback(){
     mysql_query('ROLLBACK');
+}
+
+function sendNewsFeed($uid){
+    global $xn;
+
+    $data = array('gamename'=>'象棋对战', 'creator'=>'咱家');
+    $data = json_encode($data);
+    $params = array (
+        "template_id" => 1,
+        "title_data" => $data,
+        "body_data" => $data
+    );
+
+    try {
+        $xn->feed('publishTemplatizedAction', $params);
+    } catch (Exception $e){
+        print $e->getMessage();
+    }
+}
+
+function getUserInfo($uid){
+    global $xn;
+    begin();
+    $ts = time(0);
+    $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
+    if ($result){
+        $row = mysql_fetch_array($result);
+    }
+    if (!$result || !$row || $row['era'] < $ts - 24 * 60*60){
+        $param = array();
+        $param['uids'] = $uid;
+        $ans = $xn->users('getInfo', $param);
+        $user = $ans['user'];
+        $name = $user['name'];
+        $icon = $user['mainurl'];
+        if (!$icon){
+            $icon = $user['headurl'];
+        }
+        if (!$icon){
+            $icon = $user['tinyurl'];
+        }
+        // echo ("name is " . $name);
+        if ($row){
+            $cmd = "UPDATE users SET name='$name', iconurl='$icon', era='$ts' WHERE id=$uid";
+        } else {
+            $cmd = "INSERT INTO users (id, name, iconurl, era) VALUES ('$uid', '$name', '$icon', '$ts') ";
+        }
+        mysql_query($cmd) or die(mysql_error());
+        $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
+        $row = mysql_fetch_array($result);
+        sendNewsFeed($uid);
+    }
+    commit();
+    return $row;
 }
 
 function checkValidGame($gid, &$row){
@@ -52,7 +107,7 @@ function doMove(&$env){
     }
     $ans .= "&fld=$fld";
 
-    mysql_query('BEGIN');
+    begin();
     $state = $fld['state'];
     $ostate = $fld['ostate'];
     $cmd = "SELECT $state FROM games WHERE gid=$gid";
@@ -393,7 +448,7 @@ function doSeat(&$env){
     $cmd = "UPDATE games SET did=-1 WHERE (did=$uid AND dstate='OVER') OR (did > 0 AND dlast < $ts)";
     mysql_query($cmd);
 
-    mysql_query('BEGIN');
+    begin();
     $cmd = "SELECT uid, did FROM games WHERE uid=$uid OR did=$uid LIMIT 1";
     $res = mysql_query($cmd);
     $row = '';

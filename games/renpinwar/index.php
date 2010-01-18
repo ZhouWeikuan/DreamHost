@@ -9,29 +9,7 @@ include_once('html_head.php');
 <?
     /// echo ("xiaonei id is:" . $lookupUser);
     createDBConn();
-    $result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
-    if ($result){
-        $row = mysql_fetch_array($result);
-    }
-    if (!$result || !$row){
-        $param = array();
-        $param['uids'] = $lookupUser;
-        $ans = $xn->users('getInfo', $param);
-        $user = $ans['user'];
-        $name = $user['name'];
-        $icon = $user['mainurl'];
-        if (!$icon){
-            $icon = $user['headurl'];
-        }
-        if (!$icon){
-            $icon = $user['tinyurl'];
-        }
-        // echo ("name is " . $name);
-        mysql_query("INSERT INTO users (id, name, iconurl) VALUES ('$lookupUser', '$name', '$icon') " )
-            or die (mysql_error());
-        $result = mysql_query("SELECT * FROM users WHERE id=" . $lookupUser);
-        $row = mysql_fetch_array($result);
-    }
+    $row = getUserInfo($lookupUser);
     /// print_r($row);
 ?>
 

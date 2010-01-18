@@ -1,9 +1,64 @@
 <?php
+include_once('header.php');
 
 function createDBConn(){
     global $conn;
     $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
     mysql_select_db("test", $conn) or die(mysql_error());
+}
+
+function sendNewsFeed($uid){
+    global $xn;
+
+    $data = array('gamename'=>'人品大战', 'creator'=>'咱家');
+    $data = json_encode($data);
+    $params = array (
+        "template_id" => 1,
+        "title_data" => $data,
+        "body_data" => $data
+    );
+
+    try {
+        $xn->feed('publishTemplatizedAction', $params);
+    } catch (Exception $e){
+        print $e->getMessage();
+    }
+}
+
+function getUserInfo($uid){
+    global $xn;
+    mysql_query('BEGIN');
+    $ts = time(0);
+    $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
+    if ($result){
+        $row = mysql_fetch_array($result);
+    }
+    if (!$result || !$row || $row['era'] < $ts - 24 * 60*60){
+        $param = array();
+        $param['uids'] = $uid;
+        $ans = $xn->users('getInfo', $param);
+        $user = $ans['user'];
+        $name = $user['name'];
+        $icon = $user['mainurl'];
+        if (!$icon){
+            $icon = $user['headurl'];
+        }
+        if (!$icon){
+            $icon = $user['tinyurl'];
+        }
+        // echo ("name is " . $name);
+        if ($row){
+            $cmd = "UPDATE users SET name='$name', iconurl='$icon', era='$ts' WHERE id=$uid";
+        } else {
+            $cmd = "INSERT INTO users (id, name, iconurl, era) VALUES ('$uid', '$name', '$icon', '$ts') ";
+        }
+        mysql_query($cmd) or die(mysql_error());
+        $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
+        $row = mysql_fetch_array($result);
+        sendNewsFeed($uid);
+    }
+    mysql_query('COMMIT');
+    return $row;
 }
 
 // make sure $conn connects to the database already
