@@ -322,6 +322,12 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 </script>
 </head>
 <body bgcolor="#ffffff">
+<div class="tc">
+    <em> 游戏进行时，请勿刷新，以免数据丢失</em> <br>
+    没人在玩？ 点<input type="button" value="这里" style="border-width:0px" 
+        onclick="javascript:JS_redirect('http://apps.renren.com/chinesexq');"></input> 先跟电脑玩会吧! <br>
+</div>
+
 <!-- saved from url=(0013)about:internet -->
 <script language="JavaScript" type="text/javascript">
 	AC_FL_RunContent(
