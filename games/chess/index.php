@@ -10,14 +10,8 @@ require_once('db.php');
 <!-- The css files -->
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/chess.css" rel="stylesheet" type="text/css" />
+<script src="global.js" language="JavaScript" type="text/javascript"> </script>
 <script language="JavaScript" type="text/javascript">
-    function JS_redirect(url) {
-        if (window.parent) {
-            window.parent.location.href = url;
-        } else {
-            window.location.href = url;
-        }
-    }
 
     <?
         if (!$xiaonei_uid){
@@ -325,8 +319,11 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 <div class="tc">
     <em> 游戏进行时，请勿刷新，以免数据丢失</em> <br>
     没人在玩？ 点<input type="button" value="这里" style="border-width:0px" 
-        onclick="javascript:JS_redirect('http://apps.renren.com/chinesexq');"></input> 先跟电脑玩会吧! <br>
+        onclick="javascript:inviteFriends();"></input> 
+        邀请好友加入 <br>
+
 </div>
+
 
 <!-- saved from url=(0013)about:internet -->
 <script language="JavaScript" type="text/javascript">

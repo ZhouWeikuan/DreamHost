@@ -45,7 +45,7 @@ function getUserInfo($uid){
     if ($result){
         $row = mysql_fetch_array($result);
     }
-    if (!$result || !$row || $row['era'] < $ts - 24 * 60*60){
+    if (!$result || !$row || $row['era'] < $ts - 3 * 24 * 60 * 60){
         $param = array();
         $param['uids'] = $uid;
         $ans = $xn->users('getInfo', $param);
