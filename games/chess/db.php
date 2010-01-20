@@ -1,10 +1,10 @@
 <?php
-include_once('header.php');
+include_once('config.php');
 
 function createDBConn(){
-    global $conn;
-    $conn = mysql_connect('localhost', 'root', 'ldap4$') or die(mysql_error());
-    mysql_select_db("chess", $conn) or die(mysql_error());
+    global $conn, $dbuser, $dbpass, $dbname;
+    $conn = mysql_connect('localhost', $dbuser, $dbpass) or die(mysql_error());
+    mysql_select_db($dbname, $conn) or die(mysql_error());
 }
 
 function begin(){

@@ -9,8 +9,20 @@ $xiaonei_uid = $_REQUEST['xn_sig_user']; // uid is posted, so reduce calling api
 $homeurl = "http://apps.renren.com/chchess/";
 
 $xn = new XNApp($api_key, $secret_key);
-$server = "192.168.1.84";
-// $server = "www.zhouweikuan.cn";
+
+// for test
+$dbname = 'chess';
+$dbuser = 'root';
+$dbpass = 'ldap4$';
+$server = "192.168.97.141";
+
+// for actual server
+/*
+$dbname = 'zhouweik_chess';
+$dbuser = 'zhouweik_weikuan';
+$dbpass = 'ldap$';
+$server = "www.zhouweikuan.cn";
+*/
 
 ?>
 
