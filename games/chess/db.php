@@ -20,9 +20,9 @@ function rollback(){
 }
 
 function sendNewsFeed($uid){
-    global $xn;
+    global $sns;
 
-    $data = array('gamename'=>'象棋对战', 'creator'=>'咱家');
+    $data = array('gamename'=>'chinese chess(象棋对战)', 'creator'=>'we(咱家)');
     $data = json_encode($data);
     $params = array (
         "template_id" => 1,
@@ -31,14 +31,14 @@ function sendNewsFeed($uid){
     );
 
     try {
-        $xn->feed('publishTemplatizedAction', $params);
+        $sns->feed('publishTemplatizedAction', $params);
     } catch (Exception $e){
         print $e->getMessage();
     }
 }
 
 function getUserInfo($uid){
-    global $xn;
+    global $sns, $sns_type;
     begin();
     $ts = time(0);
     $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
@@ -46,10 +46,7 @@ function getUserInfo($uid){
         $row = mysql_fetch_array($result);
     }
     if (!$result || !$row || $row['era'] < $ts - 3 * 24 * 60 * 60){
-        $param = array();
-        $param['uids'] = $uid;
-        $ans = $xn->users('getInfo', $param);
-        $user = $ans['user'];
+        $user = $sns->getInfo($uid);
         $name = $user['name'];
         $icon = $user['mainurl'];
         if (!$icon){
@@ -60,9 +57,10 @@ function getUserInfo($uid){
         }
         // echo ("name is " . $name);
         if ($row){
-            $cmd = "UPDATE users SET name='$name', iconurl='$icon', era='$ts' WHERE id=$uid";
+            $cmd = "UPDATE users SET name='$name', sns='$sns_type', iconurl='$icon', era='$ts' WHERE id=$uid";
         } else {
-            $cmd = "INSERT INTO users (id, name, iconurl, era) VALUES ('$uid', '$name', '$icon', '$ts') ";
+            $cmd = "INSERT INTO users (id, sns, name, iconurl, era) "
+                 . "VALUES ('$uid', '$sns_type', '$name', '$icon', '$ts') ";
         }
         mysql_query($cmd) or die(mysql_error());
         $result = mysql_query("SELECT * FROM users WHERE id=" . $uid);
@@ -493,7 +491,7 @@ function doSeat(&$env){
 }
 
 function fetchComments(){
-    $cmd = "SELECT cid, uid, name, iconurl, txt, era FROM comments, users " 
+    $cmd = "SELECT cid, sns, uid, name, iconurl, txt, comments.era as era FROM comments, users " 
          . "WHERE users.id = comments.uid ORDER BY cid DESC;";
     $res = mysql_query($cmd);
     return $res;

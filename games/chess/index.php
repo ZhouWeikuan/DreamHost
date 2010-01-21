@@ -1,12 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <?php
 
 require_once('db.php');
 
 ?>
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!-- The css files -->
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/chess.css" rel="stylesheet" type="text/css" />
@@ -14,10 +13,9 @@ require_once('db.php');
 <script language="JavaScript" type="text/javascript">
 
     <?
-        if (!$xiaonei_uid){
-            $url = 'http://app.renren.com/apps/tos.do?api_key=' . $api_key . "&v=1.0&next=";
+        if (!$sns_uid){
     ?>
-            JS_redirect("<?php echo($url);?>");
+            JS_redirect("<?php echo($auth_url);?>");
     <?  
         }
     ?>
@@ -26,7 +24,7 @@ require_once('db.php');
 <?php
 
 createDBConn();
-$user_info = getUserInfo($xiaonei_uid);
+$user_info = getUserInfo($sns_uid);
 if (! $user_info){
 ?>
     <link href="css/chess.css" rel="stylesheet" type="text/css" />
@@ -347,7 +345,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 		'allowFullScreen', 'true',
 		'allowScriptAccess','sameDomain',
 		'movie', 'ChChess',
-		'flashvars', 'server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>',
+		'flashvars', 'server=<?echo($server);?>&amp;&amp;uid=<?php echo($sns_uid);?>',
 		'salign', ''
 		); //end AC code
 </script>
@@ -358,9 +356,9 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 	<param name="movie" value="ChChess.swf" />
 	<param name="quality" value="high" />
 	<param name="bgcolor" value="#ffffff" />
-	<param name="flashvars" value="server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
+	<param name="flashvars" value="server=<?echo($server);?>&amp;&amp;uid=<?php echo($sns_uid);?>" />
 	<embed src="ChChess.swf" quality="high" bgcolor="#ffffff" width="700" height="660" name="ChChess" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" 
-	flashvars="server=<?echo($server);?>&amp;&amp;uid=<?php echo($xiaonei_uid);?>" />
+	flashvars="server=<?echo($server);?>&amp;&amp;uid=<?php echo($sns_uid);?>" />
 	</object>
 </noscript>
 <div class="tc">
@@ -369,7 +367,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 
 <script type="text/javascript" src="ajax.js"> </script>
 <div id="newComment">
-    <input type="hidden" id="commentUid" value="<? echo($xiaonei_uid);?>" />
+    <input type="hidden" id="commentUid" value="<?echo($sns_uid);?>" />
     <div id="errorMsg"> </div>
     <div class="divtitle">  欢迎添加新评论 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <input type="submit" height='10px' value="提交评论" onclick="javascript:onNewComment();" />
@@ -386,6 +384,10 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
             $User = stripslashes($row['name']);
             $icon = $row['iconurl']; 
             $url = 'http://renren.com/profile.do?id=' . $row['uid'];
+            if ($row['sns'] == 'FACEBOOK'){
+                $url = 'http://www.facebook.com/profile.php?id=' . $row['uid'];
+            }
+
             $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\")'> $User </a>";
             $SubTime = $row['era'];
             $Comment = stripslashes($row['txt']);

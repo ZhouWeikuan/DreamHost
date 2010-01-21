@@ -1,5 +1,3 @@
-var defHomeUrl = "http://apps.renren.com/chchess";
-var appID = "89330"; // 象棋对战的appId
 
 function JS_redirect(url) {
     if (window.parent) {
@@ -12,6 +10,10 @@ function JS_redirect(url) {
 function inviteFriends(){
     var url = "http://apps.renren.com/request.do?app_id=" + appID
             + "&action=" + defHomeUrl;
+    if (snsType == 'FACEBOOK'){
+        url = "http://apps.facebook.com/chchess/fb_invite.php&fb_force_mode=fbml";
+    }
+
     JS_redirect(url);
 }
 

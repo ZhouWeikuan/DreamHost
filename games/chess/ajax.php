@@ -18,7 +18,7 @@ function onNewComment(){
     }
 
     if ($result){
-        $cmd = "SELECT uid, name, iconurl, txt, era FROM comments, users "
+        $cmd = "SELECT uid, sns, name, iconurl, txt, comments.era as era FROM comments, users "
                 . "WHERE users.id = comments.uid ORDER BY era DESC LIMIT 1";
         // print($cmd);
         $result = mysql_query($cmd);
@@ -30,7 +30,10 @@ function onNewComment(){
         $SubTime = $row['era'];
         $icon = $row['iconurl'];
         $User = $row['name'];
-        $uid = 'http://renren.com/profile.do?id=' + $row['uid'];
+        $uid = 'http://renren.com/profile.do?id=' . $row['uid'];
+        if ($row['sns'] == 'FACEBOOK'){
+            $uid = 'http://www.facebook.com/profile.php?id=' . $row['uid']; 
+        }
         $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\");'> $User </a>";
 
         $Comment = stripslashes($row['txt']);
