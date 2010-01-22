@@ -31,7 +31,7 @@ class SNS {
             $param = array();
             $param['uids'] = $uid;
 
-            $this->appInstance->users('getInfo', $param);
+            $ans = $this->appInstance->users('getInfo', $param);
             $user = $ans['user'];
         } else {
         }
@@ -77,10 +77,12 @@ if (array_key_exists('fb_sig_api_key', $_REQUEST)){ // facebook applications
 }
 
 // for test
+///*
 $dbname = 'chess';
 $dbuser = 'root';
 $dbpass = 'ldap4$';
 $server = "192.168.97.141";
+//*/
 
 // for actual server
 /*
