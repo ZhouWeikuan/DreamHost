@@ -5,6 +5,23 @@
 
 require_once('db.php');
 
+if ($sns_type == SNS::FB){
+?>
+<!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+    where you may get a "operation aborted" error --> 
+<div id="FB_HiddenIFrameContainer" 
+    style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+</div>
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+<script type="text/javascript"> 
+    FB_RequireFeatures(["CanvasUtil"], function(){ 
+            FB.XdComm.Server.init('/chchess'); 
+            FB.CanvasClient.startTimerToSizeToContent(); 
+            }); 
+</script>
+<?
+}
+
 ?>
 <!-- The css files -->
 <link href="css/global.css" rel="stylesheet" type="text/css" />
@@ -400,6 +417,10 @@ EOL;
         }
     }
 ?>
+</div>
+
+<div class="tc">
+    版权所有，不可复制
 </div>
 
 </body>
