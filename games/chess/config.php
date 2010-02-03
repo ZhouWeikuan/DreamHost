@@ -94,10 +94,3 @@ $server = "www.zhouweikuan.cn";
 
 ?>
 
-<script language="JavaScript" type="text/javascript">
-    var snsType = '<?echo($sns_type);?>';
-    var snsUid= '<?echo($sns_uid);?>';
-    var appID = '<?echo($appID);?>';
-    var defHomeUrl = '<?echo($homeurl);?>';
-</script>
-
