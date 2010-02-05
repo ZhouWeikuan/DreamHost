@@ -1,0 +1,261 @@
+body,div,span,object,frame,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input,menu{margin:0;padding:0}
+body{font-size:12px;font-family:Tahoma,Verdana,STHeiTi,simsun,sans-serif}
+a img, :link img, :visited img{border:0}
+table {
+    border-collapse:collapse;
+}
+ul{list-style:none}
+tr{font-size:12px;}
+
+.container { clear:both; padding:0 10px; border-top:1px solid #d8dfea; background:#f7f7f7;}
+
+.message_info {
+    /* width: 800px; */
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #FFCC00;
+    background-color:#FFFFF7;
+    padding:.1em 0;
+}
+
+.nav {
+    font-size:1em;
+    margin:0;
+    padding:.1em 0;
+    width:100%;
+    white-space:nowrap;
+    word-wrap:normal;
+    background-color:#e5ecf9;
+    border-top:1px solid #36C;
+}
+
+.fl {
+    float:left;
+}
+
+.rl {
+    float:right;
+}
+
+.tc {
+    text-align:center;
+}
+
+.cl {
+    clear:both;
+}
+
+.style1{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #96C2F1;
+    background-color: #EFF7FF
+}
+
+.style2{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #9BDF70;
+    background-color: #F0FBEB
+}
+
+.style3{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #BBE1F1;
+    background-color: #EEFAFF
+}
+
+.style4{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #CCEFF5;
+       background-color: #FAFCFD
+}
+
+h1 h2 h3 h4 h5 {
+    text-align:left;
+    font-size:80%;
+    margin: 1px;
+    background-color: #E2EAF8;
+    color:#ccc;
+}
+
+.style6 {
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #92B0DD;
+    background-color: #FFFFFf
+}
+
+.style7 {
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #A9C9E2;
+    background-color: #E8F5FE
+}
+
+.style8{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #E3E197;
+    background-color: #FFFFDD
+}
+
+.style9{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #ADCD3C;
+    background-color: #F2FDDB
+}
+
+.style10{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #F8B3D0;
+    background-color: #FFF5FA
+}
+
+.style11{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #D3D3D3;
+    background-color: #F7F7F7
+}
+
+.style12{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #BFD1EB;
+    background-color: #F3FAFF
+}
+
+.style13{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #FFDD99;
+    background-color: #FFF9ED
+}       
+
+.style14{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #CACAFF;
+    background-color: #F7F7FF
+}       
+
+.style15{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #A5B6C8;
+    background-color: #EEF3F7
+}
+
+.style16{
+    width: 800px;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom:20px;
+    border:1px solid #CEE3E9;
+    background-color: #F1F7F9
+}       
+
+a {
+    color:#999;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#444;
+    text-decoration:underline;
+}
+
+img.std {
+    border:0px;
+    height:36px;
+    width:36px;
+}
+
+img.big {
+    border:0px;
+    height:50px;
+    width:50px;
+}
+
+ul#tabnav { /* general settings */
+    text-align: left; /* set to left, right or center */
+    margin: 1em 0 1em 0; /* set margins as desired */
+    font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+    border-bottom: 1px solid #92b0dd; /* set border COLOR as desired */
+    list-style-type: none;
+    padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+}
+
+ul#tabnav li { /* do not change */
+    display: inline;
+}
+
+body#tab_on li.tab_on, body#tab_off li.tab_off { /* settings for selected tab */
+    border-bottom: 1px solid #fff; /* set border color to page background color */
+    margin:20px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:center;
+}
+
+body#tab_on li.tab_on a, body#tab_off li.tab_off a { /* settings for selected tab link */
+    background-color: #fff; /* set selected tab background color as desired */
+    color: #000; /* set selected tab link color as desired */
+    position: relative;
+    top: 1px;
+    padding-top: 4px; /* must change with respect to padding (X) above and below */
+    margin:20px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-align:center;
+}
+
+ul#tabnav li a { /* settings for all tab links */
+    padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+    border: 1px solid #92b0dd; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+    background-color: #EFF7FF; /* set unselected tab background color as desired */
+    color: #666; /* set unselected tab link color as desired */
+    margin-right: 0px; /* set additional spacing between tabs as desired */
+    text-decoration: none;
+    border-bottom: none;
+}
+
+ul#tabnav a:hover { /* settings for hover effect */
+    background: #fff; /* set desired hover color */
+}
+

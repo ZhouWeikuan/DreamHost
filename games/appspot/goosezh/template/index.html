@@ -1,0 +1,186 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Chinese Chess" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Chess Arena" %} </a></li>
+        <li class="tab_off"> 
+            <a target="_blank" href="{{ sns.invitePage }}"> 
+                {% trans "Invite Friends" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
+            {% trans "RankList" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
+            {% trans "Play chess with others" %}</a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+        where you may get a "operation aborted" error --> 
+    <div id="FB_HiddenIFrameContainer" 
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+        type="text/javascript"> </script>
+    <script type="text/javascript"> 
+        FB_RequireFeatures(["CanvasUtil"], function(){ 
+                FB.XdComm.Server.init('/chchess'); 
+                FB.CanvasClient.startTimerToSizeToContent(); 
+                }); 
+    </script>
+    {% endifequal %}
+
+    {% if not sns_uid  %}
+        <script type='text/javascript'>
+            function js_redirect(url){
+                if (window.parent) {
+                    window.parent.location.href = url;
+                } else {
+                    window.location.href = url;
+                }
+            }
+            js_redirect('{{ sns.auth_url }}');
+        </script>
+    {% endif %}
+
+    <div class='message_info'>
+    <table border='0'>
+    <td>
+        <h3 class='nav'> {% trans "Personal Information" %} </h3>
+        <table border='0'>
+            <tr><td rowspan='3'>
+                <img alt='{{ user.name }}' class='big' 
+                    src='{{ user.icon|default_if_none:"/favicon.ico" }}' >
+                </img>
+            </td></tr>
+            <tr style="font-size:12px;">
+                <td> &nbsp;&nbsp; </td>
+                <td colspan='2'> {% trans "User name" %}: {{ user.name }} &nbsp;</td>
+                <td> {% trans "Score" %}: {{ user.score}} &nbsp; </td>
+            </tr>
+            <tr style="font-size:12px;">
+                <td> &nbsp;&nbsp; </td>
+                <td> {% trans "Win" %}: {{ user.win }}   &nbsp; </td>
+                <td> {% trans "Lose" %}: {{ user.lose }} &nbsp; </td>
+                <td> {% trans "Draw" %}: {{ user.draw }} &nbsp; </td>
+            </tr>
+        </table>
+    </td>
+    <td> &nbsp; &nbsp; </td>
+    <td>
+        <!-- table border='0'>
+            <h3 class='nav'> {% trans "System Notice" %} </h3>
+            <tr><td> This is where we should put notice. </td></tr>
+            <tr><td>    And test only </td></tr>
+            <tr><td>    the third line  </td></tr>
+        </table -->
+    </td>
+    </table>
+    </div> 
+
+    <script src="/static/js/adjust.js" type="text/javascript"> </script>
+    <iframe src='/recentgames?fb_sig_locale={{lang}}' width='100%' height='auto' 
+        id="frRecentGames" onload="javascript:dyniframesize('frRecentGames');"
+        frameborder="no" border="0" marginwidth="0" marginheight="0"
+        scrolling="no" allowtransparency="yes" >
+    </iframe>
+    <script type='text/javascript'>
+        var timeout, timeoutid;
+        function refresh_this_page(){
+            var ele = document.getElementById('frRecentGames');
+            ele.src = ele.src;
+            timeout *= 2;
+            timeoutid = window.setTimeout('refresh_this_page()', timeout);
+        }
+        function reset_timeout(){
+            timeout = 2 * 1000 * 60;
+            window.clearTimeout(timeoutid);
+            timeoutid = window.setTimeout('refresh_this_page()', timeout);
+        }
+        reset_timeout();
+    </script>
+
+    <div class="nav">
+        <h3> {% trans "Play Against Computer" %} </h3>
+    </div>
+
+    <table border="0" height="auto">
+        <tr>
+            <td valign="top">
+            <object id="XQWLight" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+            codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
+            align="middle" border="0" width="520" height="576">
+            <param name="allowScriptAccess" value="always">
+            <param name="allowFullScreen" value="false">
+            <param name="movie" value="http://goosezh.appspot.com/static/xq.swf">
+            <param name="quality" value="high">
+            <param name="menu" value="false">
+            <embed src="http://goosezh.appspot.com/static/xq.swf" 
+            name="XQWLight" align="middle" border="0" width="520" height="576" quality="high" 
+            allowscriptaccess="always" allowfullscreen="false" menu="false" 
+            type="application/x-shockwave-flash" 
+            pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </object>
+            </td>
+    <td> &nbsp; &nbsp; </td>
+    <td valign="top">
+    <dl> <dt>
+    <script language="JavaScript">
+        var XQWLight = document["XQWLight"];
+
+        function restart_click() {
+            reset_timeout();
+            XQWLight.setLevel(selLevel.options[selLevel.selectedIndex].value);
+            XQWLight.restart(selFlipped.selectedIndex == 1, 0, '{{ sns_uid }}');
+        }
+    </script>             
+    <table border="0">
+        <td>
+        <dt><font size="2"> </font></dt>
+        <dt><font size="2">{% trans "The level for computer:" %}</font></dt>
+        <dt><font size="2">
+            <select name="selLevel" id="selLevel" size="5" >
+                <option value="1"> {% trans "Entry Level" %} </option>
+                <option value="4"> {% trans "First Level" %} </option>
+                <option selected value="16"> {% trans "Middle Level" %} </option>
+                <option value="32"> {% trans "Advanced Level" %} </option>
+                <option value="64"> {% trans "Last Level" %} </option>
+            </select></font></dt>
+        </td>
+        <td>
+        <dt><font size="2"></font>　</dt>
+            <font size="2">{% trans "Who goes first?" %}</font>
+        </dt>
+        <dt><font size="2">
+        <select name="selFlipped" id="selFlipped" size="2">
+            <option selected value="0">{% trans "I go first" %}</option>
+            <option value="1">{% trans "Computer goes first" %}</option>
+        </select></font></dt>
+        <dt><font color="#008080" size="2"><strong>
+            <input type="button" value='{% trans "Start Game" %}' onclick="restart_click()"></strong></font></dt>
+        <dt><font size="2"></font></dt>
+        </td>
+    </table>
+    <dt><font size="2"> </font></dt>
+    <dt><font color="#008080" size="2"><strong></strong></font></dt>
+    <dt><font color="#008080" size="2"><strong>{% trans "Game Rules" %}</strong></font></dt>
+    <dt><font color="#008080" size="2">{% trans "For each game, it pays 2 for entry level, 4 for first level," %}<br> 
+                   {% trans "8 for middle level, 16 for advanced level, 32 for last level" %} </font></dt>
+    <dt><font color="#008080" size="2">{% trans "Everyone has 100 at first. He gets full score for the game if win," %}<br> 
+        {% trans "half score if draw, lose the score depending on levels" %} </font></dt>
+    <dt><font color="#008080" size="2">{% trans "He loses if he leaves or restart" %} </font></dt>
+    </dl>
+    <dl> </dl>
+    </td>
+    </tr>
+    </table>
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>
+

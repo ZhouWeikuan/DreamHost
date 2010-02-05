@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-04 17:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:139
+msgid "FB"
+msgstr "臉書"
+
+#: main.py:140
+msgid "XN"
+msgstr "校內網"
+
+#: format.py:46
+msgid "Start"
+msgstr "開局"
+
+#: opensns.py:84
+msgid "is playing Chinese Chess(vs. computers)"
+msgstr "正在與電腦比象棋"
+
+#: opensns.py:86
+msgid "The Chinese Chess(vs computers)"
+msgstr "與電腦比象棋"
+
+#: opensns.py:88
+msgid "joins game Chinese Chess(vs. computers)"
+msgstr "加入了游戲與電腦比象棋"
+
+#: opensns.py:89
+msgid "a good chinese chess arena"
+msgstr "一個好的中國象棋平台"
+
+#: opensns.py:92
+msgid "Games"
+msgstr "休閑娛樂"
+
+#: opensns.py:95
+msgid "5 stars"
+msgstr "五星"
+
+#: opensns.py:107
+msgid "Visit this game"
+msgstr "訪問這個游戲"
+
+#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "中國象棋"
+
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
+msgstr "最近結果"
+
+#: template/index.html:11 template/rank.html:11
+msgid "Chess Arena"
+msgstr "象棋擂台"
+
+#: template/index.html:14 template/rank.html:14
+msgid "Invite Friends"
+msgstr "邀請好友"
+
+#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
+#: template/rank.html.py:37
+msgid "RankList"
+msgstr "排行榜"
+
+#: template/index.html:18 template/rank.html:18
+msgid "Play chess with others"
+msgstr "雙人對弈"
+
+#: template/index.html:53
+msgid "Personal Information"
+msgstr "個人信息"
+
+#: template/index.html:62
+msgid "User name"
+msgstr "姓名"
+
+#: template/index.html:63 template/rank.html:46
+msgid "Score"
+msgstr "得分"
+
+#: template/index.html:67 template/rank.html:47
+msgid "Win"
+msgstr "贏局"
+
+#: template/index.html:68 template/rank.html:48
+msgid "Lose"
+msgstr "輸局"
+
+#: template/index.html:69 template/rank.html:49
+msgid "Draw"
+msgstr "平局"
+
+#: template/index.html:76
+msgid "System Notice"
+msgstr "系統公告"
+
+#: template/index.html:108
+msgid "Play Against Computer"
+msgstr "與電腦對戰"
+
+#: template/index.html:144
+msgid "The level for computer:"
+msgstr "電腦等級："
+
+#: template/index.html:147
+msgid "Entry Level"
+msgstr "入門"
+
+#: template/index.html:148
+msgid "First Level"
+msgstr "初級"
+
+#: template/index.html:149
+msgid "Middle Level"
+msgstr "中級"
+
+#: template/index.html:150
+msgid "Advanced Level"
+msgstr "高級"
+
+#: template/index.html:151
+msgid "Last Level"
+msgstr "終級"
+
+#: template/index.html:156
+msgid "Who goes first?"
+msgstr "誰先走？"
+
+#: template/index.html:160
+msgid "I go first"
+msgstr "我先走"
+
+#: template/index.html:161
+msgid "Computer goes first"
+msgstr "電腦先走"
+
+#: template/index.html:164
+msgid "Start Game"
+msgstr "開局"
+
+#: template/index.html:170
+msgid "Game Rules"
+msgstr "游戲規則"
+
+#: template/index.html:171
+msgid "For each game, it pays 2 for entry level, 4 for first level,"
+msgstr "每局入門2分，初級4分，"
+
+#: template/index.html:172
+msgid "8 for middle level, 16 for advanced level, 32 for last level"
+msgstr "中級8分，高級16分，終級32分"
+
+#: template/index.html:173
+msgid "Everyone has 100 at first. He gets full score for the game if win,"
+msgstr "每人初始100分，贏一局得全分，"
+
+#: template/index.html:174
+msgid "half score if draw, lose the score depending on levels"
+msgstr "平局得一半分數，告負按等級扣分"
+
+#: template/index.html:175
+msgid "He loses if he leaves or restart"
+msgstr "沒下完一局就離開或重新開始的，直接判負"
+
+#: template/index.html:182
+msgid "CopyRight@2010"
+msgstr "版權所有 2010年"
+
+#: template/rank.html:38
+msgid "Top20"
+msgstr "前20名"
+
+#: template/rank.html:39
+msgid "Bottom20"
+msgstr "加油哦"
+
+#: template/rank.html:43
+msgid "Rank"
+msgstr "名次"
+
+#: template/rank.html:44
+msgid "Player(s)"
+msgstr "玩家"
+
+#: template/rank.html:45
+msgid "SNS"
+msgstr "來自"
+
+#: template/rank.html:56
+msgid "Visit home page"
+msgstr "訪問個人主頁"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "英文"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "簡體中文"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "繁體中文"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "繁体中文"
+
+#~ msgid "The source code mainly comes from"
+#~ msgstr "源碼主要來自"
+
+#~ msgid "Little Chess Wizard"
+#~ msgstr "象棋小巫師"
+
+#~ msgid "Chess Resources"
+#~ msgstr "象棋資源網"

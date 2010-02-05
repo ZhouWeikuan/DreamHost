@@ -1,0 +1,30 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Chinese Chess" %} {% trans "Recent Results" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body>
+    <div class='nav'>
+        <h3> {% trans "Recent Results" %} </h3>
+    </div>
+    <div>
+        <table class='tc' style='font-size:12px;'>
+        {% for g in games %}
+            <td><a target='_blank' href='{{ g.url }}'>
+                <img alt='{{ g.name }}' class='std' 
+                    src='{{ g.icon|default_if_none:"favicon.ico" }}'></img></a><br>
+                <a target='_blank' href='{{ g.url }}'>{{ g.name }}</a><br>
+                <!-- don't show sns source {{ g.src }} <br> -->
+                    {{ g.lvl }} <br> 
+                    {{ g.tim }} <br>
+                    {{ g.res }}
+            </td>
+            <td>&nbsp;</td>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+

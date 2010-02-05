@@ -1,0 +1,20 @@
+{% load i18n %}
+<html>
+    <head>
+        <title> test </title>
+    </head>
+<body>
+    <h1> test </h1>
+    <div id='games'>
+    {% for g in games %}
+        <div style='float:left; border: 1px solid #925;'>
+            {{ g }} &nbsp; <br>
+            name, zhouweikuan <br>
+            who is here now?
+        </div>
+    {% endfor %}
+    <div style='float:clear;'>
+    </div>
+</body>
+</html>
+
