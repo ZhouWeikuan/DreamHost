@@ -34,7 +34,7 @@ function onNewComment(){
         if ($row['sns'] == 'FACEBOOK'){
             $uid = 'http://www.facebook.com/profile.php?id=' . $row['uid']; 
         }
-        $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\");'> $User </a>";
+        $User = "<a target='_blank' href='$url'> $User </a>";
 
         $Comment = stripslashes($row['txt']);
         print <<<EOF

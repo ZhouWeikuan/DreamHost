@@ -40,7 +40,28 @@ class SNS {
 
     public function feed($func, $param){
         if ($this->src == SNS::FB){
+            return
             // facebook doesn't support feed any more.
+            $message = 'is playing Chinese Chess with others.';
+            $attachment = array('name' => 'The Chinese Chess', 
+                                'href' => 'http://apps.facebook.com/chchess/',
+                                'caption' => '{*actor*} rated the chess 5 stars',
+                                'description' => 'a good chinese chess table',
+                                'properties' => array(
+                                    'category' => array(
+                                        'text' => 'Games',
+                                        'href' => 'http://apps.facebook.com/chchess/'),
+                                    'ratings' => '5 stars'),
+                                'media' => array(
+                                    array('type' => 'image',
+                                          'src' => 'http://apps.facebook.com/chchess/favicon.ico',
+                                          'href' => 'http://apps.facebook.com/chchess/')),
+                                );
+            $action_links = array( array('text' => 'Visit this game',
+                                        'href' => 'http://apps.facebook.com/chchess/'));
+            $attachment = json_encode($attachment);
+            $action_links = json_encode($action_links);
+            $this->appInstance->stream_publish($message, $attachment, $action_links);
             return;
         } else if ($this->src == SNS::XN){
             $this->appInstance->feed($func, $param);

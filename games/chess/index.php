@@ -415,7 +415,7 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
                 $url = 'http://www.facebook.com/profile.php?id=' . $row['uid'];
             }
 
-            $User = "<a href='#' onclick='javascript:JS_redirect(\"$url\")'> $User </a>";
+            $User = "<a target='_blank' href='$url'> $User </a>";
             $SubTime = $row['era'];
             $Comment = stripslashes($row['txt']);
             print <<<EOL
