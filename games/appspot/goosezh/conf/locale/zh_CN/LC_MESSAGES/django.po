@@ -8,13 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-06 23:51+0800\n"
+"POT-Creation-Date: 2010-02-08 10:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:139 template/rank.html:64
+msgid "FB"
+msgstr "脸书"
+
+#: main.py:140 template/rank.html:62
+msgid "XN"
+msgstr "校内网"
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -44,13 +52,183 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "访问这个游戏"
 
-#: main.py:139 template/rank.html:62
-msgid "FB"
-msgstr "脸书"
+#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "中国象棋"
 
-#: main.py:140 template/rank.html:60
-msgid "XN"
-msgstr "校内网"
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
+msgstr "最近结果"
+
+#: template/index.html:11 template/rank.html:11 template/help.html:11
+msgid "Chess Arena"
+msgstr "象棋擂台"
+
+#: template/index.html:14 template/rank.html:14 template/help.html:14
+msgid "Invite Friends"
+msgstr "邀请好友"
+
+#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
+#: template/rank.html.py:39 template/help.html:16
+msgid "RankList"
+msgstr "排行榜"
+
+#: template/index.html:18 template/rank.html:18 template/help.html:5
+#: template/help.html.py:18
+msgid "Help Files"
+msgstr "帮助"
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+msgid "Play chess with others"
+msgstr "双人对弈"
+
+#: template/index.html:55
+msgid "Personal Information"
+msgstr "个人信息"
+
+#: template/index.html:64
+msgid "User name"
+msgstr "姓名"
+
+#: template/index.html:65 template/rank.html:48
+msgid "Score"
+msgstr "分数"
+
+#: template/index.html:69 template/rank.html:49
+msgid "Win"
+msgstr "赢局"
+
+#: template/index.html:70 template/rank.html:50
+msgid "Lose"
+msgstr "输局"
+
+#: template/index.html:71 template/rank.html:51
+msgid "Draw"
+msgstr "平局"
+
+#: template/index.html:78
+msgid "Happy Chinese New Year!"
+msgstr "新年快乐！"
+
+#: template/index.html:79
+msgid "Have a wonderful holiday!"
+msgstr "祝大家玩得开心"
+
+#: template/index.html:80
+msgid "We will improve the game after the new year."
+msgstr "新年后，我们会做进一步改进"
+
+#: template/index.html:81
+msgid "Hope everyone will like it."
+msgstr "希望大家能继续喜欢和支持"
+
+#: template/index.html:110
+msgid "Play Against Computer"
+msgstr "与电脑对战"
+
+#: template/index.html:146
+msgid "The level for computer:"
+msgstr "电脑等级："
+
+#: template/index.html:149
+msgid "Entry Level"
+msgstr "入门"
+
+#: template/index.html:150
+msgid "First Level"
+msgstr "初级"
+
+#: template/index.html:151
+msgid "Middle Level"
+msgstr "中级"
+
+#: template/index.html:152
+msgid "Advanced Level"
+msgstr "高级"
+
+#: template/index.html:153
+msgid "Last Level"
+msgstr "终级"
+
+#: template/index.html:158
+msgid "Who goes first?"
+msgstr "谁先走？"
+
+#: template/index.html:162
+msgid "I go first"
+msgstr "我先走"
+
+#: template/index.html:163
+msgid "Computer goes first"
+msgstr "电脑先走"
+
+#: template/index.html:166
+msgid "Start Game"
+msgstr "开局"
+
+#: template/index.html:172
+msgid "Game Rules"
+msgstr "游戏规则"
+
+#: template/index.html:173
+msgid "For each game, it pays 2 for entry level, 4 for first level,"
+msgstr "每局入门2分，初级4分，"
+
+#: template/index.html:174
+msgid "8 for middle level, 16 for advanced level, 32 for last level"
+msgstr "中级8分，高级16分，终级32分"
+
+#: template/index.html:175
+msgid "Everyone has 100 at first. He gets full score for the game if win,"
+msgstr "每人初始100分，赢一局得全分，"
+
+#: template/index.html:176
+msgid "half score if draw, lose the score depending on levels"
+msgstr "平局得一半分数，告负按等级扣分"
+
+#: template/index.html:177
+msgid "He loses if he leaves or restart"
+msgstr "没下完一局就离开或重新开始的，直接判负"
+
+#: template/index.html:184 template/help.html:51
+msgid "CopyRight@2010"
+msgstr "版权所有 2010年"
+
+#: template/rank.html:40
+msgid "Top20"
+msgstr "前20名"
+
+#: template/rank.html:41
+msgid "Bottom20"
+msgstr "加油哦"
+
+#: template/rank.html:45
+msgid "Rank"
+msgstr "名次"
+
+#: template/rank.html:46
+msgid "Player(s)"
+msgstr "玩家"
+
+#: template/rank.html:47
+msgid "SNS"
+msgstr "来自"
+
+#: template/rank.html:58
+msgid "Visit home page"
+msgstr "访问个人主页"
+
+#: template/help.html:40
+msgid "Game rules"
+msgstr "游戏规则"
+
+#: template/help.html:43
+msgid "Still under construction"
+msgstr "仍在开发中"
+
+#: template/help.html:45
+msgid "Game scores"
+msgstr "游戏分数"
 
 #: conf/settings.py:6
 msgid "English"
@@ -71,167 +249,6 @@ msgstr "繁体中文(香港)"
 #: conf/settings.py:16
 msgid "Start"
 msgstr "开局"
-
-#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
-msgid "Chinese Chess"
-msgstr "中国象棋"
-
-#: template/index.html:11 template/rank.html:11
-msgid "Chess Arena"
-msgstr "象棋擂台"
-
-#: template/index.html:14 template/rank.html:14
-msgid "Invite Friends"
-msgstr "邀请好友"
-
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:37
-msgid "RankList"
-msgstr "排行榜"
-
-#: template/index.html:18 template/rank.html:18
-msgid "Play chess with others"
-msgstr "双人对弈"
-
-#: template/index.html:53
-msgid "Personal Information"
-msgstr "个人信息"
-
-#: template/index.html:62
-msgid "User name"
-msgstr "姓名"
-
-#: template/index.html:63 template/rank.html:46
-msgid "Score"
-msgstr "分数"
-
-#: template/index.html:67 template/rank.html:47
-msgid "Win"
-msgstr "赢局"
-
-#: template/index.html:68 template/rank.html:48
-msgid "Lose"
-msgstr "输局"
-
-#: template/index.html:69 template/rank.html:49
-msgid "Draw"
-msgstr "平局"
-
-#: template/index.html:76
-msgid "Happy Chinese New Year!"
-msgstr "新年快乐！"
-
-#: template/index.html:77
-msgid "Have a wonderful holiday!"
-msgstr "祝大家玩得开心"
-
-#: template/index.html:78
-msgid "We will improve the game after the new year."
-msgstr "新年后，我们会做进一步改进"
-
-#: template/index.html:79
-msgid "Hope everyone will like it."
-msgstr "希望大家能继续喜欢和支持"
-
-#: template/index.html:108
-msgid "Play Against Computer"
-msgstr "与电脑对战"
-
-#: template/index.html:144
-msgid "The level for computer:"
-msgstr "电脑等级："
-
-#: template/index.html:147
-msgid "Entry Level"
-msgstr "入门"
-
-#: template/index.html:148
-msgid "First Level"
-msgstr "初级"
-
-#: template/index.html:149
-msgid "Middle Level"
-msgstr "中级"
-
-#: template/index.html:150
-msgid "Advanced Level"
-msgstr "高级"
-
-#: template/index.html:151
-msgid "Last Level"
-msgstr "终级"
-
-#: template/index.html:156
-msgid "Who goes first?"
-msgstr "谁先走？"
-
-#: template/index.html:160
-msgid "I go first"
-msgstr "我先走"
-
-#: template/index.html:161
-msgid "Computer goes first"
-msgstr "电脑先走"
-
-#: template/index.html:164
-msgid "Start Game"
-msgstr "开局"
-
-#: template/index.html:170
-msgid "Game Rules"
-msgstr "游戏规则"
-
-#: template/index.html:171
-msgid "For each game, it pays 2 for entry level, 4 for first level,"
-msgstr "每局入门2分，初级4分，"
-
-#: template/index.html:172
-msgid "8 for middle level, 16 for advanced level, 32 for last level"
-msgstr "中级8分，高级16分，终级32分"
-
-#: template/index.html:173
-msgid "Everyone has 100 at first. He gets full score for the game if win,"
-msgstr "每人初始100分，赢一局得全分，"
-
-#: template/index.html:174
-msgid "half score if draw, lose the score depending on levels"
-msgstr "平局得一半分数，告负按等级扣分"
-
-#: template/index.html:175
-msgid "He loses if he leaves or restart"
-msgstr "没下完一局就离开或重新开始的，直接判负"
-
-#: template/index.html:182
-msgid "CopyRight@2010"
-msgstr "版权所有 2010年"
-
-#: template/rank.html:38
-msgid "Top20"
-msgstr "前20名"
-
-#: template/rank.html:39
-msgid "Bottom20"
-msgstr "加油哦"
-
-#: template/rank.html:43
-msgid "Rank"
-msgstr "名次"
-
-#: template/rank.html:44
-msgid "Player(s)"
-msgstr "玩家"
-
-#: template/rank.html:45
-msgid "SNS"
-msgstr "来自"
-
-#: template/rank.html:56
-msgid "Visit home page"
-msgstr "访问个人主页"
-
-#: template/recentgames.html:5 template/recentgames.html.py:10
-msgid "Recent Results"
-msgstr "最近结果"
 
 #~ msgid "System Notice"
 #~ msgstr "系统公告"

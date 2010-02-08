@@ -8,13 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-06 23:51+0800\n"
+"POT-Creation-Date: 2010-02-08 10:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:139 template/rank.html:64
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:140 template/rank.html:62
+msgid "XN"
+msgstr "Xiaonei"
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -45,13 +53,183 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit home page"
 
-#: main.py:139 template/rank.html:62
-msgid "FB"
-msgstr "Facebook"
+#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "Chinese Chess"
 
-#: main.py:140 template/rank.html:60
-msgid "XN"
-msgstr "Xiaonei"
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
+msgstr ""
+
+#: template/index.html:11 template/rank.html:11 template/help.html:11
+msgid "Chess Arena"
+msgstr "Chess Arena"
+
+#: template/index.html:14 template/rank.html:14 template/help.html:14
+msgid "Invite Friends"
+msgstr "Invite Friends"
+
+#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
+#: template/rank.html.py:39 template/help.html:16
+msgid "RankList"
+msgstr "Rank List"
+
+#: template/index.html:18 template/rank.html:18 template/help.html:5
+#: template/help.html.py:18
+msgid "Help Files"
+msgstr ""
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+msgid "Play chess with others"
+msgstr "Play chess with others"
+
+#: template/index.html:55
+msgid "Personal Information"
+msgstr ""
+
+#: template/index.html:64
+msgid "User name"
+msgstr ""
+
+#: template/index.html:65 template/rank.html:48
+msgid "Score"
+msgstr "Score"
+
+#: template/index.html:69 template/rank.html:49
+msgid "Win"
+msgstr "Win"
+
+#: template/index.html:70 template/rank.html:50
+msgid "Lose"
+msgstr "Lose"
+
+#: template/index.html:71 template/rank.html:51
+msgid "Draw"
+msgstr "Draw"
+
+#: template/index.html:78
+msgid "Happy Chinese New Year!"
+msgstr ""
+
+#: template/index.html:79
+msgid "Have a wonderful holiday!"
+msgstr ""
+
+#: template/index.html:80
+msgid "We will improve the game after the new year."
+msgstr ""
+
+#: template/index.html:81
+msgid "Hope everyone will like it."
+msgstr ""
+
+#: template/index.html:110
+msgid "Play Against Computer"
+msgstr ""
+
+#: template/index.html:146
+msgid "The level for computer:"
+msgstr ""
+
+#: template/index.html:149
+msgid "Entry Level"
+msgstr ""
+
+#: template/index.html:150
+msgid "First Level"
+msgstr ""
+
+#: template/index.html:151
+msgid "Middle Level"
+msgstr ""
+
+#: template/index.html:152
+msgid "Advanced Level"
+msgstr ""
+
+#: template/index.html:153
+msgid "Last Level"
+msgstr ""
+
+#: template/index.html:158
+msgid "Who goes first?"
+msgstr ""
+
+#: template/index.html:162
+msgid "I go first"
+msgstr ""
+
+#: template/index.html:163
+msgid "Computer goes first"
+msgstr ""
+
+#: template/index.html:166
+msgid "Start Game"
+msgstr ""
+
+#: template/index.html:172
+msgid "Game Rules"
+msgstr ""
+
+#: template/index.html:173
+msgid "For each game, it pays 2 for entry level, 4 for first level,"
+msgstr ""
+
+#: template/index.html:174
+msgid "8 for middle level, 16 for advanced level, 32 for last level"
+msgstr ""
+
+#: template/index.html:175
+msgid "Everyone has 100 at first. He gets full score for the game if win,"
+msgstr ""
+
+#: template/index.html:176
+msgid "half score if draw, lose the score depending on levels"
+msgstr ""
+
+#: template/index.html:177
+msgid "He loses if he leaves or restart"
+msgstr ""
+
+#: template/index.html:184 template/help.html:51
+msgid "CopyRight@2010"
+msgstr ""
+
+#: template/rank.html:40
+msgid "Top20"
+msgstr "Top 20"
+
+#: template/rank.html:41
+msgid "Bottom20"
+msgstr "Bottom 20"
+
+#: template/rank.html:45
+msgid "Rank"
+msgstr "Rank"
+
+#: template/rank.html:46
+msgid "Player(s)"
+msgstr "Player(s)"
+
+#: template/rank.html:47
+msgid "SNS"
+msgstr ""
+
+#: template/rank.html:58
+msgid "Visit home page"
+msgstr "Visit home page"
+
+#: template/help.html:40
+msgid "Game rules"
+msgstr ""
+
+#: template/help.html:43
+msgid "Still under construction"
+msgstr ""
+
+#: template/help.html:45
+msgid "Game scores"
+msgstr ""
 
 #: conf/settings.py:6
 msgid "English"
@@ -72,167 +250,6 @@ msgstr ""
 
 #: conf/settings.py:16
 msgid "Start"
-msgstr ""
-
-#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
-msgid "Chinese Chess"
-msgstr "Chinese Chess"
-
-#: template/index.html:11 template/rank.html:11
-msgid "Chess Arena"
-msgstr "Chess Arena"
-
-#: template/index.html:14 template/rank.html:14
-msgid "Invite Friends"
-msgstr "Invite Friends"
-
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:37
-msgid "RankList"
-msgstr "Rank List"
-
-#: template/index.html:18 template/rank.html:18
-msgid "Play chess with others"
-msgstr "Play chess with others"
-
-#: template/index.html:53
-msgid "Personal Information"
-msgstr ""
-
-#: template/index.html:62
-msgid "User name"
-msgstr ""
-
-#: template/index.html:63 template/rank.html:46
-msgid "Score"
-msgstr "Score"
-
-#: template/index.html:67 template/rank.html:47
-msgid "Win"
-msgstr "Win"
-
-#: template/index.html:68 template/rank.html:48
-msgid "Lose"
-msgstr "Lose"
-
-#: template/index.html:69 template/rank.html:49
-msgid "Draw"
-msgstr "Draw"
-
-#: template/index.html:76
-msgid "Happy Chinese New Year!"
-msgstr ""
-
-#: template/index.html:77
-msgid "Have a wonderful holiday!"
-msgstr ""
-
-#: template/index.html:78
-msgid "We will improve the game after the new year."
-msgstr ""
-
-#: template/index.html:79
-msgid "Hope everyone will like it."
-msgstr ""
-
-#: template/index.html:108
-msgid "Play Against Computer"
-msgstr ""
-
-#: template/index.html:144
-msgid "The level for computer:"
-msgstr ""
-
-#: template/index.html:147
-msgid "Entry Level"
-msgstr ""
-
-#: template/index.html:148
-msgid "First Level"
-msgstr ""
-
-#: template/index.html:149
-msgid "Middle Level"
-msgstr ""
-
-#: template/index.html:150
-msgid "Advanced Level"
-msgstr ""
-
-#: template/index.html:151
-msgid "Last Level"
-msgstr ""
-
-#: template/index.html:156
-msgid "Who goes first?"
-msgstr ""
-
-#: template/index.html:160
-msgid "I go first"
-msgstr ""
-
-#: template/index.html:161
-msgid "Computer goes first"
-msgstr ""
-
-#: template/index.html:164
-msgid "Start Game"
-msgstr ""
-
-#: template/index.html:170
-msgid "Game Rules"
-msgstr ""
-
-#: template/index.html:171
-msgid "For each game, it pays 2 for entry level, 4 for first level,"
-msgstr ""
-
-#: template/index.html:172
-msgid "8 for middle level, 16 for advanced level, 32 for last level"
-msgstr ""
-
-#: template/index.html:173
-msgid "Everyone has 100 at first. He gets full score for the game if win,"
-msgstr ""
-
-#: template/index.html:174
-msgid "half score if draw, lose the score depending on levels"
-msgstr ""
-
-#: template/index.html:175
-msgid "He loses if he leaves or restart"
-msgstr ""
-
-#: template/index.html:182
-msgid "CopyRight@2010"
-msgstr ""
-
-#: template/rank.html:38
-msgid "Top20"
-msgstr "Top 20"
-
-#: template/rank.html:39
-msgid "Bottom20"
-msgstr "Bottom 20"
-
-#: template/rank.html:43
-msgid "Rank"
-msgstr "Rank"
-
-#: template/rank.html:44
-msgid "Player(s)"
-msgstr "Player(s)"
-
-#: template/rank.html:45
-msgid "SNS"
-msgstr ""
-
-#: template/rank.html:56
-msgid "Visit home page"
-msgstr "Visit home page"
-
-#: template/recentgames.html:5 template/recentgames.html.py:10
-msgid "Recent Results"
 msgstr ""
 
 #~ msgid "Chess Resources"
