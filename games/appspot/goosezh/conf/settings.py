@@ -12,3 +12,5 @@ LANGUAGES = (
 # This is a default language
 LANGUAGE_CODE = 'en'
 
+# add the following to force multilingual on these items
+aaa = _('Start')

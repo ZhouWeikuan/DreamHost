@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-04 17:02+0800\n"
+"POT-Creation-Date: 2010-02-06 23:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,54 +16,67 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:139
-msgid "FB"
-msgstr "Facebook"
-
-#: main.py:140
-msgid "XN"
-msgstr "Xiaonei"
-
-#: format.py:46
-msgid "Start"
-msgstr ""
-
-#: opensns.py:84
+#: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:86
+#: opensns.py:87
 msgid "The Chinese Chess(vs computers)"
 msgstr ""
 
-#: opensns.py:88
+#: opensns.py:89
 msgid "joins game Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:89
+#: opensns.py:90
 msgid "a good chinese chess arena"
 msgstr ""
 
-#: opensns.py:92
+#: opensns.py:93
 msgid "Games"
 msgstr ""
 
-#: opensns.py:95
+#: opensns.py:96
 msgid "5 stars"
 msgstr ""
 
-#: opensns.py:107
+#: opensns.py:108
 #, fuzzy
 msgid "Visit this game"
 msgstr "Visit home page"
 
-#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+#: main.py:139 template/rank.html:62
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:140 template/rank.html:60
+msgid "XN"
+msgstr "Xiaonei"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "English"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: conf/settings.py:8
+#, fuzzy
+msgid "Taiwan Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr ""
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr ""
+
+#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
 msgid "Chinese Chess"
 msgstr "Chinese Chess"
-
-#: template/recentgames.html:5 template/recentgames.html.py:10
-msgid "Recent Results"
-msgstr ""
 
 #: template/index.html:11 template/rank.html:11
 msgid "Chess Arena"
@@ -107,7 +120,19 @@ msgid "Draw"
 msgstr "Draw"
 
 #: template/index.html:76
-msgid "System Notice"
+msgid "Happy Chinese New Year!"
+msgstr ""
+
+#: template/index.html:77
+msgid "Have a wonderful holiday!"
+msgstr ""
+
+#: template/index.html:78
+msgid "We will improve the game after the new year."
+msgstr ""
+
+#: template/index.html:79
+msgid "Hope everyone will like it."
 msgstr ""
 
 #: template/index.html:108
@@ -206,21 +231,8 @@ msgstr ""
 msgid "Visit home page"
 msgstr "Visit home page"
 
-#: conf/settings.py:6
-msgid "English"
-msgstr "English"
-
-#: conf/settings.py:7
-msgid "Simplified Chinese"
-msgstr "Simplified Chinese"
-
-#: conf/settings.py:8
-#, fuzzy
-msgid "Taiwan Chinese"
-msgstr "Traditional Chinese"
-
-#: conf/settings.py:9
-msgid "Hong Kong Chinese"
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
 msgstr ""
 
 #~ msgid "Chess Resources"

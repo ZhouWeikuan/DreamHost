@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-04 17:02+0800\n"
+"POT-Creation-Date: 2010-02-06 23:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -16,53 +16,65 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:139
-msgid "FB"
-msgstr "脸书"
-
-#: main.py:140
-msgid "XN"
-msgstr "校内网"
-
-#: format.py:46
-msgid "Start"
-msgstr "开局"
-
-#: opensns.py:84
+#: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
 msgstr "正在玩中国象棋段位赛"
 
-#: opensns.py:86
+#: opensns.py:87
 msgid "The Chinese Chess(vs computers)"
 msgstr "中国象棋段位赛"
 
-#: opensns.py:88
+#: opensns.py:89
 msgid "joins game Chinese Chess(vs. computers)"
 msgstr "加入了游戏中国象棋段位赛"
 
-#: opensns.py:89
+#: opensns.py:90
 msgid "a good chinese chess arena"
 msgstr "一个很好的中国象棋平台"
 
-#: opensns.py:92
+#: opensns.py:93
 msgid "Games"
 msgstr "休闲娱乐"
 
-#: opensns.py:95
+#: opensns.py:96
 msgid "5 stars"
 msgstr "五星"
 
-#: opensns.py:107
+#: opensns.py:108
 msgid "Visit this game"
 msgstr "访问这个游戏"
 
-#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+#: main.py:139 template/rank.html:62
+msgid "FB"
+msgstr "脸书"
+
+#: main.py:140 template/rank.html:60
+msgid "XN"
+msgstr "校内网"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "英文"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "简体中文"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "繁体中文(台湾)"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "繁体中文(香港)"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr "开局"
+
+#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
 msgid "Chinese Chess"
 msgstr "中国象棋"
-
-#: template/recentgames.html:5 template/recentgames.html.py:10
-msgid "Recent Results"
-msgstr "最近结果"
 
 #: template/index.html:11 template/rank.html:11
 msgid "Chess Arena"
@@ -106,8 +118,20 @@ msgid "Draw"
 msgstr "平局"
 
 #: template/index.html:76
-msgid "System Notice"
-msgstr "系统公告"
+msgid "Happy Chinese New Year!"
+msgstr "新年快乐！"
+
+#: template/index.html:77
+msgid "Have a wonderful holiday!"
+msgstr "祝大家玩得开心"
+
+#: template/index.html:78
+msgid "We will improve the game after the new year."
+msgstr "新年后，我们会做进一步改进"
+
+#: template/index.html:79
+msgid "Hope everyone will like it."
+msgstr "希望大家能继续喜欢和支持"
 
 #: template/index.html:108
 msgid "Play Against Computer"
@@ -205,21 +229,12 @@ msgstr "来自"
 msgid "Visit home page"
 msgstr "访问个人主页"
 
-#: conf/settings.py:6
-msgid "English"
-msgstr "英文"
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
+msgstr "最近结果"
 
-#: conf/settings.py:7
-msgid "Simplified Chinese"
-msgstr "简体中文"
-
-#: conf/settings.py:8
-msgid "Taiwan Chinese"
-msgstr "繁体中文(台湾)"
-
-#: conf/settings.py:9
-msgid "Hong Kong Chinese"
-msgstr "繁体中文(香港)"
+#~ msgid "System Notice"
+#~ msgstr "系统公告"
 
 #~ msgid "The source code mainly comes from"
 #~ msgstr "源码主要来自"

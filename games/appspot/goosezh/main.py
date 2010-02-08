@@ -125,7 +125,7 @@ def updateCache(g, u):
             games = []
         games.insert(0, g)
         del games[12:] ### at most 12 recent games
-        memcache.set(key=keyRecent, value=games, time=3600*24) # expire in one day
+        memcache.set(key=keyRecent, value=games, time=3600*24*3) # expire in 3 days
     except :
         pass
     return
@@ -150,8 +150,19 @@ class AdminHandler(webapp.RequestHandler):
             self.response.out.write('FAIL')
         return
 
-class NoneHandler(webapp.RequestHandler):
+class HelpHandler(webapp.RequestHandler):
     def get(self):
+        opensns.init_sns(self)
+        lang = opensns.sns.lang
+        lang = setHandlerLocale(self, lang)
+        template_values = {
+            'sns' : opensns.sns,
+            'lang' : lang,
+        }
+
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/help.html')
+        self.response.out.write(template.render(path, template_values))
         return
 
 class RankHandler(webapp.RequestHandler):
@@ -184,6 +195,8 @@ class RecentGamesHandler(webapp.RequestHandler):
         lang = setHandlerLocale(self, lang)
 
         games = memcache.get(key=keyRecent)
+        if not games:
+            games = []
         for g in games:
             g.src = _(g.src)
             g.lvl = _(g.lvl)
@@ -337,7 +350,7 @@ def main():
                                         ('/rank', RankHandler),
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
-                                        ('/None', NoneHandler),
+                                        ('/help', HelpHandler),
                                         ('/invite', InviteHandler),
                                         ('/admin', AdminHandler)],
                                         debug=True)
