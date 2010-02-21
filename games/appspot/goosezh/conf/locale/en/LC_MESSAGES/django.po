@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-08 10:02+0800\n"
+"POT-Creation-Date: 2010-02-21 14:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,9 +49,8 @@ msgid "5 stars"
 msgstr ""
 
 #: opensns.py:108
-#, fuzzy
 msgid "Visit this game"
-msgstr "Visit home page"
+msgstr "Visit this game's home page"
 
 #: template/recentgames.html:5 template/index.html:5 template/rank.html:5
 msgid "Chinese Chess"
@@ -108,19 +107,19 @@ msgid "Draw"
 msgstr "Draw"
 
 #: template/index.html:78
-msgid "Happy Chinese New Year!"
+msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:79
-msgid "Have a wonderful holiday!"
+msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
 msgstr ""
 
 #: template/index.html:80
-msgid "We will improve the game after the new year."
+msgid "The services may not be very stable at that time,"
 msgstr ""
 
 #: template/index.html:81
-msgid "Hope everyone will like it."
+msgid "Just keep patience if any."
 msgstr ""
 
 #: template/index.html:110
@@ -240,13 +239,12 @@ msgid "Simplified Chinese"
 msgstr "Simplified Chinese"
 
 #: conf/settings.py:8
-#, fuzzy
 msgid "Taiwan Chinese"
 msgstr "Traditional Chinese"
 
 #: conf/settings.py:9
 msgid "Hong Kong Chinese"
-msgstr ""
+msgstr "Traditional Chinese"
 
 #: conf/settings.py:16
 msgid "Start"

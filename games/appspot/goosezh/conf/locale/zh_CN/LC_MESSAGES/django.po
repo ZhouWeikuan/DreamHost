@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-08 10:02+0800\n"
+"POT-Creation-Date: 2010-02-21 14:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -107,20 +107,20 @@ msgid "Draw"
 msgstr "平局"
 
 #: template/index.html:78
-msgid "Happy Chinese New Year!"
-msgstr "新年快乐！"
+msgid "System Notice!"
+msgstr "系统公告"
 
 #: template/index.html:79
-msgid "Have a wonderful holiday!"
-msgstr "祝大家玩得开心"
+msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
+msgstr "下周末（2月28日）游戏升级，"
 
 #: template/index.html:80
-msgid "We will improve the game after the new year."
-msgstr "新年后，我们会做进一步改进"
+msgid "The services may not be very stable at that time,"
+msgstr "届时服务可能不太稳定，"
 
 #: template/index.html:81
-msgid "Hope everyone will like it."
-msgstr "希望大家能继续喜欢和支持"
+msgid "Just keep patience if any."
+msgstr "请大家保持耐心。"
 
 #: template/index.html:110
 msgid "Play Against Computer"
@@ -250,8 +250,17 @@ msgstr "繁体中文(香港)"
 msgid "Start"
 msgstr "开局"
 
-#~ msgid "System Notice"
-#~ msgstr "系统公告"
+#~ msgid "Happy Chinese New Year!"
+#~ msgstr "新年快乐！"
+
+#~ msgid "Have a wonderful holiday!"
+#~ msgstr "祝大家玩得开心"
+
+#~ msgid "We will improve the game after the new year."
+#~ msgstr "新年后，我们会做进一步改进"
+
+#~ msgid "Hope everyone will like it."
+#~ msgstr "希望大家能继续喜欢和支持"
 
 #~ msgid "The source code mainly comes from"
 #~ msgstr "源码主要来自"
