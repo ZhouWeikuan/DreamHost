@@ -291,6 +291,10 @@ class ResultHandler(webapp.RequestHandler):
 
 class InviteHandler(webapp.RequestHandler):
     def post(self):
+        opensns.init_sns(self)
+        lang = opensns.sns.lang
+        lang = setHandlerLocale(self, lang)
+
         template_values = {
         };
         self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
