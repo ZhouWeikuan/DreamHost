@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 14:07+0800\n"
+"POT-Creation-Date: 2010-02-21 15:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -116,11 +116,11 @@ msgstr "下周末（2月28日）游戏升级，"
 
 #: template/index.html:80
 msgid "The services may not be very stable at that time,"
-msgstr "届时服务可能不太稳定，"
+msgstr "届时服务如果不太稳定，"
 
 #: template/index.html:81
-msgid "Just keep patience if any."
-msgstr "请大家保持耐心。"
+msgid "Please forgive us if any."
+msgstr "敬请谅解。"
 
 #: template/index.html:110
 msgid "Play Against Computer"
@@ -249,6 +249,9 @@ msgstr "繁体中文(香港)"
 #: conf/settings.py:16
 msgid "Start"
 msgstr "开局"
+
+#~ msgid "Just keep patience if any."
+#~ msgstr "请大家保持耐心。"
 
 #~ msgid "Happy Chinese New Year!"
 #~ msgstr "新年快乐！"

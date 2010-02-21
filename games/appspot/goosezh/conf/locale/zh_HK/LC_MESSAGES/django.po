@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 14:07+0800\n"
+"POT-Creation-Date: 2010-02-21 15:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,8 +119,8 @@ msgid "The services may not be very stable at that time,"
 msgstr "屆時服務可能不太穩定，"
 
 #: template/index.html:81
-msgid "Just keep patience if any."
-msgstr "請大家保持耐心。"
+msgid "Please forgive us if any."
+msgstr "敬請諒解。"
 
 #: template/index.html:110
 msgid "Play Against Computer"
@@ -249,6 +249,9 @@ msgstr "繁体中文"
 #: conf/settings.py:16
 msgid "Start"
 msgstr "開局"
+
+#~ msgid "Just keep patience if any."
+#~ msgstr "請大家保持耐心。"
 
 #~ msgid "Happy Chinese New Year!"
 #~ msgstr "新年快樂！"

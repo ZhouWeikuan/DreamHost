@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 14:07+0800\n"
+"POT-Creation-Date: 2010-02-21 15:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgid "The services may not be very stable at that time,"
 msgstr ""
 
 #: template/index.html:81
-msgid "Just keep patience if any."
+msgid "Please forgive us if any."
 msgstr ""
 
 #: template/index.html:110
