@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 15:11+0800\n"
+"POT-Creation-Date: 2010-02-22 14:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -112,7 +112,7 @@ msgstr "系统公告"
 
 #: template/index.html:79
 msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
-msgstr "下周末（2月28日）游戏升级，"
+msgstr "本周末（2月28日）游戏升级，"
 
 #: template/index.html:80
 msgid "The services may not be very stable at that time,"
@@ -166,7 +166,7 @@ msgstr "电脑先走"
 msgid "Start Game"
 msgstr "开局"
 
-#: template/index.html:172
+#: template/index.html:172 template/help.html:45
 msgid "Game Rules"
 msgstr "游戏规则"
 
@@ -190,7 +190,7 @@ msgstr "平局得一半分数，告负按等级扣分"
 msgid "He loses if he leaves or restart"
 msgstr "没下完一局就离开或重新开始的，直接判负"
 
-#: template/index.html:184 template/help.html:51
+#: template/index.html:184 template/help.html:84
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
@@ -219,16 +219,89 @@ msgid "Visit home page"
 msgstr "访问个人主页"
 
 #: template/help.html:40
-msgid "Game rules"
-msgstr "游戏规则"
+msgid "Tips: This help file will take effect after this weekend"
+msgstr "提示：本帮助文件待本周末后方有效"
 
-#: template/help.html:43
-msgid "Still under construction"
-msgstr "仍在开发中"
+#: template/help.html:46
+msgid "Each player is on level 0 and has score 100 initially."
+msgstr "每个玩家初始有100分，零段"
 
-#: template/help.html:45
-msgid "Game scores"
-msgstr "游戏分数"
+#: template/help.html:47
+msgid "Each game has different score for different level."
+msgstr "每局游戏分数依段位不同而不同。"
+
+#: template/help.html:48
+msgid ""
+"Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
+msgstr "零段每局2分，赢家得2分，失败减2分，平局得1分。"
+
+#: template/help.html:49
+msgid ""
+"Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
+msgstr "初段每局4分，赢家得4分，失败减4分，平局得2分。"
+
+#: template/help.html:50
+msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
+msgstr "二段每局8分，三段每局16分，以上各段依次类推。"
+
+#: template/help.html:55
+msgid "Levels Description"
+msgstr "段位描述"
+
+#: template/help.html:56
+msgid "This game contains 10 levels for each player."
+msgstr "每个玩家可经历总共10个段位"
+
+#: template/help.html:57
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr "玩家只能玩段位小于或等于玩家本身段位的游戏"
+
+#: template/help.html:58
+msgid "After the player upgrades his level, he can play more levels."
+msgstr "玩家提升自己段位后，可选游戏段位得以增加。"
+
+#: template/help.html:62
+msgid "How To Upgrade Your Level"
+msgstr "如何提升段位"
+
+#: template/help.html:63
+msgid ""
+"The player can upgrade his level, only after he wins three consecutive games "
+"with the same level as his level(called same-level game)."
+msgstr "玩家只有连赢三局与自身段位相等（即同段位）的电脑后才可升级。"
+
+#: template/help.html:64
+msgid "The games which levels are lower than his level is ignored."
+msgstr "期间，逊于本身段位的棋局得失不被计入。"
+
+#: template/help.html:65
+msgid ""
+"Three consecutive games mean the neiboring games should be played in 6 hours."
+msgstr "连赢三局是说，相隔的两局棋间不得超过6小时。"
+
+#: template/help.html:66
+msgid ""
+"If the play wins a same-level game, and after more than 6 hours, he wins "
+"another same-level game."
+msgstr "若玩家赢了一局同段位电脑后，过了6小时才再赢另一局同段位电脑，"
+
+#: template/help.html:67
+msgid "These two same-level games are not consecutive."
+msgstr "这样的两局得胜不被视为连赢。"
+
+#: template/help.html:72
+msgid "On Retract"
+msgstr "关于悔棋"
+
+#: template/help.html:73 template/help.html.py:79
+msgid "This is not implemented yet."
+msgstr "此项功能尚在研发中"
+
+#: template/help.html:78
+msgid "On Handicap"
+msgstr "关于让子"
 
 #: conf/settings.py:6
 msgid "English"
@@ -249,6 +322,18 @@ msgstr "繁体中文(香港)"
 #: conf/settings.py:16
 msgid "Start"
 msgstr "开局"
+
+#~ msgid "The player can upgrade his level,"
+#~ msgstr "玩家可以提升段位，"
+
+#~ msgid "Game rules"
+#~ msgstr "游戏规则"
+
+#~ msgid "Still under construction"
+#~ msgstr "仍在开发中"
+
+#~ msgid "Game scores"
+#~ msgstr "游戏分数"
 
 #~ msgid "Just keep patience if any."
 #~ msgstr "请大家保持耐心。"
