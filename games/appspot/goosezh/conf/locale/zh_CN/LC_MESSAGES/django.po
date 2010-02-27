@@ -8,21 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 14:20+0800\n"
+"POT-Creation-Date: 2010-02-27 14:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: main.py:139 template/rank.html:64
-msgid "FB"
-msgstr "脸书"
-
-#: main.py:140 template/rank.html:62
-msgid "XN"
-msgstr "校内网"
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -52,13 +44,81 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "访问这个游戏"
 
-#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+#: main.py:135 template/rank.html:72
+msgid "FB"
+msgstr "脸书"
+
+#: main.py:136 template/rank.html:70
+msgid "XN"
+msgstr "校内网"
+
+#: main.py:177 main.py:316
+msgid "lvl "
+msgstr "段"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "英文"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "简体中文"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "繁体中文(台湾)"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "繁体中文(香港)"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr "开局"
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr "零段"
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr "一段"
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr "二段"
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr "三段"
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr "四段"
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr "五段"
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr "六段"
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr "七段"
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr "八段"
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr "九段"
+
+#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
 msgid "Chinese Chess"
 msgstr "中国象棋"
-
-#: template/recentgames.html:5 template/recentgames.html.py:10
-msgid "Recent Results"
-msgstr "最近结果"
 
 #: template/index.html:11 template/rank.html:11 template/help.html:11
 msgid "Chess Arena"
@@ -86,141 +146,101 @@ msgstr "双人对弈"
 msgid "Personal Information"
 msgstr "个人信息"
 
-#: template/index.html:64
-msgid "User name"
-msgstr "姓名"
-
-#: template/index.html:65 template/rank.html:48
+#: template/index.html:66 template/rank.html:55
 msgid "Score"
 msgstr "分数"
 
-#: template/index.html:69 template/rank.html:49
+#: template/index.html:70 template/rank.html:56
 msgid "Win"
 msgstr "赢局"
 
-#: template/index.html:70 template/rank.html:50
+#: template/index.html:71 template/rank.html:57
 msgid "Lose"
 msgstr "输局"
 
-#: template/index.html:71 template/rank.html:51
+#: template/index.html:72 template/rank.html:58
 msgid "Draw"
 msgstr "平局"
 
-#: template/index.html:78
+#: template/index.html:79
 msgid "System Notice!"
 msgstr "系统公告"
 
-#: template/index.html:79
-msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
-msgstr "本周末（2月28日）游戏升级，"
-
 #: template/index.html:80
-msgid "The services may not be very stable at that time,"
-msgstr "届时服务如果不太稳定，"
+msgid "The game is in upgrade."
+msgstr "游戏正在升级中"
 
 #: template/index.html:81
-msgid "Please forgive us if any."
-msgstr "敬请谅解。"
+msgid "It is estimated to be done at 6:00pm GMT+8"
+msgstr "大约北京时间下午6点前完成"
 
-#: template/index.html:110
+#: template/index.html:82
+msgid "Please visit it later. Thanks!"
+msgstr "请完成后再访问。谢谢！"
+
+#: template/index.html:105
 msgid "Play Against Computer"
 msgstr "与电脑对战"
 
-#: template/index.html:146
+#: template/index.html:140
 msgid "The level for computer:"
 msgstr "电脑等级："
 
-#: template/index.html:149
-msgid "Entry Level"
-msgstr "入门"
-
 #: template/index.html:150
-msgid "First Level"
-msgstr "初级"
-
-#: template/index.html:151
-msgid "Middle Level"
-msgstr "中级"
-
-#: template/index.html:152
-msgid "Advanced Level"
-msgstr "高级"
-
-#: template/index.html:153
-msgid "Last Level"
-msgstr "终级"
-
-#: template/index.html:158
 msgid "Who goes first?"
 msgstr "谁先走？"
 
-#: template/index.html:162
+#: template/index.html:154
 msgid "I go first"
 msgstr "我先走"
 
-#: template/index.html:163
+#: template/index.html:155
 msgid "Computer goes first"
 msgstr "电脑先走"
 
-#: template/index.html:166
+#: template/index.html:158
 msgid "Start Game"
 msgstr "开局"
 
-#: template/index.html:172 template/help.html:45
-msgid "Game Rules"
-msgstr "游戏规则"
+#: template/index.html:166
+msgid "Read game rules in help"
+msgstr "请阅读帮助以了解规则"
 
-#: template/index.html:173
-msgid "For each game, it pays 2 for entry level, 4 for first level,"
-msgstr "每局入门2分，初级4分，"
-
-#: template/index.html:174
-msgid "8 for middle level, 16 for advanced level, 32 for last level"
-msgstr "中级8分，高级16分，终级32分"
-
-#: template/index.html:175
-msgid "Everyone has 100 at first. He gets full score for the game if win,"
-msgstr "每人初始100分，赢一局得全分，"
-
-#: template/index.html:176
-msgid "half score if draw, lose the score depending on levels"
-msgstr "平局得一半分数，告负按等级扣分"
-
-#: template/index.html:177
-msgid "He loses if he leaves or restart"
-msgstr "没下完一局就离开或重新开始的，直接判负"
-
-#: template/index.html:184 template/help.html:84
+#: template/index.html:179 template/help.html:85
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
-#: template/rank.html:40
-msgid "Top20"
-msgstr "前20名"
-
-#: template/rank.html:41
-msgid "Bottom20"
-msgstr "加油哦"
-
-#: template/rank.html:45
+#: template/rank.html:51
 msgid "Rank"
 msgstr "名次"
 
-#: template/rank.html:46
+#: template/rank.html:52
 msgid "Player(s)"
 msgstr "玩家"
 
-#: template/rank.html:47
+#: template/rank.html:53
+msgid "Level"
+msgstr "段位"
+
+#: template/rank.html:54
 msgid "SNS"
 msgstr "来自"
 
-#: template/rank.html:58
+#: template/rank.html:65
 msgid "Visit home page"
 msgstr "访问个人主页"
 
+#: template/recentgames.html:5 template/recentgames.html.py:10
+msgid "Recent Results"
+msgstr "最近结果"
+
 #: template/help.html:40
-msgid "Tips: This help file will take effect after this weekend"
-msgstr "提示：本帮助文件待本周末后方有效"
+msgid "Tips: This help file will take effect after Feb 28 2010"
+msgstr "提示：本帮助文件待2月28日后方有效"
+
+#: template/help.html:44
+msgid "Game Rules"
+msgstr "游戏规则"
 
 #: template/help.html:46
 msgid "Each player is on level 0 and has score 100 initially."
@@ -244,7 +264,7 @@ msgstr "初段每局4分，赢家得4分，失败减4分，平局得2分。"
 msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
 msgstr "二段每局8分，三段每局16分，以上各段依次类推。"
 
-#: template/help.html:55
+#: template/help.html:54
 msgid "Levels Description"
 msgstr "段位描述"
 
@@ -266,28 +286,28 @@ msgstr "玩家提升自己段位后，可选游戏段位得以增加。"
 msgid "How To Upgrade Your Level"
 msgstr "如何提升段位"
 
-#: template/help.html:63
-msgid ""
-"The player can upgrade his level, only after he wins three consecutive games "
-"with the same level as his level(called same-level game)."
-msgstr "玩家只有连赢三局与自身段位相等（即同段位）的电脑后才可升级。"
-
 #: template/help.html:64
+msgid ""
+"The player can upgrade his level, only after he wins 3 consecutive games "
+"with the same level as his level(called same-level game)."
+msgstr "玩家只有连赢3局与自身段位相等（即同段位）的电脑后才可升级。"
+
+#: template/help.html:65
 msgid "The games which levels are lower than his level is ignored."
 msgstr "期间，逊于本身段位的棋局得失不被计入。"
 
-#: template/help.html:65
+#: template/help.html:66
 msgid ""
 "Three consecutive games mean the neiboring games should be played in 6 hours."
-msgstr "连赢三局是说，相隔的两局棋间不得超过6小时。"
+msgstr "连赢是说，相隔的两局棋间不得超过6小时。"
 
-#: template/help.html:66
+#: template/help.html:67
 msgid ""
 "If the play wins a same-level game, and after more than 6 hours, he wins "
 "another same-level game."
 msgstr "若玩家赢了一局同段位电脑后，过了6小时才再赢另一局同段位电脑，"
 
-#: template/help.html:67
+#: template/help.html:68
 msgid "These two same-level games are not consecutive."
 msgstr "这样的两局得胜不被视为连赢。"
 
@@ -295,7 +315,7 @@ msgstr "这样的两局得胜不被视为连赢。"
 msgid "On Retract"
 msgstr "关于悔棋"
 
-#: template/help.html:73 template/help.html.py:79
+#: template/help.html:74 template/help.html.py:80
 msgid "This is not implemented yet."
 msgstr "此项功能尚在研发中"
 
@@ -303,25 +323,53 @@ msgstr "此项功能尚在研发中"
 msgid "On Handicap"
 msgstr "关于让子"
 
-#: conf/settings.py:6
-msgid "English"
-msgstr "英文"
+#~ msgid " Rank"
+#~ msgstr "名次"
 
-#: conf/settings.py:7
-msgid "Simplified Chinese"
-msgstr "简体中文"
+#~ msgid "Top20"
+#~ msgstr "前20名"
 
-#: conf/settings.py:8
-msgid "Taiwan Chinese"
-msgstr "繁体中文(台湾)"
+#~ msgid "Bottom20"
+#~ msgstr "加油哦"
 
-#: conf/settings.py:9
-msgid "Hong Kong Chinese"
-msgstr "繁体中文(香港)"
+#~ msgid "User name"
+#~ msgstr "姓名"
 
-#: conf/settings.py:16
-msgid "Start"
-msgstr "开局"
+#~ msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
+#~ msgstr "本周末（2月28日）游戏升级，"
+
+#~ msgid "The services may not be very stable at that time,"
+#~ msgstr "届时服务如果不太稳定，"
+
+#~ msgid "Please forgive us if any."
+#~ msgstr "敬请谅解。"
+
+#~ msgid "Entry Level"
+#~ msgstr "入门"
+
+#~ msgid "First Level"
+#~ msgstr "初级"
+
+#~ msgid "Middle Level"
+#~ msgstr "中级"
+
+#~ msgid "Advanced Level"
+#~ msgstr "高级"
+
+#~ msgid "For each game, it pays 2 for entry level, 4 for first level,"
+#~ msgstr "每局入门2分，初级4分，"
+
+#~ msgid "8 for middle level, 16 for advanced level, 32 for last level"
+#~ msgstr "中级8分，高级16分，终级32分"
+
+#~ msgid "Everyone has 100 at first. He gets full score for the game if win,"
+#~ msgstr "每人初始100分，赢一局得全分，"
+
+#~ msgid "half score if draw, lose the score depending on levels"
+#~ msgstr "平局得一半分数，告负按等级扣分"
+
+#~ msgid "He loses if he leaves or restart"
+#~ msgstr "没下完一局就离开或重新开始的，直接判负"
 
 #~ msgid "The player can upgrade his level,"
 #~ msgstr "玩家可以提升段位，"

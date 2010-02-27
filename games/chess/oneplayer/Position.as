@@ -471,7 +471,7 @@ package {
 			stream.endian = Endian.LITTLE_ENDIAN;
 			stream.addEventListener(Event.COMPLETE, loadBook);
 			stream.addEventListener(IOErrorEvent.IO_ERROR, noBook);
-			stream.load(new URLRequest("BOOK.DAT"));
+			stream.load(new URLRequest("/static/BOOK.DAT"));
 			return null;
 		}
 

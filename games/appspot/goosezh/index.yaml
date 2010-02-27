@@ -15,7 +15,12 @@ indexes:
     direction: desc
 - kind: FBUsers
   properties:
+  - name: lvl
   - name: score
     direction: desc
   - name: win
     direction: desc
+- kind: FBUsers
+  properties:
+  - name: lvl
+  - name: score

@@ -37,18 +37,25 @@
     {% endifequal %}
 
     <div class='nav'> <h3> {% trans "RankList" %}
-        <a target='_top' href='{{sns.homeurl}}/rank'>{% trans "Top20" %} </a>
-        <a target='_top' href='{{sns.homeurl}}/rank?rev=1'>{% trans "Bottom20" %}</a>
+    {% for lv in lvls%}
+        {% ifequal forloop.revcounter0 lvl %}
+        <a class="curitem" target='_top' 
+            href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}&rev={{rev}}'> {{ lv }} </a>
+        {% else %}
+        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}'> {{ lv }}</a>
+        {% endifequal %}
+    {% endfor %}
     </h3></div>
     <table border='0' style="text-align:center;">
         <thead>
             <th width='80'> {% trans "Rank" %} </th>
             <th width='200'> {% trans "Player(s)" %} </th>
-            <th width='80'> {% trans "SNS" %} </th>
-            <th width='80'> {% trans "Score" %} </th>
-            <th width='80'> {% trans "Win" %} </th>
-            <th width='80'> {% trans "Lose" %} </th>
-            <th width='80'> {% trans "Draw" %} </th>
+            <th width='72'> {% trans "Level" %} </th>
+            <th width='72'> {% trans "SNS" %} </th>
+            <th width='72'> {% trans "Score" %} </th>
+            <th width='72'> {% trans "Win" %} </th>
+            <th width='72'> {% trans "Lose" %} </th>
+            <th width='72'> {% trans "Draw" %} </th>
         </thead>
     {% for u in users %}    
         <tr>
@@ -58,6 +65,7 @@
               <a title='{% trans "Visit home page" %}' target='_blank' 
                 href='{{ u.getProfileUrl }}'> {{ u.name }} </a>
          </td>
+         <td> {{ u.lvl }} </td>
          {% ifequal u.src "XN" %}
          <td> {% trans "XN" %} </td>
          {% else %}

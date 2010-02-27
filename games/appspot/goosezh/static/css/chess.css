@@ -195,6 +195,11 @@ a {
     text-decoration:none;
 }
 
+a.curitem {
+    color:#ABC;
+    text-decoration:line-through;
+}
+
 a:hover {
     color:#444;
     text-decoration:underline;

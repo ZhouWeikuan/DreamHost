@@ -26,7 +26,7 @@ class FBUsers(db.Model):
 class Games(db.Model):
     gid = db.StringProperty(required=True);
     uid = db.StringProperty(required=True);
-    lvl = db.IntegerProperty(default=32);
+    lvl = db.IntegerProperty(default=0);
     res = db.StringProperty(choices=set(["",'win', 'lose', 'draw', "Win","Lose","Draw", "Start"]), default='Start');
     tms = db.DateTimeProperty();
 

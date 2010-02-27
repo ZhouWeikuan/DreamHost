@@ -61,7 +61,8 @@
             </td></tr>
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
-                <td colspan='2'> {% trans "User name" %}: {{ user.name }} &nbsp;</td>
+                <td> {{ user.name }} &nbsp;</td>
+                <td> {{ tit }} &nbsp;</td>
                 <td> {% trans "Score" %}: {{ user.score}} &nbsp; </td>
             </tr>
             <tr style="font-size:12px;">
@@ -76,9 +77,9 @@
     <td>
         <table border='0'>
             <h3 class='nav'> {% trans "System Notice!" %} </h3>
-            <tr><td> {% trans "We are planning to upgrade the chess next weekend(Feb 28th), " %}</td></tr>
-            <tr><td> {% trans "The services may not be very stable at that time," %} </td></tr>
-            <tr><td> {% trans "Please forgive us if any." %}  </td></tr>
+            <tr><td> {% trans "The game is in upgrade." %}</td></tr>
+            <tr><td> {% trans "It is estimated to be done at 6:00pm GMT+8" %} </td></tr>
+            <tr><td> {% trans "Please visit it later. Thanks!" %}  </td></tr>
         </table>
     </td>
     </table>
@@ -91,19 +92,13 @@
         scrolling="no" allowtransparency="yes" >
     </iframe>
     <script type='text/javascript'>
-        var timeout, timeoutid;
+        var timeout = 2 * 1000 * 60;
         function refresh_this_page(){
             var ele = document.getElementById('frRecentGames');
             ele.src = ele.src;
-            timeout *= 2;
-            timeoutid = window.setTimeout('refresh_this_page()', timeout);
+            window.setTimeout('refresh_this_page()', timeout);
         }
-        function reset_timeout(){
-            timeout = 2 * 1000 * 60;
-            window.clearTimeout(timeoutid);
-            timeoutid = window.setTimeout('refresh_this_page()', timeout);
-        }
-        reset_timeout();
+        window.setTimeout('refresh_this_page()', timeout);
     </script>
 
     <div class="nav">
@@ -135,7 +130,6 @@
         var XQWLight = document["XQWLight"];
 
         function restart_click() {
-            reset_timeout();
             XQWLight.setLevel(selLevel.options[selLevel.selectedIndex].value);
             XQWLight.restart(selFlipped.selectedIndex == 1, 0, '{{ sns_uid }}');
         }
@@ -146,11 +140,9 @@
         <dt><font size="2">{% trans "The level for computer:" %}</font></dt>
         <dt><font size="2">
             <select name="selLevel" id="selLevel" size="5" >
-                <option value="1"> {% trans "Entry Level" %} </option>
-                <option value="4"> {% trans "First Level" %} </option>
-                <option selected value="16"> {% trans "Middle Level" %} </option>
-                <option value="32"> {% trans "Advanced Level" %} </option>
-                <option value="64"> {% trans "Last Level" %} </option>
+            {%for duan in lvl%}
+                <option value="{{forloop.counter0}}"> {{ duan }} </option>
+            {%endfor%}
             </select></font></dt>
         </td>
         <td>
@@ -169,12 +161,15 @@
     </table>
     <dt><font size="2"> </font></dt>
     <dt><font color="#008080" size="2"><strong></strong></font></dt>
-    <dt><font color="#008080" size="2"><strong>{% trans "Game Rules" %}</strong></font></dt>
-    <dt><font color="#008080" size="2">{% trans "For each game, it pays 2 for entry level, 4 for first level," %}<br> 
-                   {% trans "8 for middle level, 16 for advanced level, 32 for last level" %} </font></dt>
-    <dt><font color="#008080" size="2">{% trans "Everyone has 100 at first. He gets full score for the game if win," %}<br> 
-        {% trans "half score if draw, lose the score depending on levels" %} </font></dt>
-    <dt><font color="#008080" size="2">{% trans "He loses if he leaves or restart" %} </font></dt>
+    <dt><font color="#008080" size="2"><strong>
+        <a target="_blank" href="{{ sns.homeurl }}/help">
+            {% trans "Read game rules in help" %} </a></strong></font></dt>
+    <dt><font color="#008080" size="2"> <br>
+        </font></dt>
+        <dt><font color="#008080" size="2"> <br>
+        </font></dt>
+        <dt><font color="#008080" size="2"> <br>
+        </font></dt>
     </dl>
     <dl> </dl>
     </td>

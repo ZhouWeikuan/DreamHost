@@ -17,7 +17,7 @@
 #
 
 import os;
-import time, datetime;
+import time, datetime, math;
 from google.appengine.ext import webapp
 from google.appengine.ext import db
 from google.appengine.ext.webapp import template
@@ -36,29 +36,11 @@ from django.utils import simplejson
 keyRecent = 'recentGames'
 
 def getLevelText(lvl):
-    if lvl <= 1:
-        txt = "Entry Level"
-    elif lvl <= 4:
-        txt = "First Level"
-    elif lvl <= 16:
-        txt = "Middle Level"
-    elif lvl <= 32:
-        txt = "Advanced Level"
-    else :
-        txt = "Last Level"
+    txt = "lvl " + str(lvl)
     return txt
 
 def getLevelScore(lvl):
-    if lvl <= 1:
-        fen = 2
-    elif lvl <= 4:
-        fen = 4
-    elif lvl <= 16:
-        fen = 8
-    elif lvl <= 32:
-        fen = 16
-    elif lvl <= 64:
-        fen = 32
+    fen = int(math.pow(2, lvl+1))
     return fen
 
 def setHandlerLocale(handle, lang):
@@ -101,8 +83,9 @@ class GameInfo():
     url = ''
     res = ''
     tim = ''
+    tms = 0 
     src = 'FB'
-    lvl = 16
+    lvl = 0
 
 def formatGame(g, u=None):
     ret = GameInfo()
@@ -110,12 +93,27 @@ def formatGame(g, u=None):
         u = getUserObject(g.uid)
     ret.url = u.getProfileUrl()
     ret.tim = "%02d:%02d:%02d"%(g.tms.hour, g.tms.minute, g.tms.second);
+    ret.tms = g.tms
     ret.res = g.res
     ret.lvl = getLevelText(g.lvl)
     ret.name = u.name
     ret.icon = u.icon
     ret.src = u.src
     return ret
+
+def checkUpgrade(u, v):
+    k = "score_" + str(u.uid)
+    fen = memcache.get(key=k)
+    if fen is None:
+        fen = 0
+    fen = fen + v
+    if fen < 0:
+        fen = 0
+    if fen >= 3 and u.lvl < 9:
+        u.lvl = u.lvl + 1
+        fen = 0
+    memcache.set(key=k, value=fen, time=3600*6) # expire in 6 hours
+    return
 
 def updateCache(g, u):
     try :
@@ -169,18 +167,24 @@ class RankHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
         rev = int(self.request.get('rev', default_value='0'))
+        lvl = int(self.request.get('lvl', default_value='9'))
         if rev == 1:
-            users = db.GqlQuery("SELECT * FROM FBUsers ORDER BY score").fetch(20);
+            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
         else :
-            users = db.GqlQuery("SELECT * FROM FBUsers ORDER BY score DESC, win DESC").fetch(20);
+            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score DESC, win DESC", lvl).fetch(20);
 
+        rev = 1 - rev
         lang = opensns.sns.lang
         lang = setHandlerLocale(self, lang)
+        lvls = [ _("lvl " + str(i)) for i in range(9, -1, -1)]
 
         template_values = {
             'sns'  : opensns.sns,
             'lang' : lang,
             'users': users,
+            'lvls': lvls,
+            'lvl': lvl,
+            'rev': rev,
         }
 
         self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
@@ -234,29 +238,18 @@ class CleanGamesHandler(webapp.RequestHandler):
 class StartHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
-        lvl = int(self.request.get('lvl', default_value='32'))
+        lvl = int(self.request.get('lvl', default_value='0'))
         user = getUserObject(uid);
 
-        try :
-            his_games = db.GqlQuery("SELECT * FROM Games WHERE uid = :1 and res in ('', 'Start') LIMIT 5", uid);
-            if his_games:
-                for g in his_games:
-                    g.res = "Lose"
-                    g.tms = datetime.datetime.today()
-                    user.lose = user.lose + 1
-                    user.score = user.score - getLevelScore(g.lvl)
-                    updateCache(g, user)
-                    g.delete()
-            user.put()
-        except:
-            pass
-            
         gid = str(int(time.time()))
         newgame = Games(gid=gid, uid=uid, lvl=lvl)
         newgame.res = 'Start'
         newgame.tms = datetime.datetime.today()
-        newgame.put()
+        user.score = user.score - getLevelScore(newgame.lvl)
+        user.lose = user.lose + 1
         updateCache(newgame, user)
+        checkUpgrade(user, -1)
+        user.put()
         self.response.out.write(gid);
         pass;
 
@@ -264,29 +257,33 @@ class ResultHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
         act = self.request.get('action');
+        lvl = int(self.request.get('lvl', default_value='0'))
+        gid = str(int(time.time()))
+        newgame = Games(gid=gid, uid=uid, lvl=lvl)
 
-        game = db.GqlQuery("SELECT * FROM Games WHERE uid = :1 AND res in ('', 'Start')", uid).get();
-        if game is None:
-            return
-
-        lvl = int(self.request.get('lvl', default_value='16'))
-        fen = getLevelScore(game.lvl)
-
+        fen = getLevelScore(lvl)
         user = getUserObject(uid);
+        val = 0
         if act == 'win' :
             user.win = user.win + 1
-            user.score = user.score + fen
+            user.lose = user.lose - 1
+            user.score = user.score + fen*2
+            val = 2
         elif act == 'lose':
-            user.lose = user.lose + 1
-            user.score = user.score - fen
+            val = 0
         else:
             user.draw = user.draw + 1
-            user.score = user.score + fen/2
-        game.res = act.capitalize()
-        game.tms = datetime.datetime.today()
+            user.lose = user.lose - 1
+            user.score = user.score + fen*3/2
+            val = 1 
 
-        updateCache(game, user)
-        game.delete()
+        if lvl >= user.lvl:
+            checkUpgrade(user, val)
+
+        newgame.res = act.capitalize()
+        newgame.tms = datetime.datetime.today()
+
+        updateCache(newgame, user)
         user.put() 
 
 class InviteHandler(webapp.RequestHandler):
@@ -313,12 +310,19 @@ class MainHandler(webapp.RequestHandler):
     lang = opensns.sns.lang
     setHandlerLocale(self, lang)
     user = getUserObject(sns_uid)
+    lvl = []
+    for i in range(0, user.lvl+1):
+        t = "lvl " + str(i)
+        lvl.append(_(t))
 
+    tit = _("lvl " + str(user.lvl))
     template_values = {
         'sns' : opensns.sns,
         'lang' : lang,
         'sns_uid': sns_uid,    
         'user': user,
+        'lvl': lvl,
+        'tit': tit,
     }
 
     self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
