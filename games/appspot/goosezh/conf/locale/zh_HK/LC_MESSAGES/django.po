@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 14:01+0800\n"
+"POT-Creation-Date: 2010-02-27 16:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,15 +44,15 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "訪問這個游戲"
 
-#: main.py:135 template/rank.html:72
+#: main.py:137 template/rank.html:72
 msgid "FB"
 msgstr "臉書"
 
-#: main.py:136 template/rank.html:70
+#: main.py:138 template/rank.html:70
 msgid "XN"
 msgstr "校內網"
 
-#: main.py:177 main.py:316
+#: main.py:179 main.py:318
 msgid "lvl "
 msgstr "段"
 
@@ -78,7 +78,7 @@ msgstr "開局"
 
 #: conf/settings.py:17
 msgid "lvl 0"
-msgstr "零段"
+msgstr "無段"
 
 #: conf/settings.py:18
 msgid "lvl 1"
@@ -167,16 +167,16 @@ msgid "System Notice!"
 msgstr "系統公告"
 
 #: template/index.html:80
-msgid "The game is in upgrade."
-msgstr "游戲正在升級中"
+msgid "The game is upgraded."
+msgstr "游戲已升級"
 
 #: template/index.html:81
-msgid "It is estimated to be done at 6:00pm GMT+8"
-msgstr "大概中原時間下午6點左右完成"
+msgid "Please refer to help for more informaiton."
+msgstr "想了解更多信息，請看幫助"
 
 #: template/index.html:82
-msgid "Please visit it later. Thanks!"
-msgstr "請完成後再使用，謝謝！"
+msgid "Have a wonderful time!"
+msgstr "祝大家玩得開心"
 
 #: template/index.html:105
 msgid "Play Against Computer"
@@ -230,7 +230,7 @@ msgstr "來自"
 msgid "Visit home page"
 msgstr "訪問個人主頁"
 
-#: template/recentgames.html:5 template/recentgames.html.py:10
+#: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr "最近結果"
 
@@ -323,6 +323,12 @@ msgstr "此項功能尚在研發中"
 msgid "On Handicap"
 msgstr "關于讓子"
 
+#~ msgid "It is estimated to be done at 6:00pm GMT+8"
+#~ msgstr "大概中原時間下午6點左右完成"
+
+#~ msgid "Please visit it later. Thanks!"
+#~ msgstr "請完成後再使用，謝謝！"
+
 #~ msgid " Rank"
 #~ msgstr "名次"
 
@@ -388,9 +394,6 @@ msgstr "關于讓子"
 
 #~ msgid "Happy Chinese New Year!"
 #~ msgstr "新年快樂！"
-
-#~ msgid "Have a wonderful holiday!"
-#~ msgstr "祝大家玩得開心"
 
 #~ msgid "We will improve the game after the new year."
 #~ msgstr "新年後，我們會做進一步改進"

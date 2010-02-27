@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 14:01+0800\n"
+"POT-Creation-Date: 2010-02-27 16:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,15 +44,15 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
-#: main.py:135 template/rank.html:72
+#: main.py:137 template/rank.html:72
 msgid "FB"
 msgstr "Facebook"
 
-#: main.py:136 template/rank.html:70
+#: main.py:138 template/rank.html:70
 msgid "XN"
 msgstr "Xiaonei"
 
-#: main.py:177 main.py:316
+#: main.py:179 main.py:318
 msgid "lvl "
 msgstr "Level"
 
@@ -167,15 +167,15 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:80
-msgid "The game is in upgrade."
+msgid "The game is upgraded."
 msgstr ""
 
 #: template/index.html:81
-msgid "It is estimated to be done at 6:00pm GMT+8"
+msgid "Please refer to help for more informaiton."
 msgstr ""
 
 #: template/index.html:82
-msgid "Please visit it later. Thanks!"
+msgid "Have a wonderful time!"
 msgstr ""
 
 #: template/index.html:105
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Visit home page"
 msgstr "Visit home page"
 
-#: template/recentgames.html:5 template/recentgames.html.py:10
+#: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr ""
 
