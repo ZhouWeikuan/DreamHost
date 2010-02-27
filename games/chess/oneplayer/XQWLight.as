@@ -123,7 +123,7 @@ package {
 		private var pos:Position = new Position();
 		private var search:Search = new Search(pos, 16);
 		private var bFlipped:Boolean = false, bSound:Boolean = true;
-		private var nHandicap:int = 0, nLevel:int = 0, nTime:int = 160;
+		private var nHandicap:int = 0, nLevel:int = 0, nTime:int = 160, nDeep:int = 32;
 		private var sqSelected:int = 0, mvLast:int = 0;
 		private var sdCurrent:int, sdRetract:int = 0;
 		private var pcCurrent:Array = new Array(256), pcRetract:Array = new Array(256);
@@ -219,7 +219,7 @@ package {
 		}
 
 		private function responseMove(e:TimerEvent):void {
-			var mv:int = search.searchMain(nTime, nLevel);
+			var mv:int = search.searchMain(nTime, nDeep);
 			if (mvLast > 0) {
 				drawMove(mvLast);
 			}
@@ -382,27 +382,9 @@ package {
 		}
 
 		public function setLevel(nLevel_:int):void {
-			if (nLevel_<= 1)
-            {
-                nTime = 10;
-            }
-            else if (nLevel_ <= 4)
-            {
-                nTime = 40;
-            }
-            else if (nLevel_ <= 16)
-            {
-                nTime = 160;
-            }
-            else if (nLevel_ <= 32)
-            {
-                nTime = 320;
-            }
-            else
-            {
-                nTime = 1000;
-            }// end else if
             nLevel = nLevel_;
+            nDeep = int(Math.pow(1.59, nLevel));
+            nTime = int(10 * Math.pow(1.69, nLevel));
             return;
 		}
 
