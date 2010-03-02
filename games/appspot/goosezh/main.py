@@ -239,6 +239,8 @@ class StartHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
         lvl = int(self.request.get('lvl', default_value='0'))
+        if lvl >= 10:
+            lvl = 9
         user = getUserObject(uid);
 
         gid = str(int(time.time()))
