@@ -341,6 +341,21 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 </script>
 </head>
 <body bgcolor="#ffffff">
+
+<div>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-3444671286856380";
+    /* frontBanner */
+    google_ad_slot = "6809388696";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+
 <div class="tc">
     <em> 游戏进行时，请勿刷新，以免数据丢失</em> <br>
     没人在玩？ 点<input type="button" value="这里" style="border-width:0px" 
@@ -390,6 +405,19 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
 </noscript>
 <div class="tc">
     version=0.0.1, beta release
+</div>
+
+<div>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-3444671286856380";
+    google_ad_slot = "4732789149";
+    google_ad_width = 468;
+    google_ad_height = 60;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
 </div>
 
 <script type="text/javascript" src="ajax.js"> </script>

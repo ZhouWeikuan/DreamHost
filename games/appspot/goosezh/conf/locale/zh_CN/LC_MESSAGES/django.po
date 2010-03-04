@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 16:02+0800\n"
+"POT-Creation-Date: 2010-03-04 20:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -44,15 +44,15 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "访问这个游戏"
 
-#: main.py:137 template/rank.html:72
+#: main.py:137 template/rank.html:86
 msgid "FB"
 msgstr "脸书"
 
-#: main.py:138 template/rank.html:70
+#: main.py:138 template/rank.html:84
 msgid "XN"
 msgstr "校内网"
 
-#: main.py:179 main.py:318
+#: main.py:179 main.py:320
 msgid "lvl "
 msgstr "段"
 
@@ -129,7 +129,7 @@ msgid "Invite Friends"
 msgstr "邀请好友"
 
 #: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:39 template/help.html:16
+#: template/rank.html.py:53 template/help.html:16
 msgid "RankList"
 msgstr "排行榜"
 
@@ -142,91 +142,91 @@ msgstr "帮助"
 msgid "Play chess with others"
 msgstr "双人对弈"
 
-#: template/index.html:55
+#: template/index.html:74
 msgid "Personal Information"
 msgstr "个人信息"
 
-#: template/index.html:66 template/rank.html:55
+#: template/index.html:85 template/rank.html:69
 msgid "Score"
 msgstr "分数"
 
-#: template/index.html:70 template/rank.html:56
+#: template/index.html:89 template/rank.html:70
 msgid "Win"
 msgstr "赢局"
 
-#: template/index.html:71 template/rank.html:57
+#: template/index.html:90 template/rank.html:71
 msgid "Lose"
 msgstr "输局"
 
-#: template/index.html:72 template/rank.html:58
+#: template/index.html:91 template/rank.html:72
 msgid "Draw"
 msgstr "平局"
 
-#: template/index.html:79
+#: template/index.html:98
 msgid "System Notice!"
 msgstr "系统公告"
 
-#: template/index.html:80
+#: template/index.html:99
 msgid "The game is upgraded."
 msgstr "游戏已升级"
 
-#: template/index.html:81
+#: template/index.html:100
 msgid "Please refer to help for more informaiton."
 msgstr "想了解更多信息，请看帮助"
 
-#: template/index.html:82
+#: template/index.html:101
 msgid "Have a wonderful time!"
 msgstr "祝大家玩得开心"
 
-#: template/index.html:105
+#: template/index.html:125
 msgid "Play Against Computer"
 msgstr "与电脑对战"
 
-#: template/index.html:140
+#: template/index.html:160
 msgid "The level for computer:"
 msgstr "电脑等级："
 
-#: template/index.html:150
+#: template/index.html:170
 msgid "Who goes first?"
 msgstr "谁先走？"
 
-#: template/index.html:154
+#: template/index.html:174
 msgid "I go first"
 msgstr "我先走"
 
-#: template/index.html:155
+#: template/index.html:175
 msgid "Computer goes first"
 msgstr "电脑先走"
 
-#: template/index.html:158
+#: template/index.html:178
 msgid "Start Game"
 msgstr "开局"
 
-#: template/index.html:166
+#: template/index.html:186
 msgid "Read game rules in help"
 msgstr "请阅读帮助以了解规则"
 
-#: template/index.html:179 template/help.html:85
+#: template/index.html:207 template/help.html:105
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
-#: template/rank.html:51
+#: template/rank.html:65
 msgid "Rank"
 msgstr "名次"
 
-#: template/rank.html:52
+#: template/rank.html:66
 msgid "Player(s)"
 msgstr "玩家"
 
-#: template/rank.html:53
+#: template/rank.html:67
 msgid "Level"
 msgstr "段位"
 
-#: template/rank.html:54
+#: template/rank.html:68
 msgid "SNS"
 msgstr "来自"
 
-#: template/rank.html:65
+#: template/rank.html:79
 msgid "Visit home page"
 msgstr "访问个人主页"
 
@@ -322,6 +322,18 @@ msgstr "此项功能尚在研发中"
 #: template/help.html:78
 msgid "On Handicap"
 msgstr "关于让子"
+
+#: template/help.html:84
+msgid "On earnings"
+msgstr "关于收益"
+
+#: template/help.html:86
+msgid "We have applied Google adsense on the pages."
+msgstr "我们已经申请了Google adsense广告联盟"
+
+#: template/help.html:87
+msgid "If you feel like this game, you can click the ads as the following."
+msgstr "如果您觉得这个游戏还不错，心情好的话，有空点一下页面上的广告吧"
 
 #~ msgid "It is estimated to be done at 6:00pm GMT+8"
 #~ msgstr "大约北京时间下午6点前完成"
