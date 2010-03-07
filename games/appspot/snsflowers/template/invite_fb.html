@@ -1,0 +1,9 @@
+{% load i18n %}
+<fb:request-form action="http://apps.facebook.com/chschess/?skipped=1" 
+    method="POST" invite="true" type="Online Games" 
+    content= "Invite your friends to play chinese chess(vs. computer). 
+                <fb:req-choice url='http://apps.facebook.com/chschess/' label='Add Chinese Chess!' /> " >
+<fb:multi-friend-selector showborder="false" 
+    actiontext="Invite your friends to use Chinse Chess(vs. computer).">
+</fb:request-form>
+

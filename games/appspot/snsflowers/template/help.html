@@ -1,0 +1,123 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Help Files" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Chess Arena" %} </a></li>
+        <li class="tab_off"> 
+            <a target="_blank" href="{{ sns.invitePage }}"> 
+                {% trans "Invite Friends" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
+            {% trans "RankList" %} </a></li>
+        <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help Files" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
+            {% trans "Play chess with others" %}</a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+        where you may get a "operation aborted" error --> 
+    <div id="FB_HiddenIFrameContainer" 
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+        type="text/javascript"> </script>
+    <script type="text/javascript"> 
+        FB_RequireFeatures(["CanvasUtil"], function(){ 
+                FB.XdComm.Server.init('/chchess'); 
+                FB.CanvasClient.startTimerToSizeToContent(); 
+                }); 
+    </script>
+    {% endifequal %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class="nav">
+        <h3> {% trans "Tips: This help file will take effect after Feb 28 2010" %} </h3>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "Game Rules" %} </h3> </div>
+    <div>
+        {% trans "Each player is on level 0 and has score 100 initially." %} <br>
+        {% trans "Each game has different score for different level." %} <br>
+        {% trans "Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw." %} <br>
+        {% trans "Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw." %} <br>
+        {% trans "Level 2 has score 8, level 3 has score 16, and so on for later levels." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "Levels Description" %} </h3> </div>
+    <div>
+        {% trans "This game contains 10 levels for each player." %} <br>
+        {% trans "The player can only play the games which level is lower or equal to his level." %} <br>
+        {% trans "After the player upgrades his level, he can play more levels." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "How To Upgrade Your Level" %} </h3> </div>
+    <div>
+        {% trans "The player can upgrade his level, only after he wins 3 consecutive games with the same level as his level(called same-level game)." %} <br>
+        {% trans "The games which levels are lower than his level is ignored." %} <br>
+        {% trans "Three consecutive games mean the neiboring games should be played in 6 hours." %} <br>
+        {% trans "If the play wins a same-level game, and after more than 6 hours, he wins another same-level game." %} <br>
+        {% trans "These two same-level games are not consecutive." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "On Retract" %} </h3> </div>
+    <div>
+        {% trans "This is not implemented yet." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "On Handicap" %} </h3> </div>
+    <div>
+        {% trans "This is not implemented yet." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "On earnings" %} </h3> </div>
+    <div>
+        {% trans "We have applied Google adsense on the pages." %} <br>
+        {% trans "If you feel like this game, you can click the ads as the following." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "4732789149";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>
+

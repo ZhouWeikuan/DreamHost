@@ -1,20 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
 
 import os;
 import time, datetime, math;
@@ -23,7 +8,7 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp import util
 from google.appengine.api import memcache
-from dbs import FBUsers, Games
+from dbs import FBUsers
 import opensns
 
 # multilingual settings
@@ -40,7 +25,7 @@ def getLevelText(lvl):
     return txt
 
 def getLevelScore(lvl):
-    fen = int(math.pow(2, lvl+1))
+    fen = 100 * lvl * lvl;
     return fen
 
 def setHandlerLocale(handle, lang):
@@ -82,7 +67,6 @@ class GameInfo():
     icon = ''
     url = ''
     res = ''
-    tim = ''
     tms = 0 
     src = 'FB'
     lvl = 0
@@ -92,7 +76,6 @@ def formatGame(g, u=None):
     if not u:
         u = getUserObject(g.uid)
     ret.url = u.getProfileUrl()
-    ret.tim = "%02d:%02d:%02d"%(g.tms.hour, g.tms.minute, g.tms.second);
     ret.tms = g.tms
     ret.res = g.res
     ret.lvl = getLevelText(g.lvl)
@@ -106,12 +89,10 @@ def checkUpgrade(u, v):
     fen = memcache.get(key=k)
     if fen is None:
         fen = 0
-    if v < 0 :
+    fen = fen + v
+    if fen < 0:
         fen = 0
-    else : 
-        fen = fen + v
-
-    if fen >= 3 and u.lvl < 10:
+    if fen >= 3 and u.lvl < 9:
         u.lvl = u.lvl + 1
         fen = 0
     memcache.set(key=k, value=fen, time=3600*6) # expire in 6 hours
@@ -169,7 +150,7 @@ class RankHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
         rev = int(self.request.get('rev', default_value='0'))
-        lvl = int(self.request.get('lvl', default_value='10'))
+        lvl = int(self.request.get('lvl', default_value='9'))
         if rev == 1:
             users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
         else :
@@ -178,7 +159,7 @@ class RankHandler(webapp.RequestHandler):
         rev = 1 - rev
         lang = opensns.sns.lang
         lang = setHandlerLocale(self, lang)
-        lvls = [ _("lvl " + str(i)) for i in range(10, -1, -1)]
+        lvls = [ _("lvl " + str(i)) for i in range(9, -1, -1)]
 
         template_values = {
             'sns'  : opensns.sns,
@@ -221,20 +202,6 @@ class RecentGamesHandler(webapp.RequestHandler):
 
 class CleanGamesHandler(webapp.RequestHandler):
     def get(self):
-        day = int(self.request.get('day', default_value='3'))
-        tms = datetime.datetime.today() - datetime.timedelta(days=day)
-        games = db.GqlQuery("SELECT * FROM Games WHERE tms < :1 LIMIT 10", tms);
-        if games:
-            for g in games:
-                if g.res == '' or g.res == 'Start':
-                    try :
-                        user = getUserObject(g.uid)
-                        user.lose = user.lose + 1
-                        user.score = user.score - getLevelScore(g.lvl)
-                        user.put()
-                    except :
-                        pass
-            db.delete(games)
         pass;
 
 class StartHandler(webapp.RequestHandler):
@@ -250,7 +217,6 @@ class StartHandler(webapp.RequestHandler):
         newgame.res = 'Start'
         newgame.tms = datetime.datetime.today()
         user.score = user.score - getLevelScore(newgame.lvl)
-        user.lose = user.lose + 1
         updateCache(newgame, user)
         checkUpgrade(user, -1)
         user.put()
@@ -262,8 +228,6 @@ class ResultHandler(webapp.RequestHandler):
         uid = self.request.get('uid');
         act = self.request.get('action');
         lvl = int(self.request.get('lvl', default_value='0'))
-        if lvl >= 10:
-            lvl = 9
         gid = str(int(time.time()))
         newgame = Games(gid=gid, uid=uid, lvl=lvl)
 
@@ -316,11 +280,8 @@ class MainHandler(webapp.RequestHandler):
     lang = opensns.sns.lang
     setHandlerLocale(self, lang)
     user = getUserObject(sns_uid)
-    lim = user.lvl+1
-    if lim > 10:
-        lim = 10
     lvl = []
-    for i in range(0, lim):
+    for i in range(0, user.lvl+1):
         t = "lvl " + str(i)
         lvl.append(_(t))
 
