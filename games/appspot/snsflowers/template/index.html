@@ -55,8 +55,8 @@
             </tr>
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
-                <td> {% trans "Score" %}: {{ user.score}} &nbsp; </td>
-                <td> &nbsp;&nbsp; </td>
+                <td> {% trans "Score" %} &nbsp; </td>
+                <td> {{ user.score}} &nbsp; </td>
             </tr>
         </table>
     </td>
@@ -64,9 +64,9 @@
     <td>
         <h3 class='nav'> {% trans "System Notice!" %} </h3>
         <table border='0'>
-            <tr><td> a </td></tr>
-            <tr><td> b </td></tr>
-            <tr><td> c </td></tr>
+            <tr><td> &nbsp; </td></tr>
+            <tr><td> &nbsp; </td></tr>
+            <tr><td> &nbsp; </td></tr>
         </table>
     </td>
     </table>
@@ -102,9 +102,11 @@
             <param name="movie" value="http://snsflowers.appspot.com/static/flower.swf">
             <param name="quality" value="high">
             <param name="menu" value="false">
+            <param name="flashvars" value="lang={{lang}}">
             <embed src="http://snsflowers.appspot.com/static/flower.swf" 
             name="flower" align="middle" border="0" width="770" height="578" quality="high" 
             allowscriptaccess="always" allowfullscreen="false" menu="false" 
+            flashvars="lang={{lang}}"
             type="application/x-shockwave-flash" 
             pluginspage="http://www.macromedia.com/go/getflashplayer" />
             </object>
@@ -126,7 +128,7 @@
         <tr>
             <td>
             <dt><font size="2"> </font></dt>
-            <dt><font size="2">{% trans "Choose the level:" %}</font></dt>
+            <dt><font size="2">{% trans "Set level:" %}</font></dt>
             <dt><font size="2">
                 <select name="selLevel" id="selLevel" size="5" >
                 {%for duan in lvl%}

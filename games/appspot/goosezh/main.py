@@ -106,7 +106,7 @@ def checkUpgrade(u, v):
     fen = memcache.get(key=k)
     if fen is None:
         fen = 0
-    if v < 0 :
+    if v == 0 :
         fen = 0
     else : 
         fen = fen + v

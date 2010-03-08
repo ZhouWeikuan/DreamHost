@@ -25,7 +25,7 @@ def getLevelText(lvl):
     return txt
 
 def getLevelScore(lvl):
-    fen = 100 * lvl * lvl;
+    fen = 10 * lvl * lvl * lvl;
     return fen
 
 def setHandlerLocale(handle, lang):
@@ -71,18 +71,19 @@ class GameInfo():
     src = 'FB'
     lvl = 0
 
+    def __init__(self, uid, lvl):
+        self.uid = uid
+        self.lvl = lvl
+
 def formatGame(g, u=None):
-    ret = GameInfo()
     if not u:
         u = getUserObject(g.uid)
-    ret.url = u.getProfileUrl()
-    ret.tms = g.tms
-    ret.res = g.res
-    ret.lvl = getLevelText(g.lvl)
-    ret.name = u.name
-    ret.icon = u.icon
-    ret.src = u.src
-    return ret
+    g.url = u.getProfileUrl()
+    g.lvl = getLevelText(g.lvl)
+    g.name = u.name
+    g.icon = u.icon
+    g.src = u.src
+    return g
 
 def checkUpgrade(u, v):
     k = "score_" + str(u.uid)
@@ -90,7 +91,7 @@ def checkUpgrade(u, v):
     if fen is None:
         fen = 0
     fen = fen + v
-    if fen < 0:
+    if fen == 0:
         fen = 0
     if fen >= 3 and u.lvl < 9:
         u.lvl = u.lvl + 1
@@ -210,42 +211,33 @@ class StartHandler(webapp.RequestHandler):
         lvl = int(self.request.get('lvl', default_value='0'))
         if lvl >= 10:
             lvl = 9
-        user = getUserObject(uid);
 
-        gid = str(int(time.time()))
-        newgame = Games(gid=gid, uid=uid, lvl=lvl)
+        user = getUserObject(uid);
+        newgame = GameInfo(uid=uid, lvl=lvl)
         newgame.res = 'Start'
         newgame.tms = datetime.datetime.today()
         user.score = user.score - getLevelScore(newgame.lvl)
         updateCache(newgame, user)
         checkUpgrade(user, -1)
         user.put()
-        self.response.out.write(gid);
-        pass;
+        return
 
 class ResultHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
         act = self.request.get('action');
         lvl = int(self.request.get('lvl', default_value='0'))
-        gid = str(int(time.time()))
-        newgame = Games(gid=gid, uid=uid, lvl=lvl)
+        score = int(self.request.get('score', default_value='0'))
 
-        fen = getLevelScore(lvl)
+        newgame = GameInfo(uid=uid, lvl=lvl)
         user = getUserObject(uid);
         val = 0
         if act == 'win' :
-            user.win = user.win + 1
-            user.lose = user.lose - 1
-            user.score = user.score + fen*2
             val = 2
-        elif act == 'lose':
+        else : # act == 'lose'
             val = 0
-        else:
-            user.draw = user.draw + 1
-            user.lose = user.lose - 1
-            user.score = user.score + fen*3/2
-            val = 1 
+            
+        user.score = user.score + score
 
         if lvl >= user.lvl:
             checkUpgrade(user, val)
