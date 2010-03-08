@@ -47,12 +47,12 @@ class FacebookWrapper():
     def __init__(self, req):
         self.src = 'FB'
         self.lang       = req.request.get('fb_sig_locale', default_value='en')
-        self.api_key    = '4676b3b9629ef74da7e3367ffbbba1a1'
-        self.secret_key = '7f98509397899a1497891eac880a1b2d'; 
+        self.api_key    = '46ec9d4d989bf5968efcef973b7fb840'
+        self.secret_key = '22cb2d5bfbeaf4d6cc2fee1ab0cf2bfd' 
         self.uid        = req.request.get('fb_sig_user', default_value='0')
-        self.homeurl    = "http://apps.facebook.com/chschess";
+        self.homeurl    = "http://apps.facebook.com/yihuajiemu";
         self.topurl     = "http://apps.facebook.com"
-        self.appID      = "265137985846";
+        self.appID      = "383491791998";
         self.auth_url   = 'http://www.facebook.com/tos.php?api_key=' + self.api_key + "&v=1.0&canvas&next=";
         self.invitePage = self.homeurl + '/invite?fb_force_mode=fbml'
         self.app        = pyfacebook.Facebook(self.api_key, self.secret_key)
