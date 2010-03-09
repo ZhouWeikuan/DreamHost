@@ -2,22 +2,24 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>{% trans "Chinese Chess" %} {% trans "RankList" %} </title>
+    <title>{% trans "Rotate Branches" %} {% trans "RankList" %} </title>
     <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
 </head>
 <body id="tab_on" class="body">
     <ul id="tabnav">
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}"> 
-            {% trans "Chess Arena" %} </a></li>
+            {% trans "Rotate Branches" %} </a></li>
         <li class="tab_off"> 
             <a target="_blank" href="{{ sns.invitePage }}"> 
                 {% trans "Invite Friends" %} </a></li>
         <li class="tab_on"> <a target="_top" href="{{sns.homeurl}}/rank"> 
             {% trans  "RankList" %} </a></li>
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
-            {% trans "Help Files" %} </a></li>
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{sns.topurl}}/chschess/"> 
+            {% trans "Chess(1)" %}</a></li>
         <li class="tab_off"> <a target="_blank" href="{{sns.topurl}}/chchess/"> 
-            {% trans "Play chess with others" %}</a></li>
+            {% trans "Chess(2)" %}</a></li>
     </ul>
 
     {% ifequal sns.src 'FB' %}
@@ -62,14 +64,11 @@
     </h3></div>
     <table border='0' style="text-align:center;">
         <thead>
-            <th width='80'> {% trans "Rank" %} </th>
-            <th width='200'> {% trans "Player(s)" %} </th>
-            <th width='72'> {% trans "Level" %} </th>
-            <th width='72'> {% trans "SNS" %} </th>
-            <th width='72'> {% trans "Score" %} </th>
-            <th width='72'> {% trans "Win" %} </th>
-            <th width='72'> {% trans "Lose" %} </th>
-            <th width='72'> {% trans "Draw" %} </th>
+            <th width='100'> {% trans "Rank" %} </th>
+            <th width='240'> {% trans "Player(s)" %} </th>
+            <th width='100'> {% trans "Level" %} </th>
+            <th width='100'> {% trans "Score" %} </th>
+            <th width='100'> {% trans "SNS" %} </th>
         </thead>
     {% for u in users %}    
         <tr>
@@ -80,15 +79,12 @@
                 href='{{ u.getProfileUrl }}'> {{ u.name }} </a>
          </td>
          <td> {{ u.lvl }} </td>
+         <td> {{ u.score}} </td>
          {% ifequal u.src "XN" %}
          <td> {% trans "XN" %} </td>
          {% else %}
          <td> {% trans "FB" %} </td>
          {% endifequal %}
-         <td> {{ u.score}} </td>
-         <td> {{ u.win }}  </td>
-         <td> {{ u.lose }} </td>
-         <td> {{ u.draw }} </td>
         </td>
         </tr>
     {% endfor %}

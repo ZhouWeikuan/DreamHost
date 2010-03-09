@@ -8,13 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 22:31+0800\n"
+"POT-Creation-Date: 2010-03-09 16:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:139 template/rank.html:88
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:140 template/rank.html:86
+msgid "XN"
+msgstr "Xiaonei"
+
+#: main.py:181 main.py:327
+msgid "lvl "
+msgstr "Level"
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -44,17 +56,228 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
-#: main.py:137 template/rank.html:86
-msgid "FB"
-msgstr "Facebook"
+#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "Chinese Chess"
 
-#: main.py:138 template/rank.html:84
-msgid "XN"
-msgstr "Xiaonei"
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr ""
 
-#: main.py:179 main.py:320
-msgid "lvl "
-msgstr "Level"
+#: template/index.html:11 template/rank.html:11 template/help.html:11
+msgid "Chess Arena"
+msgstr "Chess Arena"
+
+#: template/index.html:14 template/rank.html:14 template/help.html:14
+msgid "Invite Friends"
+msgstr "Invite Friends"
+
+#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
+#: template/rank.html.py:55 template/help.html:16
+msgid "RankList"
+msgstr "Rank List"
+
+#: template/index.html:18 template/rank.html:18 template/help.html:5
+#: template/help.html.py:18
+msgid "Help Files"
+msgstr ""
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+msgid "Play chess with others"
+msgstr "Play chess with others"
+
+#: template/index.html:22 template/rank.html:22 template/help.html:22
+msgid "Rotate Branches"
+msgstr ""
+
+#: template/index.html:71
+msgid "Personal Information"
+msgstr ""
+
+#: template/index.html:82 template/rank.html:71
+msgid "Score"
+msgstr "Score"
+
+#: template/index.html:86 template/rank.html:72
+msgid "Win"
+msgstr "Win"
+
+#: template/index.html:87 template/rank.html:73
+msgid "Lose"
+msgstr "Lose"
+
+#: template/index.html:88 template/rank.html:74
+msgid "Draw"
+msgstr "Draw"
+
+#: template/index.html:95
+msgid "System Notice!"
+msgstr ""
+
+#: template/index.html:96
+msgid "The game is upgraded."
+msgstr ""
+
+#: template/index.html:97
+msgid "Please refer to help for more informaiton."
+msgstr ""
+
+#: template/index.html:98
+msgid "Have a wonderful time!"
+msgstr ""
+
+#: template/index.html:122
+msgid "Play Against Computer"
+msgstr ""
+
+#: template/index.html:171
+msgid "The level for computer:"
+msgstr ""
+
+#: template/index.html:181
+msgid "Who goes first?"
+msgstr ""
+
+#: template/index.html:185
+msgid "I go first"
+msgstr ""
+
+#: template/index.html:186
+msgid "Computer goes first"
+msgstr ""
+
+#: template/index.html:189
+msgid "Start Game"
+msgstr ""
+
+#: template/index.html:197
+msgid "Read game rules in help"
+msgstr ""
+
+#: template/index.html:218 template/help.html:121
+msgid "CopyRight@2010"
+msgstr ""
+
+#: template/rank.html:67
+msgid "Rank"
+msgstr "Rank"
+
+#: template/rank.html:68
+msgid "Player(s)"
+msgstr "Player(s)"
+
+#: template/rank.html:69
+msgid "Level"
+msgstr ""
+
+#: template/rank.html:70
+msgid "SNS"
+msgstr ""
+
+#: template/rank.html:81
+msgid "Visit home page"
+msgstr "Visit home page"
+
+#: template/help.html:56
+msgid "Tips: This help file will take effect after Feb 28 2010"
+msgstr ""
+
+#: template/help.html:60
+msgid "Game Rules"
+msgstr ""
+
+#: template/help.html:62
+msgid "Each player is on level 0 and has score 100 initially."
+msgstr ""
+
+#: template/help.html:63
+msgid "Each game has different score for different level."
+msgstr ""
+
+#: template/help.html:64
+msgid ""
+"Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
+msgstr ""
+
+#: template/help.html:65
+msgid ""
+"Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
+msgstr ""
+
+#: template/help.html:66
+msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
+msgstr ""
+
+#: template/help.html:70
+msgid "Levels Description"
+msgstr ""
+
+#: template/help.html:72
+msgid "This game contains 10 levels for each player."
+msgstr ""
+
+#: template/help.html:73
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr ""
+
+#: template/help.html:74
+msgid "After the player upgrades his level, he can play more levels."
+msgstr ""
+
+#: template/help.html:78
+msgid "How To Upgrade Your Level"
+msgstr ""
+
+#: template/help.html:80
+msgid ""
+"The player can upgrade his level, only after he wins 3 consecutive games "
+"with the same level as his level(called same-level game)."
+msgstr ""
+
+#: template/help.html:81
+msgid "The games which levels are lower than his level is ignored."
+msgstr ""
+
+#: template/help.html:82
+msgid ""
+"Three consecutive games mean the neiboring games should be played in 6 hours."
+msgstr ""
+
+#: template/help.html:83
+msgid ""
+"If the play wins a same-level game, and after more than 6 hours, he wins "
+"another same-level game."
+msgstr ""
+
+#: template/help.html:84
+msgid "These two same-level games are not consecutive."
+msgstr ""
+
+#: template/help.html:88
+msgid "On Retract"
+msgstr ""
+
+#: template/help.html:90 template/help.html.py:96
+msgid "This is not implemented yet."
+msgstr ""
+
+#: template/help.html:94
+msgid "On Handicap"
+msgstr ""
+
+#: template/help.html:100
+msgid "On earnings"
+msgstr ""
+
+#: template/help.html:102
+msgid "We have applied Google adsense on the pages."
+msgstr ""
+
+#: template/help.html:103
+msgid "If you feel like this game, you can support us via clicking the ads."
+msgstr ""
 
 #: conf/settings.py:6
 msgid "English"
@@ -119,225 +342,6 @@ msgstr "Level 9"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "Level 10"
-
-#: template/index.html:5 template/rank.html:5 template/recentgames.html:5
-msgid "Chinese Chess"
-msgstr "Chinese Chess"
-
-#: template/index.html:11 template/rank.html:11 template/help.html:11
-msgid "Chess Arena"
-msgstr "Chess Arena"
-
-#: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
-msgstr "Invite Friends"
-
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:53 template/help.html:16
-msgid "RankList"
-msgstr "Rank List"
-
-#: template/index.html:18 template/rank.html:18 template/help.html:5
-#: template/help.html.py:18
-msgid "Help Files"
-msgstr ""
-
-#: template/index.html:20 template/rank.html:20 template/help.html:20
-msgid "Play chess with others"
-msgstr "Play chess with others"
-
-#: template/index.html:69
-msgid "Personal Information"
-msgstr ""
-
-#: template/index.html:80 template/rank.html:69
-msgid "Score"
-msgstr "Score"
-
-#: template/index.html:84 template/rank.html:70
-msgid "Win"
-msgstr "Win"
-
-#: template/index.html:85 template/rank.html:71
-msgid "Lose"
-msgstr "Lose"
-
-#: template/index.html:86 template/rank.html:72
-msgid "Draw"
-msgstr "Draw"
-
-#: template/index.html:93
-msgid "System Notice!"
-msgstr ""
-
-#: template/index.html:94
-msgid "The game is upgraded."
-msgstr ""
-
-#: template/index.html:95
-msgid "Please refer to help for more informaiton."
-msgstr ""
-
-#: template/index.html:96
-msgid "Have a wonderful time!"
-msgstr ""
-
-#: template/index.html:120
-msgid "Play Against Computer"
-msgstr ""
-
-#: template/index.html:169
-msgid "The level for computer:"
-msgstr ""
-
-#: template/index.html:179
-msgid "Who goes first?"
-msgstr ""
-
-#: template/index.html:183
-msgid "I go first"
-msgstr ""
-
-#: template/index.html:184
-msgid "Computer goes first"
-msgstr ""
-
-#: template/index.html:187
-msgid "Start Game"
-msgstr ""
-
-#: template/index.html:195
-msgid "Read game rules in help"
-msgstr ""
-
-#: template/index.html:216 template/help.html:119
-msgid "CopyRight@2010"
-msgstr ""
-
-#: template/rank.html:65
-msgid "Rank"
-msgstr "Rank"
-
-#: template/rank.html:66
-msgid "Player(s)"
-msgstr "Player(s)"
-
-#: template/rank.html:67
-msgid "Level"
-msgstr ""
-
-#: template/rank.html:68
-msgid "SNS"
-msgstr ""
-
-#: template/rank.html:79
-msgid "Visit home page"
-msgstr "Visit home page"
-
-#: template/recentgames.html:5 template/recentgames.html.py:19
-msgid "Recent Results"
-msgstr ""
-
-#: template/help.html:54
-msgid "Tips: This help file will take effect after Feb 28 2010"
-msgstr ""
-
-#: template/help.html:58
-msgid "Game Rules"
-msgstr ""
-
-#: template/help.html:60
-msgid "Each player is on level 0 and has score 100 initially."
-msgstr ""
-
-#: template/help.html:61
-msgid "Each game has different score for different level."
-msgstr ""
-
-#: template/help.html:62
-msgid ""
-"Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
-msgstr ""
-
-#: template/help.html:63
-msgid ""
-"Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
-msgstr ""
-
-#: template/help.html:64
-msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
-msgstr ""
-
-#: template/help.html:68
-msgid "Levels Description"
-msgstr ""
-
-#: template/help.html:70
-msgid "This game contains 10 levels for each player."
-msgstr ""
-
-#: template/help.html:71
-msgid ""
-"The player can only play the games which level is lower or equal to his "
-"level."
-msgstr ""
-
-#: template/help.html:72
-msgid "After the player upgrades his level, he can play more levels."
-msgstr ""
-
-#: template/help.html:76
-msgid "How To Upgrade Your Level"
-msgstr ""
-
-#: template/help.html:78
-msgid ""
-"The player can upgrade his level, only after he wins 3 consecutive games "
-"with the same level as his level(called same-level game)."
-msgstr ""
-
-#: template/help.html:79
-msgid "The games which levels are lower than his level is ignored."
-msgstr ""
-
-#: template/help.html:80
-msgid ""
-"Three consecutive games mean the neiboring games should be played in 6 hours."
-msgstr ""
-
-#: template/help.html:81
-msgid ""
-"If the play wins a same-level game, and after more than 6 hours, he wins "
-"another same-level game."
-msgstr ""
-
-#: template/help.html:82
-msgid "These two same-level games are not consecutive."
-msgstr ""
-
-#: template/help.html:86
-msgid "On Retract"
-msgstr ""
-
-#: template/help.html:88 template/help.html.py:94
-msgid "This is not implemented yet."
-msgstr ""
-
-#: template/help.html:92
-msgid "On Handicap"
-msgstr ""
-
-#: template/help.html:98
-msgid "On earnings"
-msgstr ""
-
-#: template/help.html:100
-msgid "We have applied Google adsense on the pages."
-msgstr ""
-
-#: template/help.html:101
-msgid "If you feel like this game, you can click the ads as the following."
-msgstr ""
 
 #~ msgid " Rank"
 #~ msgstr " Rank"

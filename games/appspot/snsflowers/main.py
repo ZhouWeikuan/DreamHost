@@ -155,7 +155,7 @@ class RankHandler(webapp.RequestHandler):
         if rev == 1:
             users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
         else :
-            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score DESC, win DESC", lvl).fetch(20);
+            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score DESC", lvl).fetch(20);
 
         rev = 1 - rev
         lang = opensns.sns.lang

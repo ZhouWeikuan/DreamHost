@@ -2,22 +2,24 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>{% trans "Help Files" %} </title>
+    <title>{% trans "Help" %} </title>
     <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
 </head>
 <body id="tab_on" class="body">
     <ul id="tabnav">
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}">
-            {% trans "Chess Arena" %} </a></li>
+            {% trans "Rotate Branches" %} </a></li>
         <li class="tab_off"> 
             <a target="_blank" href="{{ sns.invitePage }}"> 
                 {% trans "Invite Friends" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
             {% trans "RankList" %} </a></li>
         <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}/help">
-            {% trans "Help Files" %} </a></li>
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chschess/"> 
+            {% trans "Chess(1)" %}</a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
-            {% trans "Play chess with others" %}</a></li>
+            {% trans "Chess(2)" %}</a></li>
     </ul>
 
     {% ifequal sns.src 'FB' %}
@@ -51,17 +53,15 @@
     </div>
 
     <div class="nav">
-        <h3> {% trans "Tips: This help file will take effect after Feb 28 2010" %} </h3>
+        <h3> {% trans "Tips: This help file will take effect after March 10 2010" %} </h3>
     </div>
     <div> <br /> </div>
 
     <div class="nav"> <h3> {% trans "Game Rules" %} </h3> </div>
     <div>
         {% trans "Each player is on level 0 and has score 100 initially." %} <br>
-        {% trans "Each game has different score for different level." %} <br>
-        {% trans "Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw." %} <br>
-        {% trans "Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw." %} <br>
-        {% trans "Level 2 has score 8, level 3 has score 16, and so on for later levels." %} <br>
+        {% trans "Each game has different scores and time limits for different level." %} <br>
+        {% trans "The scores and time limites is still unknown yet." %} <br>
     </div>
     <div> <br /> </div>
 
@@ -83,22 +83,10 @@
     </div>
     <div> <br /> </div>
 
-    <div class="nav"> <h3> {% trans "On Retract" %} </h3> </div>
-    <div>
-        {% trans "This is not implemented yet." %} <br>
-    </div>
-    <div> <br /> </div>
-
-    <div class="nav"> <h3> {% trans "On Handicap" %} </h3> </div>
-    <div>
-        {% trans "This is not implemented yet." %} <br>
-    </div>
-    <div> <br /> </div>
-
     <div class="nav"> <h3> {% trans "On earnings" %} </h3> </div>
     <div>
         {% trans "We have applied Google adsense on the pages." %} <br>
-        {% trans "If you feel like this game, you can click the ads as the following." %} <br>
+        {% trans "If you feel like this game, you can support us via clicking the ads." %} <br>
     </div>
     <div> <br /> </div>
 

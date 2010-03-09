@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 22:51+0800\n"
+"POT-Creation-Date: 2010-03-09 15:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -16,17 +16,29 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: main.py:121 template/rank.html:86
+msgid "FB"
+msgstr "脸书"
+
+#: main.py:122 template/rank.html:84
+msgid "XN"
+msgstr "校内网"
+
+#: main.py:163 main.py:280
+msgid "lvl "
+msgstr "关"
+
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
-msgstr "正在玩中国象棋段位赛"
+msgstr "正在玩中国象棋九段"
 
 #: opensns.py:87
 msgid "The Chinese Chess(vs computers)"
-msgstr "中国象棋段位赛"
+msgstr "中国象棋九段"
 
 #: opensns.py:89
 msgid "joins game Chinese Chess(vs. computers)"
-msgstr "加入了游戏中国象棋段位赛"
+msgstr "加入了游戏中国象棋九段"
 
 #: opensns.py:90
 msgid "a good chinese chess arena"
@@ -44,17 +56,164 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "访问这个游戏"
 
-#: main.py:120 template/rank.html:86
-msgid "FB"
-msgstr "脸书"
+#: template/recentgames.html:5 template/index.html:5 template/index.html.py:11
+#: template/index.html:93 template/rank.html:5 template/rank.html.py:11
+#: template/help.html:11
+msgid "Rotate Branches"
+msgstr "移花接木"
 
-#: main.py:121 template/rank.html:84
-msgid "XN"
-msgstr "校内网"
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr "最近结果"
 
-#: main.py:162 main.py:288
-msgid "lvl "
-msgstr "段"
+#: template/index.html:14 template/rank.html:14 template/help.html:14
+msgid "Invite Friends"
+msgstr "邀请好友"
+
+#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
+#: template/rank.html.py:55 template/help.html:16
+msgid "RankList"
+msgstr "排行榜"
+
+#: template/index.html:18 template/rank.html:18 template/help.html:5
+#: template/help.html.py:18
+msgid "Help"
+msgstr "帮助"
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+msgid "Chess(1)"
+msgstr "单机象棋"
+
+#: template/index.html:22 template/rank.html:22 template/help.html:22
+msgid "Chess(2)"
+msgstr "象棋对弈"
+
+#: template/index.html:44
+msgid "Personal Information"
+msgstr "个人信息"
+
+#: template/index.html:58 template/rank.html:70
+msgid "Score"
+msgstr "分数"
+
+#: template/index.html:65
+msgid "System Notice!"
+msgstr "系统公告"
+
+#: template/index.html:126
+msgid "Read game rules in help"
+msgstr "请阅读帮助以了解规则"
+
+#: template/index.html:131
+msgid "Set level:"
+msgstr "设定关卡"
+
+#: template/index.html:143
+msgid "Start Game"
+msgstr "开局"
+
+#: template/index.html:155 template/help.html:107
+msgid "CopyRight@2010"
+msgstr "版权所有 2010年"
+
+#: template/rank.html:67
+msgid "Rank"
+msgstr "名次"
+
+#: template/rank.html:68
+msgid "Player(s)"
+msgstr "玩家"
+
+#: template/rank.html:69
+msgid "Level"
+msgstr "关卡"
+
+#: template/rank.html:71
+msgid "SNS"
+msgstr "来自"
+
+#: template/rank.html:78
+msgid "Visit home page"
+msgstr "访问个人主页"
+
+#: template/help.html:56
+msgid "Tips: This help file will take effect after March 10 2010"
+msgstr "提示：本帮助文件待3月10日后方有效"
+
+#: template/help.html:60
+msgid "Game Rules"
+msgstr "游戏规则"
+
+#: template/help.html:62
+msgid "Each player is on level 0 and has score 100 initially."
+msgstr "每个玩家初始有100分，第0关"
+
+#: template/help.html:63
+msgid "Each game has different scores and time limits for different level."
+msgstr "每局游戏分数和时限依关卡不同而不同。"
+
+#: template/help.html:64
+msgid "The scores and time limites is still unknown yet."
+msgstr "分数和时限目前尚未确定"
+
+#: template/help.html:68
+msgid "Levels Description"
+msgstr "关卡描述"
+
+#: template/help.html:70
+msgid "This game contains 10 levels for each player."
+msgstr "每个玩家可经历总共10个关卡"
+
+#: template/help.html:71
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr "玩家只能玩关卡小于或等于玩家本身关卡的游戏"
+
+#: template/help.html:72
+msgid "After the player upgrades his level, he can play more levels."
+msgstr "玩家提升自己关卡后，可选游戏关卡得以增加。"
+
+#: template/help.html:76
+msgid "How To Upgrade Your Level"
+msgstr "如何提升关卡"
+
+#: template/help.html:78
+msgid ""
+"The player can upgrade his level, only after he wins 3 consecutive games "
+"with the same level as his level(called same-level game)."
+msgstr "玩家只有连赢3局与自身相等（即同关卡）的电脑后才可升级。"
+
+#: template/help.html:79
+msgid "The games which levels are lower than his level is ignored."
+msgstr "期间，逊于本身关卡的棋局得失不被计入。"
+
+#: template/help.html:80
+msgid ""
+"Three consecutive games mean the neiboring games should be played in 6 hours."
+msgstr "连赢是说，相隔的两局棋间不得超过6小时。"
+
+#: template/help.html:81
+msgid ""
+"If the play wins a same-level game, and after more than 6 hours, he wins "
+"another same-level game."
+msgstr "若玩家赢了一局同关卡电脑后，过了6小时才再赢另一局同关卡电脑，"
+
+#: template/help.html:82
+msgid "These two same-level games are not consecutive."
+msgstr "这样的两局得胜不被视为连赢。"
+
+#: template/help.html:86
+msgid "On earnings"
+msgstr "关于收益"
+
+#: template/help.html:88
+msgid "We have applied Google adsense on the pages."
+msgstr "我们已经申请了Google adsense广告联盟"
+
+#: template/help.html:89
+msgid "If you feel like this game, you can support us via clicking the ads."
+msgstr "如果您觉得这个游戏还不错，心情好的话，点一下页面上的广告吧"
 
 #: conf/settings.py:6
 msgid "English"
@@ -78,248 +237,78 @@ msgstr "开局"
 
 #: conf/settings.py:17
 msgid "lvl 0"
-msgstr "无段"
+msgstr "第0关"
 
 #: conf/settings.py:18
 msgid "lvl 1"
-msgstr "一段"
+msgstr "第一关"
 
 #: conf/settings.py:19
 msgid "lvl 2"
-msgstr "二段"
+msgstr "第二关"
 
 #: conf/settings.py:20
 msgid "lvl 3"
-msgstr "三段"
+msgstr "第三关"
 
 #: conf/settings.py:21
 msgid "lvl 4"
-msgstr "四段"
+msgstr "第四关"
 
 #: conf/settings.py:22
 msgid "lvl 5"
-msgstr "五段"
+msgstr "第五关"
 
 #: conf/settings.py:23
 msgid "lvl 6"
-msgstr "六段"
+msgstr "第六关"
 
 #: conf/settings.py:24
 msgid "lvl 7"
-msgstr "七段"
+msgstr "第七关"
 
 #: conf/settings.py:25
 msgid "lvl 8"
-msgstr "八段"
+msgstr "第八关"
 
 #: conf/settings.py:26
 msgid "lvl 9"
-msgstr "九段"
+msgstr "第九关"
 
-#: template/index.html:5 template/index.html.py:11 template/index.html:93
-msgid "Rotate Branches"
-msgstr ""
-
-#: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
-msgstr "邀请好友"
-
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:53 template/help.html:16
-msgid "RankList"
-msgstr "排行榜"
-
-#: template/index.html:18 template/rank.html:18 template/help.html:5
-#: template/help.html.py:18
-msgid "Help Files"
-msgstr "帮助"
-
-#: template/index.html:20
-#, fuzzy
-msgid "Chess vs comps"
-msgstr "象棋资源网"
-
-#: template/index.html:22
-#, fuzzy
-msgid "Chess vs others"
-msgstr "象棋资源网"
-
-#: template/index.html:44
-msgid "Personal Information"
-msgstr "个人信息"
-
-#: template/index.html:58 template/rank.html:69
-msgid "Score"
-msgstr "分数"
-
-#: template/index.html:65
-msgid "System Notice!"
-msgstr "系统公告"
-
-#: template/index.html:124
-msgid "Read game rules in help"
-msgstr "请阅读帮助以了解规则"
-
-#: template/index.html:129
-msgid "Choose the level:"
-msgstr ""
-
-#: template/index.html:141
-msgid "Start Game"
-msgstr "开局"
-
-#: template/index.html:153 template/help.html:119
-msgid "CopyRight@2010"
-msgstr "版权所有 2010年"
-
-#: template/rank.html:5 template/recentgames.html:5
-msgid "Chinese Chess"
-msgstr "中国象棋"
-
-#: template/rank.html:11 template/help.html:11
-msgid "Chess Arena"
-msgstr "象棋擂台"
-
-#: template/rank.html:20 template/help.html:20
-msgid "Play chess with others"
-msgstr "双人对弈"
-
-#: template/rank.html:65
-msgid "Rank"
-msgstr "名次"
-
-#: template/rank.html:66
-msgid "Player(s)"
-msgstr "玩家"
-
-#: template/rank.html:67
-msgid "Level"
-msgstr "段位"
-
-#: template/rank.html:68
-msgid "SNS"
-msgstr "来自"
-
-#: template/rank.html:70
+#: conf/settings.py:27
 msgid "Win"
-msgstr "赢局"
+msgstr "胜利"
 
-#: template/rank.html:71
+#: conf/settings.py:28
 msgid "Lose"
-msgstr "输局"
+msgstr "失败"
 
-#: template/rank.html:72
-msgid "Draw"
-msgstr "平局"
+#~ msgid "Help Files"
+#~ msgstr "帮助"
 
-#: template/rank.html:79
-msgid "Visit home page"
-msgstr "访问个人主页"
+#~ msgid "Chess Arena"
+#~ msgstr "象棋擂台"
 
-#: template/recentgames.html:5 template/recentgames.html.py:19
-msgid "Recent Results"
-msgstr "最近结果"
+#~ msgid "Play chess with others"
+#~ msgstr "双人对弈"
 
-#: template/help.html:54
-msgid "Tips: This help file will take effect after Feb 28 2010"
-msgstr "提示：本帮助文件待2月28日后方有效"
+#~ msgid "On Retract"
+#~ msgstr "关于悔棋"
 
-#: template/help.html:58
-msgid "Game Rules"
-msgstr "游戏规则"
+#~ msgid "This is not implemented yet."
+#~ msgstr "此项功能尚在研发中"
 
-#: template/help.html:60
-msgid "Each player is on level 0 and has score 100 initially."
-msgstr "每个玩家初始有100分，零段"
+#~ msgid "On Handicap"
+#~ msgstr "关于让子"
 
-#: template/help.html:61
-msgid "Each game has different score for different level."
-msgstr "每局游戏分数依段位不同而不同。"
+#~ msgid "Chinese Chess"
+#~ msgstr "中国象棋"
 
-#: template/help.html:62
-msgid ""
-"Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
-msgstr "零段每局2分，赢家得2分，失败减2分，平局得1分。"
+#~ msgid "Chess vs comps"
+#~ msgstr "单机象棋"
 
-#: template/help.html:63
-msgid ""
-"Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
-msgstr "初段每局4分，赢家得4分，失败减4分，平局得2分。"
-
-#: template/help.html:64
-msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
-msgstr "二段每局8分，三段每局16分，以上各段依次类推。"
-
-#: template/help.html:68
-msgid "Levels Description"
-msgstr "段位描述"
-
-#: template/help.html:70
-msgid "This game contains 10 levels for each player."
-msgstr "每个玩家可经历总共10个段位"
-
-#: template/help.html:71
-msgid ""
-"The player can only play the games which level is lower or equal to his "
-"level."
-msgstr "玩家只能玩段位小于或等于玩家本身段位的游戏"
-
-#: template/help.html:72
-msgid "After the player upgrades his level, he can play more levels."
-msgstr "玩家提升自己段位后，可选游戏段位得以增加。"
-
-#: template/help.html:76
-msgid "How To Upgrade Your Level"
-msgstr "如何提升段位"
-
-#: template/help.html:78
-msgid ""
-"The player can upgrade his level, only after he wins 3 consecutive games "
-"with the same level as his level(called same-level game)."
-msgstr "玩家只有连赢3局与自身段位相等（即同段位）的电脑后才可升级。"
-
-#: template/help.html:79
-msgid "The games which levels are lower than his level is ignored."
-msgstr "期间，逊于本身段位的棋局得失不被计入。"
-
-#: template/help.html:80
-msgid ""
-"Three consecutive games mean the neiboring games should be played in 6 hours."
-msgstr "连赢是说，相隔的两局棋间不得超过6小时。"
-
-#: template/help.html:81
-msgid ""
-"If the play wins a same-level game, and after more than 6 hours, he wins "
-"another same-level game."
-msgstr "若玩家赢了一局同段位电脑后，过了6小时才再赢另一局同段位电脑，"
-
-#: template/help.html:82
-msgid "These two same-level games are not consecutive."
-msgstr "这样的两局得胜不被视为连赢。"
-
-#: template/help.html:86
-msgid "On Retract"
-msgstr "关于悔棋"
-
-#: template/help.html:88 template/help.html.py:94
-msgid "This is not implemented yet."
-msgstr "此项功能尚在研发中"
-
-#: template/help.html:92
-msgid "On Handicap"
-msgstr "关于让子"
-
-#: template/help.html:98
-msgid "On earnings"
-msgstr "关于收益"
-
-#: template/help.html:100
-msgid "We have applied Google adsense on the pages."
-msgstr "我们已经申请了Google adsense广告联盟"
-
-#: template/help.html:101
-msgid "If you feel like this game, you can click the ads as the following."
-msgstr "如果您觉得这个游戏还不错，心情好的话，有空点一下页面上的广告吧"
+#~ msgid "Draw"
+#~ msgstr "平局"
 
 #~ msgid "The game is upgraded."
 #~ msgstr "游戏已升级"

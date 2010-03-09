@@ -19,7 +19,7 @@ class XiaoneiWrapper():
         self.api_key    = '5bf782053f7c49ad94d92e91fb271ab7'
         self.secret_key = 'fdcb2b65fc5b4e3fbc40372a472ed401'; 
         self.uid        = req.request.get('xn_sig_user', default_value='0')
-        self.homeurl    = "http://apps.renren.com/xihuajiemu";
+        self.homeurl    = "http://apps.renren.com/yihuajiemu";
         self.topurl     = "http://apps.renren.com"
         self.appID      = "67174";
         self.auth_url   = 'http://app.renren.com/apps/tos.do?api_key=' + self.api_key + "&v=1.0&canvas&next=";
