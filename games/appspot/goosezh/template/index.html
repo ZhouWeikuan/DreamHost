@@ -8,18 +8,18 @@
 <body id="tab_on" class="body">
     <ul id="tabnav">
         <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
-            {% trans "Chess Arena" %} </a></li>
+            {% trans "Chess(1)" %} </a></li>
         <li class="tab_off"> 
             <a target="_blank" href="{{ sns.invitePage }}"> 
-                {% trans "Invite Friends" %} </a></li>
+                {% trans "Invite" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
-            {% trans "RankList" %} </a></li>
+            {% trans "Rank" %} </a></li>
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
-            {% trans "Help Files" %} </a></li>
+            {% trans "Help" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
-            {% trans "Play chess with others" %}</a></li>
+            {% trans "Chess(2)" %}</a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
-            <font color="red"><strong> {% trans "Rotate Branches" %} </strong></font></a></li>
+            <font color="red"><strong> {% trans "Rotate" %} </strong></font></a></li>
     </ul>
 
     {% ifequal sns.src 'FB' %}
@@ -93,9 +93,9 @@
     <td>
         <table border='0'>
             <h3 class='nav'> {% trans "System Notice!" %} </h3>
-            <tr><td> {% trans "The game is upgraded." %}</td></tr>
-            <tr><td> {% trans "Please refer to help for more informaiton." %} </td></tr>
-            <tr><td> {% trans "Have a wonderful time!" %}  </td></tr>
+            <tr><td> {% trans "New game" %} {% trans "Rotate" %} {% trans "is under beta test." %}</td></tr>
+            <tr><td> {% trans "You are welcome to join that game." %} </td></tr>
+            <tr><td> {% trans "We will adjust it after test finished." %}  </td></tr>
         </table>
     </td>
     </table>

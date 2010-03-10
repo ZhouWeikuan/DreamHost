@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 16:10+0800\n"
+"POT-Creation-Date: 2010-03-10 12:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,38 +56,40 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
-#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
-msgid "Chinese Chess"
-msgstr "Chinese Chess"
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
+#: template/help.html:11
+msgid "Chess(1)"
+msgstr ""
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr ""
 
-#: template/index.html:11 template/rank.html:11 template/help.html:11
-msgid "Chess Arena"
-msgstr "Chess Arena"
+#: template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "Chinese Chess"
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
+#, fuzzy
+msgid "Invite"
 msgstr "Invite Friends"
 
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:55 template/help.html:16
-msgid "RankList"
-msgstr "Rank List"
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:67
+#: template/help.html:16
+msgid "Rank"
+msgstr "Rank"
 
-#: template/index.html:18 template/rank.html:18 template/help.html:5
-#: template/help.html.py:18
-msgid "Help Files"
+#: template/index.html:18 template/rank.html:18 template/help.html:18
+msgid "Help"
 msgstr ""
 
 #: template/index.html:20 template/rank.html:20 template/help.html:20
-msgid "Play chess with others"
-msgstr "Play chess with others"
+msgid "Chess(2)"
+msgstr ""
 
-#: template/index.html:22 template/rank.html:22 template/help.html:22
-msgid "Rotate Branches"
+#: template/index.html:22 template/index.html.py:96 template/rank.html:22
+#: template/help.html:22
+msgid "Rotate"
 msgstr ""
 
 #: template/index.html:71
@@ -115,15 +117,19 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:96
-msgid "The game is upgraded."
+msgid "New game"
+msgstr ""
+
+#: template/index.html:96
+msgid "is under beta test."
 msgstr ""
 
 #: template/index.html:97
-msgid "Please refer to help for more informaiton."
+msgid "You are welcome to join that game."
 msgstr ""
 
 #: template/index.html:98
-msgid "Have a wonderful time!"
+msgid "We will adjust it after test finished."
 msgstr ""
 
 #: template/index.html:122
@@ -158,9 +164,9 @@ msgstr ""
 msgid "CopyRight@2010"
 msgstr ""
 
-#: template/rank.html:67
-msgid "Rank"
-msgstr "Rank"
+#: template/rank.html:5 template/rank.html.py:55
+msgid "RankList"
+msgstr "Rank List"
 
 #: template/rank.html:68
 msgid "Player(s)"
@@ -177,6 +183,10 @@ msgstr ""
 #: template/rank.html:81
 msgid "Visit home page"
 msgstr "Visit home page"
+
+#: template/help.html:5
+msgid "Help Files"
+msgstr ""
 
 #: template/help.html:56
 msgid "Tips: This help file will take effect after Feb 28 2010"
@@ -342,6 +352,12 @@ msgstr "Level 9"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "Level 10"
+
+#~ msgid "Chess Arena"
+#~ msgstr "Chess Arena"
+
+#~ msgid "Play chess with others"
+#~ msgstr "Play chess with others"
 
 #~ msgid " Rank"
 #~ msgstr " Rank"

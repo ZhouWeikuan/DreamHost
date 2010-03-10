@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 15:59+0800\n"
+"POT-Creation-Date: 2010-03-10 12:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,24 +56,28 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
-#: template/recentgames.html:5 template/index.html:5 template/index.html.py:11
-#: template/index.html:93 template/rank.html:5 template/rank.html.py:11
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
 #: template/help.html:11
-msgid "Rotate Branches"
+msgid "Rotate"
 msgstr ""
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr ""
 
+#: template/index.html:5 template/index.html.py:93 template/rank.html:5
+msgid "Rotate Branches"
+msgstr ""
+
 #: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
+#, fuzzy
+msgid "Invite"
 msgstr "Invite Friends"
 
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:55 template/help.html:16
-msgid "RankList"
-msgstr "Rank List"
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:67
+#: template/help.html:16
+msgid "Rank"
+msgstr "Rank"
 
 #: template/index.html:18 template/rank.html:18 template/help.html:5
 #: template/help.html.py:18
@@ -100,6 +104,18 @@ msgstr "Score"
 msgid "System Notice!"
 msgstr ""
 
+#: template/index.html:67
+msgid "This game is still under test."
+msgstr ""
+
+#: template/index.html:68
+msgid "Welcome to invite your friends."
+msgstr ""
+
+#: template/index.html:69
+msgid "We will adjust the game when test finished. "
+msgstr ""
+
 #: template/index.html:126
 msgid "Read game rules in help"
 msgstr ""
@@ -116,9 +132,9 @@ msgstr ""
 msgid "CopyRight@2010"
 msgstr ""
 
-#: template/rank.html:67
-msgid "Rank"
-msgstr "Rank"
+#: template/rank.html:5 template/rank.html.py:55
+msgid "RankList"
+msgstr "Rank List"
 
 #: template/rank.html:68
 msgid "Player(s)"
@@ -137,7 +153,7 @@ msgid "Visit home page"
 msgstr "Visit home page"
 
 #: template/help.html:56
-msgid "Tips: This help file will take effect after May 10 2010"
+msgid "Tips: This help file will take effect after March 10 2010"
 msgstr ""
 
 #: template/help.html:60

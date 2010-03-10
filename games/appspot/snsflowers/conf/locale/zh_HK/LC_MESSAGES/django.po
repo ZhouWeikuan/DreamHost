@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 15:59+0800\n"
+"POT-Creation-Date: 2010-03-10 12:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,24 +56,27 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "訪問這個游戲"
 
-#: template/recentgames.html:5 template/index.html:5 template/index.html.py:11
-#: template/index.html:93 template/rank.html:5 template/rank.html.py:11
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
 #: template/help.html:11
-msgid "Rotate Branches"
+msgid "Rotate"
 msgstr "移花接木"
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr "最近結果"
 
+#: template/index.html:5 template/index.html.py:93 template/rank.html:5
+msgid "Rotate Branches"
+msgstr "移花接木"
+
 #: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
+msgid "Invite"
 msgstr "邀請好友"
 
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:55 template/help.html:16
-msgid "RankList"
-msgstr "排行榜"
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:67
+#: template/help.html:16
+msgid "Rank"
+msgstr "名次"
 
 #: template/index.html:18 template/rank.html:18 template/help.html:5
 #: template/help.html.py:18
@@ -100,6 +103,18 @@ msgstr "得分"
 msgid "System Notice!"
 msgstr "系統公告"
 
+#: template/index.html:67
+msgid "This game is still under test."
+msgstr "本游戲仍在測試中"
+
+#: template/index.html:68
+msgid "Welcome to invite your friends."
+msgstr "歡迎邀請好友加入"
+
+#: template/index.html:69
+msgid "We will adjust the game when test finished. "
+msgstr "測試結束後，我們會加以調整"
+
 #: template/index.html:126
 msgid "Read game rules in help"
 msgstr "請閱讀幫助以了解規則"
@@ -116,9 +131,9 @@ msgstr "開局"
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
-#: template/rank.html:67
-msgid "Rank"
-msgstr "名次"
+#: template/rank.html:5 template/rank.html.py:55
+msgid "RankList"
+msgstr "排行榜"
 
 #: template/rank.html:68
 msgid "Player(s)"

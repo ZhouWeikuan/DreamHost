@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 16:10+0800\n"
+"POT-Creation-Date: 2010-03-10 12:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,38 +56,39 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "訪問這個游戲"
 
-#: template/recentgames.html:5 template/index.html:5 template/rank.html:5
-msgid "Chinese Chess"
-msgstr "中國象棋"
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
+#: template/help.html:11
+msgid "Chess(1)"
+msgstr "單機象棋"
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr "最近結果"
 
-#: template/index.html:11 template/rank.html:11 template/help.html:11
-msgid "Chess Arena"
-msgstr "象棋擂台"
+#: template/index.html:5 template/rank.html:5
+msgid "Chinese Chess"
+msgstr "中國象棋"
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
-msgid "Invite Friends"
+msgid "Invite"
 msgstr "邀請好友"
 
-#: template/index.html:16 template/rank.html:5 template/rank.html.py:16
-#: template/rank.html.py:55 template/help.html:16
-msgid "RankList"
-msgstr "排行榜"
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:67
+#: template/help.html:16
+msgid "Rank"
+msgstr "名次"
 
-#: template/index.html:18 template/rank.html:18 template/help.html:5
-#: template/help.html.py:18
-msgid "Help Files"
+#: template/index.html:18 template/rank.html:18 template/help.html:18
+msgid "Help"
 msgstr "幫助"
 
 #: template/index.html:20 template/rank.html:20 template/help.html:20
-msgid "Play chess with others"
+msgid "Chess(2)"
 msgstr "雙人對弈"
 
-#: template/index.html:22 template/rank.html:22 template/help.html:22
-msgid "Rotate Branches"
+#: template/index.html:22 template/index.html.py:96 template/rank.html:22
+#: template/help.html:22
+msgid "Rotate"
 msgstr "移花接木"
 
 #: template/index.html:71
@@ -115,16 +116,20 @@ msgid "System Notice!"
 msgstr "系統公告"
 
 #: template/index.html:96
-msgid "The game is upgraded."
-msgstr "游戲已升級"
+msgid "New game"
+msgstr "新游戲"
+
+#: template/index.html:96
+msgid "is under beta test."
+msgstr "正在beta測試中"
 
 #: template/index.html:97
-msgid "Please refer to help for more informaiton."
-msgstr "想了解更多信息，請看幫助"
+msgid "You are welcome to join that game."
+msgstr "歡迎加入新游戲"
 
 #: template/index.html:98
-msgid "Have a wonderful time!"
-msgstr "祝大家玩得開心"
+msgid "We will adjust it after test finished."
+msgstr "根據測試結果，我們會再加以調整"
 
 #: template/index.html:122
 msgid "Play Against Computer"
@@ -158,9 +163,9 @@ msgstr "請閱讀幫助以了解規則"
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
-#: template/rank.html:67
-msgid "Rank"
-msgstr "名次"
+#: template/rank.html:5 template/rank.html.py:55
+msgid "RankList"
+msgstr "排行榜"
 
 #: template/rank.html:68
 msgid "Player(s)"
@@ -177,6 +182,10 @@ msgstr "來自"
 #: template/rank.html:81
 msgid "Visit home page"
 msgstr "訪問個人主頁"
+
+#: template/help.html:5
+msgid "Help Files"
+msgstr "幫助"
 
 #: template/help.html:56
 msgid "Tips: This help file will take effect after Feb 28 2010"
@@ -342,6 +351,24 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid "Chess Arena"
+#~ msgstr "象棋擂台"
+
+#~ msgid "Play chess with others"
+#~ msgstr "雙人對弈"
+
+#~ msgid "Rotate Branches"
+#~ msgstr "移花接木"
+
+#~ msgid "The game is upgraded."
+#~ msgstr "游戲已升級"
+
+#~ msgid "Please refer to help for more informaiton."
+#~ msgstr "想了解更多信息，請看幫助"
+
+#~ msgid "Have a wonderful time!"
+#~ msgstr "祝大家玩得開心"
 
 #~ msgid "It is estimated to be done at 6:00pm GMT+8"
 #~ msgstr "大概中原時間下午6點左右完成"
