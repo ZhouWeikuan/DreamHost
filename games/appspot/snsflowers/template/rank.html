@@ -54,33 +54,43 @@
 
     <div class='nav'> <h3> {% trans "RankList" %}
     {% for lv in lvls%}
-        {% ifequal forloop.revcounter0 lvl %}
+        {% ifequal lv.cnt lvl %}
         <a class="curitem" target='_top' 
-            href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}&rev={{rev}}'> {{ lv }} </a>
+            href='{{sns.homeurl}}/rank?lvl={{lv.cnt}}'> {{ lv.tit }} </a>
         {% else %}
-        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}'> {{ lv }}</a>
+        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{lv.cnt}}'> {{ lv.tit }}</a>
         {% endifequal %}
     {% endfor %}
     </h3></div>
+
+    <script type="text/javascript">
+        function formatTime(Y, M, D, h, m, s){
+            var dat = new Date(Y, M, D, h, m, s);
+            document.write(dat.toLocaleDateString());
+        }
+    </script>
+
     <table border='0' style="text-align:center;">
         <thead>
             <th width='100'> {% trans "Rank" %} </th>
-            <th width='240'> {% trans "Player(s)" %} </th>
-            <th width='100'> {% trans "Level" %} </th>
+            <th width='160'> {% trans "Player(s)" %} </th>
+            <th width='240'> {% trans "Date" %} </th>
             <th width='100'> {% trans "Score" %} </th>
             <th width='100'> {% trans "SNS" %} </th>
         </thead>
-    {% for u in users %}    
+    {% for g in games %}    
         <tr>
         <td> {{ forloop.counter }} </td>
-        <td> <img alt='{{ u.name }}' class='big'
-                src='{{ u.icon|default_if_none:"/favicon.ico" }}'></img> <br>
+        <td> <img alt='{{ g.name }}' class='big'
+                src='{{ g.icon|default_if_none:"/favicon.ico" }}'></img> <br>
               <a title='{% trans "Visit home page" %}' target='_blank' 
-                href='{{ u.getProfileUrl }}'> {{ u.name }} </a>
+                href='{{ g.getProfileUrl }}'> {{ g.name }} </a>
          </td>
-         <td> {{ u.lvl }} </td>
-         <td> {{ u.score}} </td>
-         {% ifequal u.src "XN" %}
+         <td><script type="text/javascript">
+                 formatTime({{g.tms.year}}, {{g.tms.month}}, {{g.tms.day}}, {{g.tms.hour}}, {{g.tms.minute}}, {{g.tms.second}});
+         </script></td>
+         <td> {{ g.res }} {% trans " Sec." %} </td>
+         {% ifequal g.src "XN" %}
          <td> {% trans "XN" %} </td>
          {% else %}
          <td> {% trans "FB" %} </td>
