@@ -8,13 +8,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-12 00:52+0800\n"
+"POT-Creation-Date: 2010-03-12 09:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:104 template/rank.html:96
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:105 template/rank.html:94
+msgid "XN"
+msgstr "Xiaonei"
+
+#: main.py:143 main.py:268
+msgid "lvl "
+msgstr "Level"
+
+#: main.py:173 template/rank.html:92
+msgid " Sec."
+msgstr ""
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -44,97 +60,17 @@ msgstr ""
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
-#: main.py:104 template/rank.html:96
-msgid "FB"
-msgstr "Facebook"
-
-#: main.py:105 template/rank.html:94
-msgid "XN"
-msgstr "Xiaonei"
-
-#: main.py:141 main.py:260
-msgid "lvl "
-msgstr "Level"
-
-#: main.py:170
-msgid " Sec."
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
+#: template/help.html:11
+msgid "Rotate"
 msgstr ""
 
-#: conf/settings.py:6
-msgid "English"
-msgstr "English"
-
-#: conf/settings.py:7
-msgid "Simplified Chinese"
-msgstr "Simplified Chinese"
-
-#: conf/settings.py:8
-msgid "Taiwan Chinese"
-msgstr "Traditional Chinese"
-
-#: conf/settings.py:9
-msgid "Hong Kong Chinese"
-msgstr "Traditional Chinese"
-
-#: conf/settings.py:16
-msgid "Start"
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
 msgstr ""
-
-#: conf/settings.py:17
-msgid "lvl 0"
-msgstr "Level 0"
-
-#: conf/settings.py:18
-msgid "lvl 1"
-msgstr "Level 1"
-
-#: conf/settings.py:19
-msgid "lvl 2"
-msgstr "Level 2"
-
-#: conf/settings.py:20
-msgid "lvl 3"
-msgstr "Level 3"
-
-#: conf/settings.py:21
-msgid "lvl 4"
-msgstr "Level 4"
-
-#: conf/settings.py:22
-msgid "lvl 5"
-msgstr "Level 5"
-
-#: conf/settings.py:23
-msgid "lvl 6"
-msgstr "Level 6"
-
-#: conf/settings.py:24
-msgid "lvl 7"
-msgstr "Level 7"
-
-#: conf/settings.py:25
-msgid "lvl 8"
-msgstr "Level 8"
-
-#: conf/settings.py:26
-msgid "lvl 9"
-msgstr "Level 9"
-
-#: conf/settings.py:27
-msgid "Win"
-msgstr "Win"
-
-#: conf/settings.py:28
-msgid "Lose"
-msgstr "Lose"
 
 #: template/index.html:5 template/index.html.py:93 template/rank.html:5
 msgid "Rotate Branches"
-msgstr ""
-
-#: template/index.html:11 template/rank.html:11 template/recentgames.html:5
-#: template/help.html:11
-msgid "Rotate"
 msgstr ""
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
@@ -164,9 +100,9 @@ msgstr ""
 msgid "Personal Information"
 msgstr ""
 
-#: template/index.html:58 template/rank.html:78
-msgid "Score"
-msgstr "Score"
+#: template/index.html:58
+msgid "Level"
+msgstr ""
 
 #: template/index.html:65
 msgid "System Notice!"
@@ -212,6 +148,10 @@ msgstr "Player(s)"
 msgid "Date"
 msgstr ""
 
+#: template/rank.html:78
+msgid "Score"
+msgstr "Score"
+
 #: template/rank.html:79
 msgid "SNS"
 msgstr ""
@@ -219,10 +159,6 @@ msgstr ""
 #: template/rank.html:86
 msgid "Visit home page"
 msgstr "Visit home page"
-
-#: template/recentgames.html:5 template/recentgames.html.py:19
-msgid "Recent Results"
-msgstr ""
 
 #: template/help.html:56
 msgid "Tips: This help file will take effect after March 10 2010"
@@ -302,6 +238,74 @@ msgstr ""
 #: template/help.html:89
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr ""
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "English"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr ""
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr "Level 0"
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr "Level 1"
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr "Level 2"
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr "Level 3"
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr "Level 4"
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr "Level 5"
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr "Level 6"
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr "Level 7"
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr "Level 8"
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr "Level 9"
+
+#: conf/settings.py:27
+msgid "Win"
+msgstr "Win"
+
+#: conf/settings.py:28
+msgid "Lose"
+msgstr "Lose"
 
 #~ msgid "Chess Arena"
 #~ msgstr "Chess Arena"

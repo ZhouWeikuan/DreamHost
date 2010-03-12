@@ -51,12 +51,12 @@
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
                 <td> {{ user.name }} &nbsp;</td>
-                <td> {{ tit }} &nbsp;</td>
+                <td> &nbsp;</td>
             </tr>
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
-                <td> {% trans "Score" %} &nbsp; </td>
-                <td> {{ user.score}} &nbsp; </td>
+                <td> {% trans "Level" %} &nbsp; </td>
+                <td> {{ tit }} &nbsp;</td>
             </tr>
         </table>
     </td>
@@ -132,7 +132,7 @@
             <dt><font size="2">
                 <select name="selLevel" id="selLevel" size="5" >
                 {%for duan in lvl%}
-                    <option value="{{forloop.counter0}}"> {{ duan }} </option>
+                    <option value="{{forloop.counter}}"> {{ duan }} </option>
                 {%endfor%}
                 </select></font></dt>
             </td>

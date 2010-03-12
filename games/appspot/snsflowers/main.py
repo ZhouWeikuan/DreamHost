@@ -77,7 +77,7 @@ def checkUpgrade(u, v):
     if fen == 0:
         fen = 0
     if fen >= 3 and int(u.lvl) < 9:
-        u.lvl = str(int(u.lvl) + 1)
+        u.lvl = u.lvl + 1
         fen = 0
     memcache.set(key=k, value=fen, time=3600*6) # expire in 6 hours
     return
@@ -144,6 +144,7 @@ class RankHandler(webapp.RequestHandler):
             o = {"tit":t, "cnt":i}
             lvls.append(o)
 
+        lvl = int(lvl)
         template_values = {
             'sns'  : opensns.sns,
             'lang' : lang,
@@ -205,6 +206,18 @@ class StartHandler(webapp.RequestHandler):
         user.put()
         return
 
+class TestHandler(webapp.RequestHandler):
+    def get(self):
+        uid = '296576367'
+        user = getUserObject(uid)
+        k = "score_" + str(user.uid)
+        fen = memcache.get(key=k)
+        self.response.out.write("<div>")
+        self.response.out.write("fen = " + str(fen) + "<br>")
+        self.response.out.write("lvl = " + str(user.lvl) + "<br>")
+        self.response.out.write("</div>")
+
+ 
 class ResultHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
@@ -308,6 +321,7 @@ def main():
                                         ('/rank', RankHandler),
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
+                                        ('/test', TestHandler),
                                         ('/help', HelpHandler),
                                         ('/invite', InviteHandler),
                                         ('/admin', AdminHandler)],

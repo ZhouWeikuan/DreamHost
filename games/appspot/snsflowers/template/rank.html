@@ -65,7 +65,7 @@
 
     <script type="text/javascript">
         function formatTime(Y, M, D, h, m, s){
-            var dat = new Date(Y, M, D, h, m, s);
+            var dat = new Date(Y, M - 1, D, h, m, s);
             document.write(dat.toLocaleDateString());
         }
     </script>

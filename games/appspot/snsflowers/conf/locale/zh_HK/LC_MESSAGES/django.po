@@ -8,13 +8,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-12 00:52+0800\n"
+"POT-Creation-Date: 2010-03-12 09:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:104 template/rank.html:96
+msgid "FB"
+msgstr "臉書"
+
+#: main.py:105 template/rank.html:94
+msgid "XN"
+msgstr "校內網"
+
+#: main.py:143 main.py:268
+msgid "lvl "
+msgstr "段"
+
+#: main.py:173 template/rank.html:92
+msgid " Sec."
+msgstr "秒"
 
 #: opensns.py:85
 msgid "is playing Chinese Chess(vs. computers)"
@@ -44,97 +60,17 @@ msgstr "五星"
 msgid "Visit this game"
 msgstr "訪問這個游戲"
 
-#: main.py:104 template/rank.html:96
-msgid "FB"
-msgstr "臉書"
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
+#: template/help.html:11
+msgid "Rotate"
+msgstr "移花接木"
 
-#: main.py:105 template/rank.html:94
-msgid "XN"
-msgstr "校內網"
-
-#: main.py:141 main.py:260
-msgid "lvl "
-msgstr "段"
-
-#: main.py:170
-msgid " Sec."
-msgstr "秒"
-
-#: conf/settings.py:6
-msgid "English"
-msgstr "英文"
-
-#: conf/settings.py:7
-msgid "Simplified Chinese"
-msgstr "簡體中文"
-
-#: conf/settings.py:8
-msgid "Taiwan Chinese"
-msgstr "繁體中文"
-
-#: conf/settings.py:9
-msgid "Hong Kong Chinese"
-msgstr "繁體中文"
-
-#: conf/settings.py:16
-msgid "Start"
-msgstr "開局"
-
-#: conf/settings.py:17
-msgid "lvl 0"
-msgstr "第0關"
-
-#: conf/settings.py:18
-msgid "lvl 1"
-msgstr "第一關"
-
-#: conf/settings.py:19
-msgid "lvl 2"
-msgstr "第二關"
-
-#: conf/settings.py:20
-msgid "lvl 3"
-msgstr "第三關"
-
-#: conf/settings.py:21
-msgid "lvl 4"
-msgstr "第四關"
-
-#: conf/settings.py:22
-msgid "lvl 5"
-msgstr "第五關"
-
-#: conf/settings.py:23
-msgid "lvl 6"
-msgstr "第六關"
-
-#: conf/settings.py:24
-msgid "lvl 7"
-msgstr "第七關"
-
-#: conf/settings.py:25
-msgid "lvl 8"
-msgstr "第八關"
-
-#: conf/settings.py:26
-msgid "lvl 9"
-msgstr "第九關"
-
-#: conf/settings.py:27
-msgid "Win"
-msgstr "勝利"
-
-#: conf/settings.py:28
-msgid "Lose"
-msgstr "失敗"
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr "最近結果"
 
 #: template/index.html:5 template/index.html.py:93 template/rank.html:5
 msgid "Rotate Branches"
-msgstr "移花接木"
-
-#: template/index.html:11 template/rank.html:11 template/recentgames.html:5
-#: template/help.html:11
-msgid "Rotate"
 msgstr "移花接木"
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
@@ -163,9 +99,9 @@ msgstr "象棋對弈"
 msgid "Personal Information"
 msgstr "個人信息"
 
-#: template/index.html:58 template/rank.html:78
-msgid "Score"
-msgstr "得分"
+#: template/index.html:58
+msgid "Level"
+msgstr "關卡"
 
 #: template/index.html:65
 msgid "System Notice!"
@@ -211,6 +147,10 @@ msgstr "玩家"
 msgid "Date"
 msgstr "日期"
 
+#: template/rank.html:78
+msgid "Score"
+msgstr "得分"
+
 #: template/rank.html:79
 msgid "SNS"
 msgstr "來自"
@@ -218,10 +158,6 @@ msgstr "來自"
 #: template/rank.html:86
 msgid "Visit home page"
 msgstr "訪問個人主頁"
-
-#: template/recentgames.html:5 template/recentgames.html.py:19
-msgid "Recent Results"
-msgstr "最近結果"
 
 #: template/help.html:56
 msgid "Tips: This help file will take effect after March 10 2010"
@@ -302,8 +238,73 @@ msgstr "我們已經申請了Google adsense廣告聯盟"
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr "如果您覺得這個游戲還不錯，心情好的話，點一下頁面上的廣告吧"
 
-#~ msgid "Level"
-#~ msgstr "段位"
+#: conf/settings.py:6
+msgid "English"
+msgstr "英文"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "簡體中文"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "繁體中文"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "繁體中文"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr "開局"
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr "第0關"
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr "第一關"
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr "第二關"
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr "第三關"
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr "第四關"
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr "第五關"
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr "第六關"
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr "第七關"
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr "第八關"
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr "第九關"
+
+#: conf/settings.py:27
+msgid "Win"
+msgstr "勝利"
+
+#: conf/settings.py:28
+msgid "Lose"
+msgstr "失敗"
 
 #~ msgid "Help Files"
 #~ msgstr "幫助"
