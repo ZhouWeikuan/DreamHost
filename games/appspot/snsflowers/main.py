@@ -188,6 +188,15 @@ class RecentGamesHandler(webapp.RequestHandler):
 
 class CleanGamesHandler(webapp.RequestHandler):
     def get(self):
+        lvl = self.request.get('lvl', default_value='-1')
+        lvl = int(lvl)
+        if lvl <= 0:
+            import random
+            lvl = random.randint(1, 9)
+        lvl = str(lvl)
+        games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(10, 20);
+        if games:
+            db.delete(games)
         pass;
 
 class StartHandler(webapp.RequestHandler):
