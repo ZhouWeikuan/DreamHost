@@ -43,6 +43,42 @@ class XiaoneiWrapper():
 
         return info
 
+class FiveoneWrapper():
+    def __init__(self, req):
+        self.src        = '51'
+        self.lang       = req.request.get('fb_sig_locale', default_value='zh_CN')
+        self.api_key    = '53b1d610d9dda9f9e4b1a6b9c2cb486c'
+        self.secret_key = '8b6b67bd57bb29efe22f29be4a0fd4e6'; 
+        self.uid        = req.request.get('51_sig_user', default_value='')
+        self.homeurl    = "http://apps.51.com/yihuajiemu";
+        self.topurl     = "http://apps.51.com"
+        self.appID      = "unknow_app_id";
+        self.auth_url   = "http://apps.51.com/app_view.php?app_key=" + self.api_key;
+        self.invitePage = self.homeurl + '/invite51?51_force_mode=51ml'
+        self.app        = pyfiveone.FiveOne(self.api_key, self.secret_key)
+        self.request    = req.request
+        pass
+
+    def getUserInfo(self, uid):
+        try :
+            if not self.app.check_session(self.request): # a must before any api call
+                return getNullInfo()
+            info = self.app.users.getInfo([uid], ['username', 'nickname', 'face', 'facebig', 'facesmall'])[0]
+            if not info['name'] :
+                info['name'] = info['nickname']
+            if not info['name'] :
+                info['name'] = info['username']
+            info['pic_square'] = info['face']
+            if not info['pic_square'] :
+                info['pic_square'] = info['facebig']
+            if not info['pic_square'] :
+                info['pic_square'] = info['facesmall']
+        except :
+            info = getNullInfo()
+
+        return info
+
+
 class FacebookWrapper():
     def __init__(self, req):
         self.src = 'FB'
@@ -72,10 +108,13 @@ class FacebookWrapper():
 def init_sns(req):
     global sns
     xn_sig_api_key = req.request.get('xn_sig_api_key', default_value=None)
+    fb_sig_api_key = req.request.get('fb_sig_api_key', default_value=None)
     if xn_sig_api_key :
         sns = XiaoneiWrapper(req)
-    else :
+    elif fb_sig_api_key :
         sns = FacebookWrapper(req)
+    else :
+        sns = FiveoneWrapper(req)
     return sns
 
 

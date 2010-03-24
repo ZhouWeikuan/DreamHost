@@ -103,6 +103,7 @@ class AdminHandler(webapp.RequestHandler):
         if cmd != 'chsrc' or src is None:
             a = _('FB')
             b = _('XN')
+            b = _('51')
             return
 
         self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
@@ -270,12 +271,24 @@ class InviteHandler(webapp.RequestHandler):
         path = os.path.join(os.path.dirname(__file__), 'template/invite_fb.html')
         self.response.out.write(template.render(path, template_values))
 
+class Invite51Handler(webapp.RequestHandler):
+    def post(self):
+        opensns.init_sns(self)
+        lang = opensns.sns.lang
+        lang = setHandlerLocale(self, lang)
+
+        template_values = {
+        };
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/invite_51.html')
+        self.response.out.write(template.render(path, template_values))
+
 class MainHandler(webapp.RequestHandler):
   def get(self):
     opensns.init_sns(self)
 
     sns_uid = opensns.sns.uid
-    if int(sns_uid) == 0 :
+    if sns_uid == '' :
         self.ask_auth(opensns.sns.auth_url)
         return
 
@@ -333,6 +346,7 @@ def main():
                                         ('/test', TestHandler),
                                         ('/help', HelpHandler),
                                         ('/invite', InviteHandler),
+                                        ('/invite51', Invite51Handler),
                                         ('/admin', AdminHandler)],
                                         debug=True)
     util.run_wsgi_app(application)

@@ -14,8 +14,10 @@ class FBUsers(db.Model):
     def getProfileUrl(self):
         if self.src == 'XN':
             url = 'http://www.renren.com/profile.do?id=' + self.uid
-        else :
+        elif self.src == 'FB' :
             url = 'http://www.facebook.com/profile.php?id=' + self.uid
+        else :
+            url = 'http://home.51.com/?u=' + self.uid
         return url
 
 class GameInfo(db.Model):
