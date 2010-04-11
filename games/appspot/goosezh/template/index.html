@@ -19,7 +19,9 @@
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
             {% trans "Chess(2)" %}</a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
-            <font color="red"><strong> {% trans "Rotate" %} </strong></font></a></li>
+            {% trans "Rotate" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Cell Phone" %} </a></li>
     </ul>
 
     {% ifequal sns.src 'FB' %}
@@ -93,9 +95,9 @@
     <td>
         <table border='0'>
             <h3 class='nav'> {% trans "System Notice!" %} </h3>
-            <tr><td> {% trans "New game" %} {% trans "Rotate" %} {% trans "is under beta test." %}</td></tr>
-            <tr><td> {% trans "You are welcome to join that game." %} </td></tr>
-            <tr><td> {% trans "We will adjust it after test finished." %}  </td></tr>
+            <tr><td> {% trans "Chess is ported to android/1.5" %}</td></tr>
+            <tr><td> {% trans "The porting to iphone is on the way" %} </td></tr>
+            <tr><td> {% trans "Click the tab 'Cell Phone' to visit it" %}  </td></tr>
         </table>
     </td>
     </table>

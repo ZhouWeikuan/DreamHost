@@ -150,6 +150,21 @@ class AdminHandler(webapp.RequestHandler):
             self.response.out.write('FAIL')
         return
 
+class CellPhoneHandler(webapp.RequestHandler):
+    def get(self):
+        opensns.init_sns(self)
+        lang = opensns.sns.lang
+        lang = setHandlerLocale(self, lang)
+        template_values = {
+            'sns' : opensns.sns,
+            'lang' : lang,
+        }
+
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/cellphone.html')
+        self.response.out.write(template.render(path, template_values))
+        return
+
 class HelpHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
@@ -368,6 +383,7 @@ def main():
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
                                         ('/help', HelpHandler),
+                                        ('/cellphone', CellPhoneHandler),
                                         ('/invite', InviteHandler),
                                         ('/admin', AdminHandler)],
                                         debug=True)

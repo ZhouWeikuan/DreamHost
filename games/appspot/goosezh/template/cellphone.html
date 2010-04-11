@@ -1,0 +1,88 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Chinese Chess" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Chess(1)" %} </a></li>
+        <li class="tab_off">
+            <a target="_blank" href="{{ sns.invitePage }}">
+                {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank">
+            {% trans "Rank" %} </a></li>
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/">
+            {% trans "Chess(2)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/">
+            {% trans "Rotate" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Cell Phone" %} </a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE
+        where you may get a "operation aborted" error -->
+    <div id="FB_HiddenIFrameContainer"
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"
+        type="text/javascript"> </script>
+    <script type="text/javascript">
+        FB_RequireFeatures(["CanvasUtil"], function(){
+                FB.XdComm.Server.init('/chchess');
+                FB.CanvasClient.startTimerToSizeToContent();
+                });
+    </script>
+    {% endifequal %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class='nav'> <h3 class='nav'> {% trans "Android SDK 1.5" %} </h3> </div>
+    <div>
+        <a href="https://slideme.org/application/chinese-chess" target="_blank" > slideme </a> <br>
+        <a href="http://appslib.com/applications/index.html?searchkw=Chinese%20Chess"
+            target="_blank" > appslib </a> <br>
+        <a href="http://www.eoemarket.com/apps/6194" target="_blank" > eoeMarket </a> <br>
+    </div>
+    <br>
+
+    <div class="nav"> <h3> {% trans "iPhone" %} </h3> </div>
+    <div>
+        {% trans "Still on the way" %} <br>
+    </div>
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "4732789149";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>
