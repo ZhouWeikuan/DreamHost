@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import pyfacebook, pyxiaonei;
+import pyfacebook, pyxiaonei, pyfiveone;
 from django.utils import simplejson
 
 sns = None
