@@ -84,7 +84,7 @@
         <td> <img alt='{{ g.name }}' class='big'
                 src='{{ g.icon|default_if_none:"/favicon.ico" }}'></img> <br>
               <a title='{% trans "Visit home page" %}' target='_blank' 
-                href='{{ g.getProfileUrl }}'> {{ g.name }} </a>
+                href='{{ g.url }}'> {{ g.name }} </a>
          </td>
          <td><script type="text/javascript">
                  formatTime({{g.tms.year}}, {{g.tms.month}}, {{g.tms.day}}, {{g.tms.hour}}, {{g.tms.minute}}, {{g.tms.second}});

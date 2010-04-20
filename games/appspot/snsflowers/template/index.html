@@ -32,11 +32,13 @@
         type="text/javascript"> </script>
     <script type="text/javascript"> 
         FB_RequireFeatures(["CanvasUtil"], function(){ 
-                FB.XdComm.Server.init('/yihuajiemu'); 
+                FB.XdComm.Server.init('/static/xd_receiver.html'); 
                 FB.CanvasClient.startTimerToSizeToContent(); 
-                }); 
+                });
     </script>
+
     {% endifequal %}
+
     <div>
         <script type="text/javascript"><!--
         google_ad_client = "pub-3444671286856380";
