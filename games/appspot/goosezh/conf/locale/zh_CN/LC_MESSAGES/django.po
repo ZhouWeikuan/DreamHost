@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 12:51+0800\n"
+"POT-Creation-Date: 2010-05-14 17:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -124,12 +124,12 @@ msgid "System Notice!"
 msgstr "系统公告"
 
 #: template/index.html:98
-msgid "Chess is ported to android/1.5"
-msgstr "单机象棋已经移植到Android SDK 1.5"
+msgid "New android/1.5 game Rotate Mono is available"
+msgstr "android上新游戏旋转毛球已经完成"
 
 #: template/index.html:99
-msgid "The porting to iphone is on the way"
-msgstr "iphone的移植也在进行中"
+msgid "Uses gravity to collect the monos, support en/zh_cn"
+msgstr "使用重力感应旋转毛球并消去，支持中英文"
 
 #: template/index.html:100
 msgid "Click the tab 'Cell Phone' to visit it"
@@ -163,7 +163,7 @@ msgstr "开局"
 msgid "Read game rules in help"
 msgstr "请阅读帮助以了解规则"
 
-#: template/index.html:220 template/help.html:123 template/cellphone.html:84
+#: template/index.html:220 template/help.html:123 template/cellphone.html:93
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
@@ -293,14 +293,18 @@ msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr "如果您觉得这个游戏还不错，心情好的话，点一下页面上的广告吧"
 
 #: template/cellphone.html:57
-msgid "Android SDK 1.5"
-msgstr ""
+msgid "Android SDK 1.5 Chinese Chess"
+msgstr "中国象棋"
 
-#: template/cellphone.html:65
+#: template/cellphone.html:66
+msgid "Android SDK 1.5 Rotate Mono "
+msgstr "旋转毛球"
+
+#: template/cellphone.html:74
 msgid "iPhone"
 msgstr ""
 
-#: template/cellphone.html:67
+#: template/cellphone.html:76
 msgid "Still on the way"
 msgstr "仍在开发中"
 
@@ -367,6 +371,12 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid "Chess is ported to android/1.5"
+#~ msgstr "单机象棋已经移植到Android SDK 1.5"
+
+#~ msgid "The porting to iphone is on the way"
+#~ msgstr "iphone的移植也在进行中"
 
 #~ msgid "New game"
 #~ msgstr "新游戏"

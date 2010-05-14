@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 12:51+0800\n"
+"POT-Creation-Date: 2010-05-14 17:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,6 @@ msgstr "Chinese Chess"
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
 #: template/cellphone.html:14
-#, fuzzy
 msgid "Invite"
 msgstr "Invite Friends"
 
@@ -125,11 +124,11 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:98
-msgid "Chess is ported to android/1.5"
+msgid "New android/1.5 game Rotate Mono is available"
 msgstr ""
 
 #: template/index.html:99
-msgid "The porting to iphone is on the way"
+msgid "Uses gravity to collect the monos, support en/zh_cn"
 msgstr ""
 
 #: template/index.html:100
@@ -164,7 +163,7 @@ msgstr ""
 msgid "Read game rules in help"
 msgstr ""
 
-#: template/index.html:220 template/help.html:123 template/cellphone.html:84
+#: template/index.html:220 template/help.html:123 template/cellphone.html:93
 msgid "CopyRight@2010"
 msgstr ""
 
@@ -294,14 +293,18 @@ msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr ""
 
 #: template/cellphone.html:57
-msgid "Android SDK 1.5"
+msgid "Android SDK 1.5 Chinese Chess"
+msgstr "Chinese Chess"
+
+#: template/cellphone.html:66
+msgid "Android SDK 1.5 Rotate Mono "
 msgstr ""
 
-#: template/cellphone.html:65
+#: template/cellphone.html:74
 msgid "iPhone"
 msgstr ""
 
-#: template/cellphone.html:67
+#: template/cellphone.html:76
 msgid "Still on the way"
 msgstr ""
 
