@@ -239,7 +239,7 @@ class CleanGamesHandler(webapp.RequestHandler):
         day = int(self.request.get('day', default_value='3'))
         tms = datetime.datetime.today() - datetime.timedelta(days=day)
         games = db.GqlQuery("SELECT * FROM Games WHERE tms < :1 LIMIT 10", tms);
-        if games:
+        if games and len(games) > 0:
             for g in games:
                 if g.res == '' or g.res == 'Start':
                     try :
