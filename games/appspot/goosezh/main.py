@@ -186,9 +186,9 @@ class RankHandler(webapp.RequestHandler):
         rev = int(self.request.get('rev', default_value='0'))
         lvl = int(self.request.get('lvl', default_value='10'))
         if rev == 1:
-            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
+            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score", lvl).fetch(40);
         else :
-            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score DESC, win DESC", lvl).fetch(20);
+            users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY score DESC, win DESC", lvl).fetch(40);
 
         rev = 1 - rev
         lang = opensns.sns.lang
