@@ -174,9 +174,73 @@ class UserProfileHandler(BaseRequestHandler):
     # Generate the user profile
     self.generate('user.html', template_values={'queried_user': greeting_user})
 
-                                                
+class TaskListHandler(webapp.RequestHandler):
+    def get(self):
+        self.post()
+
+    def post(self):
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        self.response.out.write("""<?xml version="1.0" encoding="utf-8" ?>
+        <tasklists>""");
+        for i in range(0, 20):
+            self.response.out.write("""
+            <taskitem>
+                <no> """ + str(i) + """ </no>
+                <name> this is the online store """ + str(i) + """ and its name </name>
+                <status> confirmed </status>
+            </taskitem>""");
+
+        self.response.out.write("""
+        </tasklists>""");
+
+class TaskDetailsHandler(webapp.RequestHandler):
+    def get(self):
+        self.post()
+
+    def post(self):
+        SendNo = self.request.get('SendNo');
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        self.response.out.write("""<?xml version="1.0" encoding="utf-8" ?>
+        <taskdetails>
+            <Date> 2010-06-10 18:23:11 </Date>
+            <Route> Route Name to the right place </Route>
+            <SendNo> """ + SendNo + """ </SendNo>
+            <RetailName> the retailer name </RetailName>
+            <LicenseNo> License 12394kd84 </LicenseNo>
+            <TotalNum> 12 </TotalNum>
+            <TotalMoney> $1280.00 </TotalMoney>
+            <AddressName> the address name </AddressName>
+            <TelNo> (+86) 13929313948 </TelNo>
+            <PayStatus> Paid </PayStatus>
+        </taskdetails>""");
+
+class ItemDetailsHandler(webapp.RequestHandler):
+    def get(self):
+        self.post()
+
+    def post(self):
+        SendNo = self.request.get('SendNo');
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        self.response.out.write("""<?xml version="1.0" encoding="utf-8" ?>
+        <tasklists>""");
+        for i in range(0, 20):
+            self.response.out.write("""
+            <taskitem>
+                <itemName> """ + str(i) + """ </itemName>
+                <itemNum> """ + str(SendNo) + """ </itemNum>
+                <itemMoney> $1200.00 </itemMoney>
+                <unitPrice> $2.00 </unitPrice>
+            </taskitem>""");
+
+        self.response.out.write("""
+        </tasklists>""");
+
+                                               
 application = webapp.WSGIApplication(
                                      [('/', MainRequestHandler),
+                                      ('/tasklist', TaskListHandler),
+                                      ('/taskdetails', TaskDetailsHandler),
+                                      ('/itemdetails', ItemDetailsHandler),
                                       ('/getchats', ChatsRequestHandler),
                                       ('/user/([^/]+)', UserProfileHandler),
                                       ('/edituser/([^/]+)', EditUserProfileHandler)],
