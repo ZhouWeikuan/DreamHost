@@ -3,6 +3,7 @@ import os
 import urllib
 import logging
 
+from google.appengine.api import images
 from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
@@ -24,6 +25,10 @@ class Greeting(db.Model):
   author = db.UserProperty()
   content = db.StringProperty(multiline=True)
   date = db.DateTimeProperty(auto_now_add=True)
+
+class ImageFile(db.Model):
+    name = db.StringProperty()
+    data = db.BlobProperty()
 
 class BaseRequestHandler(webapp.RequestHandler):
   """Base request handler extends webapp.Request handler
@@ -235,12 +240,46 @@ class ItemDetailsHandler(webapp.RequestHandler):
         self.response.out.write("""
         </tasklists>""");
 
-                                               
+class UploadHandler(webapp.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        self.response.out.write("""<html>
+            <form action='/upload' method='post' enctype='multipart/form-data'>
+                <input type='text' name='title' />
+                <input type='file' name='picfile' />
+                <input type='submit' name='aaa' />
+            </form>
+        </html>""");
+
+    def post(self):
+        name = u'testimage' # cgi.escape(self.request.get('title'))
+        data = self.request.POST.get('picfile').file.read()
+        img = images.Image(data)
+        img.im_feeling_lucky()
+        img.resize(200,200)
+        data = img.execute_transforms(images.PNG)
+
+        img = ImageFile()
+        img.name = name
+        img.data = data
+        img.put()
+        self.response.out.write("OK");
+        
+class ShowHandler(webapp.RequestHandler):
+    def get(self):
+        query = u'testimage'
+        pic = db.GqlQuery("SELECT * FROM ImageFile WHERE name = :1", str(query)).get();
+        self.response.headers['Content-Type'] = 'image/png'
+        self.response.out.write(pic.data);
+
+                                              
 application = webapp.WSGIApplication(
                                      [('/', MainRequestHandler),
                                       ('/tasklist', TaskListHandler),
                                       ('/taskdetails', TaskDetailsHandler),
                                       ('/itemdetails', ItemDetailsHandler),
+                                      ('/upload', UploadHandler),
+                                      ('/show', ShowHandler),
                                       ('/getchats', ChatsRequestHandler),
                                       ('/user/([^/]+)', UserProfileHandler),
                                       ('/edituser/([^/]+)', EditUserProfileHandler)],
