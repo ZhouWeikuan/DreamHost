@@ -29,6 +29,7 @@ class Greeting(db.Model):
 class ImageFile(db.Model):
     name = db.StringProperty()
     data = db.BlobProperty()
+    satisfy = db.StringProperty()
 
 class BaseRequestHandler(webapp.RequestHandler):
   """Base request handler extends webapp.Request handler
@@ -191,7 +192,7 @@ class TaskListHandler(webapp.RequestHandler):
             self.response.out.write("""
             <taskitem>
                 <no> """ + str(i) + """ </no>
-                <name> this is the online store """ + str(i) + """ and its name </name>
+                <name> The online store """ + str(i) + """ and its name </name>
                 <status> confirmed </status>
             </taskitem>""");
 
@@ -252,18 +253,22 @@ class UploadHandler(webapp.RequestHandler):
         </html>""");
 
     def post(self):
+        SendNo = self.request.POST.get('SendNo');
         name = u'testimage' # cgi.escape(self.request.get('title'))
         data = self.request.POST.get('picfile').file.read()
         img = images.Image(data)
         img.im_feeling_lucky()
-        img.resize(200,200)
+        # img.resize(200,200)
         data = img.execute_transforms(images.PNG)
 
-        img = ImageFile()
+        query = u'testimage'
+        img = db.GqlQuery("SELECT * FROM ImageFile WHERE name = :1", str(query)).get();
+        if not img:
+            img = ImageFile()
         img.name = name
         img.data = data
         img.put()
-        self.response.out.write("OK");
+        self.response.out.write("OK=" + SendNo);
         
 class ShowHandler(webapp.RequestHandler):
     def get(self):
@@ -272,7 +277,34 @@ class ShowHandler(webapp.RequestHandler):
         self.response.headers['Content-Type'] = 'image/png'
         self.response.out.write(pic.data);
 
-                                              
+class SatisfyHandler(webapp.RequestHandler):
+    def get(self):
+        query = u'testimage'
+        img = db.GqlQuery("SELECT * FROM ImageFile WHERE name = :1", str(query)).get();
+        satis = ''
+        if img is None:
+            satis = "not found"
+        else :
+            satis = img.satisfy
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        self.response.out.write("""<html>
+            the feedback is """ + str(satis) + """
+        </html>""");
+
+    def post(self):
+        SendNo = self.request.get('SendNo');
+        query = u'testimage'
+        satis = self.request.get('FeedBack')
+        img = db.GqlQuery("SELECT * FROM ImageFile WHERE name = :1", str(query)).get();
+        if img is None:
+            img = ImageFile()
+            img.satisfy = satis
+        else :
+            img.satisfy = satis
+ 
+        img.put()
+        self.response.out.write("OK=" + SendNo);
+                                             
 application = webapp.WSGIApplication(
                                      [('/', MainRequestHandler),
                                       ('/tasklist', TaskListHandler),
@@ -280,6 +312,7 @@ application = webapp.WSGIApplication(
                                       ('/itemdetails', ItemDetailsHandler),
                                       ('/upload', UploadHandler),
                                       ('/show', ShowHandler),
+                                      ('/satisfy', SatisfyHandler),
                                       ('/getchats', ChatsRequestHandler),
                                       ('/user/([^/]+)', UserProfileHandler),
                                       ('/edituser/([^/]+)', EditUserProfileHandler)],
