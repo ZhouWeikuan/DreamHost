@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-14 17:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:139 template/rank.html:90
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:140 template/rank.html:88
+msgid "XN"
+msgstr "Xiaonei"
+
+#: main.py:196 main.py:342
+msgid "lvl "
+msgstr "Level"
+
+#: opensns.py:85
+msgid "is playing Chinese Chess(vs. computers)"
+msgstr ""
+
+#: opensns.py:87
+msgid "The Chinese Chess(vs computers)"
+msgstr ""
+
+#: opensns.py:89
+msgid "joins game Chinese Chess(vs. computers)"
+msgstr ""
+
+#: opensns.py:90
+msgid "a good chinese chess arena"
+msgstr ""
+
+#: opensns.py:93
+msgid "Games"
+msgstr ""
+
+#: opensns.py:96
+msgid "5 stars"
+msgstr ""
+
+#: opensns.py:108
+msgid "Visit this game"
+msgstr "Visit this game's home page"
+
+#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
+#: template/help.html:11 template/cellphone.html:11
+msgid "Chess(1)"
+msgstr ""
+
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr ""
+
+#: template/index.html:5 template/rank.html:5 template/cellphone.html:5
+msgid "Chinese Chess"
+msgstr "Chinese Chess"
+
+#: template/index.html:14 template/rank.html:14 template/help.html:14
+#: template/cellphone.html:14
+msgid "Invite"
+msgstr "Invite Friends"
+
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:69
+#: template/help.html:16 template/cellphone.html:16
+msgid "Rank"
+msgstr "Rank"
+
+#: template/index.html:18 template/rank.html:18 template/help.html:18
+#: template/cellphone.html:18
+msgid "Help"
+msgstr ""
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+#: template/cellphone.html:20
+msgid "Chess(2)"
+msgstr ""
+
+#: template/index.html:22 template/rank.html:22 template/help.html:22
+#: template/cellphone.html:22
+msgid "Rotate"
+msgstr ""
+
+#: template/index.html:24 template/rank.html:24 template/help.html:24
+#: template/cellphone.html:24
+msgid "Cell Phone"
+msgstr ""
+
+#: template/index.html:73
+msgid "Personal Information"
+msgstr ""
+
+#: template/index.html:84 template/rank.html:73
+msgid "Score"
+msgstr "Score"
+
+#: template/index.html:88 template/rank.html:74
+msgid "Win"
+msgstr "Win"
+
+#: template/index.html:89 template/rank.html:75
+msgid "Lose"
+msgstr "Lose"
+
+#: template/index.html:90 template/rank.html:76
+msgid "Draw"
+msgstr "Draw"
+
+#: template/index.html:97
+msgid "System Notice!"
+msgstr ""
+
+#: template/index.html:98
+msgid "New android/1.5 game Rotate Mono is available"
+msgstr ""
+
+#: template/index.html:99
+msgid "Uses gravity to collect the monos, support en/zh_cn"
+msgstr ""
+
+#: template/index.html:100
+msgid "Click the tab 'Cell Phone' to visit it"
+msgstr ""
+
+#: template/index.html:124
+msgid "Play Against Computer"
+msgstr ""
+
+#: template/index.html:173
+msgid "The level for computer:"
+msgstr ""
+
+#: template/index.html:183
+msgid "Who goes first?"
+msgstr ""
+
+#: template/index.html:187
+msgid "I go first"
+msgstr ""
+
+#: template/index.html:188
+msgid "Computer goes first"
+msgstr ""
+
+#: template/index.html:191
+msgid "Start Game"
+msgstr ""
+
+#: template/index.html:199
+msgid "Read game rules in help"
+msgstr ""
+
+#: template/index.html:220 template/help.html:123 template/cellphone.html:93
+msgid "CopyRight@2010"
+msgstr ""
+
+#: template/rank.html:5 template/rank.html.py:57
+msgid "RankList"
+msgstr "Rank List"
+
+#: template/rank.html:70
+msgid "Player(s)"
+msgstr "Player(s)"
+
+#: template/rank.html:71
+msgid "Level"
+msgstr ""
+
+#: template/rank.html:72
+msgid "SNS"
+msgstr ""
+
+#: template/rank.html:83
+msgid "Visit home page"
+msgstr "Visit home page"
+
+#: template/help.html:5
+msgid "Help Files"
+msgstr ""
+
+#: template/help.html:58
+msgid "Tips: This help file will take effect after Feb 28 2010"
+msgstr ""
+
+#: template/help.html:62
+msgid "Game Rules"
+msgstr ""
+
+#: template/help.html:64
+msgid "Each player is on level 0 and has score 100 initially."
+msgstr ""
+
+#: template/help.html:65
+msgid "Each game has different score for different level."
+msgstr ""
+
+#: template/help.html:66
+msgid ""
+"Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
+msgstr ""
+
+#: template/help.html:67
+msgid ""
+"Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
+msgstr ""
+
+#: template/help.html:68
+msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
+msgstr ""
+
+#: template/help.html:72
+msgid "Levels Description"
+msgstr ""
+
+#: template/help.html:74
+msgid "This game contains 10 levels for each player."
+msgstr ""
+
+#: template/help.html:75
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr ""
+
+#: template/help.html:76
+msgid "After the player upgrades his level, he can play more levels."
+msgstr ""
+
+#: template/help.html:80
+msgid "How To Upgrade Your Level"
+msgstr ""
+
+#: template/help.html:82
+msgid ""
+"The player can upgrade his level, only after he wins 3 consecutive games "
+"with the same level as his level(called same-level game)."
+msgstr ""
+
+#: template/help.html:83
+msgid "The games which levels are lower than his level is ignored."
+msgstr ""
+
+#: template/help.html:84
+msgid ""
+"Three consecutive games mean the neiboring games should be played in 6 hours."
+msgstr ""
+
+#: template/help.html:85
+msgid ""
+"If the play wins a same-level game, and after more than 6 hours, he wins "
+"another same-level game."
+msgstr ""
+
+#: template/help.html:86
+msgid "These two same-level games are not consecutive."
+msgstr ""
+
+#: template/help.html:90
+msgid "On Retract"
+msgstr ""
+
+#: template/help.html:92 template/help.html.py:98
+msgid "This is not implemented yet."
+msgstr ""
+
+#: template/help.html:96
+msgid "On Handicap"
+msgstr ""
+
+#: template/help.html:102
+msgid "On earnings"
+msgstr ""
+
+#: template/help.html:104
+msgid "We have applied Google adsense on the pages."
+msgstr ""
+
+#: template/help.html:105
+msgid "If you feel like this game, you can support us via clicking the ads."
+msgstr ""
+
+#: template/cellphone.html:57
+msgid "Android SDK 1.5 Chinese Chess"
+msgstr "Chinese Chess"
+
+#: template/cellphone.html:66
+msgid "Android SDK 1.5 Rotate Mono "
+msgstr ""
+
+#: template/cellphone.html:74
+msgid "iPhone"
+msgstr ""
+
+#: template/cellphone.html:76
+msgid "Still on the way"
+msgstr ""
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "English"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr ""
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr "Level 0"
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr "Level 1"
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr "Level 2"
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr "Level 3"
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr "Level 4"
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr "Level 5"
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr "Level 6"
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr "Level 7"
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr "Level 8"
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr "Level 9"
+
+#: conf/settings.py:27
+msgid "lvl 10"
+msgstr "Level 10"
+
+#~ msgid "Chess Arena"
+#~ msgstr "Chess Arena"
+
+#~ msgid "Play chess with others"
+#~ msgstr "Play chess with others"
+
+#~ msgid " Rank"
+#~ msgstr " Rank"
+
+#~ msgid "Top20"
+#~ msgstr "Top 20"
+
+#~ msgid "Bottom20"
+#~ msgstr "Bottom 20"
+
+#~ msgid "Chess Resources"
+#~ msgstr "Chess Resources"
+
+#~ msgid "Top20ofRankList"
+#~ msgstr "Top 20 of Rank List"

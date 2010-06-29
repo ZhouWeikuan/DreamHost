@@ -76,7 +76,7 @@ def checkUpgrade(u, v):
     fen = fen + v
     if fen == 0:
         fen = 0
-    if fen >= 3 and int(u.lvl) < 9:
+    if fen >= 1 and int(u.lvl) < 18:
         u.lvl = u.lvl + 1
         fen = 0
     memcache.set(key=k, value=fen, time=3600*6) # expire in 6 hours
@@ -134,13 +134,13 @@ class HelpHandler(webapp.RequestHandler):
 class RankHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
-        lvl = self.request.get('lvl', default_value='9')
+        lvl = self.request.get('lvl', default_value='18')
         games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
 
         lang = opensns.sns.lang
         lang = setHandlerLocale(self, lang)
         lvls = []
-        for i in range(9, 0, -1):
+        for i in range(18, 0, -1):
             t = _("lvl " + str(i))
             o = {"tit":t, "cnt":i}
             lvls.append(o)
@@ -193,7 +193,7 @@ class CleanGamesHandler(webapp.RequestHandler):
         lvl = int(lvl)
         if lvl <= 0:
             import random
-            lvl = random.randint(1, 9)
+            lvl = random.randint(0, 19)
         lvl = str(lvl)
         games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(20, 20);
         if games:
@@ -204,8 +204,8 @@ class StartHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
         lvl = int(self.request.get('lvl', default_value='0'))
-        if lvl >= 10:
-            lvl = 9
+        if lvl >= 18:
+            lvl = 17
 
         user = getUserObject(uid);
         newgame = GameInfo(uid=uid, lvl=str(lvl))
