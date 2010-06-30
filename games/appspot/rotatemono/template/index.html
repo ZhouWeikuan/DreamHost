@@ -9,9 +9,8 @@
     <ul id="tabnav">
         <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
             {% trans "Mono" %} </a></li>
-        <li class="tab_off"> 
-            <a target="_blank" href="{{ sns.invitePage }}"> 
-                {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.invitePage }}"> 
+            {% trans "Invite" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
             {% trans "Rank" %} </a></li>
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
@@ -80,14 +79,12 @@
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
                 <td> {{ user.name }} &nbsp;</td>
-                <td> {{ tit }} &nbsp;</td>
-                <td> {% trans "Score" %}: {{ user.score}} &nbsp; </td>
+                <td> &nbsp;</td>
             </tr>
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
-                <td> {% trans "Win" %}: {{ user.win }}   &nbsp; </td>
-                <td> {% trans "Lose" %}: {{ user.lose }} &nbsp; </td>
-                <td> {% trans "Draw" %}: {{ user.draw }} &nbsp; </td>
+                <td> {% trans "Level" %} &nbsp; </td>
+                <td> {{ tit }} &nbsp;</td>
             </tr>
         </table>
     </td>
@@ -130,15 +127,17 @@
             <dl><dt>
             <object id="Mono" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
             codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
-            align="middle" border="0" width="600" height="480">
+            align="middle" border="0" width="640" height="480">
             <param name="allowScriptAccess" value="always">
             <param name="allowFullScreen" value="false">
             <param name="movie" value="http://rotatemono.appspot.com/static/mono.swf">
             <param name="quality" value="high">
             <param name="menu" value="false">
+            <param name="flashvars" value="lang={{lang}}">
             <embed src="http://rotatemono.appspot.com/static/mono.swf" 
-            name="Mono" align="middle" border="0" width="600" height="480" quality="high" 
+            name="Mono" align="middle" border="0" width="640" height="480" quality="high" 
             allowscriptaccess="always" allowfullscreen="false" menu="false" 
+            flashvars="lang={{lang}}"
             type="application/x-shockwave-flash" 
             pluginspage="http://www.macromedia.com/go/getflashplayer" />
             </object>
@@ -169,7 +168,7 @@
     <table border="0">
         <tr>
         <dt><font size="2"> </font></dt>
-        <dt><font size="2">{% trans "The level for computer:" %}</font></dt>
+        <dt><font size="2">{% trans "The game level:" %}</font></dt>
         <dt><font size="2">
             <select name="selLevel" id="selLevel" size="5" >
             {%for duan in lvl%}
@@ -179,7 +178,7 @@
         </tr>
         <tr>
         <dt><font color="#008080" size="2"><strong>
-            <input type="button" value='{% trans "Start Game" %}' onclick="restart_click();Mono.focus();">
+            <input type="button" value='{% trans "Start" %}' onclick="restart_click();Mono.focus();">
             </strong></font></dt>
         <dt><font size="2"></font></dt>
         </tr>

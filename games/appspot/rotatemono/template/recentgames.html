@@ -24,7 +24,7 @@
             <td><a target='_blank' href='{{ g.url }}'>
                 <img alt='{{ g.name }}' class='std' 
                     src='{{ g.icon|default_if_none:"favicon.ico" }}'></img></a><br>
-                <a target='_blank' href='{{ g.url|default_if_none:"None" }}'>{{ g.name }}</a><br>
+                <a target='_blank' href='{{ g.url|default_if_none:"/" }}'>{{ g.name }}</a><br>
                 <!-- don't show sns source {{ g.src }} <br> -->
                     {{ g.lvl }} <br> 
                     <script type="text/javascript">

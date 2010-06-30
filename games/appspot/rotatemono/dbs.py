@@ -7,7 +7,7 @@ class FBUsers(db.Model):
     uid  = db.StringProperty(required=True);
     name = db.StringProperty(default='');
     icon = db.StringProperty(default='');
-    lvl  = db.IntegerProperty(default=1);
+    lvl  = db.IntegerProperty(default = 0);
     src  = db.StringProperty(default='FB');
     era  = db.DateTimeProperty(); # when refreshed? datetime.datetime.now()
 
@@ -26,5 +26,5 @@ class GameInfo(db.Model):
     tms  = db.DateTimeProperty();
     src  = db.StringProperty(default='', multiline=True);
     lvl  = db.StringProperty(default='0', multiline=True);
-    score= db.IntegerProperty(default=0);
+    score= db.FloatProperty(default=0.0);
 

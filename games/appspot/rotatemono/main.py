@@ -68,20 +68,6 @@ def formatGame(g, u=None):
     g.src = u.src
     return g
 
-def checkUpgrade(u, v):
-    k = "score_" + str(u.uid)
-    fen = memcache.get(key=k)
-    if fen is None:
-        fen = 0
-    fen = fen + v
-    if fen == 0:
-        fen = 0
-    if fen >= 1 and int(u.lvl) < 18:
-        u.lvl = u.lvl + 1
-        fen = 0
-    memcache.set(key=k, value=fen, time=3600*6) # expire in 6 hours
-    return
-
 def updateCache(g, u):
     try :
         g = formatGame(g, u)
@@ -114,6 +100,21 @@ class AdminHandler(webapp.RequestHandler):
             self.response.out.write('OK')
         except :
             self.response.out.write('FAIL')
+        return
+
+class CellPhoneHandler(webapp.RequestHandler):
+    def get(self):
+        opensns.init_sns(self)
+        lang = opensns.sns.lang
+        lang = setHandlerLocale(self, lang)
+        template_values = {
+            'sns' : opensns.sns,
+            'lang' : lang,
+        }
+
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/cellphone.html')
+        self.response.out.write(template.render(path, template_values))
         return
 
 class HelpHandler(webapp.RequestHandler):
@@ -172,7 +173,7 @@ class RecentGamesHandler(webapp.RequestHandler):
             g.src = _(g.src)
             g.lvl = _(g.lvl)
             if g.res != 'Lose' and g.res != 'Start':
-                g.res = g.res + _(" Sec.")
+                g.res = g.res + _(" s")
             else:
                 g.res = _(g.res)
 
@@ -212,49 +213,28 @@ class StartHandler(webapp.RequestHandler):
         newgame.res = 'Start'
         newgame.tms = datetime.datetime.today()
         updateCache(newgame, user)
-        checkUpgrade(user, -1)
-        user.put()
         return
 
-class TestHandler(webapp.RequestHandler):
-    def get(self):
-        uid = '296576367'
-        user = getUserObject(uid)
-        k = "score_" + str(user.uid)
-        fen = memcache.get(key=k)
-        self.response.out.write("<div>")
-        self.response.out.write("fen = " + str(fen) + "<br>")
-        self.response.out.write("lvl = " + str(user.lvl) + "<br>")
-        self.response.out.write("</div>")
-
- 
 class ResultHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
-        act = self.request.get('action');
+        elp = self.request.get('elapsed');
         lvl = int(self.request.get('lvl', default_value='0'))
-        score = int(self.request.get('score', default_value='0'))
+
+        user = getUserObject(uid);
 
         newgame = GameInfo(uid=uid, lvl=str(lvl))
         newgame.tms = datetime.datetime.today()
-
-        user = getUserObject(uid);
-        val = 0
-        if act == 'win' :
-            val = 2
-            newgame.res = str(score)
-            newgame.score = score
-            newgame.icon = user.icon
-            newgame.name = user.name
-            newgame.src = user.src
-            newgame.url = user.getProfileUrl()
-            newgame.put()
-        else : # act == 'lose'
-            newgame.res = act.capitalize()
-            val = 0
-            
+        newgame.score = float(elp) * 10
+        newgame.res = elp
+        newgame.icon = user.icon
+        newgame.name = user.name
+        newgame.src = user.src
+        newgame.url = user.getProfileUrl()
+        newgame.put()
+        
         if lvl >= user.lvl:
-            checkUpgrade(user, val)
+            user.lvl = user.lvl + 1
 
         updateCache(newgame, user)
         user.put() 
@@ -296,7 +276,7 @@ class MainHandler(webapp.RequestHandler):
     setHandlerLocale(self, lang)
     user = getUserObject(sns_uid)
     lvl = []
-    for i in range(1, user.lvl+1):
+    for i in range(0, user.lvl+1):
         t = "lvl " + str(i)
         lvl.append(_(t))
 
@@ -343,8 +323,8 @@ def main():
                                         ('/rank', RankHandler),
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
-                                        ('/test', TestHandler),
                                         ('/help', HelpHandler),
+                                        ('/cellphone', CellPhoneHandler),
                                         ('/invite', InviteHandler),
                                         ('/invite51', Invite51Handler),
                                         ('/admin', AdminHandler)],
