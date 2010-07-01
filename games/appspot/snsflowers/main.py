@@ -288,7 +288,7 @@ class MainHandler(webapp.RequestHandler):
     opensns.init_sns(self)
 
     sns_uid = opensns.sns.uid
-    if sns_uid == '' :
+    if int(sns_uid) == 0 :
         self.ask_auth(opensns.sns.auth_url)
         return
 
