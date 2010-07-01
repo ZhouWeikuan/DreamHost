@@ -9,6 +9,8 @@ tr{font-size:12px;}
 
 .container { clear:both; padding:0 10px; border-top:1px solid #d8dfea; background:#f7f7f7;}
 
+.newsItem {color: red; }
+
 .message_info {
     /* width: 800px; */
     width: auto;

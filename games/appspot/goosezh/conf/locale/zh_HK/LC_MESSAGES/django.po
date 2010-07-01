@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-14 17:26+0800\n"
+"POT-Creation-Date: 2010-07-01 15:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:139 template/rank.html:90
+#: main.py:139 template/rank.html:94
 msgid "FB"
 msgstr "臉書"
 
-#: main.py:140 template/rank.html:88
+#: main.py:140 template/rank.html:92
 msgid "XN"
 msgstr "校內網"
 
@@ -74,7 +74,7 @@ msgstr "中國象棋"
 msgid "Invite"
 msgstr "邀請好友"
 
-#: template/index.html:16 template/rank.html:16 template/rank.html.py:69
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:73
 #: template/help.html:16 template/cellphone.html:16
 msgid "Rank"
 msgstr "名次"
@@ -86,104 +86,114 @@ msgstr "幫助"
 
 #: template/index.html:20 template/rank.html:20 template/help.html:20
 #: template/cellphone.html:20
-msgid "Chess(2)"
-msgstr "雙人對弈"
+msgid "Mono"
+msgstr "旋轉毛球"
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+#: template/cellphone.html:20
+msgid "new!"
+msgstr "新!"
 
 #: template/index.html:22 template/rank.html:22 template/help.html:22
 #: template/cellphone.html:22
-msgid "Rotate"
-msgstr "移花接木"
+msgid "Chess(2)"
+msgstr "雙人對弈"
 
 #: template/index.html:24 template/rank.html:24 template/help.html:24
 #: template/cellphone.html:24
+msgid "Rotate"
+msgstr "移花接木"
+
+#: template/index.html:26 template/rank.html:26 template/help.html:26
+#: template/cellphone.html:26
 msgid "Cell Phone"
 msgstr "手機游戲"
 
-#: template/index.html:73
+#: template/index.html:75
 msgid "Personal Information"
 msgstr "個人信息"
 
-#: template/index.html:84 template/rank.html:73
+#: template/index.html:86 template/rank.html:77
 msgid "Score"
 msgstr "得分"
 
-#: template/index.html:88 template/rank.html:74
+#: template/index.html:90 template/rank.html:78
 msgid "Win"
 msgstr "贏局"
 
-#: template/index.html:89 template/rank.html:75
+#: template/index.html:91 template/rank.html:79
 msgid "Lose"
 msgstr "輸局"
 
-#: template/index.html:90 template/rank.html:76
+#: template/index.html:92 template/rank.html:80
 msgid "Draw"
 msgstr "平局"
 
-#: template/index.html:97
+#: template/index.html:99
 msgid "System Notice!"
 msgstr "系統公告"
 
-#: template/index.html:98
-msgid "New android/1.5 game Rotate Mono is available"
-msgstr "Android上新游戲旋轉毛球已經完成"
-
-#: template/index.html:99
-msgid "Uses gravity to collect the monos, support en/zh_cn"
-msgstr "使用重力感應來消去毛球，支持簡中/英文"
-
 #: template/index.html:100
-msgid "Click the tab 'Cell Phone' to visit it"
-msgstr "可以從手機游戲頁查看訪問地址"
+msgid "Rotate Mono is available for SNS/iphone/android now"
+msgstr "旋轉毛球目前支持社交網絡/iphone/android等平台"
 
-#: template/index.html:124
+#: template/index.html:101
+msgid "Click the tab 'Mono' to visit it in SNS "
+msgstr "可以從旋轉毛球頁查看社交網絡上的web game版"
+
+#: template/index.html:102
+msgid "Click the tab 'Phone' to visit it in iphone/android "
+msgstr "也可以從手機游戲頁查看iphone/android版訪問地址"
+
+#: template/index.html:126
 msgid "Play Against Computer"
 msgstr "與電腦對戰"
 
-#: template/index.html:173
+#: template/index.html:175
 msgid "The level for computer:"
 msgstr "電腦等級："
 
-#: template/index.html:183
+#: template/index.html:185
 msgid "Who goes first?"
 msgstr "誰先走？"
 
-#: template/index.html:187
+#: template/index.html:189
 msgid "I go first"
 msgstr "我先走"
 
-#: template/index.html:188
+#: template/index.html:190
 msgid "Computer goes first"
 msgstr "電腦先走"
 
-#: template/index.html:191
+#: template/index.html:193
 msgid "Start Game"
 msgstr "開局"
 
-#: template/index.html:199
+#: template/index.html:201
 msgid "Read game rules in help"
 msgstr "請閱讀幫助以了解規則"
 
-#: template/index.html:220 template/help.html:123 template/cellphone.html:93
+#: template/index.html:222 template/help.html:125 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
-#: template/rank.html:5 template/rank.html.py:57
+#: template/rank.html:5 template/rank.html.py:59
 msgid "RankList"
 msgstr "排行榜"
 
-#: template/rank.html:70
+#: template/rank.html:74
 msgid "Player(s)"
 msgstr "玩家"
 
-#: template/rank.html:71
+#: template/rank.html:75
 msgid "Level"
 msgstr "段位"
 
-#: template/rank.html:72
+#: template/rank.html:76
 msgid "SNS"
 msgstr "來自"
 
-#: template/rank.html:83
+#: template/rank.html:87
 msgid "Visit home page"
 msgstr "訪問個人主頁"
 
@@ -191,120 +201,120 @@ msgstr "訪問個人主頁"
 msgid "Help Files"
 msgstr "幫助"
 
-#: template/help.html:58
+#: template/help.html:60
 msgid "Tips: This help file will take effect after Feb 28 2010"
 msgstr "提示：本幫助文件待2月28日升級後方有效"
 
-#: template/help.html:62
+#: template/help.html:64
 msgid "Game Rules"
 msgstr "游戲規則"
 
-#: template/help.html:64
+#: template/help.html:66
 msgid "Each player is on level 0 and has score 100 initially."
 msgstr "玩家初始每人有100分，零段"
 
-#: template/help.html:65
+#: template/help.html:67
 msgid "Each game has different score for different level."
 msgstr "每局分數依棋局的段位不同而不同。"
 
-#: template/help.html:66
+#: template/help.html:68
 msgid ""
 "Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
 msgstr "零段每局2分，贏家得2分，失敗減2分，平局得1分。"
 
-#: template/help.html:67
+#: template/help.html:69
 msgid ""
 "Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
 msgstr "初段每局4分，贏家得4分，失敗減4分，平局得2分。"
 
-#: template/help.html:68
+#: template/help.html:70
 msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
 msgstr "二段每局8分，三段每局16分，以上各段依次類推。"
 
-#: template/help.html:72
+#: template/help.html:74
 msgid "Levels Description"
 msgstr "段位描述"
 
-#: template/help.html:74
+#: template/help.html:76
 msgid "This game contains 10 levels for each player."
 msgstr "玩家可經歷總共10個段位"
 
-#: template/help.html:75
+#: template/help.html:77
 msgid ""
 "The player can only play the games which level is lower or equal to his "
 "level."
 msgstr "玩家只能玩段位小于或等于本身段位的游戲"
 
-#: template/help.html:76
+#: template/help.html:78
 msgid "After the player upgrades his level, he can play more levels."
 msgstr "玩家提升自己的段位後，可選游戲段位得以增加"
 
-#: template/help.html:80
+#: template/help.html:82
 msgid "How To Upgrade Your Level"
 msgstr "如何升級"
 
-#: template/help.html:82
+#: template/help.html:84
 msgid ""
 "The player can upgrade his level, only after he wins 3 consecutive games "
 "with the same level as his level(called same-level game)."
 msgstr "玩家只有連贏3局與自身段位相等（即同段位）的電腦後才可升級。"
 
-#: template/help.html:83
+#: template/help.html:85
 msgid "The games which levels are lower than his level is ignored."
 msgstr "期間，遜于本身段位的棋局得失不被計入。"
 
-#: template/help.html:84
+#: template/help.html:86
 msgid ""
 "Three consecutive games mean the neiboring games should be played in 6 hours."
 msgstr "連贏是說，相隔的兩局棋間不得超過6小時。"
 
-#: template/help.html:85
+#: template/help.html:87
 msgid ""
 "If the play wins a same-level game, and after more than 6 hours, he wins "
 "another same-level game."
 msgstr "若玩家贏了一局同段位電腦後，過了6小時才再贏另一局同段位電腦，"
 
-#: template/help.html:86
+#: template/help.html:88
 msgid "These two same-level games are not consecutive."
 msgstr "這樣的兩局得勝不被視為連贏。"
 
-#: template/help.html:90
+#: template/help.html:92
 msgid "On Retract"
 msgstr "關于悔棋"
 
-#: template/help.html:92 template/help.html.py:98
+#: template/help.html:94 template/help.html.py:100
 msgid "This is not implemented yet."
 msgstr "此項功能尚在研發中"
 
-#: template/help.html:96
+#: template/help.html:98
 msgid "On Handicap"
 msgstr "關于讓子"
 
-#: template/help.html:102
+#: template/help.html:104
 msgid "On earnings"
 msgstr "關于收益"
 
-#: template/help.html:104
+#: template/help.html:106
 msgid "We have applied Google adsense on the pages."
 msgstr "我們已經申請了Google adsense廣告聯盟"
 
-#: template/help.html:105
+#: template/help.html:107
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr "如果您覺得這個游戲還不錯，心情好的話，點一下頁面上的廣告吧"
 
-#: template/cellphone.html:57
+#: template/cellphone.html:59
 msgid "Android SDK 1.5 Chinese Chess"
 msgstr "中國象棋"
 
-#: template/cellphone.html:66
+#: template/cellphone.html:68
 msgid "Android SDK 1.5 Rotate Mono "
 msgstr "旋轉毛球"
 
-#: template/cellphone.html:74
+#: template/cellphone.html:76
 msgid "iPhone"
 msgstr ""
 
-#: template/cellphone.html:76
+#: template/cellphone.html:78
 msgid "Still on the way"
 msgstr "仍在開發中"
 
@@ -371,6 +381,12 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid "New android/1.5 game Rotate Mono is available"
+#~ msgstr "Android上新游戲旋轉毛球已經完成"
+
+#~ msgid "Uses gravity to collect the monos, support en/zh_cn"
+#~ msgstr "使用重力感應來消去毛球，支持簡中/英文"
 
 #~ msgid "Chess is ported to android/1.5"
 #~ msgstr "單機象棋已經移植到android SDK 1.5"

@@ -135,13 +135,13 @@ class HelpHandler(webapp.RequestHandler):
 class RankHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
-        lvl = self.request.get('lvl', default_value='18')
+        lvl = self.request.get('lvl', default_value='17')
         games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
 
         lang = opensns.sns.lang
         lang = setHandlerLocale(self, lang)
         lvls = []
-        for i in range(18, 0, -1):
+        for i in range(17, -1, -1):
             t = _("lvl " + str(i))
             o = {"tit":t, "cnt":i}
             lvls.append(o)
@@ -172,8 +172,8 @@ class RecentGamesHandler(webapp.RequestHandler):
         for g in games:
             g.src = _(g.src)
             g.lvl = _(g.lvl)
-            if g.res != 'Lose' and g.res != 'Start':
-                g.res = g.res + _(" s")
+            if g.res != 'Start':
+                g.res = g.res + " s"
             else:
                 g.res = _(g.res)
 

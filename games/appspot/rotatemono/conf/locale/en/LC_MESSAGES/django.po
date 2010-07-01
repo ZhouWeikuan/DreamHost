@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-30 16:08+0800\n"
+"POT-Creation-Date: 2010-07-01 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,24 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:104 template/rank.html:97
+#: main.py:90 template/rank.html:98
 msgid "FB"
 msgstr "Facebook"
 
-#: main.py:105 template/rank.html:95
+#: main.py:91 template/rank.html:96
 msgid "XN"
 msgstr "Xiaonei"
 
-#: main.py:106
+#: main.py:92
 msgid "51"
 msgstr ""
 
-#: main.py:144 main.py:296
+#: main.py:145 main.py:283
 msgid "lvl "
-msgstr "Level"
-
-#: main.py:175 template/rank.html:93
-msgid " Sec."
 msgstr ""
 
 #: template/recentgames.html:5 template/index.html:5
@@ -55,7 +51,7 @@ msgstr ""
 msgid "Invite"
 msgstr "Invite Friends"
 
-#: template/index.html:15 template/rank.html:15 template/rank.html.py:76
+#: template/index.html:15 template/rank.html:15 template/rank.html.py:77
 #: template/help.html:15 template/cellphone.html:15
 msgid "Rank"
 msgstr "Rank"
@@ -74,7 +70,8 @@ msgstr ""
 msgid "Branches"
 msgstr ""
 
-#: template/index.html:23 template/rank.html:23 template/cellphone.html:23
+#: template/index.html:23 template/rank.html:23 template/help.html:23
+#: template/cellphone.html:23
 msgid "Phone"
 msgstr ""
 
@@ -95,7 +92,7 @@ msgid "Rotate Mono is under test"
 msgstr ""
 
 #: template/index.html:96
-msgid "Use keyboard/buttons to rotate the screen"
+msgid "Use keyboard/buttons to rotate the grid"
 msgstr ""
 
 #: template/index.html:97
@@ -103,18 +100,18 @@ msgid "You are welcome to test it/invite your friends"
 msgstr ""
 
 #: template/index.html:171
-msgid "The level for computer:"
+msgid "The game level:"
 msgstr ""
 
-#: template/index.html:181
-msgid "Start Game"
+#: template/index.html:181 conf/settings.py:16
+msgid "Start"
 msgstr ""
 
 #: template/index.html:190
 msgid "Read game rules in help"
 msgstr ""
 
-#: template/index.html:211 template/help.html:118 template/cellphone.html:85
+#: template/index.html:211 template/help.html:118 template/cellphone.html:89
 msgid "CopyRight@2010"
 msgstr ""
 
@@ -122,36 +119,36 @@ msgstr ""
 msgid "RankList"
 msgstr "Rank List"
 
-#: template/rank.html:77
+#: template/rank.html:78
 msgid "Player(s)"
 msgstr "Player(s)"
 
-#: template/rank.html:78
+#: template/rank.html:79
 msgid "Date"
 msgstr ""
 
-#: template/rank.html:79
+#: template/rank.html:80
 msgid "Score"
 msgstr "Score"
 
-#: template/rank.html:80
+#: template/rank.html:81
 msgid "SNS"
 msgstr ""
 
-#: template/rank.html:87
+#: template/rank.html:88
 msgid "Visit home page"
 msgstr "Visit home page"
+
+#: template/rank.html:94
+msgid " Sec."
+msgstr ""
 
 #: template/help.html:5
 msgid "Help Files"
 msgstr ""
 
-#: template/help.html:23
-msgid "Cell Phone"
-msgstr ""
-
 #: template/help.html:57
-msgid "Tips: This help file will take effect after Feb 28 2010"
+msgid "Tips: This help file will take effect after July 1 2010"
 msgstr ""
 
 #: template/help.html:61
@@ -236,7 +233,7 @@ msgid "After clicking in the flash screen, you can also use keyboard "
 msgstr ""
 
 #: template/help.html:93
-msgid "    to rotate the grids, the Left, Up, Down arrow keys"
+msgid "    to rotate the grids, the Left, Up, Right arrow keys"
 msgstr ""
 
 #: template/help.html:97
@@ -299,88 +296,77 @@ msgstr "Traditional Chinese"
 msgid "Hong Kong Chinese"
 msgstr "Traditional Chinese"
 
-#: conf/settings.py:16
-msgid "Start"
-msgstr ""
-
 #: conf/settings.py:17
 msgid "lvl 0"
-msgstr "Level 0"
+msgstr ""
 
 #: conf/settings.py:18
 msgid "lvl 1"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:19
 msgid "lvl 2"
-msgstr "Level 2"
+msgstr ""
 
 #: conf/settings.py:20
 msgid "lvl 3"
-msgstr "Level 3"
+msgstr ""
 
 #: conf/settings.py:21
 msgid "lvl 4"
-msgstr "Level 4"
+msgstr ""
 
 #: conf/settings.py:22
 msgid "lvl 5"
-msgstr "Level 5"
+msgstr ""
 
 #: conf/settings.py:23
 msgid "lvl 6"
-msgstr "Level 6"
+msgstr ""
 
 #: conf/settings.py:24
 msgid "lvl 7"
-msgstr "Level 7"
+msgstr ""
 
 #: conf/settings.py:25
 msgid "lvl 8"
-msgstr "Level 8"
+msgstr ""
 
 #: conf/settings.py:26
 msgid "lvl 9"
-msgstr "Level 9"
+msgstr ""
 
 #: conf/settings.py:27
 msgid "lvl 10"
-msgstr "Level 10"
+msgstr ""
 
 #: conf/settings.py:28
-#, fuzzy
 msgid "lvl 11"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:29
-#, fuzzy
 msgid "lvl 12"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:30
-#, fuzzy
 msgid "lvl 13"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:31
-#, fuzzy
 msgid "lvl 14"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:32
-#, fuzzy
 msgid "lvl 15"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:33
-#, fuzzy
 msgid "lvl 16"
-msgstr "Level 1"
+msgstr ""
 
 #: conf/settings.py:34
-#, fuzzy
 msgid "lvl 17"
-msgstr "Level 1"
+msgstr ""
 
 #~ msgid "Win"
 #~ msgstr "Win"

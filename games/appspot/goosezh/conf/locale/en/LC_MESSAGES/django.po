@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-14 17:26+0800\n"
+"POT-Creation-Date: 2010-07-01 15:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:139 template/rank.html:90
+#: main.py:139 template/rank.html:94
 msgid "FB"
 msgstr "Facebook"
 
-#: main.py:140 template/rank.html:88
+#: main.py:140 template/rank.html:92
 msgid "XN"
 msgstr "Xiaonei"
 
@@ -74,7 +74,7 @@ msgstr "Chinese Chess"
 msgid "Invite"
 msgstr "Invite Friends"
 
-#: template/index.html:16 template/rank.html:16 template/rank.html.py:69
+#: template/index.html:16 template/rank.html:16 template/rank.html.py:73
 #: template/help.html:16 template/cellphone.html:16
 msgid "Rank"
 msgstr "Rank"
@@ -86,104 +86,114 @@ msgstr ""
 
 #: template/index.html:20 template/rank.html:20 template/help.html:20
 #: template/cellphone.html:20
-msgid "Chess(2)"
+msgid "Mono"
+msgstr ""
+
+#: template/index.html:20 template/rank.html:20 template/help.html:20
+#: template/cellphone.html:20
+msgid "new!"
 msgstr ""
 
 #: template/index.html:22 template/rank.html:22 template/help.html:22
 #: template/cellphone.html:22
-msgid "Rotate"
+msgid "Chess(2)"
 msgstr ""
 
 #: template/index.html:24 template/rank.html:24 template/help.html:24
 #: template/cellphone.html:24
+msgid "Rotate"
+msgstr ""
+
+#: template/index.html:26 template/rank.html:26 template/help.html:26
+#: template/cellphone.html:26
 msgid "Cell Phone"
 msgstr ""
 
-#: template/index.html:73
+#: template/index.html:75
 msgid "Personal Information"
 msgstr ""
 
-#: template/index.html:84 template/rank.html:73
+#: template/index.html:86 template/rank.html:77
 msgid "Score"
 msgstr "Score"
 
-#: template/index.html:88 template/rank.html:74
+#: template/index.html:90 template/rank.html:78
 msgid "Win"
 msgstr "Win"
 
-#: template/index.html:89 template/rank.html:75
+#: template/index.html:91 template/rank.html:79
 msgid "Lose"
 msgstr "Lose"
 
-#: template/index.html:90 template/rank.html:76
+#: template/index.html:92 template/rank.html:80
 msgid "Draw"
 msgstr "Draw"
 
-#: template/index.html:97
+#: template/index.html:99
 msgid "System Notice!"
 msgstr ""
 
-#: template/index.html:98
-msgid "New android/1.5 game Rotate Mono is available"
-msgstr ""
-
-#: template/index.html:99
-msgid "Uses gravity to collect the monos, support en/zh_cn"
-msgstr ""
-
 #: template/index.html:100
-msgid "Click the tab 'Cell Phone' to visit it"
+msgid "Rotate Mono is available for SNS/iphone/android now"
 msgstr ""
 
-#: template/index.html:124
+#: template/index.html:101
+msgid "Click the tab 'Mono' to visit it in SNS "
+msgstr ""
+
+#: template/index.html:102
+msgid "Click the tab 'Phone' to visit it in iphone/android "
+msgstr ""
+
+#: template/index.html:126
 msgid "Play Against Computer"
 msgstr ""
 
-#: template/index.html:173
+#: template/index.html:175
 msgid "The level for computer:"
 msgstr ""
 
-#: template/index.html:183
+#: template/index.html:185
 msgid "Who goes first?"
 msgstr ""
 
-#: template/index.html:187
+#: template/index.html:189
 msgid "I go first"
 msgstr ""
 
-#: template/index.html:188
+#: template/index.html:190
 msgid "Computer goes first"
 msgstr ""
 
-#: template/index.html:191
+#: template/index.html:193
 msgid "Start Game"
 msgstr ""
 
-#: template/index.html:199
+#: template/index.html:201
 msgid "Read game rules in help"
 msgstr ""
 
-#: template/index.html:220 template/help.html:123 template/cellphone.html:93
+#: template/index.html:222 template/help.html:125 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr ""
 
-#: template/rank.html:5 template/rank.html.py:57
+#: template/rank.html:5 template/rank.html.py:59
 msgid "RankList"
 msgstr "Rank List"
 
-#: template/rank.html:70
+#: template/rank.html:74
 msgid "Player(s)"
 msgstr "Player(s)"
 
-#: template/rank.html:71
+#: template/rank.html:75
 msgid "Level"
 msgstr ""
 
-#: template/rank.html:72
+#: template/rank.html:76
 msgid "SNS"
 msgstr ""
 
-#: template/rank.html:83
+#: template/rank.html:87
 msgid "Visit home page"
 msgstr "Visit home page"
 
@@ -191,120 +201,120 @@ msgstr "Visit home page"
 msgid "Help Files"
 msgstr ""
 
-#: template/help.html:58
+#: template/help.html:60
 msgid "Tips: This help file will take effect after Feb 28 2010"
 msgstr ""
 
-#: template/help.html:62
+#: template/help.html:64
 msgid "Game Rules"
 msgstr ""
 
-#: template/help.html:64
+#: template/help.html:66
 msgid "Each player is on level 0 and has score 100 initially."
 msgstr ""
 
-#: template/help.html:65
+#: template/help.html:67
 msgid "Each game has different score for different level."
 msgstr ""
 
-#: template/help.html:66
+#: template/help.html:68
 msgid ""
 "Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if draw."
 msgstr ""
 
-#: template/help.html:67
+#: template/help.html:69
 msgid ""
 "Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if draw."
 msgstr ""
 
-#: template/help.html:68
+#: template/help.html:70
 msgid "Level 2 has score 8, level 3 has score 16, and so on for later levels."
 msgstr ""
 
-#: template/help.html:72
+#: template/help.html:74
 msgid "Levels Description"
 msgstr ""
 
-#: template/help.html:74
+#: template/help.html:76
 msgid "This game contains 10 levels for each player."
 msgstr ""
 
-#: template/help.html:75
+#: template/help.html:77
 msgid ""
 "The player can only play the games which level is lower or equal to his "
 "level."
 msgstr ""
 
-#: template/help.html:76
+#: template/help.html:78
 msgid "After the player upgrades his level, he can play more levels."
 msgstr ""
 
-#: template/help.html:80
+#: template/help.html:82
 msgid "How To Upgrade Your Level"
 msgstr ""
 
-#: template/help.html:82
+#: template/help.html:84
 msgid ""
 "The player can upgrade his level, only after he wins 3 consecutive games "
 "with the same level as his level(called same-level game)."
 msgstr ""
 
-#: template/help.html:83
+#: template/help.html:85
 msgid "The games which levels are lower than his level is ignored."
 msgstr ""
 
-#: template/help.html:84
+#: template/help.html:86
 msgid ""
 "Three consecutive games mean the neiboring games should be played in 6 hours."
 msgstr ""
 
-#: template/help.html:85
+#: template/help.html:87
 msgid ""
 "If the play wins a same-level game, and after more than 6 hours, he wins "
 "another same-level game."
 msgstr ""
 
-#: template/help.html:86
+#: template/help.html:88
 msgid "These two same-level games are not consecutive."
 msgstr ""
 
-#: template/help.html:90
+#: template/help.html:92
 msgid "On Retract"
 msgstr ""
 
-#: template/help.html:92 template/help.html.py:98
+#: template/help.html:94 template/help.html.py:100
 msgid "This is not implemented yet."
 msgstr ""
 
-#: template/help.html:96
+#: template/help.html:98
 msgid "On Handicap"
 msgstr ""
 
-#: template/help.html:102
+#: template/help.html:104
 msgid "On earnings"
 msgstr ""
 
-#: template/help.html:104
+#: template/help.html:106
 msgid "We have applied Google adsense on the pages."
 msgstr ""
 
-#: template/help.html:105
+#: template/help.html:107
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr ""
 
-#: template/cellphone.html:57
+#: template/cellphone.html:59
 msgid "Android SDK 1.5 Chinese Chess"
 msgstr "Chinese Chess"
 
-#: template/cellphone.html:66
+#: template/cellphone.html:68
 msgid "Android SDK 1.5 Rotate Mono "
 msgstr ""
 
-#: template/cellphone.html:74
+#: template/cellphone.html:76
 msgid "iPhone"
 msgstr ""
 
-#: template/cellphone.html:76
+#: template/cellphone.html:78
 msgid "Still on the way"
 msgstr ""
 

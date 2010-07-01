@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-30 16:08+0800\n"
+"POT-Creation-Date: 2010-07-01 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:104 template/rank.html:97
+#: main.py:90 template/rank.html:98
 msgid "FB"
 msgstr "臉書"
 
-#: main.py:105 template/rank.html:95
+#: main.py:91 template/rank.html:96
 msgid "XN"
 msgstr "校內網"
 
-#: main.py:106
+#: main.py:92
 msgid "51"
 msgstr ""
 
-#: main.py:144 main.py:296
+#: main.py:145 main.py:283
 msgid "lvl "
-msgstr "段"
-
-#: main.py:175 template/rank.html:93
-msgid " Sec."
-msgstr ""
+msgstr "關"
 
 #: template/recentgames.html:5 template/index.html:5
 #: template/index.html.py:121 template/cellphone.html:5
-#, fuzzy
 msgid "Rotate Mono"
-msgstr "移花接木"
+msgstr "旋轉小球"
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
@@ -49,14 +44,14 @@ msgstr "最近結果"
 #: template/index.html:11 template/rank.html:5 template/rank.html.py:11
 #: template/help.html:11 template/cellphone.html:11
 msgid "Mono"
-msgstr ""
+msgstr "旋轉毛球"
 
 #: template/index.html:13 template/rank.html:13 template/help.html:13
 #: template/cellphone.html:13
 msgid "Invite"
 msgstr "邀請好友"
 
-#: template/index.html:15 template/rank.html:15 template/rank.html.py:76
+#: template/index.html:15 template/rank.html:15 template/rank.html.py:77
 #: template/help.html:15 template/cellphone.html:15
 msgid "Rank"
 msgstr "名次"
@@ -72,12 +67,11 @@ msgid "Chess(1)"
 msgstr "單機象棋"
 
 #: template/index.html:21 template/rank.html:21 template/help.html:21
-#, fuzzy
 msgid "Branches"
 msgstr "移花接木"
 
-#: template/index.html:23 template/rank.html:23 template/cellphone.html:23
-#, fuzzy
+#: template/index.html:23 template/rank.html:23 template/help.html:23
+#: template/cellphone.html:23
 msgid "Phone"
 msgstr "手機游戲"
 
@@ -87,7 +81,7 @@ msgstr "個人信息"
 
 #: template/index.html:86
 msgid "Level"
-msgstr "段位"
+msgstr "關卡"
 
 #: template/index.html:94
 msgid "System Notice!"
@@ -95,30 +89,29 @@ msgstr "系統公告"
 
 #: template/index.html:95
 msgid "Rotate Mono is under test"
-msgstr ""
+msgstr "旋轉毛球正在測試中"
 
 #: template/index.html:96
-msgid "Use keyboard/buttons to rotate the screen"
-msgstr ""
+msgid "Use keyboard/buttons to rotate the grid"
+msgstr "可以使用鼠標鍵盤旋轉格子"
 
 #: template/index.html:97
-#, fuzzy
 msgid "You are welcome to test it/invite your friends"
-msgstr "歡迎加入新游戲"
+msgstr "歡迎加入此游戲，并邀請好友"
 
 #: template/index.html:171
-msgid "The level for computer:"
-msgstr "電腦等級："
+msgid "The game level:"
+msgstr "選擇關卡："
 
-#: template/index.html:181
-msgid "Start Game"
-msgstr "開局"
+#: template/index.html:181 conf/settings.py:16
+msgid "Start"
+msgstr "開始"
 
 #: template/index.html:190
 msgid "Read game rules in help"
 msgstr "請閱讀幫助以了解規則"
 
-#: template/index.html:211 template/help.html:118 template/cellphone.html:85
+#: template/index.html:211 template/help.html:118 template/cellphone.html:89
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
@@ -126,126 +119,122 @@ msgstr "版權所有 2010年"
 msgid "RankList"
 msgstr "排行榜"
 
-#: template/rank.html:77
+#: template/rank.html:78
 msgid "Player(s)"
 msgstr "玩家"
 
-#: template/rank.html:78
-#, fuzzy
-msgid "Date"
-msgstr "移花接木"
-
 #: template/rank.html:79
+msgid "Date"
+msgstr "日期"
+
+#: template/rank.html:80
 msgid "Score"
 msgstr "得分"
 
-#: template/rank.html:80
+#: template/rank.html:81
 msgid "SNS"
 msgstr "來自"
 
-#: template/rank.html:87
+#: template/rank.html:88
 msgid "Visit home page"
 msgstr "訪問個人主頁"
+
+#: template/rank.html:94
+msgid " Sec."
+msgstr "秒"
 
 #: template/help.html:5
 msgid "Help Files"
 msgstr "幫助"
 
-#: template/help.html:23
-msgid "Cell Phone"
-msgstr "手機游戲"
-
 #: template/help.html:57
-msgid "Tips: This help file will take effect after Feb 28 2010"
-msgstr "提示：本幫助文件待2月28日升級後方有效"
+msgid "Tips: This help file will take effect after July 1 2010"
+msgstr "提示：本幫助文件待2010年7月1日後方有效"
 
 #: template/help.html:61
 msgid "Game Rules"
 msgstr "游戲規則"
 
 #: template/help.html:63
-#, fuzzy
 msgid "Each player is on level 0 initially."
-msgstr "玩家初始每人有100分，零段"
+msgstr "玩家初始每人等級為0"
 
 #: template/help.html:64
 msgid "Each game displays the current level and the elapsed time in seconds"
-msgstr ""
+msgstr "游戲進行時，會顯示當前關卡數和已使用的時間"
 
 #: template/help.html:65
 msgid "If the player clicks start button before the game ends, "
-msgstr ""
+msgstr "若玩家在完成游戲前再次點擊開始按鈕"
 
 #: template/help.html:66
 msgid "     the current game is ignored."
-msgstr ""
+msgstr "     當前進行的游戲將被忽略，重頭開始新的游戲"
 
 #: template/help.html:67
 msgid ""
 "If he finishes the current level, the elapsed time will be sent to server, "
-msgstr ""
+msgstr "完成當前游戲後，所使用的時間將發送給服務器"
 
 #: template/help.html:68
 msgid "     that game will be displayed in rank list if the time is in top 10"
-msgstr ""
+msgstr "       若使用的時間是前十名之內，將會在排行榜上顯示"
 
 #: template/help.html:72
 msgid "Levels Description"
-msgstr "段位描述"
+msgstr "關卡描述"
 
 #: template/help.html:74
-#, fuzzy
 msgid "This game contains 18 levels for each player."
-msgstr "玩家可經歷總共10個段位"
+msgstr "玩家可經歷總共18個關卡"
 
 #: template/help.html:75
 msgid ""
 "The player can only play the games which level is lower or equal to his "
 "level."
-msgstr "玩家只能玩段位小于或等于本身段位的游戲"
+msgstr "玩家只能玩關卡數小于或等于本身等級的游戲"
 
 #: template/help.html:76
 msgid "After the player upgrades his level, he can play more levels."
-msgstr "玩家提升自己的段位後，可選游戲段位得以增加"
+msgstr "玩家提升自己的等級後，可選游戲關卡數得以增加"
 
 #: template/help.html:80
 msgid "How To Upgrade Your Level"
-msgstr "如何升級"
+msgstr "如何提升等級"
 
 #: template/help.html:82
-#, fuzzy
 msgid ""
 "The player can upgrade his level, only after he wins 1 game with the same "
 "level as his level(called same-level game)."
-msgstr "玩家只有連贏3局與自身段位相等（即同段位）的電腦後才可升級。"
+msgstr "玩家只有贏了1局與自身等級相等的游戲關卡後才可升級。"
 
 #: template/help.html:83
 msgid "The games which levels are lower than his level is ignored."
-msgstr "期間，遜于本身段位的棋局得失不被計入。"
+msgstr "期間，遜于本身等級的游戲得失不被計入。"
 
 #: template/help.html:84
 msgid "We will add a time limit for each level later."
-msgstr ""
+msgstr "我們以後會加入限時機制，每個關卡的游戲有一定的時間限制"
 
 #: template/help.html:88
 msgid "On Mouse and Keyboard"
-msgstr ""
+msgstr "關于鼠標和鍵盤操作"
 
 #: template/help.html:90
 msgid "Use mouse to click the start button to start one game."
-msgstr ""
+msgstr "使用鼠標點擊開始按鈕進行新游戲"
 
 #: template/help.html:91
 msgid "Use mouse to click the rotate buttons in flash to rotate the grid."
-msgstr ""
+msgstr "使用鼠標點擊游戲中的旋轉按鈕，以旋轉格子"
 
 #: template/help.html:92
 msgid "After clicking in the flash screen, you can also use keyboard "
-msgstr ""
+msgstr "用鼠標點了游戲界面後，你也可以用鍵盤操作"
 
 #: template/help.html:93
-msgid "    to rotate the grids, the Left, Up, Down arrow keys"
-msgstr ""
+msgid "    to rotate the grids, the Left, Up, Right arrow keys"
+msgstr "     使用向左，向上，向右等鍵旋轉格子"
 
 #: template/help.html:97
 msgid "On earnings"
@@ -264,33 +253,32 @@ msgid "Rotate"
 msgstr "移花接木"
 
 #: template/cellphone.html:56
-#, fuzzy
 msgid "Android Rotate Mono"
-msgstr "旋轉毛球"
+msgstr "旋轉毛球 android版"
 
 #: template/cellphone.html:58
 msgid "Search 'Rotate Mono' in android market "
-msgstr ""
+msgstr "以'Rotate Mono'为关键字在anroid market上搜索"
 
 #: template/cellphone.html:59
 msgid "Or search my name 'Zhou Weikuan' in android market "
-msgstr ""
+msgstr "或以我名字'Zhou weikuan'为关键字搜索android market"
 
 #: template/cellphone.html:60
 msgid "  to find all my android games"
-msgstr ""
+msgstr "能找到我写的所有android游戏"
 
 #: template/cellphone.html:64
 msgid "iPhone Rotate Mono"
-msgstr ""
+msgstr "旋转小球 iphone版"
 
 #: template/cellphone.html:66
 msgid "Just find it in the following website:"
-msgstr ""
+msgstr "点击以下itunes链接即可"
 
 #: template/cellphone.html:68
 msgid "Rotate Mono on itunes"
-msgstr ""
+msgstr "itunes上的旋转小球"
 
 #: conf/settings.py:6
 msgid "English"
@@ -308,88 +296,89 @@ msgstr "繁體中文"
 msgid "Hong Kong Chinese"
 msgstr "繁體中文"
 
-#: conf/settings.py:16
-msgid "Start"
-msgstr "開局"
-
 #: conf/settings.py:17
 msgid "lvl 0"
-msgstr "無段"
+msgstr "第0关"
 
 #: conf/settings.py:18
 msgid "lvl 1"
-msgstr "一段"
+msgstr "第1关"
 
 #: conf/settings.py:19
 msgid "lvl 2"
-msgstr "二段"
+msgstr "第2关"
 
 #: conf/settings.py:20
 msgid "lvl 3"
-msgstr "三段"
+msgstr "第3关"
 
 #: conf/settings.py:21
 msgid "lvl 4"
-msgstr "四段"
+msgstr "第4关"
 
 #: conf/settings.py:22
 msgid "lvl 5"
-msgstr "五段"
+msgstr "第5关"
 
 #: conf/settings.py:23
 msgid "lvl 6"
-msgstr "六段"
+msgstr "第6关"
 
 #: conf/settings.py:24
 msgid "lvl 7"
-msgstr "七段"
+msgstr "第7关"
 
 #: conf/settings.py:25
 msgid "lvl 8"
-msgstr "八段"
+msgstr "第8关"
 
 #: conf/settings.py:26
 msgid "lvl 9"
-msgstr "九段"
+msgstr "第9关"
 
 #: conf/settings.py:27
 msgid "lvl 10"
-msgstr "十段"
+msgstr "10关"
 
 #: conf/settings.py:28
-#, fuzzy
 msgid "lvl 11"
-msgstr "一段"
+msgstr "11关"
 
 #: conf/settings.py:29
-#, fuzzy
 msgid "lvl 12"
-msgstr "一段"
+msgstr "12关"
 
 #: conf/settings.py:30
-#, fuzzy
 msgid "lvl 13"
-msgstr "一段"
+msgstr "13关"
 
 #: conf/settings.py:31
-#, fuzzy
 msgid "lvl 14"
-msgstr "一段"
+msgstr "14关"
 
 #: conf/settings.py:32
-#, fuzzy
 msgid "lvl 15"
-msgstr "一段"
+msgstr "15关"
 
 #: conf/settings.py:33
-#, fuzzy
 msgid "lvl 16"
-msgstr "一段"
+msgstr "16关"
 
 #: conf/settings.py:34
-#, fuzzy
 msgid "lvl 17"
-msgstr "一段"
+msgstr "17关"
+
+#~ msgid " s"
+#~ msgstr "秒"
+
+#~ msgid "The level for computer:"
+#~ msgstr "電腦等級："
+
+#~ msgid "Start Game"
+#~ msgstr "開局"
+
+#~ msgid "Cell Phone"
+#~ msgstr "手機游戲"
 
 #~ msgid "Win"
 #~ msgstr "贏局"

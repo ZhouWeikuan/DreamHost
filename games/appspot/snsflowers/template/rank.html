@@ -9,15 +9,16 @@
     <ul id="tabnav">
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}"> 
             {% trans "Rotate" %} </a></li>
-        <li class="tab_off"> 
-            <a target="_blank" href="{{ sns.invitePage }}"> 
-                {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.invitePage }}"> 
+            {% trans "Invite" %} </a></li>
         <li class="tab_on"> <a target="_top" href="{{sns.homeurl}}/rank"> 
             {% trans  "Rank" %} </a></li>
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
             {% trans "Help" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{sns.topurl}}/chschess/"> 
             {% trans "Chess(1)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/rotatemono/"> 
+            {% trans "Mono" %} <sup><span class="newsItem">{% trans "new!" %}</span></sup> </a></li>
         <li class="tab_off"> <a target="_blank" href="{{sns.topurl}}/chchess/"> 
             {% trans "Chess(2)" %}</a></li>
     </ul>
@@ -70,6 +71,7 @@
         }
     </script>
 
+    <hr />
     <table border='0' style="text-align:center;">
         <thead>
             <th width='100'> {% trans "Rank" %} </th>
@@ -99,6 +101,7 @@
         </tr>
     {% endfor %}
     </table>
+    <hr />
 
     <div>
         <script type="text/javascript"><!--

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-12 09:45+0800\n"
+"POT-Creation-Date: 2010-07-01 13:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,47 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:104 template/rank.html:96
+#: main.py:104 template/rank.html:98
 msgid "FB"
 msgstr "臉書"
 
-#: main.py:105 template/rank.html:94
+#: main.py:105 template/rank.html:96
 msgid "XN"
 msgstr "校內網"
 
-#: main.py:143 main.py:268
+#: main.py:106
+msgid "51"
+msgstr ""
+
+#: main.py:144 main.py:303
 msgid "lvl "
 msgstr "段"
 
-#: main.py:173 template/rank.html:92
+#: main.py:175 template/rank.html:94
 msgid " Sec."
 msgstr "秒"
 
-#: opensns.py:85
+#: opensns.py:123
 msgid "is playing Chinese Chess(vs. computers)"
 msgstr "正在與電腦比象棋"
 
-#: opensns.py:87
+#: opensns.py:125
 msgid "The Chinese Chess(vs computers)"
 msgstr "與電腦比象棋"
 
-#: opensns.py:89
+#: opensns.py:127
 msgid "joins game Chinese Chess(vs. computers)"
 msgstr "加入了游戲與電腦比象棋"
 
-#: opensns.py:90
+#: opensns.py:128
 msgid "a good chinese chess arena"
 msgstr "一個好的中國象棋平台"
 
-#: opensns.py:93
+#: opensns.py:131
 msgid "Games"
 msgstr "休閑娛樂"
 
-#: opensns.py:96
+#: opensns.py:134
 msgid "5 stars"
 msgstr "五星"
 
-#: opensns.py:108
+#: opensns.py:146
 msgid "Visit this game"
 msgstr "訪問這個游戲"
 
@@ -69,172 +73,184 @@ msgstr "移花接木"
 msgid "Recent Results"
 msgstr "最近結果"
 
-#: template/index.html:5 template/index.html.py:93 template/rank.html:5
+#: template/index.html:5 template/index.html.py:109 template/rank.html:5
 msgid "Rotate Branches"
 msgstr "移花接木"
 
-#: template/index.html:14 template/rank.html:14 template/help.html:14
+#: template/index.html:13 template/rank.html:13 template/help.html:13
 msgid "Invite"
 msgstr "邀請好友"
 
-#: template/index.html:16 template/rank.html:16 template/rank.html.py:75
-#: template/help.html:16
+#: template/index.html:15 template/rank.html:15 template/rank.html.py:77
+#: template/help.html:15
 msgid "Rank"
 msgstr "名次"
 
-#: template/index.html:18 template/rank.html:18 template/help.html:5
-#: template/help.html.py:18
+#: template/index.html:17 template/rank.html:17 template/help.html:5
+#: template/help.html.py:17
 msgid "Help"
 msgstr "幫助"
 
-#: template/index.html:20 template/rank.html:20 template/help.html:20
+#: template/index.html:19 template/rank.html:19 template/help.html:19
 msgid "Chess(1)"
 msgstr "單機象棋"
 
-#: template/index.html:22 template/rank.html:22 template/help.html:22
+#: template/index.html:21 template/rank.html:21 template/help.html:21
+msgid "Mono"
+msgstr "旋轉小球"
+
+#: template/index.html:21 template/rank.html:21 template/help.html:21
+msgid "new!"
+msgstr "新!"
+
+#: template/index.html:23 template/rank.html:23 template/help.html:23
 msgid "Chess(2)"
 msgstr "象棋對弈"
 
-#: template/index.html:44
+#: template/index.html:60
 msgid "Personal Information"
 msgstr "個人信息"
 
-#: template/index.html:58
+#: template/index.html:74
 msgid "Level"
 msgstr "關卡"
 
-#: template/index.html:65
+#: template/index.html:81
 msgid "System Notice!"
 msgstr "系統公告"
 
-#: template/index.html:67
+#: template/index.html:83
 msgid "This game is still under test."
 msgstr "本游戲仍在測試中"
 
-#: template/index.html:68
+#: template/index.html:84
 msgid "Welcome to invite your friends."
 msgstr "歡迎邀請好友加入"
 
-#: template/index.html:69
+#: template/index.html:85
 msgid "We will adjust the game when test finished. "
 msgstr "測試結束後，我們會加以調整"
 
-#: template/index.html:126
+#: template/index.html:142
 msgid "Read game rules in help"
 msgstr "請閱讀幫助以了解規則"
 
-#: template/index.html:131
+#: template/index.html:147
 msgid "Set level:"
 msgstr "設定關卡"
 
-#: template/index.html:143
+#: template/index.html:159
 msgid "Start Game"
 msgstr "開局"
 
-#: template/index.html:155 template/help.html:107
+#: template/index.html:181 template/help.html:109
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
-#: template/rank.html:5 template/rank.html.py:55
+#: template/rank.html:5 template/rank.html.py:56
 msgid "RankList"
 msgstr "排行榜"
 
-#: template/rank.html:76
+#: template/rank.html:78
 msgid "Player(s)"
 msgstr "玩家"
 
-#: template/rank.html:77
+#: template/rank.html:79
 msgid "Date"
 msgstr "日期"
 
-#: template/rank.html:78
+#: template/rank.html:80
 msgid "Score"
 msgstr "得分"
 
-#: template/rank.html:79
+#: template/rank.html:81
 msgid "SNS"
 msgstr "來自"
 
-#: template/rank.html:86
+#: template/rank.html:88
 msgid "Visit home page"
 msgstr "訪問個人主頁"
 
-#: template/help.html:56
+#: template/help.html:57
 msgid "Tips: This help file will take effect after March 10 2010"
 msgstr "提示：本幫助文件待3月10日升級後方有效"
 
-#: template/help.html:60
+#: template/help.html:61
 msgid "Game Rules"
 msgstr "游戲規則"
 
-#: template/help.html:62
+#: template/help.html:63
+msgid "Click the grid to rotate the branches after clicking start button."
+msgstr ""
+
+#: template/help.html:64
 msgid "Each player is on level 0 and has score 100 initially."
 msgstr "玩家初始每人有100分，第0關"
 
-#: template/help.html:63
+#: template/help.html:65
 msgid "Each game has different scores and time limits for different level."
 msgstr "每關分數和時限依關卡而不同。"
 
-#: template/help.html:64
+#: template/help.html:66
 msgid "The scores and time limites is still unknown yet."
 msgstr "目前分數和時限尚未完全決定"
 
-#: template/help.html:68
+#: template/help.html:70
 msgid "Levels Description"
 msgstr "關卡描述"
 
-#: template/help.html:70
+#: template/help.html:72
 msgid "This game contains 10 levels for each player."
 msgstr "玩家可經歷總共10個關卡"
 
-#: template/help.html:71
+#: template/help.html:73
 msgid ""
 "The player can only play the games which level is lower or equal to his "
 "level."
 msgstr "玩家只能玩關卡小于或等于本身的游戲"
 
-#: template/help.html:72
+#: template/help.html:74
 msgid "After the player upgrades his level, he can play more levels."
 msgstr "玩家提升自己的關卡後，可選游戲關卡得以增加"
 
-#: template/help.html:76
+#: template/help.html:78
 msgid "How To Upgrade Your Level"
 msgstr "如何升級"
 
-#: template/help.html:78
+#: template/help.html:80
 msgid ""
 "The player can upgrade his level, only after he wins 3 consecutive games "
 "with the same level as his level(called same-level game)."
 msgstr "玩家只有連贏3局與自身關卡相等（即同關卡）的電腦後才可升級。"
 
-#: template/help.html:79
+#: template/help.html:81
 msgid "The games which levels are lower than his level is ignored."
 msgstr "期間，遜于本身關卡的棋局得失不被計入。"
 
-#: template/help.html:80
+#: template/help.html:82
 msgid ""
 "Three consecutive games mean the neiboring games should be played in 6 hours."
 msgstr "連贏是說，相隔的兩局間不得超過6小時。"
 
-#: template/help.html:81
+#: template/help.html:83
 msgid ""
 "If the play wins a same-level game, and after more than 6 hours, he wins "
 "another same-level game."
 msgstr "若玩家贏了一局同關卡電腦後，過了6小時才再贏另一局同關卡電腦，"
 
-#: template/help.html:82
+#: template/help.html:84
 msgid "These two same-level games are not consecutive."
 msgstr "這樣的兩局得勝不被視為連贏。"
 
-#: template/help.html:86
+#: template/help.html:88
 msgid "On earnings"
 msgstr "關于收益"
 
-#: template/help.html:88
+#: template/help.html:90
 msgid "We have applied Google adsense on the pages."
 msgstr "我們已經申請了Google adsense廣告聯盟"
 
-#: template/help.html:89
+#: template/help.html:91
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr "如果您覺得這個游戲還不錯，心情好的話，點一下頁面上的廣告吧"
 
