@@ -164,7 +164,8 @@ class GQL(object):
 
   __ANCESTOR = -1
 
-  def __init__(self, query_string, _app=None, _auth_domain=None):
+  def __init__(self, query_string, _app=None, _auth_domain=None,
+               namespace=None):
     """Ctor.
 
     Parses the input query into the class as a pre-compiled query, allowing
@@ -173,6 +174,7 @@ class GQL(object):
 
     Args:
       query_string: properly formatted GQL query string.
+      namespace: the namespace to use for this query.
 
     Raises:
       datastore_errors.BadQueryError: if the query is not parsable.
@@ -185,6 +187,7 @@ class GQL(object):
     self.__limit = -1
     self.__hint = ''
     self.__app = _app
+    self.__namespace = namespace
     self.__auth_domain = _auth_domain
 
     self.__symbols = self.TOKENIZE_REGEX.findall(query_string)
@@ -195,7 +198,7 @@ class GQL(object):
     else:
       pass
 
-  def Bind(self, args, keyword_args):
+  def Bind(self, args, keyword_args, cursor=None, end_cursor=None):
     """Bind the existing query to the argument list.
 
     Assumes that the input args are first positional, then a dictionary.
@@ -228,8 +231,12 @@ class GQL(object):
       query_count = 1
 
     for i in xrange(query_count):
-      queries.append(datastore.Query(self._entity, _app=self.__app,
-                                     keys_only=self._keys_only))
+      queries.append(datastore.Query(self._entity,
+                                     _app=self.__app,
+                                     keys_only=self._keys_only,
+                                     namespace=self.__namespace,
+                                     cursor=cursor,
+                                     end_cursor=end_cursor))
 
     logging.log(LOG_LEVEL,
                 'Binding with %i positional args %s and %i keywords %s'
@@ -646,9 +653,7 @@ class GQL(object):
     """
     bind_results = self.Bind(args, keyword_args)
 
-    offset = 0
-    if self.__offset != -1:
-      offset = self.__offset
+    offset = self.offset()
 
     if self.__limit == -1:
       it = bind_results.Run()
@@ -674,6 +679,13 @@ class GQL(object):
   def limit(self):
     """Return numerical result count limit."""
     return self.__limit
+
+  def offset(self):
+    """Return numerical result offset."""
+    if self.__offset == -1:
+      return 0
+    else:
+      return self.__offset
 
   def orderings(self):
     """Return the result ordering list."""

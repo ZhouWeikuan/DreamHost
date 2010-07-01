@@ -3,6 +3,98 @@ All rights reserved.
 
 App Engine Python SDK - Release Notes
 
+Version 1.3.5
+=================================
+- Developers can enable Python pre-compilation to decrease start up time for
+  new application instances. This can be enabled by including the
+  derived_file_type in your app.yaml.
+- Ability to configure the Task Queue storage limit with the
+  total_storage_limit field in the queue.yaml file.
+- Task Queues now support up to 50 qps per queue, up from 50 qps per app.
+- Developers can programmatically access Blobs with BlobReader, a file-like
+  interface for reading blobs.
+- Bulkloader transform helpers for lists and hierarchical keys were added.
+- remote_api_shell commands can be sent over HTTPS or HTTP.
+- Admin Console logs now include information on request time latency.
+- Db.delete will now accept an iterable, in addition to a list of models or
+  keys.
+- The datastore now supports end cursors.
+- Fixed an issue properly handling a query with an offset that returns no
+  results.
+- Fixed an issue that improperly allowed quad-dotted netmasks as subnet prefixes
+  for the DoS API.
+- Fixed an issue via user submitted patch in the SDK dataviewer displaying
+  multiline StringProperties.
+    http://code.google.com/p/googleappengine/issues/detail?id=502
+
+Version 1.3.4
+=================================
+- New bulkloader configuration syntax and wizard for easier import/export with
+  the datastore.
+- Applications can now be configured to authenticate with OpenID by selecting
+  the OpenID option when creating your application in the admin console.
+    http://code.google.com/p/googleappengine/issues/detail?id=248
+    http://code.google.com/p/googleappengine/issues/detail?id=56
+- New API to allow App Engine apps to act as OAuth service providers.
+    http://code.google.com/p/googleappengine/issues/detail?id=919
+- Auto task execution is now enabled in the dev_appserver. To turn this off
+  use the flag --disable_task_running.
+- Fixed an issue using db.put() with constructor initialized id based keys.
+    http://code.google.com/p/googleappengine/issues/detail?id=3209
+
+Version 1.3.3
+=================================
+- A new experimental feature allows you to set dev_appserver datastore file
+  stub to use sqlite. To enable, set the flag --use_sqlite=true.
+- It is now possible to implement properties on db.Expando.
+- Fixed a datastore issue where an error was thrown when setting a query offset
+  to more than the number of results throws an error.
+    http://code.google.com/p/googleappengine/issues/detail?id=2875
+- Fixed issue not allowing ByteString type to be viewed in the Development
+  Console datastore viewer.
+    http://code.google.com/p/googleappengine/issues/detail?id=1176
+
+Version 1.3.2
+=================================
+- New API to read the contents of uploaded Blobs (fetch_data)
+    http://code.google.com/p/googleappengine/issues/detail?id=2536
+- URLFetch now supports accessing ports 80-90, 440-450, and 1024-65535
+- Mail API now allows common document formats as attachments
+    http://code.google.com/p/googleappengine/issues/detail?id=494
+- The Task Queue API now supports adding multiple tasks in a single call to
+  Queue.add()
+- Fixed charset handling for inbound emails
+    http://code.google.com/p/googleappengine/issues/detail?id=2326
+- Fixed issue with compositing background colors in dev_appserver
+- New feature in the datastore to specify whether to use strong or eventually
+  consistent reads (the default is strong)
+- New datastore feature allows setting deadlines for operations
+- Increased the maximum Task Queue refill rate from 20/s to 50/s
+- Support for IP blacklisting to prevent denial of service (DoS) attacks
+- Fix an issue with Mac Launcher in Mac OSX 10.5.5
+    http://code.google.com/p/googleappengine/issues/detail?id=778
+- Fix issue with slow updates when there are many skipped files
+    http://code.google.com/p/googleappengine/issues/detail?id=2492
+- Fix issue with cursor not updating when using a GqlQuery
+    http://code.google.com/p/googleappengine/issues/detail?id=2757
+
+Version 1.3.1
+================================
+  - Datastore Query Cursors
+      http://code.google.com/appengine/docs/python/datastore/queriesandindexes.html#Query_Cursors
+  - Transactional Task Creation
+  - Support for Custom Admin Console pages
+  - New "month" and "synchronized" syntax for Cron configuration
+      http://code.google.com/appengine/docs/java/config/cron.html
+  - Application Stats library now included in with SDK
+      http://code.google.com/appengine/docs/python/tools/appstats.html
+  - Bulk Loader supports bulk downloading all kinds simultaneously
+  - appcfg.py validates SSL certificates for HTTPS on Upload
+  - Support for ETags, If-matches, If-not-matches HTTP Headers, as well as 304
+    status codes now available on static files (not available on the
+    dev_appserver or Blobstore blobs)
+      http://code.google.com/p/googleappengine/issues/detail?id=575
+
 Version 1.3.0 - December 14, 2009
 ================================
   - Adds support for the new Blobstore API
@@ -31,7 +123,7 @@ Version 1.2.8 - October 28, 2009
   - Fixed issue in Bulk Loader with line breaks in data.
   - Fixed exception in Bulk Loader with certain data ranges.
       http://code.google.com/p/googleappengine/issues/detail?id=2085
-  - Added SERVER_SOFTWARE and DATACENTER environment variables to runtime.
+  - Added SERVER_SOFTWARE environment variable to runtime.
   - Over Quota HTTP status code changed from 403 to 503
       http://code.google.com/p/googleappengine/issues/detail?id=961
   - Task Queue now considers all HTTP 2xx status codes to represent success
@@ -55,17 +147,17 @@ Version 1.2.7 - October 14, 2009
 Version 1.2.6 - September 17, 2009
 ==================================
   - Added incoming email support.
-    http://code.google.com/p/googleappengine/issues/detail?id=165
+      http://code.google.com/p/googleappengine/issues/detail?id=165
   - Remote API now supports XMPP and task queues.
   - The default for all handlers is now secure: optional. Users can
     now access all pages via SSL unless explicitly disallowed.
   - Remote API now supports HTTPS.
-    http://code.google.com/p/googleappengine/issues/detail?id=1461
+      http://code.google.com/p/googleappengine/issues/detail?id=1461
   - Appcfg now uses https by default.
-    http://code.google.com/p/googleappengine/issues/detail?id=794
+      http://code.google.com/p/googleappengine/issues/detail?id=794
   - Appcfg.py now supports the --application and --version flags to
     override the values specified in app.yaml.
-    http://code.google.com/p/googleappengine/issues/detail?id=670
+      http://code.google.com/p/googleappengine/issues/detail?id=670
   - GQL now supports '= NULL' queries.
   - The db.Model constructor now supports explicitly setting a key
     (and thus an id) for a Model instance.
@@ -78,8 +170,8 @@ Version 1.2.5 - August 13, 2009
 ===============================
   - The Windows Python SDK now includes a GUI launcher, similar to the Mac SDK.
   - Added XMPP support.
-    http://code.google.com/appengine/docs/python/xmpp
-    http://code.google.com/p/googleappengine/issues/detail?id=231
+      http://code.google.com/appengine/docs/python/xmpp
+      http://code.google.com/p/googleappengine/issues/detail?id=231
   - Datastore now supports multiple writes to the same entity within a
     transaction.
   - Datastore entity key names can now start with a digit.

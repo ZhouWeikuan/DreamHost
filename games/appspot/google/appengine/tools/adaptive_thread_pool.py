@@ -385,7 +385,8 @@ class ThreadGate(object):
     self.__thread_semaphore.acquire()
     if self.__backoff_time > 0.0:
       if not threading.currentThread().exit_flag:
-        logger.info('Backing off due to errors: %.1f seconds',
+        logger.info('[%s] Backing off due to errors: %.1f seconds',
+                    threading.currentThread().getName(),
                     self.__backoff_time)
         self.__sleep(self.__backoff_time)
 

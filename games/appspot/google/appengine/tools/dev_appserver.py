@@ -96,15 +96,19 @@ from google.appengine.api import yaml_errors
 from google.appengine.api.blobstore import blobstore_stub
 from google.appengine.api.blobstore import file_blob_storage
 from google.appengine.api.capabilities import capability_stub
+from google.appengine.api.channel import channel_service_stub
 from google.appengine.api.labs.taskqueue import taskqueue_stub
 from google.appengine.api.memcache import memcache_stub
 from google.appengine.api.xmpp import xmpp_service_stub
+from google.appengine.datastore import datastore_sqlite_stub
 
 from google.appengine import dist
 
 from google.appengine.tools import dev_appserver_blobstore
+from google.appengine.tools import dev_appserver_channel
 from google.appengine.tools import dev_appserver_index
 from google.appengine.tools import dev_appserver_login
+from google.appengine.tools import dev_appserver_oauth
 from google.appengine.tools import dev_appserver_upload
 
 
@@ -142,6 +146,9 @@ API_VERSION = '1'
 
 SITE_PACKAGES = os.path.normcase(os.path.join(os.path.dirname(os.__file__),
                                               'site-packages'))
+
+DEVEL_PAYLOAD_HEADER = 'HTTP_X_APPENGINE_DEVELOPMENT_PAYLOAD'
+DEVEL_PAYLOAD_RAW_HEADER = 'X-AppEngine-Development-Payload'
 
 
 
@@ -267,6 +274,8 @@ class AppServerRequest(object):
     self.headers = headers
     self.infile = infile
     self.force_admin = force_admin
+    if DEVEL_PAYLOAD_RAW_HEADER in self.headers:
+      self.force_admin = True
 
   def __eq__(self, other):
     """Used mainly for testing.
@@ -680,6 +689,12 @@ def SetupEnvironment(cgi_path,
   env['USER_ID'] = user_id
   if admin:
     env['USER_IS_ADMIN'] = '1'
+  if env['AUTH_DOMAIN'] == '*':
+    auth_domain = 'gmail.com'
+    parts = email_addr.split('@')
+    if len(parts) == 2 and parts[1]:
+      auth_domain = parts[1]
+    env['AUTH_DOMAIN'] = auth_domain
 
   for key in headers:
     if key in _IGNORE_REQUEST_HEADERS:
@@ -687,9 +702,8 @@ def SetupEnvironment(cgi_path,
     adjusted_name = key.replace('-', '_').upper()
     env['HTTP_' + adjusted_name] = ', '.join(headers.getheaders(key))
 
-  PAYLOAD_HEADER = 'HTTP_X_APPENGINE_DEVELOPMENT_PAYLOAD'
-  if PAYLOAD_HEADER in env:
-    del env[PAYLOAD_HEADER]
+  if DEVEL_PAYLOAD_HEADER in env:
+    del env[DEVEL_PAYLOAD_HEADER]
     new_data = base64.standard_b64decode(infile.getvalue())
     infile.seek(0)
     infile.truncate()
@@ -845,6 +859,9 @@ SHARED_MODULE_PREFIXES = set([
     'sre_parse',
 
 
+    'email',
+
+
 
 
     'wsgiref',
@@ -936,6 +953,8 @@ class FakeFile(file):
   ALLOWED_DIRS = set([
       os.path.normcase(os.path.realpath(os.path.dirname(os.__file__))),
       os.path.normcase(os.path.abspath(os.path.dirname(os.__file__))),
+      os.path.normcase(os.path.dirname(os.path.realpath(os.__file__))),
+      os.path.normcase(os.path.dirname(os.path.abspath(os.__file__))),
   ])
 
   NOT_ALLOWED_DIRS = set([
@@ -1141,11 +1160,14 @@ class FakeFile(file):
                               normcase=normcase):
       relative_filename = logical_dirfakefile[len(FakeFile._root_path):]
 
-      if (not FakeFile._allow_skipped_files and
-          FakeFile._skip_files.match(relative_filename)):
-        logging.warning('Blocking access to skipped file "%s"',
-                        logical_filename)
-        return False
+      if not FakeFile._allow_skipped_files:
+        path = relative_filename
+        while path != os.path.dirname(path):
+          if FakeFile._skip_files.match(path):
+            logging.warning('Blocking access to skipped file "%s"',
+                            logical_filename)
+            return False
+          path = os.path.dirname(path)
 
       if FakeFile._static_file_config_matcher.IsStaticFile(relative_filename):
         logging.warning('Blocking access to static file "%s"',
@@ -3209,6 +3231,9 @@ def CreateRequestHandler(root_path,
         self.send_response(httplib.INTERNAL_SERVER_ERROR, title)
         self.wfile.write('Content-Type: text/html\r\n\r\n')
         self.wfile.write('<pre>%s</pre>' % cgi.escape(msg))
+      except KeyboardInterrupt, e:
+        logging.info('Server interrupted by user, terminating')
+        self.server.stop_serving_forever()
       except:
         msg = 'Exception encountered handling request'
         logging.exception(msg)
@@ -3481,6 +3506,7 @@ def SetupStubs(app_id, **config):
     login_url: Relative URL which should be used for handling user login/logout.
     blobstore_path: Path to the directory to store Blobstore blobs in.
     datastore_path: Path to the file to store Datastore file stub data in.
+    use_sqlite: Use the SQLite stub for the datastore.
     history_path: DEPRECATED, No-op.
     clear_datastore: If the datastore should be cleared on startup.
     smtp_host: SMTP host used for sending test mail.
@@ -3490,6 +3516,10 @@ def SetupStubs(app_id, **config):
     enable_sendmail: Whether to use sendmail as an alternative to SMTP.
     show_mail_body: Whether to log the body of emails.
     remove: Used for dependency injection.
+    disable_task_running: True if tasks should not automatically run after
+      they are enqueued.
+    task_retry_seconds: How long to wait after an auto-running task before it
+      is tried again.
     trusted: True if this app can access data belonging to other apps.  This
       behavior is different from the real app server and should be left False
       except for advanced uses of dev_appserver.
@@ -3499,6 +3529,7 @@ def SetupStubs(app_id, **config):
   blobstore_path = config['blobstore_path']
   datastore_path = config['datastore_path']
   clear_datastore = config['clear_datastore']
+  use_sqlite = config.get('use_sqlite', False)
   require_indexes = config.get('require_indexes', False)
   smtp_host = config.get('smtp_host', None)
   smtp_port = config.get('smtp_port', 25)
@@ -3507,6 +3538,8 @@ def SetupStubs(app_id, **config):
   enable_sendmail = config.get('enable_sendmail', False)
   show_mail_body = config.get('show_mail_body', False)
   remove = config.get('remove', os.remove)
+  disable_task_running = config.get('disable_task_running', False)
+  task_retry_seconds = config.get('task_retry_seconds', 30)
   trusted = config.get('trusted', False)
 
   os.environ['APPLICATION_ID'] = app_id
@@ -3522,9 +3555,14 @@ def SetupStubs(app_id, **config):
 
   apiproxy_stub_map.apiproxy = apiproxy_stub_map.APIProxyStubMap()
 
-  datastore = datastore_file_stub.DatastoreFileStub(
-      app_id, datastore_path, require_indexes=require_indexes,
-      trusted=trusted)
+  if use_sqlite:
+    datastore = datastore_sqlite_stub.DatastoreSqliteStub(
+        app_id, datastore_path, require_indexes=require_indexes,
+        trusted=trusted)
+  else:
+    datastore = datastore_file_stub.DatastoreFileStub(
+        app_id, datastore_path, require_indexes=require_indexes,
+        trusted=trusted)
   apiproxy_stub_map.apiproxy.RegisterStub('datastore_v3', datastore)
 
   fixed_login_url = '%s?%s=%%s' % (login_url,
@@ -3560,11 +3598,19 @@ def SetupStubs(app_id, **config):
 
   apiproxy_stub_map.apiproxy.RegisterStub(
       'taskqueue',
-      taskqueue_stub.TaskQueueServiceStub(root_path=root_path))
+      taskqueue_stub.TaskQueueServiceStub(
+          root_path=root_path,
+          auto_task_running=(not disable_task_running),
+          task_retry_seconds=task_retry_seconds))
 
   apiproxy_stub_map.apiproxy.RegisterStub(
       'xmpp',
       xmpp_service_stub.XmppServiceStub())
+
+  apiproxy_stub_map.apiproxy.RegisterStub(
+      'channel',
+      channel_service_stub.ChannelServiceStub())
+
 
 
 
@@ -3642,6 +3688,33 @@ def CreateImplicitMatcher(
                      False,
                      False,
                      appinfo.AUTH_FAIL_ACTION_UNAUTHORIZED)
+
+  oauth_dispatcher = dev_appserver_oauth.CreateOAuthDispatcher()
+
+  url_matcher.AddURL(dev_appserver_oauth.OAUTH_URL_PATTERN,
+                     oauth_dispatcher,
+                     '',
+                     False,
+                     False,
+                     appinfo.AUTH_FAIL_ACTION_UNAUTHORIZED)
+
+  channel_dispatcher = dev_appserver_channel.CreateChannelDispatcher(
+      apiproxy_stub_map.apiproxy.GetStub('channel'))
+
+  url_matcher.AddURL('/_ah/channel/dev(?:/.*)?',
+                     channel_dispatcher,
+                     '',
+                     False,
+                     False,
+                     appinfo.AUTH_FAIL_ACTION_UNAUTHORIZED)
+
+  url_matcher.AddURL('/_ah/channel/jsapi',
+                     channel_dispatcher,
+                     '',
+                     False,
+                     False,
+                     appinfo.AUTH_FAIL_ACTION_UNAUTHORIZED)
+
 
   return url_matcher
 
@@ -3721,7 +3794,14 @@ def CreateServer(root_path,
 
   if absolute_root_path not in python_path_list:
     python_path_list.insert(0, absolute_root_path)
-  return HTTPServerWithScheduler((serve_address, port), handler_class)
+
+  server = HTTPServerWithScheduler((serve_address, port), handler_class)
+
+  queue_stub = apiproxy_stub_map.apiproxy.GetStub('taskqueue')
+  if queue_stub:
+    queue_stub._add_event = server.AddEvent
+
+  return server
 
 
 class HTTPServerWithScheduler(BaseHTTPServer.HTTPServer):
@@ -3737,6 +3817,7 @@ class HTTPServerWithScheduler(BaseHTTPServer.HTTPServer):
     BaseHTTPServer.HTTPServer.__init__(self, server_address,
                                        request_handler_class)
     self._events = []
+    self._stopped = False
 
   def get_request(self, time_func=time.time, select_func=select.select):
     """Overrides the base get_request call.
@@ -3761,7 +3842,23 @@ class HTTPServerWithScheduler(BaseHTTPServer.HTTPServer):
       current_time = time_func()
       if self._events and current_time >= self._events[0][0]:
         unused_eta, runnable = heapq.heappop(self._events)
-        runnable()
+        request_tuple = runnable()
+        if request_tuple:
+          return request_tuple
+
+  def serve_forever(self):
+    """Handle one request at a time until told to stop."""
+    while not self._stopped:
+      self.handle_request()
+
+  def stop_serving_forever(self):
+    """Stop the serve_forever() loop.
+
+    Stop happens on the next handle_request() loop; it will not stop
+    immediately.  Since dev_appserver.py must run on py2.5 we can't
+    use newer features of SocketServer (e.g. shutdown(), added in py2.6).
+    """
+    self._stopped = True
 
   def AddEvent(self, eta, runnable):
     """Add a runnable event to be run at the specified time.

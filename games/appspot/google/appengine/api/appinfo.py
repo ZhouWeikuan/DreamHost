@@ -25,6 +25,7 @@ configuration files.
 
 
 
+import logging
 import re
 
 from google.appengine.api import appinfo_errors
@@ -37,10 +38,13 @@ from google.appengine.api import yaml_object
 _URL_REGEX = r'(?!\^)/|\.|(\(.).*(?!\$).'
 _FILES_REGEX = r'(?!\^).*(?!\$).'
 
-_DELTA_REGEX = r'([1-9][0-9]*)([DdHhMm]|[sS]?)'
+_DELTA_REGEX = r'([0-9]+)([DdHhMm]|[sS]?)'
 _EXPIRATION_REGEX = r'\s*(%s)(\s+%s)*\s*' % (_DELTA_REGEX, _DELTA_REGEX)
 
-_SERVICE_RE_STRING = r'(mail|xmpp_message)'
+_SERVICE_RE_STRING = r'(mail|xmpp_message|rest)'
+
+_PAGE_NAME_REGEX = r'^.+$'
+
 
 _EXPIRATION_CONVERSIONS = {
     'd': 60 * 60 * 24,
@@ -53,7 +57,19 @@ APP_ID_MAX_LEN = 100
 MAJOR_VERSION_ID_MAX_LEN = 100
 MAX_URL_MAPS = 100
 
-APPLICATION_RE_STRING = r'(?!-)[a-z\d\-]{1,%d}' % APP_ID_MAX_LEN
+PARTITION_SEPARATOR = '~'
+
+DOMAIN_SEPARATOR = ':'
+
+PARTITION_RE_STRING = (r'[a-z\d\-]{1,%d}\%s' %
+                       (APP_ID_MAX_LEN, PARTITION_SEPARATOR))
+DOMAIN_RE_STRING = (r'(?!\-)[a-z\d\-\.]{1,%d}%s' %
+                    (APP_ID_MAX_LEN, DOMAIN_SEPARATOR))
+DISPLAY_APP_ID_RE_STRING = (r'(?!-)[a-z\d\-]{1,%d}' % (APP_ID_MAX_LEN))
+APPLICATION_RE_STRING = (r'(?:%s)?(?:%s)?%s' %
+                         (PARTITION_RE_STRING,
+                          DOMAIN_RE_STRING,
+                          DISPLAY_APP_ID_RE_STRING))
 VERSION_RE_STRING = r'(?!-)[a-z\d\-]{1,%d}' % MAJOR_VERSION_ID_MAX_LEN
 
 RUNTIME_RE_STRING = r'[a-z]{1,30}'
@@ -111,6 +127,11 @@ SKIP_FILES = 'skip_files'
 SERVICES = 'inbound_services'
 DERIVED_FILE_TYPE = 'derived_file_type'
 JAVA_PRECOMPILED = 'java_precompiled'
+PYTHON_PRECOMPILED = 'python_precompiled'
+ADMIN_CONSOLE = 'admin_console'
+
+PAGES = 'pages'
+NAME = 'name'
 
 
 class URLMap(validation.Validated):
@@ -299,6 +320,23 @@ class URLMap(validation.Validated):
     self.GetHandlerType()
 
 
+class AdminConsolePage(validation.Validated):
+  """Class representing admin console page in AdminConsole object.
+  """
+  ATTRIBUTES = {
+      URL: _URL_REGEX,
+      NAME: _PAGE_NAME_REGEX,
+      }
+
+
+class AdminConsole(validation.Validated):
+  """Class representing admin console directives in application info.
+  """
+  ATTRIBUTES = {
+      PAGES: validation.Optional(validation.Repeated(AdminConsolePage)),
+  }
+
+
 class AppInfoExternal(validation.Validated):
   """Class representing users application info.
 
@@ -337,7 +375,8 @@ class AppInfoExternal(validation.Validated):
       DEFAULT_EXPIRATION: validation.Optional(_EXPIRATION_REGEX),
       SKIP_FILES: validation.RegexStr(default=DEFAULT_SKIP_FILES),
       DERIVED_FILE_TYPE: validation.Optional(validation.Repeated(
-          validation.Options(JAVA_PRECOMPILED)))
+          validation.Options(JAVA_PRECOMPILED, PYTHON_PRECOMPILED))),
+      ADMIN_CONSOLE: validation.Optional(AdminConsole),
   }
 
   def CheckInitialized(self):
@@ -369,6 +408,18 @@ class AppInfoExternal(validation.Validated):
         if handler.secure == SECURE_DEFAULT:
           handler.secure = SECURE_HTTP_OR_HTTPS
 
+  def WarnReservedURLs(self):
+    """Generates a warning for reserved URLs.
+
+    See:
+    http://code.google.com/appengine/docs/python/config/appconfig.html#Reserved_URLs
+    """
+    if self.handlers:
+      for handler in self.handlers:
+        if handler.url == '/form':
+          logging.warning(
+              'The URL path "/form" is reserved and will not be matched.')
+
 
 def LoadSingleAppInfo(app_info):
   """Load a single AppInfo object where one and only one is expected.
@@ -397,7 +448,10 @@ def LoadSingleAppInfo(app_info):
     raise appinfo_errors.EmptyConfigurationFile()
   if len(app_infos) > 1:
     raise appinfo_errors.MultipleConfigurationFile()
+
   app_infos[0].FixSecureDefaults()
+  app_infos[0].WarnReservedURLs()
+
   return app_infos[0]
 
 

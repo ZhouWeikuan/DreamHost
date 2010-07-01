@@ -64,6 +64,14 @@ from google.appengine.ext.webapp import template
 _DEBUG = True
 
 
+def ustr(value):
+  """Like str(), but UTF-8-encodes Unicode instead of failing."""
+  try:
+    return str(value)
+  except UnicodeError:
+    return unicode(value).encode('UTF-8')
+
+
 class ImageHandler(webapp.RequestHandler):
   """Serves a static image.
 
@@ -578,9 +586,12 @@ class DatastoreRequestHandler(BaseRequestHandler):
     set of results and 0 for the entity count.
     """
     kind = self.request.get('kind')
+    namespace = self.request.get('namespace')
+    if not namespace:
+      namespace = None
     if not kind:
       return ([], 0)
-    query = datastore.Query(kind)
+    query = datastore.Query(kind, _namespace=namespace)
 
     order = self.request.get('order')
     order_type = self.request.get('order_type')
@@ -714,24 +725,26 @@ class DatastoreQueryHandler(DatastoreRequestHandler):
       kinds = self.get_kinds()
 
     values = {
-      'request': self.request,
-      'in_production': in_production,
-      'kinds': kinds,
-      'kind': self.request.get('kind'),
-      'order': self.request.get('order'),
-      'headers': headers,
-      'entities': entities,
-      'message': self.request.get('msg'),
-      'pages': pages,
-      'current_page': current_page,
-      'num': num,
-      'next_start': -1,
-      'prev_start': -1,
-      'start': start,
-      'total': total,
-      'start_base_url': self.filter_url(['kind', 'order', 'order_type',
-                                         'num']),
-      'order_base_url': self.filter_url(['kind', 'num']),
+        'request': self.request,
+        'in_production': in_production,
+        'kinds': kinds,
+        'kind': self.request.get('kind'),
+        'order': self.request.get('order'),
+        'headers': headers,
+        'entities': entities,
+        'message': self.request.get('msg'),
+        'pages': pages,
+        'current_page': current_page,
+        'namespace': self.request.get('namespace'),
+        'show_namespace': self.request.get('namespace', None) is not None,
+        'num': num,
+        'next_start': -1,
+        'prev_start': -1,
+        'start': start,
+        'total': total,
+        'start_base_url': self.filter_url(['kind', 'order', 'order_type',
+                                           'namespace', 'num']),
+        'order_base_url': self.filter_url(['kind', 'namespace', 'num']),
     }
     if current_page > 1:
       values['prev_start'] = int((current_page - 2) * num)
@@ -801,6 +814,11 @@ class DatastoreEditHandler(DatastoreRequestHandler):
 
     if len(sample_entities) < 1:
       next_uri = self.request.get('next')
+      next_uri += '&msg=%s' % urllib.quote_plus(
+          "The kind %s doesn't exist in the %s namespace" % (
+              kind,
+              self.request.get('namespace', '<Empty>')))
+
       kind_param = 'kind=%s' % kind
       if not kind_param in next_uri:
         if '?' in next_uri:
@@ -846,6 +864,7 @@ class DatastoreEditHandler(DatastoreRequestHandler):
       'key_id': entity_key_id,
       'fields': fields,
       'focus': self.request.get('focus'),
+      'namespace': self.request.get('namespace'),
       'next': self.request.get('next'),
       'parent_key': parent_key,
       'parent_kind': parent_kind,
@@ -862,7 +881,10 @@ class DatastoreEditHandler(DatastoreRequestHandler):
         return
       entity = datastore.Get(datastore.Key(entity_key))
     else:
-      entity = datastore.Entity(kind)
+      namespace = self.request.get('namespace')
+      if not namespace:
+        namespace = None
+      entity = datastore.Entity(kind, _namespace=namespace)
 
     args = self.request.arguments()
     for arg in args:
@@ -874,7 +896,7 @@ class DatastoreEditHandler(DatastoreRequestHandler):
         data_type = DataType.get_by_name(data_type_name)
         if entity and entity.has_key(field_name):
           old_formatted_value = data_type.format(entity[field_name])
-          if old_formatted_value == form_value:
+          if old_formatted_value == ustr(form_value):
             continue
 
         if len(form_value) > 0:
@@ -912,7 +934,7 @@ class DataType(object):
     return _NAMED_DATA_TYPES[name]
 
   def format(self, value):
-    return str(value)
+    return ustr(value)
 
   def short_format(self, value):
     return self.format(value)
@@ -922,7 +944,8 @@ class DataType(object):
       string_value = self.format(value)
     else:
       string_value = ''
-    return '<input class="%s" name="%s" type="text" size="%d" value="%s"/>' % (cgi.escape(self.name()), cgi.escape(name), self.input_field_size(),
+    return '<input class="%s" name="%s" type="text" size="%d" value="%s"/>' % (cgi.escape(ustr(self.name())), cgi.escape(ustr(name)),
+            self.input_field_size(),
             cgi.escape(string_value, True))
 
   def input_field_size(self):
@@ -934,11 +957,12 @@ class DataType(object):
 
 class StringType(DataType):
   def format(self, value):
-    return value
+    return ustr(value)
 
   def input_field(self, name, value, sample_values):
-    value = str(value)
-    sample_values = [str(s) for s in sample_values]
+    name = ustr(name)
+    value = ustr(value)
+    sample_values = [ustr(s) for s in sample_values]
     multiline = False
     if value:
       multiline = len(value) > 255 or value.find('\n') >= 0
@@ -973,7 +997,7 @@ class TextType(StringType):
     return 'Text'
 
   def input_field(self, name, value, sample_values):
-    return '<textarea name="%s" rows="5" cols="50">%s</textarea>' % (cgi.escape(name), cgi.escape(str(value)))
+    return '<textarea name="%s" rows="5" cols="50">%s</textarea>' % (cgi.escape(ustr(name)), cgi.escape(ustr(value)))
 
   def parse(self, value):
     return datastore_types.Text(value)
@@ -1006,7 +1030,8 @@ class TimeType(DataType):
     return 'datetime'
 
   def parse(self, value):
-    return datetime.datetime(*(time.strptime(value, TimeType._FORMAT)[0:6]))
+    return datetime.datetime(*(time.strptime(ustr(value),
+                                             TimeType._FORMAT)[0:6]))
 
   def python_type(self):
     return datetime.datetime
@@ -1017,8 +1042,8 @@ class ListType(DataType):
     value_file = cStringIO.StringIO()
     try:
       writer = csv.writer(value_file)
-      writer.writerow(value)
-      return value_file.getvalue()
+      writer.writerow(map(ustr, value))
+      return ustr(value_file.getvalue())
     finally:
       value_file.close()
 
@@ -1026,10 +1051,15 @@ class ListType(DataType):
     return 'list'
 
   def parse(self, value):
-    value_file = cStringIO.StringIO(value)
+    value_file = cStringIO.StringIO(ustr(value))
     try:
       reader = csv.reader(value_file)
-      return reader.next()
+      fields = []
+      for field in reader.next():
+        if isinstance(field, str):
+          field = field.decode('utf-8')
+        fields.append(field)
+      return fields
     finally:
       value_file.close()
 
@@ -1284,6 +1314,7 @@ _DATA_TYPES = {
   datastore_types.PostalAddress: PostalAddressType(),
   datastore_types.Rating: RatingType(),
   datastore_types.BlobKey: BlobKeyType(),
+  datastore_types.ByteString: StringType(),
 }
 
 _NAMED_DATA_TYPES = {}
