@@ -16,6 +16,7 @@
 # limitations under the License.
 #
 
+import logging
 import os;
 import time, datetime, math;
 from google.appengine.ext import webapp
@@ -236,20 +237,20 @@ class RecentGamesHandler(webapp.RequestHandler):
 
 class CleanGamesHandler(webapp.RequestHandler):
     def get(self):
-        day = int(self.request.get('day', default_value='3'))
+        # make this to clean users.
+        day = int(self.request.get('day', default_value='30'))
         tms = datetime.datetime.today() - datetime.timedelta(days=day)
-        games = db.GqlQuery("SELECT * FROM Games WHERE tms < :1 LIMIT 10", tms);
-        if games and len(games) > 0:
-            for g in games:
-                if g.res == '' or g.res == 'Start':
-                    try :
-                        user = getUserObject(g.uid)
-                        user.lose = user.lose + 1
-                        user.score = user.score - getLevelScore(g.lvl)
-                        user.put()
-                    except :
-                        pass
-            db.delete(games)
+        users = db.GqlQuery("SELECT * FROM FBUsers WHERE era < :1 LIMIT 10", tms);
+        if users :
+            for u in users :
+                if u.lvl < 0:
+                    logging.info("delete user id: %s " % u.uid );
+                    db.delete(u)
+                else :
+                    logging.info("downgrade user id: %s " % u.uid );
+                    u.lvl = u.lvl - 1
+                    u.era = datetime.datetime.today()
+                    u.put()
         pass;
 
 class StartHandler(webapp.RequestHandler):

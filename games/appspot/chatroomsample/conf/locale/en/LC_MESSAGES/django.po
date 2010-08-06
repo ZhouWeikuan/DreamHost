@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-28 21:30+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "English"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "Traditional Chinese"
+
+
+#~ msgid "lvl 0"
+#~ msgstr "Level 0"
+
+#~ msgid "lvl 1"
+#~ msgstr "Level 1"
+
+#~ msgid "lvl 2"
+#~ msgstr "Level 2"
+
+#~ msgid "lvl 3"
+#~ msgstr "Level 3"
+
+#~ msgid "lvl 4"
+#~ msgstr "Level 4"
+
+#~ msgid "lvl 5"
+#~ msgstr "Level 5"
+
+#~ msgid "lvl 6"
+#~ msgstr "Level 6"
+
+#~ msgid "lvl 7"
+#~ msgstr "Level 7"
+
+#~ msgid "lvl 8"
+#~ msgstr "Level 8"
+
+#~ msgid "lvl 9"
+#~ msgstr "Level 9"
+
+#~ msgid "lvl 10"
+#~ msgstr "Level 10"
+
+#~ msgid "FB"
+#~ msgstr "Facebook"
+
+#~ msgid "XN"
+#~ msgstr "Xiaonei"
+
+#~ msgid "lvl "
+#~ msgstr "Level"
+
+#~ msgid "Visit this game"
+#~ msgstr "Visit this game's home page"
+
+#~ msgid "Chinese Chess"
+#~ msgstr "Chinese Chess"
+
+#~ msgid "Invite"
+#~ msgstr "Invite Friends"
+
+#~ msgid "Rank"
+#~ msgstr "Rank"
+
+#~ msgid "Score"
+#~ msgstr "Score"
+
+#~ msgid "Win"
+#~ msgstr "Win"
+
+#~ msgid "Lose"
+#~ msgstr "Lose"
+
+#~ msgid "Draw"
+#~ msgstr "Draw"
+
+#~ msgid "RankList"
+#~ msgstr "Rank List"
+
+#~ msgid "Player(s)"
+#~ msgstr "Player(s)"
+
+#~ msgid "Visit home page"
+#~ msgstr "Visit home page"
+
+#~ msgid "Android SDK 1.5 Chinese Chess"
+#~ msgstr "Chinese Chess"
+
+#~ msgid "Chess Arena"
+#~ msgstr "Chess Arena"
+
+#~ msgid "Play chess with others"
+#~ msgstr "Play chess with others"
+
+#~ msgid " Rank"
+#~ msgstr " Rank"
+
+#~ msgid "Top20"
+#~ msgstr "Top 20"
+
+#~ msgid "Bottom20"
+#~ msgstr "Bottom 20"
+
+#~ msgid "Chess Resources"
+#~ msgstr "Chess Resources"
+
+#~ msgid "Top20ofRankList"
+#~ msgstr "Top 20 of Rank List"

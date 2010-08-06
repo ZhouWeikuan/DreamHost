@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os;
@@ -17,6 +16,7 @@ settings._target = None
 os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
 from django.utils import translation
 from django.utils import simplejson
+import sys, urllib, logging
 
 keyRecent = 'recentGames'
 
@@ -56,6 +56,8 @@ def getUserObject(objId):
         user.icon = info['pic_square']
         user.era = datetime.datetime.today()
         user.put()
+        logging.info(user.src)
+        logging.info(user.name)
     return user
 
 def formatGame(g, u=None):
@@ -114,6 +116,52 @@ class AdminHandler(webapp.RequestHandler):
             self.response.out.write('OK')
         except :
             self.response.out.write('FAIL')
+        return
+
+class PhoneRegHandler(webapp.RequestHandler):
+    def get(self):
+        self.post();
+
+    def post(self):
+        uid = self.request.get('phone_user', default_value='0')
+        opensns.init_sns(self)
+        logging.info("user id is " + uid)
+        user = getUserObject(uid);
+
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        self.response.out.write('OK');
+        logging.info(user.name)
+        return
+
+class PhoneRecentHandler(webapp.RequestHandler):
+    def post(self):
+        self.get()
+
+    def get(self):
+        opensns.init_sns(self)
+        lang = self.request.get('phone_locale', default_value='en')
+        lang = setHandlerLocale(self, lang)
+
+        games = memcache.get(key=keyRecent)
+        if not games:
+            games = []
+        for g in games:
+            g.src = _(g.src)
+            g.lvl = _(g.lvl)
+            if g.res != 'Lose' and g.res != 'Start':
+                g.res = g.res + _(" Sec.")
+            else:
+                g.res = _(g.res)
+
+        template_values = {
+            'sns'  : opensns.sns,
+            'lang' : lang,
+            'games': games,
+        }
+
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/recentgames.xml')
+        self.response.out.write(template.render(path, template_values))
         return
 
 class HelpHandler(webapp.RequestHandler):
@@ -344,6 +392,8 @@ def main():
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
                                         ('/test', TestHandler),
+                                        ('/phone_reg', PhoneRegHandler),
+                                        ('/phone_recent', PhoneRecentHandler),
                                         ('/help', HelpHandler),
                                         ('/invite', InviteHandler),
                                         ('/invite51', Invite51Handler),

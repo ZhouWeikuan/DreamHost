@@ -11,6 +11,8 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.api import memcache
 
+from django.utils import translation
+
 # Set the debug level
 _DEBUG = True
 
@@ -62,7 +64,7 @@ class BaseRequestHandler(webapp.RequestHandler):
 
     # Construct the path to the template
     directory = os.path.dirname(__file__)
-    path = os.path.join(directory, 'templates', template_name)
+    path = os.path.join(directory, 'template', template_name)
 
     # Respond to the request by rendering the template
     self.response.out.write(template.render(path, values, debug=_DEBUG))
@@ -180,24 +182,38 @@ class UserProfileHandler(BaseRequestHandler):
     # Generate the user profile
     self.generate('user.html', template_values={'queried_user': greeting_user})
 
+def setHandlerLocale(handle, lang):
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
+    translation.activate(lang)
+    lang = translation.get_language()
+    handle.request.LANGUAGE_CODE = lang
+    return lang
+
 class TaskListHandler(webapp.RequestHandler):
     def get(self):
         self.post()
 
     def post(self):
-        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
-        self.response.out.write("""<?xml version="1.0" encoding="utf-8" ?>
-        <tasklists>""");
-        for i in range(0, 20):
-            self.response.out.write("""
-            <taskitem>
-                <no> """ + str(i) + """ </no>
-                <name> The online store """ + str(i) + """ and its name </name>
-                <status> confirmed </status>
-            </taskitem>""");
+        # self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        # self.response.out.write("""<?xml version="1.0" encoding="utf-8" ?>
+        # <tasklists>""");
+        # for i in range(0, 20):
+        #    self.response.out.write("""
+        #    <taskitem>
+        #        <no> """ + str(i) + """ </no>
+        #        <name> The online store """ + str(i) + """ and its name </name>
+        #        <status> confirmed </status>
+        #    </taskitem>""");
 
-        self.response.out.write("""
-        </tasklists>""");
+        # self.response.out.write(""" </tasklists>""");
+        lang = 'zh_CN'
+        setHandlerLocale(self, lang)
+        template_values = {
+            'lang': lang ,
+        }
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/list.xml')
+        self.response.out.write(template.render(path, template_values))
 
 class TaskDetailsHandler(webapp.RequestHandler):
     def get(self):

@@ -16,7 +16,9 @@ class FBUsers(db.Model):
             url = 'http://www.renren.com/profile.do?id=' + self.uid
         elif self.src == 'FB' :
             url = 'http://www.facebook.com/profile.php?id=' + self.uid
-        else :
+        elif self.src == 'android' :
+            url = 'http://snsflowers.appspot.com/recentgames?fb_sig_locale=en'
+        else:
             url = 'http://home.51.com/?u=' + self.uid
         return url
 

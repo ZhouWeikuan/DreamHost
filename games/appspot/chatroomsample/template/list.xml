@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+{% load i18n %}
+<tasklists>
+    <taskitem>
+    <no> {% trans "no" %} </no>
+    <name> {% trans "name" %} </name>
+    <status> {% trans "status" %} </status>
+    </taskitem>
+</tasklists>

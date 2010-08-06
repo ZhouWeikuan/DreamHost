@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-01 15:43+0800\n"
+"POT-Creation-Date: 2010-07-23 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,16 +134,16 @@ msgid "System Notice!"
 msgstr "系統公告"
 
 #: template/index.html:100
-msgid "Rotate Mono is available for SNS/iphone/android now"
-msgstr "旋轉毛球目前支持社交網絡/iphone/android等平台"
+msgid " To save disk space, the rule for this game is updated. "
+msgstr " 為了節約空間，本游戲規則稍微做了調整。 "
 
 #: template/index.html:101
-msgid "Click the tab 'Mono' to visit it in SNS "
-msgstr "可以從旋轉毛球頁查看社交網絡上的web game版"
+msgid " Users' level will degrade if no play for more than 30 days. "
+msgstr " 玩家30天未登錄後，其等級將減少一段。 "
 
 #: template/index.html:102
-msgid "Click the tab 'Phone' to visit it in iphone/android "
-msgstr "也可以從手機游戲頁查看iphone/android版訪問地址"
+msgid " Their data will be cleaned if the users' level is less than 0 "
+msgstr " 若玩家的等級小于0，其記錄將被清空。 "
 
 #: template/index.html:126
 msgid "Play Against Computer"
@@ -173,7 +173,7 @@ msgstr "開局"
 msgid "Read game rules in help"
 msgstr "請閱讀幫助以了解規則"
 
-#: template/index.html:222 template/help.html:125 template/cellphone.html:95
+#: template/index.html:222 template/help.html:133 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr "版權所有 2010年"
 
@@ -291,14 +291,32 @@ msgid "On Handicap"
 msgstr "關于讓子"
 
 #: template/help.html:104
+msgid "On Users' data "
+msgstr " 關于玩家的記錄 "
+
+#: template/help.html:106
+msgid " To save disk space, the users' data will be cleaned regularly. "
+msgstr " 為節約空間，玩家數據將做定期清理 "
+
+#: template/help.html:107
+msgid ""
+" If the user doesn't login for more than 30 days, his level will be degrade "
+"by 1."
+msgstr " 玩家每30天未登錄，其段位將減少一段 "
+
+#: template/help.html:108
+msgid " If the user's level is less than 0, his records will be forgotten. "
+msgstr " 待其段位小于0後，玩家記錄將被清空。 "
+
+#: template/help.html:112
 msgid "On earnings"
 msgstr "關于收益"
 
-#: template/help.html:106
+#: template/help.html:114
 msgid "We have applied Google adsense on the pages."
 msgstr "我們已經申請了Google adsense廣告聯盟"
 
-#: template/help.html:107
+#: template/help.html:115
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr "如果您覺得這個游戲還不錯，心情好的話，點一下頁面上的廣告吧"
 
@@ -315,8 +333,9 @@ msgid "iPhone"
 msgstr ""
 
 #: template/cellphone.html:78
-msgid "Still on the way"
-msgstr "仍在開發中"
+msgid ""
+" We have uploaded the binary into app store, it is in review process now"
+msgstr " 程序已經提交至app store，目前仍在審核中  "
 
 #: conf/settings.py:6
 msgid "English"
@@ -381,6 +400,18 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid "Still on the way"
+#~ msgstr "仍在開發中"
+
+#~ msgid "Rotate Mono is available for SNS/iphone/android now"
+#~ msgstr "旋轉毛球目前支持社交網絡/iphone/android等平台"
+
+#~ msgid "Click the tab 'Mono' to visit it in SNS "
+#~ msgstr "可以從旋轉毛球頁查看社交網絡上的web game版"
+
+#~ msgid "Click the tab 'Phone' to visit it in iphone/android "
+#~ msgstr "也可以從手機游戲頁查看iphone/android版訪問地址"
 
 #~ msgid "New android/1.5 game Rotate Mono is available"
 #~ msgstr "Android上新游戲旋轉毛球已經完成"

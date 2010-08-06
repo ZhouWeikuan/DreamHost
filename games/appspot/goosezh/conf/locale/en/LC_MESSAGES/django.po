@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-01 15:43+0800\n"
+"POT-Creation-Date: 2010-07-23 17:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,15 +134,15 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:100
-msgid "Rotate Mono is available for SNS/iphone/android now"
+msgid " To save disk space, the rule for this game is updated. "
 msgstr ""
 
 #: template/index.html:101
-msgid "Click the tab 'Mono' to visit it in SNS "
+msgid " Users' level will degrade if no play for more than 30 days. "
 msgstr ""
 
 #: template/index.html:102
-msgid "Click the tab 'Phone' to visit it in iphone/android "
+msgid " Their data will be cleaned if the users' level is less than 0 "
 msgstr ""
 
 #: template/index.html:126
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Read game rules in help"
 msgstr ""
 
-#: template/index.html:222 template/help.html:125 template/cellphone.html:95
+#: template/index.html:222 template/help.html:133 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr ""
 
@@ -291,14 +291,32 @@ msgid "On Handicap"
 msgstr ""
 
 #: template/help.html:104
-msgid "On earnings"
+msgid "On Users' data "
 msgstr ""
 
 #: template/help.html:106
-msgid "We have applied Google adsense on the pages."
+msgid " To save disk space, the users' data will be cleaned regularly. "
 msgstr ""
 
 #: template/help.html:107
+msgid ""
+" If the user doesn't login for more than 30 days, his level will be degrade "
+"by 1."
+msgstr ""
+
+#: template/help.html:108
+msgid " If the user's level is less than 0, his records will be forgotten. "
+msgstr ""
+
+#: template/help.html:112
+msgid "On earnings"
+msgstr ""
+
+#: template/help.html:114
+msgid "We have applied Google adsense on the pages."
+msgstr ""
+
+#: template/help.html:115
 msgid "If you feel like this game, you can support us via clicking the ads."
 msgstr ""
 
@@ -315,7 +333,8 @@ msgid "iPhone"
 msgstr ""
 
 #: template/cellphone.html:78
-msgid "Still on the way"
+msgid ""
+" We have uploaded the binary into app store, it is in review process now"
 msgstr ""
 
 #: conf/settings.py:6
