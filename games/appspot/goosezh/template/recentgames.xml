@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+{% load i18n %}
+<games>
+    {% for g in games %}
+    <game>
+        <img> {{ g.icon|default_if_none:"favicon.ico" }} </img>
+        <name> {{ g.name }} </name>
+        <src> {{ g.src }} </src>
+        <level> {{ g.lvl }} </level> 
+        <time> {{ g.res }} </time>
+    </game>
+    {% endfor %}
+</games>

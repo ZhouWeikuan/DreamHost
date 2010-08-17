@@ -25,7 +25,7 @@
                 <img alt='{{ g.name }}' class='std' 
                     src='{{ g.icon|default_if_none:"favicon.ico" }}'></img></a><br>
                 <a target='_blank' href='{{ g.url }}'>{{ g.name }}</a><br>
-                <!-- don't show sns source {{ g.src }} <br> -->
+                    {{ g.src }} <br>
                     {{ g.lvl }} <br> 
                     <script type="text/javascript">
                         formatTime({{g.tms.hour}}, {{g.tms.minute}}, {{g.tms.second}});

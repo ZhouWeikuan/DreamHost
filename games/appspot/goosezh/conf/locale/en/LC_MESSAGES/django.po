@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-23 17:13+0800\n"
+"POT-Creation-Date: 2010-08-17 14:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,43 +16,47 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:139 template/rank.html:94
+#: main.py:141 template/rank.html:94
 msgid "FB"
 msgstr "Facebook"
 
-#: main.py:140 template/rank.html:92
+#: main.py:142 template/rank.html:92
 msgid "XN"
 msgstr "Xiaonei"
 
-#: main.py:196 main.py:342
+#: main.py:143
+msgid "51"
+msgstr ""
+
+#: main.py:242 main.py:388
 msgid "lvl "
 msgstr "Level"
 
-#: opensns.py:85
+#: opensns.py:114
 msgid "is playing Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:87
+#: opensns.py:116
 msgid "The Chinese Chess(vs computers)"
 msgstr ""
 
-#: opensns.py:89
+#: opensns.py:118
 msgid "joins game Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:90
+#: opensns.py:119
 msgid "a good chinese chess arena"
 msgstr ""
 
-#: opensns.py:93
+#: opensns.py:122
 msgid "Games"
 msgstr ""
 
-#: opensns.py:96
+#: opensns.py:125
 msgid "5 stars"
 msgstr ""
 
-#: opensns.py:108
+#: opensns.py:137
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 

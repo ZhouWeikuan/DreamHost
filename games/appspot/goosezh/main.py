@@ -33,6 +33,7 @@ settings._target = None
 os.environ['DJANGO_SETTINGS_MODULE'] = 'conf.settings'
 from django.utils import translation
 from django.utils import simplejson
+import sys, urllib, logging
 
 keyRecent = 'recentGames'
 
@@ -139,6 +140,7 @@ class AdminHandler(webapp.RequestHandler):
         if cmd != 'chsrc' or src is None:
             a = _('FB')
             b = _('XN')
+            b = _('51')
             return
 
         self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
@@ -149,6 +151,49 @@ class AdminHandler(webapp.RequestHandler):
             self.response.out.write('OK')
         except :
             self.response.out.write('FAIL')
+        return
+
+class PhoneRegHandler(webapp.RequestHandler):
+    def get(self):
+        self.post();
+
+    def post(self):
+        uid = self.request.get('phone_user', default_value='0')
+        opensns.init_sns(self)
+        logging.info("user id is " + uid)
+        user = getUserObject(uid);
+
+        self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+        self.response.out.write('OK');
+        logging.info(user.name)
+        return
+
+class PhoneRecentHandler(webapp.RequestHandler):
+    def post(self):
+        self.get()
+
+    def get(self):
+        opensns.init_sns(self)
+        lang = self.request.get('phone_locale', default_value='en')
+        lang = setHandlerLocale(self, lang)
+
+        games = memcache.get(key=keyRecent)
+        if not games:
+            games = []
+        for g in games:
+            g.src = _(g.src)
+            g.lvl = _(g.lvl)
+            g.res = _(g.res)
+
+        template_values = {
+            'sns'  : opensns.sns,
+            'lang' : lang,
+            'games': games,
+        }
+
+        self.response.headers['Content-Type'] = 'text/xml; charset=utf-8'
+        path = os.path.join(os.path.dirname(__file__), 'template/recentgames.xml')
+        self.response.out.write(template.render(path, template_values))
         return
 
 class CellPhoneHandler(webapp.RequestHandler):
@@ -383,6 +428,8 @@ def main():
                                         ('/rank', RankHandler),
                                         ('/recentgames', RecentGamesHandler),
                                         ('/cleangames', CleanGamesHandler),
+                                        ('/phone_reg', PhoneRegHandler),
+                                        ('/phone_recent', PhoneRecentHandler),
                                         ('/help', HelpHandler),
                                         ('/cellphone', CellPhoneHandler),
                                         ('/invite', InviteHandler),

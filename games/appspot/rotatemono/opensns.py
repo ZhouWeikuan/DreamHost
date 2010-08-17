@@ -103,8 +103,10 @@ def init_sns(req):
         sns = XiaoneiWrapper(req)
     elif fb_sig_api_key :
         sns = FacebookWrapper(req)
-    else:
+    elif phone_api_key:
         sns = PhoneWrapper(req)
+    else :
+        sns = FacebookWrapper(req)
 
     return sns
 
