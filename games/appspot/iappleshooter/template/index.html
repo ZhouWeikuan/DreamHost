@@ -1,0 +1,215 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Apple Shooter" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Shooter" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.invitePage }}"> 
+            {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
+            {% trans "Rank" %} </a></li>
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chschess/"> 
+            {% trans "Chess(1)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
+            {% trans "Branches" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Phone" %} </a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+        where you may get a "operation aborted" error --> 
+    <div id="FB_HiddenIFrameContainer" 
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+        type="text/javascript"> </script>
+    <script type="text/javascript"> 
+        FB_RequireFeatures(["CanvasUtil"], function(){ 
+                FB.XdComm.Server.init('/iappleshooter'); 
+                FB.CanvasClient.startTimerToSizeToContent(); 
+                }); 
+    </script>
+    {% endifequal %}
+
+    {% if not sns_uid  %}
+        <script type='text/javascript'>
+            function js_redirect(url){
+                if (window.parent) {
+                    window.parent.location.href = url;
+                } else {
+                    window.location.href = url;
+                }
+            }
+            js_redirect('{{ sns.auth_url }}');
+        </script>
+    {% endif %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class='message_info'>
+    <table border='0' width='100%'>
+    <td>
+        <h3 class='nav'> {% trans "Personal Information" %} </h3>
+        <table border='0'>
+            <tr><td rowspan='3'>
+                <img alt='{{ user.name }}' class='big' 
+                    src='{{ user.icon|default_if_none:"/favicon.ico" }}' >
+                </img>
+            </td></tr>
+            <tr style="font-size:12px;">
+                <td> &nbsp;&nbsp; </td>
+                <td> {{ user.name }} &nbsp;</td>
+                <td> &nbsp;</td>
+            </tr>
+            <tr style="font-size:12px;">
+                <td> &nbsp;&nbsp; </td>
+                <td> {% trans "Level" %} &nbsp; </td>
+                <td> {{ tit }} &nbsp;</td>
+            </tr>
+        </table>
+    </td>
+    <td> &nbsp; &nbsp; </td>
+    <td>
+        <table border='0'>
+            <h3 class='nav'> {% trans "System Notice!" %} </h3>
+            <tr><td> {% trans "Apple Shooter is under test" %}</td></tr>
+            <tr><td> {% trans "Use keyboard/buttons to rotate the grid" %} </td></tr>
+            <tr><td> {% trans "You are welcome to test it/invite your friends" %}  </td></tr>
+        </table>
+    </td>
+    </table>
+    </div> 
+
+    <script src="/static/js/adjust.js" type="text/javascript"> </script>
+    <iframe src='http://iappleshooter.appspot.com/recentgames?fb_sig_locale={{lang}}' 
+        width='100%' height='auto' id="frRecentGames" 
+        onload="javascript:dyniframesize('frRecentGames');"
+        frameborder="no" border="0" marginwidth="0" marginheight="0"
+        scrolling="no" allowtransparency="yes" >
+    </iframe>
+    <script type='text/javascript'>
+        var timeout = 2 * 1000 * 60;
+        function refresh_this_page(){
+            var ele = document.getElementById('frRecentGames');
+            ele.src = ele.src;
+            window.setTimeout('refresh_this_page()', timeout);
+        }
+        window.setTimeout('refresh_this_page()', timeout);
+    </script>
+
+    <div class="nav">
+        <h3> {% trans "Apple Shooter" %} </h3>
+    </div>
+
+    <table border="0" height="auto">
+        <tr>
+            <td valign="top">
+            <dl><dt>
+            <object id="Shooter" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+            codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
+            align="middle" border="0" width="640" height="480">
+            <param name="allowScriptAccess" value="always">
+            <param name="allowFullScreen" value="false">
+            <param name="movie" value="http://iappleshooter.appspot.com/static/shooter.swf">
+            <param name="quality" value="high">
+            <param name="menu" value="false">
+            <param name="flashvars" value="lang={{lang}}">
+            <embed src="http://iappleshooter.appspot.com/static/shooter.swf" 
+            name="Shooter" align="middle" border="0" width="640" height="480" quality="high" 
+            allowscriptaccess="always" allowfullscreen="false" menu="false" 
+            flashvars="lang={{lang}}"
+            type="application/x-shockwave-flash" 
+            pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </object>
+            </dt>
+            <dt>
+                <script type="text/javascript"><!--
+                google_ad_client = "pub-3444671286856380";
+                google_ad_slot = "4732789149";
+                google_ad_width = 468;
+                google_ad_height = 60;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+            </dt></dl>
+            </td>
+    <td> &nbsp; &nbsp; </td>
+    <td valign="top">
+    <dl> <dt>
+    <script language="JavaScript">
+        var Shooter = document["Shooter"];
+
+        function restart_click() {
+            Shooter.resetLevel(selLevel.options[selLevel.selectedIndex].value, '{{ sns_uid }}');
+        }
+    </script>             
+    <table border="0">
+        <tr>
+        <dt><font size="2"> </font></dt>
+        <dt><font size="2">{% trans "The game level:" %}</font></dt>
+        <dt><font size="2">
+            <select name="selLevel" id="selLevel" size="5" >
+            {%for duan in lvl%}
+                <option value="{{forloop.counter0}}"> {{ duan }} </option>
+            {%endfor%}
+            </select></font></dt>
+        </tr>
+        <tr>
+        <dt><font color="#008080" size="2"><strong>
+            <input type="button" value='{% trans "Start" %}' onclick="restart_click();">
+            </strong></font></dt>
+        <dt><font size="2"></font></dt>
+        </tr>
+    </table>
+    <dt><font size="2"> </font></dt>
+    <dt><font color="#008080" size="2"><strong></strong></font></dt>
+    <dt><font color="#008080" size="2"><strong>
+        <a target="_blank" href="{{ sns.homeurl }}/help">
+            {% trans "Read game rules in help" %} </a></strong></font></dt>
+    <dt>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "9480817577";
+        google_ad_width = 120;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </dt>
+        <dt><font color="#008080" size="2"> <br>
+        </font></dt>
+    </dl>
+    <dl> </dl>
+    </td>
+    </tr>
+    </table>
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>
+

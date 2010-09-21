@@ -1,0 +1,98 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Apple Shooter" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Shooter" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.invitePage }}">
+            {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank">
+            {% trans "Rank" %} </a></li>
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chschess/">
+            {% trans "Chess(1)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/">
+            {% trans "Rotate" %} </a></li>
+        <li class="tab_on"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Phone" %} </a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE
+        where you may get a "operation aborted" error -->
+    <div id="FB_HiddenIFrameContainer"
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"
+        type="text/javascript"> </script>
+    <script type="text/javascript">
+        FB_RequireFeatures(["CanvasUtil"], function(){
+                FB.XdComm.Server.init('/iappleshooter');
+                FB.CanvasClient.startTimerToSizeToContent();
+                });
+    </script>
+    {% endifequal %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class='nav'> <h3 class='nav'> {% trans "Android Apple Shooter" %} </h3> </div>
+    <div class='message_info'>
+        {% trans "None" %}
+        <!--
+        {% trans "Search 'iappleshooter' in android market " %}  <br/>
+        {% trans "Or search my name 'Zhou Weikuan' in android market " %} <br/>
+        {% trans "  to find all my android games" %} <br/>
+        -->
+    </div>
+    <br>
+
+    <div class="nav"> <h3> {% trans "iPhone Apple Shooter " %} </h3> </div>
+    <div class='message_info'>
+        {% trans "None" %} 
+        <!-- 
+        {% trans "Just find it in the following website:" %} <br>
+        <a target='_blank' href='http://itunes.apple.com/us/app/xxxx-xxxx/id378729589?mt=8'> 
+            {% trans "iappleshooter on itunes" %} </a> <br>
+            -->
+    </div>
+
+    <div>
+        <br/>
+    </div>
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "4732789149";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>

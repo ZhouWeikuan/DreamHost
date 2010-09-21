@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-21 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:92 template/rank.html:98
+msgid "FB"
+msgstr "Facebook"
+
+#: main.py:93 template/rank.html:96
+msgid "XN"
+msgstr "Xiaonei"
+
+#: main.py:94
+msgid "51"
+msgstr ""
+
+#: main.py:193 main.py:331
+msgid "lvl "
+msgstr ""
+
+#: template/recentgames.html:5 template/index.html:5
+#: template/index.html.py:121 template/cellphone.html:5
+msgid "Apple Shooter"
+msgstr ""
+
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr ""
+
+#: template/index.html:11 template/rank.html:5 template/rank.html.py:11
+#: template/help.html:11 template/cellphone.html:11
+msgid "Shooter"
+msgstr ""
+
+#: template/index.html:13 template/rank.html:13 template/help.html:13
+#: template/cellphone.html:13
+msgid "Invite"
+msgstr "Invite Friends"
+
+#: template/index.html:15 template/rank.html:15 template/rank.html.py:77
+#: template/help.html:15 template/cellphone.html:15
+msgid "Rank"
+msgstr "Rank"
+
+#: template/index.html:17 template/rank.html:17 template/help.html:17
+#: template/cellphone.html:17
+msgid "Help"
+msgstr ""
+
+#: template/index.html:19 template/rank.html:19 template/help.html:19
+#: template/cellphone.html:19
+msgid "Chess(1)"
+msgstr ""
+
+#: template/index.html:21 template/rank.html:21 template/help.html:21
+msgid "Branches"
+msgstr ""
+
+#: template/index.html:23 template/rank.html:23 template/help.html:23
+#: template/cellphone.html:23
+msgid "Phone"
+msgstr ""
+
+#: template/index.html:72
+msgid "Personal Information"
+msgstr ""
+
+#: template/index.html:86
+msgid "Level"
+msgstr ""
+
+#: template/index.html:94
+msgid "System Notice!"
+msgstr ""
+
+#: template/index.html:95
+msgid "Apple Shooter is under test"
+msgstr ""
+
+#: template/index.html:96
+msgid "Use keyboard/buttons to rotate the grid"
+msgstr ""
+
+#: template/index.html:97
+msgid "You are welcome to test it/invite your friends"
+msgstr ""
+
+#: template/index.html:171
+msgid "The game level:"
+msgstr ""
+
+#: template/index.html:181 conf/settings.py:16
+msgid "Start"
+msgstr ""
+
+#: template/index.html:190
+msgid "Read game rules in help"
+msgstr ""
+
+#: template/index.html:211 template/help.html:118 template/cellphone.html:95
+msgid "CopyRight@2010"
+msgstr ""
+
+#: template/rank.html:5 template/rank.html.py:56
+msgid "RankList"
+msgstr "Rank List"
+
+#: template/rank.html:78
+msgid "Player(s)"
+msgstr "Player(s)"
+
+#: template/rank.html:79
+msgid "Date"
+msgstr ""
+
+#: template/rank.html:80
+msgid "Score"
+msgstr "Score"
+
+#: template/rank.html:81
+msgid "SNS"
+msgstr ""
+
+#: template/rank.html:88
+msgid "Visit home page"
+msgstr "Visit home page"
+
+#: template/rank.html:94
+msgid " Sec."
+msgstr ""
+
+#: template/help.html:5
+msgid "Help Files"
+msgstr ""
+
+#: template/help.html:57
+msgid "Tips: This help file will take effect after July 1 2010"
+msgstr ""
+
+#: template/help.html:61
+msgid "Game Rules"
+msgstr ""
+
+#: template/help.html:63
+msgid "Each player is on level 0 initially."
+msgstr ""
+
+#: template/help.html:64
+msgid "Each game displays the current level and the elapsed time in seconds"
+msgstr ""
+
+#: template/help.html:65
+msgid "If the player clicks start button before the game ends, "
+msgstr ""
+
+#: template/help.html:66
+msgid "     the current game is ignored."
+msgstr ""
+
+#: template/help.html:67
+msgid ""
+"If he finishes the current level, the elapsed time will be sent to server, "
+msgstr ""
+
+#: template/help.html:68
+msgid "     that game will be displayed in rank list if the time is in top 10"
+msgstr ""
+
+#: template/help.html:72
+msgid "Levels Description"
+msgstr ""
+
+#: template/help.html:74
+msgid "This game contains 18 levels for each player."
+msgstr ""
+
+#: template/help.html:75
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr ""
+
+#: template/help.html:76
+msgid "After the player upgrades his level, he can play more levels."
+msgstr ""
+
+#: template/help.html:80
+msgid "How To Upgrade Your Level"
+msgstr ""
+
+#: template/help.html:82
+msgid ""
+"The player can upgrade his level, only after he wins 1 game with the same "
+"level as his level(called same-level game)."
+msgstr ""
+
+#: template/help.html:83
+msgid "The games which levels are lower than his level is ignored."
+msgstr ""
+
+#: template/help.html:84
+msgid "We will add a time limit for each level later."
+msgstr ""
+
+#: template/help.html:88
+msgid "On Mouse and Keyboard"
+msgstr ""
+
+#: template/help.html:90
+msgid "Use mouse to click the start button to start one game."
+msgstr ""
+
+#: template/help.html:91
+msgid "Use mouse to click the rotate buttons in flash to rotate the grid."
+msgstr ""
+
+#: template/help.html:92
+msgid "After clicking in the flash screen, you can also use keyboard "
+msgstr ""
+
+#: template/help.html:93
+msgid "    to rotate the grids, the Left, Up, Right arrow keys"
+msgstr ""
+
+#: template/help.html:97
+msgid "On earnings"
+msgstr ""
+
+#: template/help.html:99
+msgid "We have applied Google adsense on the pages."
+msgstr ""
+
+#: template/help.html:100
+msgid "If you feel like this game, you can support us via clicking the ads."
+msgstr ""
+
+#: template/cellphone.html:21
+msgid "Rotate"
+msgstr ""
+
+#: template/cellphone.html:56
+msgid "Android Apple Shooter"
+msgstr ""
+
+#: template/cellphone.html:58 template/cellphone.html.py:69
+msgid "None"
+msgstr ""
+
+#: template/cellphone.html:60
+msgid "Search 'iappleshooter' in android market "
+msgstr ""
+
+#: template/cellphone.html:61
+msgid "Or search my name 'Zhou Weikuan' in android market "
+msgstr ""
+
+#: template/cellphone.html:62
+msgid "  to find all my android games"
+msgstr ""
+
+#: template/cellphone.html:67
+msgid "iPhone Apple Shooter "
+msgstr ""
+
+#: template/cellphone.html:71
+msgid "Just find it in the following website:"
+msgstr ""
+
+#: template/cellphone.html:73
+msgid "iappleshooter on itunes"
+msgstr ""
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "English"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "Traditional Chinese"
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr ""
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr ""
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr ""
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr ""
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr ""
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr ""
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr ""
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr ""
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr ""
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr ""
+
+#: conf/settings.py:27
+msgid "lvl 10"
+msgstr ""
+
+#: conf/settings.py:28
+msgid "lvl 11"
+msgstr ""
+
+#: conf/settings.py:29
+msgid "lvl 12"
+msgstr ""
+
+#: conf/settings.py:30
+msgid "lvl 13"
+msgstr ""
+
+#: conf/settings.py:31
+msgid "lvl 14"
+msgstr ""
+
+#: conf/settings.py:32
+msgid "lvl 15"
+msgstr ""
+
+#: conf/settings.py:33
+msgid "lvl 16"
+msgstr ""
+
+#: conf/settings.py:34
+msgid "lvl 17"
+msgstr ""
+
+#~ msgid "Win"
+#~ msgstr "Win"
+
+#~ msgid "Lose"
+#~ msgstr "Lose"
+
+#~ msgid "Draw"
+#~ msgstr "Draw"
+
+#~ msgid "Visit this game"
+#~ msgstr "Visit this game's home page"
+
+#~ msgid "Chinese Chess"
+#~ msgstr "Chinese Chess"
+
+#~ msgid "Android SDK 1.5 Chinese Chess"
+#~ msgstr "Chinese Chess"
+
+#~ msgid "Chess Arena"
+#~ msgstr "Chess Arena"
+
+#~ msgid "Play chess with others"
+#~ msgstr "Play chess with others"
+
+#~ msgid " Rank"
+#~ msgstr " Rank"
+
+#~ msgid "Top20"
+#~ msgstr "Top 20"
+
+#~ msgid "Bottom20"
+#~ msgstr "Bottom 20"
+
+#~ msgid "Chess Resources"
+#~ msgstr "Chess Resources"
+
+#~ msgid "Top20ofRankList"
+#~ msgstr "Top 20 of Rank List"

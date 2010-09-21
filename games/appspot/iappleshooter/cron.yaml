@@ -1,0 +1,4 @@
+cron:
+- description: daily game clean up job
+  url: /cleangames
+  schedule: every 10 minutes

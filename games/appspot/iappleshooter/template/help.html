@@ -1,0 +1,122 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Help Files" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}">
+            {% trans "Shooter" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.invitePage }}"> 
+            {% trans "Invite" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/rank"> 
+            {% trans "Rank" %} </a></li>
+        <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chschess/"> 
+            {% trans "Chess(1)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
+            {% trans "Branches" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Phone" %} </a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+        where you may get a "operation aborted" error --> 
+    <div id="FB_HiddenIFrameContainer" 
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+        type="text/javascript"> </script>
+    <script type="text/javascript"> 
+        FB_RequireFeatures(["CanvasUtil"], function(){ 
+                FB.XdComm.Server.init('/iappleshooter'); 
+                FB.CanvasClient.startTimerToSizeToContent(); 
+                }); 
+    </script>
+    {% endifequal %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class="nav">
+        <h3> {% trans "Tips: This help file will take effect after July 1 2010" %} </h3>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "Game Rules" %} </h3> </div>
+    <div>
+        {% trans "Each player is on level 0 initially." %} <br>
+        {% trans "Each game displays the current level and the elapsed time in seconds" %} <br>
+        {% trans "If the player clicks start button before the game ends, " %} <br>
+        {% trans "     the current game is ignored." %} <br>
+        {% trans "If he finishes the current level, the elapsed time will be sent to server, " %} <br>
+        {% trans "     that game will be displayed in rank list if the time is in top 10" %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "Levels Description" %} </h3> </div>
+    <div>
+        {% trans "This game contains 18 levels for each player." %} <br>
+        {% trans "The player can only play the games which level is lower or equal to his level." %} <br>
+        {% trans "After the player upgrades his level, he can play more levels." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "How To Upgrade Your Level" %} </h3> </div>
+    <div>
+        {% trans "The player can upgrade his level, only after he wins 1 game with the same level as his level(called same-level game)." %} <br>
+        {% trans "The games which levels are lower than his level is ignored." %} <br>
+        {% trans "We will add a time limit for each level later." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "On Mouse and Keyboard" %} </h3> </div>
+    <div>
+        {% trans "Use mouse to click the start button to start one game." %} <br>
+        {% trans "Use mouse to click the rotate buttons in flash to rotate the grid." %} <br>
+        {% trans "After clicking in the flash screen, you can also use keyboard " %} <br>
+        {% trans "    to rotate the grids, the Left, Up, Right arrow keys" %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div class="nav"> <h3> {% trans "On earnings" %} </h3> </div>
+    <div>
+        {% trans "We have applied Google adsense on the pages." %} <br>
+        {% trans "If you feel like this game, you can support us via clicking the ads." %} <br>
+    </div>
+    <div> <br /> </div>
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "4732789149";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div>
+        {% trans "CopyRight@2010" %}
+    </div>
+</body>
+</html>
+

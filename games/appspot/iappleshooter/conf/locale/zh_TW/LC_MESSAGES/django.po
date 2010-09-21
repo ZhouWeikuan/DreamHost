@@ -1,0 +1,618 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-21 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.py:92 template/rank.html:98
+msgid "FB"
+msgstr "臉書"
+
+#: main.py:93 template/rank.html:96
+msgid "XN"
+msgstr "校內網"
+
+#: main.py:94
+msgid "51"
+msgstr ""
+
+#: main.py:193 main.py:331
+msgid "lvl "
+msgstr "關"
+
+#: template/recentgames.html:5 template/index.html:5
+#: template/index.html.py:121 template/cellphone.html:5
+msgid "Apple Shooter"
+msgstr ""
+
+#: template/recentgames.html:5 template/recentgames.html.py:19
+msgid "Recent Results"
+msgstr "最近結果"
+
+#: template/index.html:11 template/rank.html:5 template/rank.html.py:11
+#: template/help.html:11 template/cellphone.html:11
+msgid "Shooter"
+msgstr ""
+
+#: template/index.html:13 template/rank.html:13 template/help.html:13
+#: template/cellphone.html:13
+msgid "Invite"
+msgstr "邀請好友"
+
+#: template/index.html:15 template/rank.html:15 template/rank.html.py:77
+#: template/help.html:15 template/cellphone.html:15
+msgid "Rank"
+msgstr "名次"
+
+#: template/index.html:17 template/rank.html:17 template/help.html:17
+#: template/cellphone.html:17
+msgid "Help"
+msgstr "幫助"
+
+#: template/index.html:19 template/rank.html:19 template/help.html:19
+#: template/cellphone.html:19
+msgid "Chess(1)"
+msgstr "單機象棋"
+
+#: template/index.html:21 template/rank.html:21 template/help.html:21
+msgid "Branches"
+msgstr "移花接木"
+
+#: template/index.html:23 template/rank.html:23 template/help.html:23
+#: template/cellphone.html:23
+msgid "Phone"
+msgstr "手機游戲"
+
+#: template/index.html:72
+msgid "Personal Information"
+msgstr "個人信息"
+
+#: template/index.html:86
+msgid "Level"
+msgstr "關卡"
+
+#: template/index.html:94
+msgid "System Notice!"
+msgstr "系統公告"
+
+#: template/index.html:95
+#, fuzzy
+msgid "Apple Shooter is under test"
+msgstr "旋轉毛球正在測試中"
+
+#: template/index.html:96
+msgid "Use keyboard/buttons to rotate the grid"
+msgstr "可以使用鼠標鍵盤旋轉格子"
+
+#: template/index.html:97
+msgid "You are welcome to test it/invite your friends"
+msgstr "歡迎加入此游戲，并邀請好友"
+
+#: template/index.html:171
+msgid "The game level:"
+msgstr "選擇關卡："
+
+#: template/index.html:181 conf/settings.py:16
+msgid "Start"
+msgstr "開始"
+
+#: template/index.html:190
+msgid "Read game rules in help"
+msgstr "請閱讀幫助以了解規則"
+
+#: template/index.html:211 template/help.html:118 template/cellphone.html:95
+msgid "CopyRight@2010"
+msgstr "版權所有 2010年"
+
+#: template/rank.html:5 template/rank.html.py:56
+msgid "RankList"
+msgstr "排行榜"
+
+#: template/rank.html:78
+msgid "Player(s)"
+msgstr "玩家"
+
+#: template/rank.html:79
+msgid "Date"
+msgstr "日期"
+
+#: template/rank.html:80
+msgid "Score"
+msgstr "得分"
+
+#: template/rank.html:81
+msgid "SNS"
+msgstr "來自"
+
+#: template/rank.html:88
+msgid "Visit home page"
+msgstr "訪問個人主頁"
+
+#: template/rank.html:94
+msgid " Sec."
+msgstr "秒"
+
+#: template/help.html:5
+msgid "Help Files"
+msgstr "幫助"
+
+#: template/help.html:57
+msgid "Tips: This help file will take effect after July 1 2010"
+msgstr "提示：本幫助文件待2010年7月1日後方有效"
+
+#: template/help.html:61
+msgid "Game Rules"
+msgstr "游戲規則"
+
+#: template/help.html:63
+msgid "Each player is on level 0 initially."
+msgstr "玩家初始每人等級為0"
+
+#: template/help.html:64
+msgid "Each game displays the current level and the elapsed time in seconds"
+msgstr "游戲進行時，會顯示當前關卡數和已使用的時間"
+
+#: template/help.html:65
+msgid "If the player clicks start button before the game ends, "
+msgstr "若玩家在完成游戲前再次點擊開始按鈕"
+
+#: template/help.html:66
+msgid "     the current game is ignored."
+msgstr "     當前進行的游戲將被忽略，重頭開始新的游戲"
+
+#: template/help.html:67
+msgid ""
+"If he finishes the current level, the elapsed time will be sent to server, "
+msgstr "完成當前游戲後，所使用的時間將發送給服務器"
+
+#: template/help.html:68
+msgid "     that game will be displayed in rank list if the time is in top 10"
+msgstr "       若使用的時間是前十名之內，將會在排行榜上顯示"
+
+#: template/help.html:72
+msgid "Levels Description"
+msgstr "關卡描述"
+
+#: template/help.html:74
+msgid "This game contains 18 levels for each player."
+msgstr "玩家可經歷總共18個關卡"
+
+#: template/help.html:75
+msgid ""
+"The player can only play the games which level is lower or equal to his "
+"level."
+msgstr "玩家只能玩關卡數小于或等于本身等級的游戲"
+
+#: template/help.html:76
+msgid "After the player upgrades his level, he can play more levels."
+msgstr "玩家提升自己的等級後，可選游戲關卡數得以增加"
+
+#: template/help.html:80
+msgid "How To Upgrade Your Level"
+msgstr "如何提升等級"
+
+#: template/help.html:82
+msgid ""
+"The player can upgrade his level, only after he wins 1 game with the same "
+"level as his level(called same-level game)."
+msgstr "玩家只有贏了1局與自身等級相等的游戲關卡後才可升級。"
+
+#: template/help.html:83
+msgid "The games which levels are lower than his level is ignored."
+msgstr "期間，遜于本身等級的游戲得失不被計入。"
+
+#: template/help.html:84
+msgid "We will add a time limit for each level later."
+msgstr "我們以後會加入限時機制，每個關卡的游戲有一定的時間限制"
+
+#: template/help.html:88
+msgid "On Mouse and Keyboard"
+msgstr "關于鼠標和鍵盤操作"
+
+#: template/help.html:90
+msgid "Use mouse to click the start button to start one game."
+msgstr "使用鼠標點擊開始按鈕進行新游戲"
+
+#: template/help.html:91
+msgid "Use mouse to click the rotate buttons in flash to rotate the grid."
+msgstr "使用鼠標點擊游戲中的旋轉按鈕，以旋轉格子"
+
+#: template/help.html:92
+msgid "After clicking in the flash screen, you can also use keyboard "
+msgstr "用鼠標點了游戲界面後，你也可以用鍵盤操作"
+
+#: template/help.html:93
+msgid "    to rotate the grids, the Left, Up, Right arrow keys"
+msgstr "     使用向左，向上，向右等鍵旋轉格子"
+
+#: template/help.html:97
+msgid "On earnings"
+msgstr "關于收益"
+
+#: template/help.html:99
+msgid "We have applied Google adsense on the pages."
+msgstr "我們已經申請了Google adsense廣告聯盟"
+
+#: template/help.html:100
+msgid "If you feel like this game, you can support us via clicking the ads."
+msgstr "如果您覺得這個游戲還不錯，心情好的話，點一下頁面上的廣告吧"
+
+#: template/cellphone.html:21
+msgid "Rotate"
+msgstr "移花接木"
+
+#: template/cellphone.html:56
+#, fuzzy
+msgid "Android Apple Shooter"
+msgstr "旋轉毛球 android版"
+
+#: template/cellphone.html:58 template/cellphone.html.py:69
+#, fuzzy
+msgid "None"
+msgstr "手機游戲"
+
+#: template/cellphone.html:60
+#, fuzzy
+msgid "Search 'iappleshooter' in android market "
+msgstr "以'Rotate Mono'为关键字在anroid market上搜索"
+
+#: template/cellphone.html:61
+msgid "Or search my name 'Zhou Weikuan' in android market "
+msgstr "或以我名字'Zhou weikuan'为关键字搜索android market"
+
+#: template/cellphone.html:62
+msgid "  to find all my android games"
+msgstr "能找到我写的所有android游戏"
+
+#: template/cellphone.html:67
+msgid "iPhone Apple Shooter "
+msgstr ""
+
+#: template/cellphone.html:71
+msgid "Just find it in the following website:"
+msgstr "点击以下itunes链接即可"
+
+#: template/cellphone.html:73
+#, fuzzy
+msgid "iappleshooter on itunes"
+msgstr "itunes上的旋转小球"
+
+#: conf/settings.py:6
+msgid "English"
+msgstr "英文"
+
+#: conf/settings.py:7
+msgid "Simplified Chinese"
+msgstr "簡體中文"
+
+#: conf/settings.py:8
+msgid "Taiwan Chinese"
+msgstr "繁體中文"
+
+#: conf/settings.py:9
+msgid "Hong Kong Chinese"
+msgstr "繁體中文"
+
+#: conf/settings.py:17
+msgid "lvl 0"
+msgstr "第0关"
+
+#: conf/settings.py:18
+msgid "lvl 1"
+msgstr "第1关"
+
+#: conf/settings.py:19
+msgid "lvl 2"
+msgstr "第2关"
+
+#: conf/settings.py:20
+msgid "lvl 3"
+msgstr "第3关"
+
+#: conf/settings.py:21
+msgid "lvl 4"
+msgstr "第4关"
+
+#: conf/settings.py:22
+msgid "lvl 5"
+msgstr "第5关"
+
+#: conf/settings.py:23
+msgid "lvl 6"
+msgstr "第6关"
+
+#: conf/settings.py:24
+msgid "lvl 7"
+msgstr "第7关"
+
+#: conf/settings.py:25
+msgid "lvl 8"
+msgstr "第8关"
+
+#: conf/settings.py:26
+msgid "lvl 9"
+msgstr "第9关"
+
+#: conf/settings.py:27
+msgid "lvl 10"
+msgstr "10关"
+
+#: conf/settings.py:28
+msgid "lvl 11"
+msgstr "11关"
+
+#: conf/settings.py:29
+msgid "lvl 12"
+msgstr "12关"
+
+#: conf/settings.py:30
+msgid "lvl 13"
+msgstr "13关"
+
+#: conf/settings.py:31
+msgid "lvl 14"
+msgstr "14关"
+
+#: conf/settings.py:32
+msgid "lvl 15"
+msgstr "15关"
+
+#: conf/settings.py:33
+msgid "lvl 16"
+msgstr "16关"
+
+#: conf/settings.py:34
+msgid "lvl 17"
+msgstr "17关"
+
+#~ msgid "Rotate Mono"
+#~ msgstr "旋轉小球"
+
+#~ msgid "Mono"
+#~ msgstr "旋轉毛球"
+
+#~ msgid "iPhone Rotate Mono"
+#~ msgstr "旋转小球 iphone版"
+
+#~ msgid " s"
+#~ msgstr "秒"
+
+#~ msgid "The level for computer:"
+#~ msgstr "電腦等級："
+
+#~ msgid "Start Game"
+#~ msgstr "開局"
+
+#~ msgid "Cell Phone"
+#~ msgstr "手機游戲"
+
+#~ msgid "Win"
+#~ msgstr "贏局"
+
+#~ msgid "Lose"
+#~ msgstr "輸局"
+
+#~ msgid "Draw"
+#~ msgstr "平局"
+
+#~ msgid "Each game has different score for different level."
+#~ msgstr "每局分數依棋局的段位不同而不同。"
+
+#~ msgid ""
+#~ "Level 0 has score 2, the play gets 2 if he wins, -2 if he loses, 1 if "
+#~ "draw."
+#~ msgstr "零段每局2分，贏家得2分，失敗減2分，平局得1分。"
+
+#~ msgid ""
+#~ "Level 1 has score 4, the play gets 4 if he wins, -4 if he loses, 2 if "
+#~ "draw."
+#~ msgstr "初段每局4分，贏家得4分，失敗減4分，平局得2分。"
+
+#~ msgid ""
+#~ "Level 2 has score 8, level 3 has score 16, and so on for later levels."
+#~ msgstr "二段每局8分，三段每局16分，以上各段依次類推。"
+
+#~ msgid ""
+#~ "Three consecutive games mean the neiboring games should be played in 6 "
+#~ "hours."
+#~ msgstr "連贏是說，相隔的兩局棋間不得超過6小時。"
+
+#~ msgid ""
+#~ "If the play wins a same-level game, and after more than 6 hours, he wins "
+#~ "another same-level game."
+#~ msgstr "若玩家贏了一局同段位電腦後，過了6小時才再贏另一局同段位電腦，"
+
+#~ msgid "These two same-level games are not consecutive."
+#~ msgstr "這樣的兩局得勝不被視為連贏。"
+
+#~ msgid "On Retract"
+#~ msgstr "關于悔棋"
+
+#~ msgid "This is not implemented yet."
+#~ msgstr "此項功能尚在研發中"
+
+#~ msgid "On Handicap"
+#~ msgstr "關于讓子"
+
+#~ msgid "is playing Chinese Chess(vs. computers)"
+#~ msgstr "正在與電腦比象棋"
+
+#~ msgid "The Chinese Chess(vs computers)"
+#~ msgstr "與電腦比象棋"
+
+#~ msgid "joins game Chinese Chess(vs. computers)"
+#~ msgstr "加入了游戲與電腦比象棋"
+
+#~ msgid "a good chinese chess arena"
+#~ msgstr "一個好的中國象棋平台"
+
+#~ msgid "Games"
+#~ msgstr "休閑娛樂"
+
+#~ msgid "5 stars"
+#~ msgstr "五星"
+
+#~ msgid "Visit this game"
+#~ msgstr "訪問這個游戲"
+
+#~ msgid "Chinese Chess"
+#~ msgstr "中國象棋"
+
+#~ msgid "Chess(2)"
+#~ msgstr "雙人對弈"
+
+#~ msgid "New android/1.5 game Rotate Mono is available"
+#~ msgstr "Android上新游戲旋轉毛球已經完成"
+
+#~ msgid "Uses gravity to collect the monos, support en/zh_cn"
+#~ msgstr "使用重力感應來消去毛球，支持簡中/英文"
+
+#~ msgid "Click the tab 'Cell Phone' to visit it"
+#~ msgstr "可以從手機游戲頁查看訪問地址"
+
+#~ msgid "Play Against Computer"
+#~ msgstr "與電腦對戰"
+
+#~ msgid "Who goes first?"
+#~ msgstr "誰先走？"
+
+#~ msgid "I go first"
+#~ msgstr "我先走"
+
+#~ msgid "Computer goes first"
+#~ msgstr "電腦先走"
+
+#~ msgid "Android SDK 1.5 Chinese Chess"
+#~ msgstr "中國象棋"
+
+#~ msgid "Still on the way"
+#~ msgstr "仍在開發中"
+
+#~ msgid "Chess is ported to android/1.5"
+#~ msgstr "單機象棋已經移植到android SDK 1.5"
+
+#~ msgid "The porting to iphone is on the way"
+#~ msgstr "iphone上的移植也在進行中"
+
+#~ msgid "New game"
+#~ msgstr "新游戲"
+
+#~ msgid "is under beta test."
+#~ msgstr "正在beta測試中"
+
+#~ msgid "We will adjust it after test finished."
+#~ msgstr "根據測試結果，我們會再加以調整"
+
+#~ msgid "Chess Arena"
+#~ msgstr "象棋擂台"
+
+#~ msgid "Play chess with others"
+#~ msgstr "雙人對弈"
+
+#~ msgid "The game is upgraded."
+#~ msgstr "游戲已升級"
+
+#~ msgid "Please refer to help for more informaiton."
+#~ msgstr "想了解更多信息，請看幫助"
+
+#~ msgid "Have a wonderful time!"
+#~ msgstr "祝大家玩得開心"
+
+#~ msgid "It is estimated to be done at 6:00pm GMT+8"
+#~ msgstr "大概中原時間下午6點左右完成"
+
+#~ msgid "Please visit it later. Thanks!"
+#~ msgstr "請完成後再使用，謝謝！"
+
+#~ msgid " Rank"
+#~ msgstr "名次"
+
+#~ msgid "Top20"
+#~ msgstr "前20名"
+
+#~ msgid "Bottom20"
+#~ msgstr "加油哦"
+
+#~ msgid "User name"
+#~ msgstr "姓名"
+
+#~ msgid "We are planning to upgrade the chess next weekend(Feb 28th), "
+#~ msgstr "下周末（2月28日）游戲升級，"
+
+#~ msgid "The services may not be very stable at that time,"
+#~ msgstr "屆時服務可能不太穩定，"
+
+#~ msgid "Please forgive us if any."
+#~ msgstr "敬請諒解。"
+
+#~ msgid "Entry Level"
+#~ msgstr "入門"
+
+#~ msgid "First Level"
+#~ msgstr "初級"
+
+#~ msgid "Middle Level"
+#~ msgstr "中級"
+
+#~ msgid "Advanced Level"
+#~ msgstr "高級"
+
+#~ msgid "For each game, it pays 2 for entry level, 4 for first level,"
+#~ msgstr "每局入門2分，初級4分，"
+
+#~ msgid "8 for middle level, 16 for advanced level, 32 for last level"
+#~ msgstr "中級8分，高級16分，終級32分"
+
+#~ msgid "Everyone has 100 at first. He gets full score for the game if win,"
+#~ msgstr "每人初始100分，贏一局得全分，"
+
+#~ msgid "half score if draw, lose the score depending on levels"
+#~ msgstr "平局得一半分數，告負按等級扣分"
+
+#~ msgid "He loses if he leaves or restart"
+#~ msgstr "沒下完一局就離開或重新開始的，直接判負"
+
+#~ msgid "The player can upgrade his level,"
+#~ msgstr "玩家可以提升段位，"
+
+#~ msgid "Game rules"
+#~ msgstr "游戲規則"
+
+#~ msgid "Still under construction"
+#~ msgstr "仍在開發中"
+
+#~ msgid "Game scores"
+#~ msgstr "游戲分數"
+
+#~ msgid "Just keep patience if any."
+#~ msgstr "請大家保持耐心。"
+
+#~ msgid "Happy Chinese New Year!"
+#~ msgstr "新年快樂！"
+
+#~ msgid "We will improve the game after the new year."
+#~ msgstr "新年後，我們會做進一步改進"
+
+#~ msgid "Hope everyone will like it."
+#~ msgstr "希望大家能繼續喜歡和支持"
+
+#~ msgid "The source code mainly comes from"
+#~ msgstr "源碼主要來自"
+
+#~ msgid "Little Chess Wizard"
+#~ msgstr "象棋小巫師"
+
+#~ msgid "Chess Resources"
+#~ msgstr "象棋資源網"
