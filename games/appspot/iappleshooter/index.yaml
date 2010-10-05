@@ -8,23 +8,8 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-- kind: GameInfo
-  properties:
-  - name: res
-  - name: tms
-    direction: desc
-- kind: GameInfo
-  properties:
-  - name: lvl
-  - name: score
 - kind: FBUsers
   properties:
   - name: lvl
-  - name: score
+  - name: shots
     direction: desc
-  - name: win
-    direction: desc
-- kind: FBUsers
-  properties:
-  - name: lvl
-  - name: score

@@ -7,7 +7,7 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp import util
 from google.appengine.api import memcache
-from dbs import FBUsers, GameInfo
+from dbs import FBUsers
 import opensns
 
 # multilingual settings
@@ -59,6 +59,15 @@ def getUserObject(objId):
         logging.info(user.src)
         logging.info(user.name)
     return user
+
+class GameInfo():
+    name = ''
+    icon = ''
+    url  = ''
+    tms  = ''
+    src  = 'FB'
+    lvl  = 0
+    shots= 0
 
 def formatGame(g, u=None):
     if not u:
@@ -183,22 +192,17 @@ class HelpHandler(webapp.RequestHandler):
 class RankHandler(webapp.RequestHandler):
     def get(self):
         opensns.init_sns(self)
-        lvl = self.request.get('lvl', default_value='17')
-        games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(20);
+        lvl = int(self.request.get('lvl', default_value='17'))
+        users = db.GqlQuery("SELECT * FROM FBUsers WHERE lvl=:1 ORDER BY shots DESC", lvl).fetch(40);
 
         lang = opensns.sns.lang
         lang = setHandlerLocale(self, lang)
-        lvls = []
-        for i in range(17, -1, -1):
-            t = _("lvl " + str(i))
-            o = {"tit":t, "cnt":i}
-            lvls.append(o)
+        lvls = [ _("lvl " + str(i)) for i in range(17, -1, -1)]
 
-        lvl = int(lvl)
         template_values = {
             'sns'  : opensns.sns,
             'lang' : lang,
-            'games': games,
+            'users': users,
             'lvls': lvls,
             'lvl': lvl,
         }
@@ -219,11 +223,6 @@ class RecentGamesHandler(webapp.RequestHandler):
             games = []
         for g in games:
             g.src = _(g.src)
-            g.lvl = _(g.lvl)
-            if g.res != 'Start':
-                g.res = g.res + " s"
-            else:
-                g.res = _(g.res)
 
         template_values = {
             'sns'  : opensns.sns,
@@ -238,51 +237,45 @@ class RecentGamesHandler(webapp.RequestHandler):
 
 class CleanGamesHandler(webapp.RequestHandler):
     def get(self):
-        lvl = self.request.get('lvl', default_value='-1')
-        lvl = int(lvl)
-        if lvl <= 0:
-            import random
-            lvl = random.randint(0, 19)
-        lvl = str(lvl)
-        games = db.GqlQuery("SELECT * FROM GameInfo WHERE lvl=:1 ORDER BY score", lvl).fetch(20, 20);
-        if games:
-            db.delete(games)
+        # make this to clean users.
+        day = int(self.request.get('day', default_value='30'))
+        tms = datetime.datetime.today() - datetime.timedelta(days=day)
+        users = db.GqlQuery("SELECT * FROM FBUsers WHERE era < :1 LIMIT 10", tms);
+        if users :
+            for u in users :
+                if u.lvl < 0:
+                    logging.info("delete user id: %s " % u.uid );
+                    db.delete(u)
+                else :
+                    logging.info("downgrade user id: %s " % u.uid );
+                    u.lvl = u.lvl - 1
+                    u.era = datetime.datetime.today()
+                    u.put()
         pass;
-
-class StartHandler(webapp.RequestHandler):
-    def get(self):
-        uid = self.request.get('uid');
-        lvl = int(self.request.get('lvl', default_value='0'))
-        if lvl >= 18:
-            lvl = 17
-
-        user = getUserObject(uid);
-        newgame = GameInfo(uid=uid, lvl=str(lvl))
-        newgame.res = 'Start'
-        newgame.tms = datetime.datetime.today()
-        updateCache(newgame, user)
-        return
 
 class ResultHandler(webapp.RequestHandler):
     def get(self):
         uid = self.request.get('uid');
-        elp = self.request.get('elapsed');
+        shots = int(self.request.get('shots', default_value='0'))
         lvl = int(self.request.get('lvl', default_value='0'))
 
         user = getUserObject(uid);
 
-        newgame = GameInfo(uid=uid, lvl=str(lvl))
+        newgame = GameInfo()
+        newgame.uid = uid
+        newgame.lvl = str(lvl)
         newgame.tms = datetime.datetime.today()
-        newgame.score = float(elp) * 10
-        newgame.res = elp
+        newgame.shots = str(shots)
         newgame.icon = user.icon
         newgame.name = user.name
         newgame.src = user.src
         newgame.url = user.getProfileUrl()
-        newgame.put()
         
-        if lvl >= user.lvl:
+        if lvl > user.lvl:
             user.lvl = user.lvl + 1
+            user.shots = shots
+        elif lvl == user.lvl and shots < user.shots :
+            user.shots = shots
 
         updateCache(newgame, user)
         user.put() 
@@ -366,7 +359,6 @@ class MainHandler(webapp.RequestHandler):
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
-                                        ('/start', StartHandler), 
                                         ('/result', ResultHandler),
                                         ('/rank', RankHandler),
                                         ('/recentgames', RecentGamesHandler),

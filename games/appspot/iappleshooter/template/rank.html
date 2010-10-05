@@ -54,12 +54,12 @@
     </div>
 
     <div class='nav'> <h3> {% trans "RankList" %}
-    {% for lv in lvls%}
-        {% ifequal lv.cnt lvl %}
+    {% for lv in lvls %}
+        {% ifequal lv lvl %}
         <a class="curitem" target='_top' 
-            href='{{sns.homeurl}}/rank?lvl={{lv.cnt}}'> {{ lv.tit }} </a>
+            href='{{sns.homeurl}}/rank?lvl={{ forloop.revcounter0 }}'> {{ lv }} </a>
         {% else %}
-        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{lv.cnt}}'> {{ lv.tit }}</a>
+        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{ forloop.revcounter0 }}'> {{ lv }}</a>
         {% endifequal %}
     {% endfor %}
     </h3></div>
@@ -77,10 +77,10 @@
             <th width='100'> {% trans "Rank" %} </th>
             <th width='160'> {% trans "Player(s)" %} </th>
             <th width='240'> {% trans "Date" %} </th>
-            <th width='100'> {% trans "Score" %} </th>
+            <th width='100'> {% trans "Shots" %} </th>
             <th width='100'> {% trans "SNS" %} </th>
         </thead>
-    {% for g in games %}    
+    {% for g in users %}    
         <tr>
         <td> {{ forloop.counter }} </td>
         <td> <img alt='{{ g.name }}' class='big'
@@ -89,9 +89,9 @@
                 href='{{ g.url }}'> {{ g.name }} </a>
          </td>
          <td><script type="text/javascript">
-                 formatTime({{g.tms.year}}, {{g.tms.month}}, {{g.tms.day}}, {{g.tms.hour}}, {{g.tms.minute}}, {{g.tms.second}});
+                 formatTime({{g.era.year}}, {{g.era.month}}, {{g.era.day}}, {{g.era.hour}}, {{g.era.minute}}, {{g.era.second}});
          </script></td>
-         <td> {{ g.res }} {% trans " Sec." %} </td>
+         <td> {{ g.shots }} {% trans " shot(s)" %} </td>
          {% ifequal g.src "XN" %}
          <td> {% trans "XN" %} </td>
          {% else %}

@@ -93,7 +93,7 @@
         <table border='0'>
             <h3 class='nav'> {% trans "System Notice!" %} </h3>
             <tr><td> {% trans "Apple Shooter is under test" %}</td></tr>
-            <tr><td> {% trans "Use keyboard/buttons to rotate the grid" %} </td></tr>
+            <tr><td> {% trans "Press Start button when game over" %} </td></tr>
             <tr><td> {% trans "You are welcome to test it/invite your friends" %}  </td></tr>
         </table>
     </td>
@@ -120,7 +120,15 @@
     <div class="nav">
         <h3> {% trans "Apple Shooter" %} </h3>
     </div>
-
+    <hr>
+    <font color="#008080" size="2"><strong>
+        <a target="_blank" href="{{ sns.homeurl }}/help">
+            {% trans "Read game rules in help" %} </a></strong></font>
+    &nbsp; &nbsp; &nbsp;
+    <font color="#008080" size="2"><strong>
+        <input type="button" value='{% trans "Click To Start ... " %} ' onclick="restart_click();">
+            </strong></font><br>
+    <hr>
     <table border="0" height="auto">
         <tr>
             <td valign="top">
@@ -141,7 +149,15 @@
             type="application/x-shockwave-flash" 
             pluginspage="http://www.macromedia.com/go/getflashplayer" />
             </object>
+            <script language="JavaScript">
+            var Shooter = document["Shooter"];
+
+            function restart_click() {
+                Shooter.setUserName('{{ sns_uid }}');
+            }
+            </script>          
             </dt>
+            <hr>
             <dt>
                 <script type="text/javascript"><!--
                 google_ad_client = "pub-3444671286856380";
@@ -154,57 +170,7 @@
                 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
             </dt></dl>
-            </td>
-    <td> &nbsp; &nbsp; </td>
-    <td valign="top">
-    <dl> <dt>
-    <script language="JavaScript">
-        var Shooter = document["Shooter"];
-
-        function restart_click() {
-            Shooter.resetLevel(selLevel.options[selLevel.selectedIndex].value, '{{ sns_uid }}');
-        }
-    </script>             
-    <table border="0">
-        <tr>
-        <dt><font size="2"> </font></dt>
-        <dt><font size="2">{% trans "The game level:" %}</font></dt>
-        <dt><font size="2">
-            <select name="selLevel" id="selLevel" size="5" >
-            {%for duan in lvl%}
-                <option value="{{forloop.counter0}}"> {{ duan }} </option>
-            {%endfor%}
-            </select></font></dt>
-        </tr>
-        <tr>
-        <dt><font color="#008080" size="2"><strong>
-            <input type="button" value='{% trans "Start" %}' onclick="restart_click();">
-            </strong></font></dt>
-        <dt><font size="2"></font></dt>
-        </tr>
-    </table>
-    <dt><font size="2"> </font></dt>
-    <dt><font color="#008080" size="2"><strong></strong></font></dt>
-    <dt><font color="#008080" size="2"><strong>
-        <a target="_blank" href="{{ sns.homeurl }}/help">
-            {% trans "Read game rules in help" %} </a></strong></font></dt>
-    <dt>
-        <script type="text/javascript"><!--
-        google_ad_client = "pub-3444671286856380";
-        google_ad_slot = "9480817577";
-        google_ad_width = 120;
-        google_ad_height = 600;
-        //-->
-        </script>
-        <script type="text/javascript"
-        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-        </script>
-    </dt>
-        <dt><font color="#008080" size="2"> <br>
-        </font></dt>
-    </dl>
-    <dl> </dl>
-    </td>
+        </td>
     </tr>
     </table>
     <div>

@@ -5,9 +5,9 @@
     <game>
         <img> {{ g.icon|default_if_none:"favicon.ico" }} </img>
         <name> {{ g.name }} </name>
-        <src> {{ g.src }} </src>
+        <src> {{ g.shots }} {% trans "shot(s)" %} </src>
         <level> {{ g.lvl }} </level> 
-        <time> {{ g.res }} </time>
+        <tms> {{ g.tms }} </tms> 
     </game>
     {% endfor %}
 </games>

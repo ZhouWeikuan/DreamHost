@@ -23,7 +23,7 @@ class XiaoneiWrapper():
         self.uid        = req.request.get('xn_sig_user', default_value='0')
         self.homeurl    = "http://apps.renren.com/iappleshooter";
         self.topurl     = "http://apps.renren.com"
-        self.appID      = "106423";
+        self.appID      = "115381";
         self.auth_url   = 'http://app.renren.com/apps/tos.do?api_key=' + self.api_key + "&v=1.0&canvas&next=";
         self.invitePage = "http://apps.renren.com/request.do?app_id="+self.appID+"&action="+self.homeurl;
         self.app        = pyxiaonei.Xiaonei(self.api_key, self.secret_key)
