@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-21 16:33+0800\n"
+"POT-Creation-Date: 2010-10-27 14:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,29 +16,33 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:92 template/rank.html:98
+#: main.py:101 template/rank.html:98
 msgid "FB"
 msgstr "Facebook"
 
-#: main.py:93 template/rank.html:96
+#: main.py:102 template/rank.html:96
 msgid "XN"
 msgstr "Xiaonei"
 
-#: main.py:94
+#: main.py:103
 msgid "51"
 msgstr ""
 
-#: main.py:193 main.py:331
+#: main.py:200 main.py:324
 msgid "lvl "
 msgstr ""
 
 #: template/recentgames.html:5 template/index.html:5
-#: template/index.html.py:121 template/cellphone.html:5
+#: template/index.html.py:120 template/cellphone.html:5
 msgid "Apple Shooter"
 msgstr ""
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
+msgstr ""
+
+#: template/recentgames.html:29
+msgid "shot(s)"
 msgstr ""
 
 #: template/index.html:11 template/rank.html:5 template/rank.html.py:11
@@ -79,39 +83,35 @@ msgstr ""
 msgid "Personal Information"
 msgstr ""
 
-#: template/index.html:86
-msgid "Level"
-msgstr ""
-
-#: template/index.html:94
+#: template/index.html:93
 msgid "System Notice!"
 msgstr ""
 
-#: template/index.html:95
+#: template/index.html:94
 msgid "Apple Shooter is under test"
 msgstr ""
 
-#: template/index.html:96
-msgid "Use keyboard/buttons to rotate the grid"
+#: template/index.html:95
+msgid "Press Start button when game over"
 msgstr ""
 
-#: template/index.html:97
+#: template/index.html:96
 msgid "You are welcome to test it/invite your friends"
 msgstr ""
 
-#: template/index.html:171
-msgid "The game level:"
-msgstr ""
-
-#: template/index.html:181 conf/settings.py:16
-msgid "Start"
-msgstr ""
-
-#: template/index.html:190
+#: template/index.html:125
 msgid "Read game rules in help"
 msgstr ""
 
-#: template/index.html:211 template/help.html:118 template/cellphone.html:95
+#: template/index.html:128
+msgid "Click To Start ... "
+msgstr ""
+
+#: template/index.html:132
+msgid "Refresh the page to restart if game is over."
+msgstr ""
+
+#: template/index.html:180 template/help.html:118 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr ""
 
@@ -128,8 +128,8 @@ msgid "Date"
 msgstr ""
 
 #: template/rank.html:80
-msgid "Score"
-msgstr "Score"
+msgid "Shots"
+msgstr ""
 
 #: template/rank.html:81
 msgid "SNS"
@@ -140,7 +140,7 @@ msgid "Visit home page"
 msgstr "Visit home page"
 
 #: template/rank.html:94
-msgid " Sec."
+msgid " shot(s)"
 msgstr ""
 
 #: template/help.html:5
@@ -300,6 +300,10 @@ msgstr "Traditional Chinese"
 msgid "Hong Kong Chinese"
 msgstr "Traditional Chinese"
 
+#: conf/settings.py:16
+msgid "Start"
+msgstr ""
+
 #: conf/settings.py:17
 msgid "lvl 0"
 msgstr ""
@@ -371,6 +375,9 @@ msgstr ""
 #: conf/settings.py:34
 msgid "lvl 17"
 msgstr ""
+
+#~ msgid "Score"
+#~ msgstr "Score"
 
 #~ msgid "Win"
 #~ msgstr "Win"

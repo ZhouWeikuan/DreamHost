@@ -72,8 +72,7 @@
         <h3 class='nav'> {% trans "Personal Information" %} </h3>
         <table border='0'>
             <tr><td rowspan='3'>
-                <img alt='{{ user.name }}' class='big' 
-                    src='{{ user.icon|default_if_none:"/favicon.ico" }}' >
+                <img alt='{{ user.name }}' class='big' src='/static/img/sss{{user.lvl}}.jpg' >
                 </img>
             </td></tr>
             <tr style="font-size:12px;">
@@ -83,8 +82,8 @@
             </tr>
             <tr style="font-size:12px;">
                 <td> &nbsp;&nbsp; </td>
-                <td> {% trans "Level" %} &nbsp; </td>
                 <td> {{ tit }} &nbsp;</td>
+                <td> &nbsp; </td>
             </tr>
         </table>
     </td>
@@ -127,7 +126,11 @@
     &nbsp; &nbsp; &nbsp;
     <font color="#008080" size="2"><strong>
         <input type="button" value='{% trans "Click To Start ... " %} ' onclick="restart_click();">
-            </strong></font><br>
+            </strong></font>
+            
+    &nbsp; &nbsp; &nbsp;
+     {% trans "Refresh the page to restart if game is over." %}
+            <br>
     <hr>
     <table border="0" height="auto">
         <tr>

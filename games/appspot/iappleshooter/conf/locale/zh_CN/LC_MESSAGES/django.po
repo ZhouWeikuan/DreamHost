@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-21 16:33+0800\n"
+"POT-Creation-Date: 2010-10-27 14:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -16,30 +16,34 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.py:92 template/rank.html:98
+#: main.py:101 template/rank.html:98
 msgid "FB"
 msgstr "脸书"
 
-#: main.py:93 template/rank.html:96
+#: main.py:102 template/rank.html:96
 msgid "XN"
 msgstr "校内网"
 
-#: main.py:94
+#: main.py:103
 msgid "51"
 msgstr ""
 
-#: main.py:193 main.py:331
+#: main.py:200 main.py:324
 msgid "lvl "
 msgstr "关"
 
 #: template/recentgames.html:5 template/index.html:5
-#: template/index.html.py:121 template/cellphone.html:5
+#: template/index.html.py:120 template/cellphone.html:5
 msgid "Apple Shooter"
 msgstr "百步穿果"
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
 msgstr "最近结果"
+
+#: template/recentgames.html:29
+msgid "shot(s)"
+msgstr "箭"
 
 #: template/index.html:11 template/rank.html:5 template/rank.html.py:11
 #: template/help.html:11 template/cellphone.html:11
@@ -79,39 +83,35 @@ msgstr "手机游戏"
 msgid "Personal Information"
 msgstr "个人信息"
 
-#: template/index.html:86
-msgid "Level"
-msgstr "关卡"
-
-#: template/index.html:94
+#: template/index.html:93
 msgid "System Notice!"
 msgstr "系统公告"
 
-#: template/index.html:95
+#: template/index.html:94
 msgid "Apple Shooter is under test"
 msgstr "百步穿果正在测试中"
 
-#: template/index.html:96
-msgid "Use keyboard/buttons to rotate the grid"
-msgstr "可以使用鼠标键盘旋转格子"
+#: template/index.html:95
+msgid "Press Start button when game over"
+msgstr "游戏结束后，请按 开始 按钮"
 
-#: template/index.html:97
+#: template/index.html:96
 msgid "You are welcome to test it/invite your friends"
 msgstr "欢迎加入此游戏，邀请好友"
 
-#: template/index.html:171
-msgid "The game level:"
-msgstr "选择关卡："
-
-#: template/index.html:181 conf/settings.py:16
-msgid "Start"
-msgstr "开始"
-
-#: template/index.html:190
+#: template/index.html:125
 msgid "Read game rules in help"
 msgstr "请阅读帮助以了解规则"
 
-#: template/index.html:211 template/help.html:118 template/cellphone.html:95
+#: template/index.html:128
+msgid "Click To Start ... "
+msgstr "点我就开始游戏..."
+
+#: template/index.html:132
+msgid "Refresh the page to restart if game is over."
+msgstr "游戏结束后，请刷新网页重来"
+
+#: template/index.html:180 template/help.html:118 template/cellphone.html:95
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
@@ -128,8 +128,8 @@ msgid "Date"
 msgstr "日期"
 
 #: template/rank.html:80
-msgid "Score"
-msgstr "分数"
+msgid "Shots"
+msgstr "箭"
 
 #: template/rank.html:81
 msgid "SNS"
@@ -140,8 +140,8 @@ msgid "Visit home page"
 msgstr "访问个人主页"
 
 #: template/rank.html:94
-msgid " Sec."
-msgstr "秒"
+msgid " shot(s)"
+msgstr "箭"
 
 #: template/help.html:5
 msgid "Help Files"
@@ -253,17 +253,14 @@ msgid "Rotate"
 msgstr "移花接木"
 
 #: template/cellphone.html:56
-#, fuzzy
 msgid "Android Apple Shooter"
-msgstr "旋转小球 android版"
+msgstr "百步穿杨 android版"
 
 #: template/cellphone.html:58 template/cellphone.html.py:69
-#, fuzzy
 msgid "None"
 msgstr "手机游戏"
 
 #: template/cellphone.html:60
-#, fuzzy
 msgid "Search 'iappleshooter' in android market "
 msgstr "以'Rotate Mono'为关键字在anroid market上搜索"
 
@@ -284,9 +281,8 @@ msgid "Just find it in the following website:"
 msgstr "点击以下itunes链接即可"
 
 #: template/cellphone.html:73
-#, fuzzy
 msgid "iappleshooter on itunes"
-msgstr "itunes上的旋转小球"
+msgstr "itunes上的 百步穿杨"
 
 #: conf/settings.py:6
 msgid "English"
@@ -303,6 +299,10 @@ msgstr "繁体中文(台湾)"
 #: conf/settings.py:9
 msgid "Hong Kong Chinese"
 msgstr "繁体中文(香港)"
+
+#: conf/settings.py:16
+msgid "Start"
+msgstr "开始"
 
 #: conf/settings.py:17
 msgid "lvl 0"
@@ -375,6 +375,21 @@ msgstr "16关"
 #: conf/settings.py:34
 msgid "lvl 17"
 msgstr "17关"
+
+#~ msgid "Level"
+#~ msgstr "关卡"
+
+#~ msgid "Use keyboard/buttons to rotate the grid"
+#~ msgstr "可以使用鼠标键盘旋转格子"
+
+#~ msgid "The game level:"
+#~ msgstr "选择关卡："
+
+#~ msgid "Score"
+#~ msgstr "分数"
+
+#~ msgid " Sec."
+#~ msgstr "秒"
 
 #~ msgid "Rotate Mono"
 #~ msgstr "旋转小球"

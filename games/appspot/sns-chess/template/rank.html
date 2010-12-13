@@ -1,0 +1,120 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{% trans "Chinese Chess" %} {% trans "RankList" %} </title>
+    <link href="/static/css/chess.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body id="tab_on" class="body">
+    <ul id="tabnav">
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}"> 
+            {% trans "Chess(1)" %} </a></li>
+        <li class="tab_off"> 
+            <a target="_blank" href="{{ sns.invitePage }}"> 
+                {% trans "Invite" %} </a></li>
+        <li class="tab_on"> <a target="_top" href="{{sns.homeurl}}/rank"> 
+            {% trans  "Rank" %} </a></li>
+        <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
+            {% trans "Help" %} </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/rotatemono/"> 
+            {% trans "Mono" %} <sup><span class="newsItem">{% trans "new!" %}</span></sup> </a></li>
+        <li class="tab_off"> <a target="_blank" href="{{sns.topurl}}/chchess/"> 
+            {% trans "Chess(2)" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
+            {% trans "Rotate" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
+            {% trans "Cell Phone" %} </a></li>
+    </ul>
+
+    {% ifequal sns.src 'FB' %}
+    <!-- Note: Include this div markup as a workaround for a known bug in this release on IE 
+        where you may get a "operation aborted" error --> 
+    <div id="FB_HiddenIFrameContainer" 
+        style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;">
+    </div>
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" 
+        type="text/javascript"> </script>
+    <script type="text/javascript"> 
+        FB_RequireFeatures(["CanvasUtil"], function(){ 
+                FB.XdComm.Server.init('/chschess'); 
+                FB.CanvasClient.startTimerToSizeToContent(); 
+                }); 
+    </script>
+    {% endifequal %}
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        /* frontBanner */
+        google_ad_slot = "6809388696";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+
+    <div class='nav'> <h3> {% trans "RankList" %}
+    {% for lv in lvls%}
+        {% ifequal forloop.revcounter0 lvl %}
+        <a class="curitem" target='_top' 
+            href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}&rev={{rev}}'> {{ lv }} </a>
+        {% else %}
+        <a target='_top' href='{{sns.homeurl}}/rank?lvl={{forloop.revcounter0}}'> {{ lv }}</a>
+        {% endifequal %}
+    {% endfor %}
+    </h3></div>
+
+    <hr />
+    <table border='0' style="text-align:center;">
+        <thead>
+            <th width='80'> {% trans "Rank" %} </th>
+            <th width='200'> {% trans "Player(s)" %} </th>
+            <th width='72'> {% trans "Level" %} </th>
+            <th width='72'> {% trans "SNS" %} </th>
+            <th width='72'> {% trans "Score" %} </th>
+            <th width='72'> {% trans "Win" %} </th>
+            <th width='72'> {% trans "Lose" %} </th>
+            <th width='72'> {% trans "Draw" %} </th>
+        </thead>
+    {% for u in users %}    
+        <tr>
+        <td> {{ forloop.counter }} </td>
+        <td> <img alt='{{ u.name }}' class='big'
+                src='{{ u.icon|default_if_none:"/favicon.ico" }}'></img> <br>
+              <a title='{% trans "Visit home page" %}' target='_blank' 
+                href='{{ u.getProfileUrl }}'> {{ u.name }} </a>
+         </td>
+         <td> {{ u.lvl }} </td>
+         {% ifequal u.src "XN" %}
+         <td> {% trans "XN" %} </td>
+         {% else %}
+         <td> {% trans "FB" %} </td>
+         {% endifequal %}
+         <td> {{ u.score}} </td>
+         <td> {{ u.win }}  </td>
+         <td> {{ u.lose }} </td>
+         <td> {{ u.draw }} </td>
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <hr />
+
+    <div>
+        <script type="text/javascript"><!--
+        google_ad_client = "pub-3444671286856380";
+        google_ad_slot = "4732789149";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</body>
+</html>
+
