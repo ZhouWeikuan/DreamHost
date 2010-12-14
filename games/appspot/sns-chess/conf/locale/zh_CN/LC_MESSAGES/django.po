@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 14:19+0800\n"
+"POT-Creation-Date: 2010-12-14 13:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zhou Weikuan <zhouweikuan@gmail.com>\n"
 "Language-Team: 简体中文 <zhouweikuan@gmail.com>\n"
@@ -32,38 +32,10 @@ msgstr ""
 msgid "lvl "
 msgstr "段"
 
-#: opensns.py:114
-msgid "is playing Chinese Chess(vs. computers)"
-msgstr "正在玩中国象棋段位赛"
-
-#: opensns.py:116
-msgid "The Chinese Chess(vs computers)"
-msgstr "中国象棋段位赛"
-
-#: opensns.py:118
-msgid "joins game Chinese Chess(vs. computers)"
-msgstr "加入了游戏中国象棋段位赛"
-
-#: opensns.py:119
-msgid "a good chinese chess arena"
-msgstr "一个很好的中国象棋平台"
-
-#: opensns.py:122
-msgid "Games"
-msgstr "休闲娱乐"
-
-#: opensns.py:125
-msgid "5 stars"
-msgstr "五星"
-
-#: opensns.py:137
-msgid "Visit this game"
-msgstr "访问这个游戏"
-
-#: template/recentgames.html:5 template/index.html:11 template/rank.html:11
-#: template/help.html:11 template/cellphone.html:11
+#: template/recentgames.html:5 template/index.html:22 template/rank.html:22
+#: template/help.html:22 template/cellphone.html:22
 msgid "Chess(1)"
-msgstr "单机象棋"
+msgstr "中国象棋"
 
 #: template/recentgames.html:5 template/recentgames.html.py:19
 msgid "Recent Results"
@@ -72,6 +44,11 @@ msgstr "最近结果"
 #: template/index.html:5 template/rank.html:5 template/cellphone.html:5
 msgid "Chinese Chess"
 msgstr "中国象棋"
+
+#: template/index.html:11 template/rank.html:11 template/help.html:11
+#: template/cellphone.html:11
+msgid "Chess(9)"
+msgstr "国际象棋"
 
 #: template/index.html:14 template/rank.html:14 template/help.html:14
 #: template/cellphone.html:14
@@ -92,16 +69,6 @@ msgstr "帮助"
 #: template/cellphone.html:20
 msgid "Mono"
 msgstr "旋转毛球"
-
-#: template/index.html:20 template/rank.html:20 template/help.html:20
-#: template/cellphone.html:20
-msgid "new!"
-msgstr "新!"
-
-#: template/index.html:22 template/rank.html:22 template/help.html:22
-#: template/cellphone.html:22
-msgid "Chess(2)"
-msgstr "双人对弈"
 
 #: template/index.html:24 template/rank.html:24 template/help.html:24
 #: template/cellphone.html:24
@@ -158,16 +125,16 @@ msgid "The level for computer:"
 msgstr "电脑等级："
 
 #: template/index.html:185
-msgid "Who goes first?"
+msgid "Who first?"
 msgstr "谁先走？"
 
 #: template/index.html:189
-msgid "I go first"
-msgstr "我先走"
+msgid "Me"
+msgstr "我方"
 
 #: template/index.html:190
-msgid "Computer goes first"
-msgstr "电脑先走"
+msgid "Computer"
+msgstr "电脑"
 
 #: template/index.html:193
 msgid "Start Game"
@@ -177,7 +144,7 @@ msgstr "开局"
 msgid "Read game rules in help"
 msgstr "请阅读帮助以了解规则"
 
-#: template/index.html:222 template/help.html:133 template/cellphone.html:95
+#: template/index.html:222 template/help.html:133 template/cellphone.html:97
 msgid "CopyRight@2010"
 msgstr "版权所有 2010年"
 
@@ -206,8 +173,8 @@ msgid "Help Files"
 msgstr "帮助"
 
 #: template/help.html:60
-msgid "Tips: This help file will take effect after Feb 28 2010"
-msgstr "提示：本帮助文件待2月28日后方有效"
+msgid "Help file for chess"
+msgstr "国际象棋说明"
 
 #: template/help.html:64
 msgid "Game Rules"
@@ -341,6 +308,10 @@ msgid ""
 " We have uploaded the binary into app store, it is in review process now"
 msgstr " 程序已经提交至app store，目前仍在审核中 "
 
+#: template/cellphone.html:81
+msgid "Not available yet"
+msgstr "目前还没有..."
+
 #: conf/settings.py:6
 msgid "English"
 msgstr "英文"
@@ -404,6 +375,42 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid "is playing Chinese Chess(vs. computers)"
+#~ msgstr "正在玩中国象棋段位赛"
+
+#~ msgid "The Chinese Chess(vs computers)"
+#~ msgstr "中国象棋段位赛"
+
+#~ msgid "joins game Chinese Chess(vs. computers)"
+#~ msgstr "加入了游戏中国象棋段位赛"
+
+#~ msgid "a good chinese chess arena"
+#~ msgstr "一个很好的中国象棋平台"
+
+#~ msgid "Games"
+#~ msgstr "休闲娱乐"
+
+#~ msgid "5 stars"
+#~ msgstr "五星"
+
+#~ msgid "Visit this game"
+#~ msgstr "访问这个游戏"
+
+#~ msgid "new!"
+#~ msgstr "新!"
+
+#~ msgid "Chess(2)"
+#~ msgstr "双人对弈"
+
+#~ msgid "I go first"
+#~ msgstr "我先走"
+
+#~ msgid "Computer goes first"
+#~ msgstr "电脑先走"
+
+#~ msgid "Tips: This help file will take effect after Feb 28 2010"
+#~ msgstr "提示：本帮助文件待2月28日后方有效"
 
 #~ msgid "Rotate Mono is available for SNS/iphone/android now"
 #~ msgstr "旋转毛球已经在社交网络/iphone/android等平台可用"

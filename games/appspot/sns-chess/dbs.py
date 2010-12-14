@@ -21,7 +21,7 @@ class FBUsers(db.Model):
         elif self.src == 'FB' :
             url = 'http://www.facebook.com/profile.php?id=' + self.uid
         elif self.src == 'android' :
-            url = 'http://rotatemono.appspot.com/recentgames?fb_sig_locale=en'
+            url = 'http://sns-chess.appspot.com/recentgames?fb_sig_locale=en'
         else:
             url = '/'
         return url

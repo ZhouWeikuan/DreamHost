@@ -8,7 +8,7 @@
 <body id="tab_on" class="body">
     <ul id="tabnav">
         <li class="tab_on"> <a target="_top" href="{{ sns.homeurl }}">
-            {% trans "Chess(1)" %} </a></li>
+            {% trans "Chess(9)" %} </a></li>
         <li class="tab_off"> 
             <a target="_blank" href="{{ sns.invitePage }}"> 
                 {% trans "Invite" %} </a></li>
@@ -17,9 +17,9 @@
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
             {% trans "Help" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/rotatemono/"> 
-            {% trans "Mono" %} <sup><span class="newsItem">{% trans "new!" %}</span></sup> </a></li>
+            {% trans "Mono" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
-            {% trans "Chess(2)" %}</a></li>
+            {% trans "Chess(1)" %}</a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
             {% trans "Rotate" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
@@ -36,7 +36,7 @@
         type="text/javascript"> </script>
     <script type="text/javascript"> 
         FB_RequireFeatures(["CanvasUtil"], function(){ 
-                FB.XdComm.Server.init('/chschess'); 
+                FB.XdComm.Server.init('/cronlychess'); 
                 FB.CanvasClient.startTimerToSizeToContent(); 
                 }); 
     </script>
@@ -166,7 +166,7 @@
 
         function restart_click() {
             XQWLight.setLevel(selLevel.options[selLevel.selectedIndex].value);
-            XQWLight.restart(selFlipped.selectedIndex == 1, 0, '{{ sns_uid }}');
+            XQWLight.restart(selFlipped.selectedIndex == 1, " ", '{{ sns_uid }}');
         }
     </script>             
     <table border="0">
@@ -182,12 +182,12 @@
         </td>
         <td>
         <dt><font size="2"></font>　</dt>
-            <font size="2">{% trans "Who goes first?" %}</font>
+            <font size="2">{% trans "Who first?" %}</font>
         </dt>
         <dt><font size="2">
         <select name="selFlipped" id="selFlipped" size="2">
-            <option selected value="0">{% trans "I go first" %}</option>
-            <option value="1">{% trans "Computer goes first" %}</option>
+            <option selected value="0">{% trans "Me" %}</option>
+            <option value="1">{% trans "Computer" %}</option>
         </select></font></dt>
         <dt><font color="#008080" size="2"><strong>
             <input type="button" value='{% trans "Start Game" %}' onclick="restart_click()"></strong></font></dt>
