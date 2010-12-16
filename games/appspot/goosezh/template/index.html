@@ -17,9 +17,9 @@
         <li class="tab_off"> <a target="_top" href="{{ sns.homeurl }}/help">
             {% trans "Help" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/rotatemono/"> 
-            {% trans "Mono" %} <sup><span class="newsItem">{% trans "new!" %}</span></sup> </a></li>
-        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/chchess/"> 
-            {% trans "Chess(2)" %}</a></li>
+            {% trans "Mono" %}</a></li>
+        <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/cronlychess/"> 
+            {% trans "Chess(9)" %} <sup><span class="newsItem">{% trans "new!" %}</span></sup> </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.topurl }}/yihuajiemu/"> 
             {% trans "Rotate" %} </a></li>
         <li class="tab_off"> <a target="_blank" href="{{ sns.homeurl }}/cellphone">
@@ -97,9 +97,9 @@
     <td>
         <table border='0'>
             <h3 class='nav'> {% trans "System Notice!" %} </h3>
-            <tr><td> {% trans " To save disk space, the rule for this game is updated. " %}</td></tr>
-            <tr><td> {% trans " Users' level will degrade if no play for more than 30 days. " %} </td></tr>
-            <tr><td> {% trans " Their data will be cleaned if the users' level is less than 0 " %}  </td></tr>
+            <tr><td> {% trans " Chess is added here. " %}</td></tr>
+            <tr><td> {% trans " You can click tab Chess(9) to play it " %} </td></tr>
+            <tr><td> {% trans " Welcome advice and suggestion! " %}  </td></tr>
         </table>
     </td>
     </table>
@@ -113,7 +113,7 @@
         scrolling="no" allowtransparency="yes" >
     </iframe>
     <script type='text/javascript'>
-        var timeout = 2 * 1000 * 60;
+        var timeout = 3 * 1000 * 60;
         function refresh_this_page(){
             var ele = document.getElementById('frRecentGames');
             ele.src = ele.src;

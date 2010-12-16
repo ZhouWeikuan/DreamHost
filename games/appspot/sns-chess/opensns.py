@@ -52,6 +52,7 @@ class FacebookWrapper():
         self.api_key    = 'cc558703a0c21bbe4b09565355af6ee2'
         self.secret_key = '2080ce576437227e7d7bb5d2a53569d5'; 
         self.uid        = req.request.get('fb_sig_user', default_value='0')
+        logging.debug("fb uid is " + str(self.uid) )
         self.homeurl    = "http://apps.facebook.com/cronlychess";
         self.topurl     = "http://apps.facebook.com"
         self.appID      = "138183732901622";

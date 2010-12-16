@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-14 13:12+0800\n"
+"POT-Creation-Date: 2010-12-15 11:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,16 +105,16 @@ msgid "System Notice!"
 msgstr "系統公告"
 
 #: template/index.html:100
-msgid " To save disk space, the rule for this game is updated. "
-msgstr " 為了節約空間，本游戲規則稍微做了調整。 "
+msgid " Chess with 9 levels is Online "
+msgstr "國際象棋上線啦"
 
 #: template/index.html:101
-msgid " Users' level will degrade if no play for more than 30 days. "
-msgstr " 玩家30天未登錄後，其等級將減少一段。 "
+msgid " Welcome to compete with it! "
+msgstr "歡迎進行對抗賽"
 
 #: template/index.html:102
-msgid " Their data will be cleaned if the users' level is less than 0 "
-msgstr " 若玩家的等級小于0，其記錄將被清空。 "
+msgid " Welcome advice and suggestions! "
+msgstr "歡迎修改意見和建議"
 
 #: template/index.html:126
 msgid "Play Against Computer"
@@ -375,6 +375,15 @@ msgstr "九段"
 #: conf/settings.py:27
 msgid "lvl 10"
 msgstr "十段"
+
+#~ msgid " To save disk space, the rule for this game is updated. "
+#~ msgstr " 為了節約空間，本游戲規則稍微做了調整。 "
+
+#~ msgid " Users' level will degrade if no play for more than 30 days. "
+#~ msgstr " 玩家30天未登錄後，其等級將減少一段。 "
+
+#~ msgid " Their data will be cleaned if the users' level is less than 0 "
+#~ msgstr " 若玩家的等級小于0，其記錄將被清空。 "
 
 #~ msgid "is playing Chinese Chess(vs. computers)"
 #~ msgstr "正在與電腦比象棋"

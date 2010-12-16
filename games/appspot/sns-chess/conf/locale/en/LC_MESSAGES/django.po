@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-14 13:12+0800\n"
+"POT-Creation-Date: 2010-12-15 11:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,15 +105,15 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:100
-msgid " To save disk space, the rule for this game is updated. "
+msgid " Chess with 9 levels is Online "
 msgstr ""
 
 #: template/index.html:101
-msgid " Users' level will degrade if no play for more than 30 days. "
+msgid " Welcome to compete with it! "
 msgstr ""
 
 #: template/index.html:102
-msgid " Their data will be cleaned if the users' level is less than 0 "
+msgid " Welcome advice and suggestions! "
 msgstr ""
 
 #: template/index.html:126

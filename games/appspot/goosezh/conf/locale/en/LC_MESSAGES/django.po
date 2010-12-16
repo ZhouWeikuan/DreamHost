@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-17 14:19+0800\n"
+"POT-Creation-Date: 2010-12-15 11:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,31 +32,31 @@ msgstr ""
 msgid "lvl "
 msgstr "Level"
 
-#: opensns.py:114
+#: opensns.py:116
 msgid "is playing Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:116
+#: opensns.py:118
 msgid "The Chinese Chess(vs computers)"
 msgstr ""
 
-#: opensns.py:118
+#: opensns.py:120
 msgid "joins game Chinese Chess(vs. computers)"
 msgstr ""
 
-#: opensns.py:119
+#: opensns.py:121
 msgid "a good chinese chess arena"
 msgstr ""
 
-#: opensns.py:122
+#: opensns.py:124
 msgid "Games"
 msgstr ""
 
-#: opensns.py:125
+#: opensns.py:127
 msgid "5 stars"
 msgstr ""
 
-#: opensns.py:137
+#: opensns.py:139
 msgid "Visit this game"
 msgstr "Visit this game's home page"
 
@@ -93,14 +93,13 @@ msgstr ""
 msgid "Mono"
 msgstr ""
 
-#: template/index.html:20 template/rank.html:20 template/help.html:20
-#: template/cellphone.html:20
-msgid "new!"
+#: template/index.html:22
+msgid "Chess(9)"
 msgstr ""
 
-#: template/index.html:22 template/rank.html:22 template/help.html:22
-#: template/cellphone.html:22
-msgid "Chess(2)"
+#: template/index.html:22 template/rank.html:20 template/help.html:20
+#: template/cellphone.html:20
+msgid "new!"
 msgstr ""
 
 #: template/index.html:24 template/rank.html:24 template/help.html:24
@@ -138,15 +137,15 @@ msgid "System Notice!"
 msgstr ""
 
 #: template/index.html:100
-msgid " To save disk space, the rule for this game is updated. "
+msgid " Chess is added here. "
 msgstr ""
 
 #: template/index.html:101
-msgid " Users' level will degrade if no play for more than 30 days. "
+msgid " You can click tab Chess(9) to play it "
 msgstr ""
 
 #: template/index.html:102
-msgid " Their data will be cleaned if the users' level is less than 0 "
+msgid " Welcome advice and suggestion! "
 msgstr ""
 
 #: template/index.html:126
@@ -184,6 +183,10 @@ msgstr ""
 #: template/rank.html:5 template/rank.html.py:59
 msgid "RankList"
 msgstr "Rank List"
+
+#: template/rank.html:22 template/help.html:22 template/cellphone.html:22
+msgid "Chess(2)"
+msgstr ""
 
 #: template/rank.html:74
 msgid "Player(s)"
