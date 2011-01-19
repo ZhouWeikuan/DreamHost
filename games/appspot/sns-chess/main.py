@@ -288,12 +288,12 @@ class CleanGamesHandler(webapp.RequestHandler):
         users = db.GqlQuery("SELECT * FROM FBUsers WHERE era < :1 LIMIT 10", tms);
         if users :
             for u in users :
+                u.lvl = u.lvl - 1
                 if u.lvl < 0:
                     logging.info("delete user id: %s " % u.uid );
                     db.delete(u)
                 else :
                     logging.info("downgrade user id: %s " % u.uid );
-                    u.lvl = u.lvl - 1
                     u.era = datetime.datetime.today()
                     u.put()
         pass;
